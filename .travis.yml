@@ -14,7 +14,7 @@ notifications:
 install:
   - npm ci # faster, goes only from package-lock
 before_script:
-  - psql -c 'create database "boilermaker-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
+  - psql -c 'create database "codealoud-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
 script:
   - npm test # test the code
   - npm run build-client # make the bundle
@@ -22,8 +22,8 @@ script:
 before_deploy:
   - rm -rf node_modules # omit from the tarball, since we skip cleanup
 deploy:
-skip_cleanup: true # prevents travis from deleting the build
-provider: heroku
-app: codealoud # see README
-api_key:
-secure: R9PS5IzMzsjZ2uvMQBVjdf0osFgnA0+a9EWYOkzPDKeYnEfMqkZCrtFj5Mw+VRN6pqqD99AMHc92gZZSgyH2boiqx+ggdb/x8r7zZN97scWAIIotXuAhuYNS2QKHjSIJqoGZpLoZfk3ZiknZAy93LBFzb6UlZnU43WpidpAvRYB7ufnkXYWjRv/XExYfftBp14vtYp6l45Kz7dM/cHCJ2cgJRdKQ4RYzc1kI6C0wp4FDj9b0EIcHwx1fb5tiu7GAPagxAtuYoeqzgo8PA/XbXJUoB/KeDhwR0xBIGffZQ2fTLrlQlt1ouoZ7/GVLBgPjtQoxCIlPkbrSQXnW3zPDTn9bmzKsWyNwGJXdGp7RiRVg3v2GXKArqrZuaGPfjScjCn9uCmpydEaIB+R1EmAM1IMCsQ8b/IwUZ+PJHmqqHUhgZ7Xl6ms1AMtbtnuOd3MI7PfLslYpn7SknGKYol1wTkFrCtRSsnSOLjZ5kMFqSqEzNR1TNtzBSlBbhBsgW9k+SchE2MGzprVg4De6Df03kjokysMk3siTavdsgHCH9HLF8Qw9NLmG0Ka55qjoROHHF414shengSJkuSes/6Ncnzu9mIdpx8Q0iMhnHSDw5RTRIsdJFsVK8j+Hp9b+96QDrCmhMOJSohpoumC5AyIYCv2QM2FGOkI+VmN1D2Cfwis=
+  skip_cleanup: true # prevents travis from deleting the build
+  provider: heroku
+  app: codealoud # see README
+  api_key:
+    secure: R9PS5IzMzsjZ2uvMQBVjdf0osFgnA0+a9EWYOkzPDKeYnEfMqkZCrtFj5Mw+VRN6pqqD99AMHc92gZZSgyH2boiqx+ggdb/x8r7zZN97scWAIIotXuAhuYNS2QKHjSIJqoGZpLoZfk3ZiknZAy93LBFzb6UlZnU43WpidpAvRYB7ufnkXYWjRv/XExYfftBp14vtYp6l45Kz7dM/cHCJ2cgJRdKQ4RYzc1kI6C0wp4FDj9b0EIcHwx1fb5tiu7GAPagxAtuYoeqzgo8PA/XbXJUoB/KeDhwR0xBIGffZQ2fTLrlQlt1ouoZ7/GVLBgPjtQoxCIlPkbrSQXnW3zPDTn9bmzKsWyNwGJXdGp7RiRVg3v2GXKArqrZuaGPfjScjCn9uCmpydEaIB+R1EmAM1IMCsQ8b/IwUZ+PJHmqqHUhgZ7Xl6ms1AMtbtnuOd3MI7PfLslYpn7SknGKYol1wTkFrCtRSsnSOLjZ5kMFqSqEzNR1TNtzBSlBbhBsgW9k+SchE2MGzprVg4De6Df03kjokysMk3siTavdsgHCH9HLF8Qw9NLmG0Ka55qjoROHHF414shengSJkuSes/6Ncnzu9mIdpx8Q0iMhnHSDw5RTRIsdJFsVK8j+Hp9b+96QDrCmhMOJSohpoumC5AyIYCv2QM2FGOkI+VmN1D2Cfwis=
