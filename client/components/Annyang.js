@@ -3,10 +3,10 @@ import annyang from 'annyang'
 import {keywordCheck} from '../utilFunctions'
 const keywords = ['binary', 'hash', 'loop']
 
-class Annyang extends React.Component {
+export class Annyang extends React.Component {
   constructor() {
     super()
-    this.state = {hello: false, binary: 0, array: 0, hash: 0, said: ''}
+    this.state = {wordsGot: [], said: ''}
     this.handleChange = this.handleChange.bind(this)
     this.annyangStart = this.annyangStart.bind(this)
     this.annyangStop = this.annyangStop.bind(this)
@@ -19,12 +19,7 @@ class Annyang extends React.Component {
       )
     } else {
       // Let's define a command.
-      var commands = {
-        hello: () => this.setState({hello: true}),
-        binary: () => this.setState({binary: 1}),
-        array: () => this.setState({array: 1}),
-        hash: () => this.setState({hash: 1})
-      }
+      var commands = {}
 
       // Add our commands to annyang
       annyang.addCommands(commands)
@@ -56,6 +51,7 @@ class Annyang extends React.Component {
     console.log('state:', this.state)
     return (
       <div>
+        <h3>Your challenge is {this.props.challenge}</h3>
         <p>Now say how you'd solve the problem!</p>
         <button onClick={this.annyangStart}>Start Recording</button>
         <button onClick={this.annyangStop}>Stop Recording</button>
