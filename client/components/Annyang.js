@@ -1,40 +1,86 @@
 import React from 'react'
 import annyang from 'annyang'
+import {keywordCheck} from '../utilFunctions'
+const keywords = ['binary', 'hash', 'loop']
 
 class Annyang extends React.Component {
   constructor() {
     super()
-    this.state = {hello: false}
+    this.state = {hello: false, binary: 0, array: 0, hash: 0, said: ''}
+    this.handleChange = this.handleChange.bind(this)
+    this.annyangStart = this.annyangStart.bind(this)
+    this.annyangStop = this.annyangStop.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
-    if (annyang) {
+    if (!annyang) {
+      alert(
+        'Speech recognition is not yet working on some browsers. Try using the site in Chrome or you can type your answers.'
+      )
+    } else {
       // Let's define a command.
       var commands = {
         hello: () => this.setState({hello: true}),
-        Binary: () => this.state({keyword1: true})
+        binary: () => this.setState({binary: 1}),
+        array: () => this.setState({array: 1}),
+        hash: () => this.setState({hash: 1})
       }
 
       // Add our commands to annyang
       annyang.addCommands(commands)
-      annyang.addCallback('result', function(phrases) {
-        console.log(phrases[0])
-      })
 
       // Start listening.
-      annyang.start()
+
+      annyang.addCallback('result', phrases => {
+        console.log('listening and heard:', phrases[0])
+        this.setState({said: this.state.said + phrases[0]})
+      })
     }
   }
+  handleChange() {
+    this.setState({said: event.target.value})
+  }
+  handleSubmit(event) {
+    event.preventDefault()
+    let wordsGot = keywordCheck(this.state.said, keywords)
+    console.log('Keywords said:', wordsGot)
+    this.setState({wordsGot: wordsGot})
+  }
+  annyangStart() {
+    annyang.start()
+  }
+  annyangStop() {
+    annyang.abort()
+  }
   render() {
-    return this.state.hello ? (
-      <p>Now say how you'd solve the problem!</p>
-    ) : (
-      <p>Say hello!</p>
+    console.log('state:', this.state)
+    return (
+      <div>
+        <p>Now say how you'd solve the problem!</p>
+        <button onClick={this.annyangStart}>Start Recording</button>
+        <button onClick={this.annyangStop}>Stop Recording</button>
+        <form
+          style={{
+            width: 500,
+            height: 80
+          }}
+          onSubmit={this.handleSubmit}
+        >
+          <label>You said:</label>
+          <textarea
+            rows="10"
+            cols="100"
+            type="text"
+            name="said"
+            value={this.state.said}
+            onChange={this.handleChange}
+            id="Annyang"
+          />
+
+          <input type="submit" />
+        </form>
+      </div>
     )
-    //   this.state.keyword1 ? (
-    //     <p> You said the keyword! </p>
-    //   ) : (
-    //     <p>You missed the keyword. It was binary.</p>
-    //   )
   }
 }
 
