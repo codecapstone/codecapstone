@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import Annyang from './Annyang'
 
 /**
  * COMPONENT
@@ -11,6 +12,7 @@ export const UserHome = props => {
   return (
     <div>
       <h3>Welcome, {email}</h3>
+      <Annyang />
     </div>
   )
 }
