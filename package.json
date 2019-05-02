@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/codecapstone/codealoud#readme",
   "dependencies": {
+    "annyang": "^2.6.1",
     "axios": "^0.18.0",
     "codesandbox": "^2.1.4",
     "compression": "^1.7.3",
