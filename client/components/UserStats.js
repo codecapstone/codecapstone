@@ -7,8 +7,8 @@ export class UserStats extends React.Component {
     super()
 
     this.state = {
-      completed: false,
-      testsPassed: false
+      completed: 'No',
+      testsPassed: 'No'
     }
   }
 
@@ -20,16 +20,26 @@ export class UserStats extends React.Component {
         <h3>Welcome, {email}</h3>
         <p>Your problem was: {problem}</p>
         <p>In your approach you got the following keywords:</p>
-        {keywordsGot.map((word, idx) => <p key={idx}>{word}</p>)}
+        {keywordsGot.map((word, idx) => (
+          <p key={idx} id="keywordsGot">
+            {word}
+          </p>
+        ))}
         <p>Other keywords you should consider are: </p>
-        {keywordsNotGot.map((word, idx) => <p key={idx}>{word}</p>)}
+        {keywordsNotGot.map((word, idx) => (
+          <p key={idx} id="keywordsNotGot">
+            {word}
+          </p>
+        ))}
 
         <p>Did you pass the test specs?</p>
-        <button onClick={() => this.setState({testsPassed: true})}>Yes</button>
-        <button>No</button>
+        <p>{this.state.testsPassed}</p>
+        <button onClick={() => this.setState({testsPassed: 'Yes'})}>Yes</button>
+        <button onClick={() => this.setState({testsPassed: 'No'})}>No</button>
         <p>Do you want to mark this challenge as complete?</p>
-        <button onClick={() => this.setState({completed: true})}>Yes</button>
-        <button>No</button>
+        <p>{this.state.completed}</p>
+        <button onClick={() => this.setState({completed: 'Yes'})}>Yes</button>
+        <button onClick={() => this.setState({completed: 'No'})}>No</button>
       </div>
     )
   }

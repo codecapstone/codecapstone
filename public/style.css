@@ -58,3 +58,9 @@ form div {
 #sandbox {
   display: flex;
 }
+#keywordsGot {
+  color: green;
+}
+#keywordsNotGot {
+  color: red;
+}
