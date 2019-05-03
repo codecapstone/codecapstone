@@ -21,10 +21,9 @@ export class UserStats extends React.Component {
         <p>Your problem was: {problem}</p>
         <p>In your approach you got the following keywords:</p>
         {keywordsGot.map((word, idx) => <p key={idx}>{word}</p>)}
-        <p>
-          Other keywords you should consider are:{' '}
-          {keywordsNotGot.map((word, idx) => <p key={idx}>{word}</p>)}
-        </p>
+        <p>Other keywords you should consider are: </p>
+        {keywordsNotGot.map((word, idx) => <p key={idx}>{word}</p>)}
+
         <p>Did you pass the test specs?</p>
         <button onClick={() => this.setState({testsPassed: true})}>Yes</button>
         <button>No</button>
