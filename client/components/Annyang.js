@@ -1,7 +1,7 @@
 import React from 'react'
 import annyang from 'annyang'
 import {keywordCheck} from '../utilFunctions'
-
+import {getKeyWords} from '../store/userStats'
 import {connect} from 'react-redux'
 
 export class Annyang extends React.Component {
@@ -38,10 +38,17 @@ export class Annyang extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    console.log(this.props.challenge.Keywords)
-    let wordsGot = keywordCheck(this.state.said, this.props.challenge.Keywords)
-    console.log('Keywords said:', wordsGot)
-    this.setState({wordsGot: wordsGot})
+
+    let [wordsGot, wordsNotGot] = keywordCheck(
+      this.state.said,
+      this.props.challenge.keywords
+    )
+
+    this.props.getKeyWords({
+      gotKeywords: wordsGot,
+      notGotKeywords: wordsNotGot
+    })
+    this.props.history.push('/stats')
   }
   annyangStart() {
     annyang.start()
@@ -51,12 +58,12 @@ export class Annyang extends React.Component {
   }
   render() {
     console.log('state:', this.state, 'props:', this.props)
-    const {name, Prompt} = this.props.challenge
+    const {name, prompt} = this.props.challenge
     return (
       <div>
         <h3>Your challenge is {name}</h3>
         <p>As a reminder, the prompt is: </p>
-        <p id="prompt">{Prompt}</p>
+        <p id="prompt">{prompt}</p>
         <p>Now say how you'd solve the problem!</p>
         <button onClick={this.annyangStart}>Start Recording</button>
         <button onClick={this.annyangStop}>Stop Recording</button>
@@ -89,4 +96,6 @@ const mapState = state => ({
   challenge: state.problems.selected
 })
 
-export default connect(mapState)(Annyang)
+const mapDispatch = {getKeyWords}
+
+export default connect(mapState, mapDispatch)(Annyang)
