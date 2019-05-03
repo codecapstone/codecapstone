@@ -2,12 +2,12 @@ import React from 'react'
 import {getParameters} from 'codesandbox/lib/api/define'
 import {test} from '../sandboxFiles/index.test'
 import {sandboxHtml} from '../sandboxFiles/sandboxIndexHtml'
+import {connect} from 'react-redux'
 
 const challenge = 'hammingDistance'
 
-export const Sandbox = () => {
-  // once the store is set up, ourContent will refer to props.currentChallenge.name
-  const ourContent = `export default function ${challenge}() {
+export const Sandbox = props => {
+  const ourContent = `export default function ${props.problem.functionName} {
     // Your code here!
 
   }`
@@ -18,9 +18,8 @@ export const Sandbox = () => {
         content: ourContent
       },
 
-      // once the store is set up, test will refer to props.currentChallenge.tests
       'index.test.js': {
-        content: test
+        content: props.problem.tests
       },
       'index.html': {
         content: sandboxHtml
@@ -31,10 +30,7 @@ export const Sandbox = () => {
       }
     }
   })
-
-  const url = `https://codesandbox.io/api/v1/sandboxes/define?previewwindow=tests&hidenavigation=1&parameters=${parameters}`
-
-  console.log(url)
+  const url = `https://codesandbox.io/api/v1/sandboxes/define?view=editor&parameters=${parameters}`
 
   return (
     <div id="main">
@@ -42,3 +38,15 @@ export const Sandbox = () => {
     </div>
   )
 }
+
+const mapState = state => {
+  return {
+    problem: state.problems.selected
+  }
+}
+
+// const mapDispatch = dispatch => {
+
+// }
+
+export const ConnectedSandbox = connect(mapState, null)(Sandbox)

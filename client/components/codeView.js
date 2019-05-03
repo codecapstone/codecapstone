@@ -1,11 +1,11 @@
 import React from 'react'
-import {Sandbox} from './codeSandbox'
+import {ConnectedSandbox} from './codeSandbox'
 
 export const CodeView = () => {
   return (
     <div>
       <div>CODEVIEW RENDER</div>
-      <Sandbox />
+      <ConnectedSandbox />
     </div>
   )
 }
