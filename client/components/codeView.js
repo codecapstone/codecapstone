@@ -3,7 +3,7 @@ import {ConnectedSandbox} from './codeSandbox'
 
 export const CodeView = () => {
   return (
-    <div>
+    <div id="sandbox">
       <div>CODEVIEW RENDER</div>
       <ConnectedSandbox />
     </div>
