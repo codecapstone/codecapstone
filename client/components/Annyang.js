@@ -41,7 +41,8 @@ export class Annyang extends React.Component {
     console.log(this.props.challenge.Keywords)
     let wordsGot = keywordCheck(this.state.said, this.props.challenge.Keywords)
     console.log('Keywords said:', wordsGot)
-    this.setState({wordsGot: wordsGot})
+    this.setState({wordsGot: wordsGot, said: ''})
+    this.props.history.push('/stats')
   }
   annyangStart() {
     annyang.start()
