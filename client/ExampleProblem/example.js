@@ -10,7 +10,7 @@ const exampleProblem = {
      Example:
       fib(4) === 3`,
   functionName: 'fib(n)',
-  tests: `const fib = require('./index');
+  tests: `import fib from './index';
 
       test('Fib function is defined', () => {
         expect(typeof fib).toEqual('function');
