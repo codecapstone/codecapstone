@@ -9,7 +9,7 @@ export const sandboxHtml = `<!DOCTYPE html>
 
   </head>
   <body style="background-color: grey">
-    <div id="main" style="font-size: large; color: #4286f4; width: 400px; font-family: Arial">
+    <div id="main" style="font-size: large; color: #4286f4; width: 350px; font-family: Arial">
     <p>
       Now that you have taken time to consider the problem, generate examples and map out
       your approach, let's code! </p>

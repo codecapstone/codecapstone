@@ -34,7 +34,7 @@ nav a {
   height: 1000px;
   color: white;
   background-color: #465775;
-  width: 300px;
+  width: 320px;
 }
 
 form div {
@@ -55,8 +55,41 @@ form div {
   display: flex;
 }
 
-#sandbox {
+#code {
   display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+#sandbox {
+  margin-left: 30px;
+}
+
+.challengeDetails {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 30px;
+  max-width: 600;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextBtn {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  background-color: #ef6f6c;
+  margin-top: 20px;
+  margin-right: 50px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 3px 3px 5px grey;
+  align-self: flex-end;
 }
 #keywordsGot {
   color: green;
