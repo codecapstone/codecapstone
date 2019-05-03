@@ -73,10 +73,10 @@ const exampleProblem = {
   ],
   keywords: [
     'cache',
-    'big O',
+    'big o',
     'memoize',
     'for loop',
-    'Fibonacci',
+    'fibonacci',
     'recursion',
     'recursive',
     'iteration',
