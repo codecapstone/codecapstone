@@ -11,3 +11,4 @@ export {Login, Signup} from './AuthForm'
 
 export {default as Annyang} from './Annyang'
 export {default as UserStats} from './UserStats'
+export {default as CodeView} from './codeView'

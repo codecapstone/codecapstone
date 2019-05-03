@@ -48,7 +48,7 @@ export class Annyang extends React.Component {
       gotKeywords: wordsGot,
       notGotKeywords: wordsNotGot
     })
-    this.props.history.push('/stats')
+    this.props.history.push('/code')
   }
   annyangStart() {
     annyang.start()
