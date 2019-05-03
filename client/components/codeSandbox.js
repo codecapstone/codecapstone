@@ -34,7 +34,7 @@ export const Sandbox = props => {
 
   return (
     <div id="main">
-      <embed src={url} style={{width: 1200, height: 600}} />
+      <embed src={url} style={{width: 1100, height: 600}} />
     </div>
   )
 }
