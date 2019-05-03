@@ -4,7 +4,7 @@ import {PromiseProvider} from 'mongoose'
 
 export const CodeView = props => {
   return (
-    <div>
+    <div id="sandbox">
       <div>CODEVIEW RENDER</div>
       <ConnectedSandbox />
       <button onClick={() => props.history.push('/stats')}>
