@@ -24,3 +24,7 @@ form div {
   height: 350;
   width: 800;
 }
+
+#prompt {
+  color: blue;
+}
