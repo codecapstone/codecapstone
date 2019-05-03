@@ -16,8 +16,8 @@ describe('UserHome', () => {
     userHome = shallow(<UserHome email="cody@email.com" />)
   })
 
-  it('renders text in a div', () => {
-    expect(userHome.find('div').text()).to.be.equal(
+  it('renders text in an H3', () => {
+    expect(userHome.find('h3').text()).to.be.equal(
       'Placeholder for User landing page'
     )
   })
