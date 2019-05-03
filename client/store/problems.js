@@ -1,3 +1,5 @@
+import exampleProblem from '../ExampleProblem/example'
+
 //ACTION TYPES
 const GET_PROBLEMS = 'GET_PROBLEMS'
 const SET_PROBLEM = 'SET_PROBLEM'
@@ -31,7 +33,7 @@ export const selectProblem = id => async dispatch => {
 }
 
 // REDUCER
-const initialState = {all: {}, selected: {}}
+const initialState = {all: {}, selected: exampleProblem}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

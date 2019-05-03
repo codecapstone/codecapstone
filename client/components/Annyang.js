@@ -1,7 +1,8 @@
 import React from 'react'
 import annyang from 'annyang'
 import {keywordCheck} from '../utilFunctions'
-const keywords = ['binary', 'hash', 'loop']
+
+import {connect} from 'react-redux'
 
 export class Annyang extends React.Component {
   constructor() {
@@ -37,7 +38,8 @@ export class Annyang extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    let wordsGot = keywordCheck(this.state.said, keywords)
+    console.log(this.props.challenge.Keywords)
+    let wordsGot = keywordCheck(this.state.said, this.props.challenge.Keywords)
     console.log('Keywords said:', wordsGot)
     this.setState({wordsGot: wordsGot})
   }
@@ -48,10 +50,13 @@ export class Annyang extends React.Component {
     annyang.abort()
   }
   render() {
-    console.log('state:', this.state)
+    console.log('state:', this.state, 'props:', this.props)
+    const {name, Prompt} = this.props.challenge
     return (
       <div>
-        <h3>Your challenge is {this.props.challenge}</h3>
+        <h3>Your challenge is {name}</h3>
+        <p>As a reminder, the prompt is: </p>
+        <p id="prompt">{Prompt}</p>
         <p>Now say how you'd solve the problem!</p>
         <button onClick={this.annyangStart}>Start Recording</button>
         <button onClick={this.annyangStop}>Stop Recording</button>
@@ -80,4 +85,8 @@ export class Annyang extends React.Component {
   }
 }
 
-export default Annyang
+const mapState = state => ({
+  challenge: state.problems.selected
+})
+
+export default connect(mapState)(Annyang)
