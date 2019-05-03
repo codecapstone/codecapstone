@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  margin: auto 0;
 }
 
 a {
@@ -10,9 +11,30 @@ label {
   display: block;
 }
 
-nav a {
-  display: inline-block;
+nav {
+  display: flex;
   margin: 1em;
+  background-color: '#';
+  color: white;
+}
+
+nav a {
+  display: flex;
+  margin: 1em;
+  background-color: '#';
+  color: white;
+}
+
+#logo {
+  margin-left: 10px;
+}
+
+#navigation {
+  flex-direction: column;
+  height: 1000px;
+  color: white;
+  background-color: #465775;
+  width: 300px;
 }
 
 form div {
@@ -27,4 +49,12 @@ form div {
 
 #prompt {
   color: blue;
+}
+
+#app {
+  display: flex;
+}
+
+#sandbox {
+  display: flex;
 }
