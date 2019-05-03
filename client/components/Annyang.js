@@ -28,7 +28,6 @@ export class Annyang extends React.Component {
       // Start listening.
 
       annyang.addCallback('result', phrases => {
-        console.log('listening and heard:', phrases[0])
         this.setState({said: this.state.said + phrases[0]})
       })
     }
@@ -57,7 +56,6 @@ export class Annyang extends React.Component {
     annyang.abort()
   }
   render() {
-    console.log('state:', this.state, 'props:', this.props)
     const {name, prompt} = this.props.challenge
     return (
       <div>
