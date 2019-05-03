@@ -7,8 +7,7 @@ const exampleProblem = {
      For example, the sequence
       [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
      forms the first ten entries of the fibonacci series.
-     Example:
-      fib(4) === 3`,
+     `,
   functionName: 'fib(n)',
   tests: `import fib from './index';
 
@@ -83,7 +82,9 @@ const exampleProblem = {
     'iteration',
     'iterative',
     'memoization'
-  ]
+  ],
+  examples: `Example:
+  fib(4) === 3, fib(2)=== 1`
 }
 
 export default exampleProblem
