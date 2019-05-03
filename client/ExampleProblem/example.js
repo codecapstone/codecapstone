@@ -1,6 +1,6 @@
 const exampleProblem = {
   name: 'Fibonacci Series',
-  Prompt: ` 
+  prompt: ` 
      Print out the n-th entry in the fibonacci series.
      The fibonacci series is an ordering of numbers where
      each number is the sum of the preceeding two.
@@ -9,8 +9,8 @@ const exampleProblem = {
      forms the first ten entries of the fibonacci series.
      Example:
       fib(4) === 3`,
-  FunctionName: 'fib',
-  Tests: `const fib = require('./index');
+  functionName: 'fib',
+  tests: `const fib = require('./index');
 
       test('Fib function is defined', () => {
         expect(typeof fib).toEqual('function');
@@ -35,7 +35,7 @@ const exampleProblem = {
       test('calculates correct fib value for 39', () => {
         expect(fib(39)).toEqual(63245986);
       });`,
-  Solutions: [
+  solutions: [
     `function fib(n) {
           const result = [0, 1];
         
@@ -72,7 +72,7 @@ const exampleProblem = {
           
           const fib = memoize(slowFib);`
   ],
-  Keywords: [
+  keywords: [
     'cache',
     'big O',
     'memoize',
