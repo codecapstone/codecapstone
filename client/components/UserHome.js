@@ -11,7 +11,7 @@ export const UserHome = props => {
   return (
     <div>
       <h3>Placeholder for User landing page</h3>
-      <button onClick={() => props.history.push('/approach')}>
+      <button type="button" onClick={() => props.history.push('/prompt')}>
         Start example problem
       </button>
     </div>
