@@ -3,7 +3,6 @@ import annyang from 'annyang'
 import {keywordCheck} from '../utilFunctions'
 import {getKeyWords} from '../store/userStats'
 import {connect} from 'react-redux'
-import {InterviewBot} from './interviewBot'
 
 export class Annyang extends React.Component {
   constructor() {
@@ -88,9 +87,7 @@ export class Annyang extends React.Component {
             <input type="submit" />
           </form>
         </div>
-        <div id="botDiv">
-          <InterviewBot />
-        </div>
+        <div id="botDiv" />
       </div>
     )
   }
