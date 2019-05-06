@@ -10,7 +10,7 @@ describe('User model', () => {
   beforeEach(async () => {
     example = await Challenge.build({
       name: 'Fibonacci Series',
-  prompt: `
+      prompt: `
      Print out the n-th entry in the fibonacci series.
      The fibonacci series is an ordering of numbers where
      each number is the sum of the preceeding two.
