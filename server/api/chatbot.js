@@ -45,10 +45,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(
 //   }
 // })
 
-router.get('/', async (req, res, next) => {
-  try {
-    res.json('hello')
-  } catch (err) {
-    next(err)
-  }
-})
+// router.get('/', async (req, res, next) => {
+//   try {
+//     res.json('hello')
+//   } catch (err) {
+//     next(err)
+//   }
+// })
