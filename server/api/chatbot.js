@@ -14,20 +14,21 @@ router.post('/', (request, response, next) => {
     agent.add(`Nice`)
     console.log('did it add?', agent)
 
-    //     const addResp = agent => {
+    //     const addResp = agent => { add .
+
     //       agent.add('BLAH BLAH BLAH')
     //     }
     //     agent.handleRequest(addResp)
     //   }
     // )
 
-    res.send(agent)
+    response.send(agent)
   } catch (err) {
     next(err)
   }
 })
 
-router.get('/', async (req, res, next) => {
+router.get('/', (req, res, next) => {
   try {
     res.json('hello')
   } catch (err) {
