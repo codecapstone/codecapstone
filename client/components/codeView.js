@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 
 export const CodeView = props => {
   return (
-    <div id="code">
+    <div id="code" className="content">
       <div className="challengeDetails">
         <div>Your Challenge: {props.problem.name}</div>
         <br />
