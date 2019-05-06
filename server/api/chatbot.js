@@ -11,8 +11,14 @@ router.post('/', (request, response, next) => {
     console.log('req.body in chatbot api', request.body)
     const agent = new WebhookClient({request: request.body, response})
     console.log('chatbot api', agent)
-    agent.add(`Nice`)
-    console.log('did it add?', agent)
+    const add = agent => {
+      agent.add(`Nice`)
+      console.log('did it add?', agent)
+    }
+    let intentMap = new Map()
+    intentMap.set('challenge.example.save', add)
+
+    agent.handleRequest(intentMap)
 
     //     const addResp = agent => { add .
 
