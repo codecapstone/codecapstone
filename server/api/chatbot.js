@@ -4,8 +4,10 @@ module.exports = router
 
 router.post('/', async (req, res, next) => {
   try {
-    console.log('from the chatbot api', req.body)
-    res.sendStatus(200)
+    let agent = req.body
+    agent.response = 'BLAH BLAH BLAH'
+
+    res.send(agent)
   } catch (err) {
     next(err)
   }
