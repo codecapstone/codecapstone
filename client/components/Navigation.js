@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import {InterviewBot} from './interviewBot'
-import Draggable from 'react-draggable'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
   <div id="navigation">
