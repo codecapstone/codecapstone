@@ -6,12 +6,13 @@ const functions = require('firebase-functions')
 
 module.exports = router
 
-router.post('/', async (req, res, next) => {
+router.post('/', (req, res, next) => {
   try {
     console.log('req.body in chatbot api', req.body)
-    const agent = new WebhookClient({request: req.body, response: response})
+    const agent = new WebhookClient({request: req.body})
     console.log('chatbot api', agent)
     agent.add(`Nice`)
+    console.log('did it add?', agent)
 
     //     const addResp = agent => {
     //       agent.add('BLAH BLAH BLAH')
