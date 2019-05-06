@@ -58,33 +58,36 @@ export class Annyang extends React.Component {
   render() {
     const {name, prompt} = this.props.challenge
     return (
-      <div>
-        <h3>Your challenge is {name}</h3>
-        <p>As a reminder, the prompt is: </p>
-        <p id="prompt">{prompt}</p>
-        <p>Now say how you'd solve the problem!</p>
-        <button onClick={this.annyangStart}>Start Recording</button>
-        <button onClick={this.annyangStop}>Stop Recording</button>
-        <form
-          style={{
-            width: 500,
-            height: 80
-          }}
-          onSubmit={this.handleSubmit}
-        >
-          <label>You said:</label>
-          <textarea
-            rows="10"
-            cols="100"
-            type="text"
-            name="said"
-            value={this.state.said}
-            onChange={this.handleChange}
-            id="Annyang"
-          />
+      <div id="approachDiv">
+        <div id="promptAnnyang">
+          <h3>Your challenge is {name}</h3>
+          <p>As a reminder, the prompt is: </p>
+          <p id="prompt">{prompt}</p>
+          <p>Now say how you'd solve the problem!</p>
+          <button onClick={this.annyangStart}>Start Recording</button>
+          <button onClick={this.annyangStop}>Stop Recording</button>
+          <form
+            style={{
+              width: 500,
+              height: 80
+            }}
+            onSubmit={this.handleSubmit}
+          >
+            <label>You said:</label>
+            <textarea
+              rows="10"
+              cols="100"
+              type="text"
+              name="said"
+              value={this.state.said}
+              onChange={this.handleChange}
+              id="Annyang"
+            />
 
-          <input type="submit" />
-        </form>
+            <input type="submit" />
+          </form>
+        </div>
+        <div id="botDiv" />
       </div>
     )
   }
