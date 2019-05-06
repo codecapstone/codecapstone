@@ -97,3 +97,17 @@ form div {
 #keywordsNotGot {
   color: red;
 }
+
+.containsABot {
+  display: flex;
+}
+
+#botDiv {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+#approachDiv {
+  display: flex;
+  background-size: cover;
+}
