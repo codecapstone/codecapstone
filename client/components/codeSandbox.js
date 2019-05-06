@@ -1,42 +1,16 @@
 import React from 'react'
-import {getParameters} from 'codesandbox/lib/api/define'
-import {test} from '../sandboxFiles/index.test'
-import {sandboxHtml} from '../sandboxFiles/sandboxIndexHtml'
 import {connect} from 'react-redux'
 
-const challenge = 'hammingDistance'
-
 export const Sandbox = props => {
-  const ourContent = `export default function ${props.problem.functionName} {
-    // Your code here!
+  const sandboxId = props.problem.sandboxId
 
-  }`
-
-  const parameters = getParameters({
-    files: {
-      'index.js': {
-        content: ourContent
-      },
-
-      'index.test.js': {
-        content: props.problem.tests
-      },
-      'index.html': {
-        content: sandboxHtml
-      },
-
-      'package.json': {
-        content: {dependencies: {}, main: 'index.js'}
-      }
-    }
-  })
-  const url = `https://codesandbox.io/api/v1/sandboxes/define?view=editor&parameters=${parameters}`
+  const url = `https://codesandbox.io/embed/${sandboxId}?fontsize=14&previewwindow=tests&codemirror=1&verticallayout=1&editorsize=50`
 
   // const url = `https://codesandbox.io/api/v1/sandboxes/define?json=1`
 
   return (
     <div id="main">
-      <embed src={url} style={{width: 1100, height: 600}} />
+      <embed src={url} style={{width: 800, height: 1000}} />
     </div>
   )
 }
@@ -46,9 +20,5 @@ const mapState = state => {
     problem: state.problems.selected
   }
 }
-
-// const mapDispatch = dispatch => {
-
-// }
 
 export const ConnectedSandbox = connect(mapState, null)(Sandbox)

@@ -17,7 +17,7 @@ class Examples extends React.Component {
     if (!prompt) return <div>Loading your challenge...</div>
 
     return (
-      <div id="prompt">
+      <div id="prompt" className="content">
         <div>
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>

@@ -2,6 +2,9 @@ body {
   font-family: sans-serif;
   margin: auto 0;
 }
+.content {
+  margin-left: 350px;
+}
 
 a {
   text-decoration: none;
@@ -31,10 +34,14 @@ nav a {
 
 #navigation {
   flex-direction: column;
-  height: 1000px;
+  height: 1300px;
   color: white;
   background-color: #465775;
   width: 320px;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  margin-right: 20px;
 }
 
 form div {
@@ -58,7 +65,6 @@ form div {
 #code {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
 }
 #sandbox {
   margin-left: 30px;
