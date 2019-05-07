@@ -17,8 +17,13 @@
 //   })
 
 //   it('contains subcomponents Topics, DashboardStats and DashboardPrompt', () => {
-//     expect(userHome.find(Topics))
-//     expect(userHome.find(DashboardStats))
-//     expect(userHome.find(DashboardPrompt))
+//     expect(
+//       userHome
+//         .find(Topics)
+//         .render()
+//         .find('h3')
+//     ).to.be.equal('Topics')
+//     // expect(userHome.find(DashboardStats))
+//     // expect(userHome.find(DashboardPrompt))
 //   })
 // })
