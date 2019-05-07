@@ -40,6 +40,9 @@ const Challenge = db.define('challenge', {
   topic: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  creditTo: {
+    type: Sequelize.STRING
   }
 })
 
