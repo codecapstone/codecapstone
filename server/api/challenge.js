@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Challenge } = require('../db/models')
+const {Challenge} = require('../db/models')
 module.exports = router
 
 //getting all challenges
@@ -17,10 +17,17 @@ router.get('/:challengeId', async (req, res, next) => {
   try {
     const oneChallenge = await Challenge.findByPk(req.params.challengeId)
     res.json(oneChallenge)
-      }
-  catch (err) {
+  } catch (err) {
     next(err)
   }
 })
 
-//getting
+//getting a single challenge's solution
+router.get('/:challengeId/solutions', async (req, res, next) => {
+  try {
+    const oneChallenge = await Challenge.findByPk(req.params.challengeId)
+    res.json(oneChallenge.solution)
+  } catch (err) {
+    next(err)
+  }
+})

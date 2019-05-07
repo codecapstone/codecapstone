@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 export class UserStats extends React.Component {
@@ -13,7 +13,8 @@ export class UserStats extends React.Component {
   }
 
   render() {
-    const {problem, keywordsGot, keywordsNotGot} = this.props
+    const {problem, keywordsGot, keywordsNotGot, problemId} = this.props
+    console.log('problemId', problemId)
 
     return (
       <div className="content">
@@ -39,6 +40,12 @@ export class UserStats extends React.Component {
         <p>{this.state.completed}</p>
         <button onClick={() => this.setState({completed: 'Yes'})}>Yes</button>
         <button onClick={() => this.setState({completed: 'No'})}>No</button>
+
+        <div id="solutionDiv">
+          <Link to={`${problemId}/solutions`}>
+            Click here to see the solution
+          </Link>
+        </div>
       </div>
     )
   }
@@ -52,7 +59,8 @@ const mapState = state => {
     email: state.user.email,
     problem: state.problems.selected.name,
     keywordsGot: state.userStats.keywords.gotKeywords,
-    keywordsNotGot: state.userStats.keywords.notGotKeywords
+    keywordsNotGot: state.userStats.keywords.notGotKeywords,
+    problemId: state.problems.selected.id
   }
 }
 
