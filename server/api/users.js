@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { User } = require('../db/models')
+const {User} = require('../db/models')
 const {Challenge} = require('../db/models')
 module.exports = router
 
@@ -21,9 +21,25 @@ router.get('/:userId', async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.userId)
     res.json(user)
-  }
-  catch (err) {
+  } catch (err) {
     next(err)
   }
 })
 
+router.put('/', async (req, res, next) => {
+  try {
+    const update = await User.update(
+      {
+        isAdmin: true
+      },
+      {
+        where: {email: req.body.email},
+        returning: true,
+        plain: true
+      }
+    )
+    res.send(update)
+  } catch (err) {
+    next(err)
+  }
+})

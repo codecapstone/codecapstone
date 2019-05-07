@@ -12,8 +12,27 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+//getting a challenge based on the level
+router.get('/level/:level', async (req, res, next) => {
+  try {
+    const challenges = await Challenge.findByLevel(req.params.level)
+    res.json(challenges)
+  } catch (err) {
+    next(err)
+  }
+})
+router.get('/topic/:topic', async (req, res, next) => {
+  try {
+    const challenges = await Challenge.findByTopic(req.params.topic)
+    res.json(challenges)
+  } catch (err) {
+    next(err)
+  }
+})
+
 //getting a single challenge
 router.get('/:challengeId', async (req, res, next) => {
+  console.log('requset params', req.params)
   try {
     const oneChallenge = await Challenge.findByPk(req.params.challengeId)
     res.json(oneChallenge)
@@ -22,11 +41,14 @@ router.get('/:challengeId', async (req, res, next) => {
   }
 })
 
-//getting a single challenge's solution
-router.get('/:challengeId/solutions', async (req, res, next) => {
+//getting
+
+//posting a challenge
+
+router.post('/', async (req, res, next) => {
   try {
-    const oneChallenge = await Challenge.findByPk(req.params.challengeId)
-    res.json(oneChallenge.solution)
+    const newChallenge = await Challenge.create(req.body)
+    res.send(newChallenge)
   } catch (err) {
     next(err)
   }
