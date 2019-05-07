@@ -19,6 +19,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
           <a href="#" onClick={handleClick}>
             Logout
           </a>
+          <InterviewBot />
         </div>
       ) : (
         <div>
@@ -28,8 +29,6 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
         </div>
       )}
     </nav>
-
-    <InterviewBot />
   </div>
 )
 

@@ -6,6 +6,8 @@ export const Sandbox = props => {
 
   const url = `https://codesandbox.io/embed/${sandboxId}?fontsize=14&previewwindow=tests&codemirror=1&verticallayout=1&editorsize=50`
 
+  // const url = `https://codesandbox.io/api/v1/sandboxes/define?json=1`
+
   return (
     <div id="main">
       <embed src={url} style={{width: 800, height: 1000}} />

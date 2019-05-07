@@ -19,6 +19,7 @@ nav {
   margin: 1em;
   background-color: '#';
   color: white;
+  /* padding: 10px; */
 }
 
 nav a {
@@ -116,4 +117,74 @@ form div {
 #approachDiv {
   display: flex;
   background-size: cover;
+}
+
+#userHome {
+  display: flex;
+  flex-wrap: wrap;
+}
+.userHomeCard {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  background-color: #b8bbc7;
+  margin-top: 20px;
+  margin-right: 20px;
+  color: #404146;
+  text-align: center;
+  box-shadow: 3px 3px 5px grey;
+}
+
+.userHomeCard a {
+  color: #404146;
+}
+
+#dashboardPrompt {
+  width: 980px;
+  margin-top: 20px;
+  background-color: #b8bbc7;
+  box-shadow: 3px 3px 5px grey;
+  color: #404146;
+  height: 400px;
+  padding: 20px;
+}
+
+#dashboardPrompt a {
+  color: #404146;
+}
+
+.dashBtn {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 200px;
+  height: 50px;
+  background-color: #e3b505;
+  /* margin-top:  */
+  margin-right: 50px;
+  border-radius: 5px;
+  color: white;
+  /* align-self: flex-end; */
+  box-shadow: 3px 3px 5px grey;
+}
+.dashBtn h4 {
+  margin-top: 10px;
+  color: white;
+}
+.promptButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+#solutionDiv {
+  margin: 30pt;
+}
+
+#solution {
+  display: flex;
+  flex-wrap: wrap;
 }
