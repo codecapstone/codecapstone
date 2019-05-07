@@ -38,6 +38,7 @@ router.put('/', async (req, res, next) => {
         plain: true
       }
     )
+
     res.send(update)
   } catch (err) {
     next(err)
