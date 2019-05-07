@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {InterviewBot} from './interviewBot'
+
 import {Link} from 'react-router-dom'
 
 class Examples extends React.Component {
@@ -17,13 +17,13 @@ class Examples extends React.Component {
     if (!prompt) return <div>Loading your challenge...</div>
 
     return (
-      <div id="prompt" className="content">
+      <div className="content">
         <div>
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>
-          <p className="prompt">{prompt}</p>
+          <p id="prompt">{prompt}</p>
           <div>
-            <form onSubmit={this.handleSubmit}>
+            {/* <form onSubmit={this.handleSubmit}>
               <label htmlFor="examples" />
               <input
                 onChange={this.handleChange}
@@ -32,12 +32,16 @@ class Examples extends React.Component {
                 value={this.state.examples}
               />
               <button type="submit">Submit</button>
-            </form>
+            </form> */}
+
+            <p>
+              Type your examples into Interview-Bot making sure you use the key
+              word "example" before you write your actual example. E.g. "example
+              my example is ....."{' '}
+            </p>
           </div>
         </div>
-        <div>
-          <InterviewBot />
-        </div>
+        <div />
         <Link to="/approach">Next: Approach</Link>
       </div>
     )
