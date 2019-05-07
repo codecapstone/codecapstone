@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {InterviewBot} from './interviewBot'
 import {Link} from 'react-router-dom'
 
 class Examples extends React.Component {
@@ -34,9 +33,6 @@ class Examples extends React.Component {
               <button type="submit">Submit</button>
             </form>
           </div>
-        </div>
-        <div>
-          <InterviewBot />
         </div>
         <Link to="/approach">Next: Approach</Link>
       </div>
