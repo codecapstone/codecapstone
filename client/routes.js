@@ -42,7 +42,7 @@ class Routes extends Component {
             <Route path="/examples" component={Examples} />
             <Route path="/stats" component={UserStats} />
             <Route path="/code" component={Code} />
-            <Route path="/:challengeId/solutions" component={Solution} />
+            <Route path="/solutions" component={Solution} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

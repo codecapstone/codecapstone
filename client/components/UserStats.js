@@ -34,17 +34,29 @@ export class UserStats extends React.Component {
 
         <p>Did you pass the test specs?</p>
         <p>{this.state.testsPassed}</p>
-        <button onClick={() => this.setState({testsPassed: 'Yes'})}>Yes</button>
-        <button onClick={() => this.setState({testsPassed: 'No'})}>No</button>
+        <button
+          type="button"
+          onClick={() => this.setState({testsPassed: 'Yes'})}
+        >
+          Yes
+        </button>
+        <button
+          type="button"
+          onClick={() => this.setState({testsPassed: 'No'})}
+        >
+          No
+        </button>
         <p>Do you want to mark this challenge as complete?</p>
         <p>{this.state.completed}</p>
-        <button onClick={() => this.setState({completed: 'Yes'})}>Yes</button>
-        <button onClick={() => this.setState({completed: 'No'})}>No</button>
+        <button type="button" onClick={() => this.setState({completed: 'Yes'})}>
+          Yes
+        </button>
+        <button type="button" onClick={() => this.setState({completed: 'No'})}>
+          No
+        </button>
 
-        <div id="solutionDiv">
-          <Link to={`${problemId}/solutions`}>
-            Click here to see the solution
-          </Link>
+        <div id="solutionBtn">
+          <Link to="/solutions">Click here to see the solution</Link>
         </div>
       </div>
     )

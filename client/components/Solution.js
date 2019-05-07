@@ -39,8 +39,11 @@ class Solution extends React.Component {
           <code>{formattedSol}</code>
         </div>
 
-        <div />
-        <Link to="/challenges">Click here to search for a new challenge!</Link>
+        <div className="nextChallengeBtn">
+          <Link to="/challenges">
+            Click here to search for a new challenge!
+          </Link>
+        </div>
       </div>
     )
   }
