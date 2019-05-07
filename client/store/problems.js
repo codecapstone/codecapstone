@@ -13,13 +13,13 @@ const postedProblem = problem => ({type: NEW_PROBLEM, problem})
 
 //THUNK CREATORS
 
-export const fetchProblems = isLoggedIn => async dispatch => {
+export const fetchProblems = () => async dispatch => {
   try {
-    if (isLoggedIn) {
-      const data = 'placeholder'
-      // = axios or other db call goes here to get names and id#s
-      dispatch(getProblems(data))
-    }
+    // if (isLoggedIn) {
+    const {data} = await axios.get('/api/challenges')
+    // console.log('DATA', data)
+    dispatch(getProblems(data))
+    // }
   } catch (error) {
     console.error(error)
   }
@@ -27,8 +27,8 @@ export const fetchProblems = isLoggedIn => async dispatch => {
 
 export const selectProblem = id => async dispatch => {
   try {
-    const data = 'placeholder'
-    // axios or other db call to get full problem data
+    const {data} = await axios.get(`/api/challenges/${id}`)
+    console.log('DATA', data)
     dispatch(setProblem(data))
   } catch (error) {
     console.error(error)
