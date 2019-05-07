@@ -222,3 +222,8 @@ form div {
 .nextChallengeBtn a {
   color: white;
 }
+
+#individualSolution {
+  border: 1px solid black;
+  padding: 10pt;
+}
