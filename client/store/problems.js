@@ -11,12 +11,13 @@ const setProblem = selected => ({type: SET_PROBLEM, selected})
 
 //THUNK CREATORS
 
-export const fetchProblems = isLoggedIn => async dispatch => {
+export const fetchProblems = () => async dispatch => {
   try {
-    if (isLoggedIn) {
-      const data = await axios.get('/challenges')
-      dispatch(getProblems(data))
-    }
+    // if (isLoggedIn) {
+    const {data} = await axios.get('/api/challenges')
+    // console.log('DATA', data)
+    dispatch(getProblems(data))
+    // }
   } catch (error) {
     console.error(error)
   }
@@ -24,7 +25,8 @@ export const fetchProblems = isLoggedIn => async dispatch => {
 
 export const selectProblem = id => async dispatch => {
   try {
-    const data = await axios.get(`/challenges/${id}`)
+    const {data} = await axios.get(`/api/challenges/${id}`)
+    console.log('DATA', data)
     dispatch(setProblem(data))
   } catch (error) {
     console.error(error)
@@ -32,7 +34,7 @@ export const selectProblem = id => async dispatch => {
 }
 
 // REDUCER
-const initialState = {all: {}, selected: exampleProblem}
+const initialState = {all: [], selected: exampleProblem}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

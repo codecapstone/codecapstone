@@ -1,11 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {selectProblem} from '../store/problems'
+import {fetchProblems, selectProblem} from '../store/problems'
 
 export class Challenges extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.chooseProblem = this.chooseProblem.bind(this)
+  }
+
+  componentDidMount() {
+    this.props.getProblems()
   }
 
   chooseProblem(id) {
@@ -14,15 +18,19 @@ export class Challenges extends React.Component {
   }
 
   render() {
+    console.log('PROPS', this.props)
     return (
       <div className="content">
-        <div>
-          <div>Pick Your Challenge</div>
+        <div className="userHomeCard">
+          <h3>Pick Your Challenge</h3>
           <br />
           <div>
-            {this.props.problems.all.map(problem => (
-              <div onClick={() => this.chooseProblem(this.props.problem.id)}>
-                {this.props.problem.name}
+            {this.props.problems.map(problem => (
+              <div
+                key={problem.id}
+                onClick={() => this.chooseProblem(problem.id)}
+              >
+                {problem.name}
               </div>
             ))}
           </div>
@@ -40,7 +48,8 @@ const mapState = state => {
 
 const mapDispatch = dispatch => {
   return {
-    setProblem: dispatch(id => selectProblem(id))
+    getProblems: () => dispatch(fetchProblems()),
+    setProblem: id => dispatch(selectProblem(id))
   }
 }
 
