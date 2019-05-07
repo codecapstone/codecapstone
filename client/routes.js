@@ -11,6 +11,8 @@ import {
   Code,
   Challenges,
   Solutions
+  PostProblem,
+  
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -43,6 +45,7 @@ class Routes extends Component {
             <Route path="/stats" component={UserStats} />
             <Route path="/code" component={Code} />
             <Route path="/solutions" component={Solutions} />
+            <Route path="/admin" component={PostProblem} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
