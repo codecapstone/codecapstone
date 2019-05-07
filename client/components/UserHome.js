@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
+import {Topics, DashboardPrompt, DashboardStats} from './index'
 
 /**
  * COMPONENT
@@ -9,11 +10,10 @@ export const UserHome = props => {
   const {email} = props
 
   return (
-    <div className="content">
-      <h3>Placeholder for User landing page</h3>
-      <button type="button" onClick={() => props.history.push('/prompt')}>
-        Start example problem
-      </button>
+    <div className="content" id="userHome">
+      <Topics />
+      <DashboardStats />
+      <DashboardPrompt />
     </div>
   )
 }
