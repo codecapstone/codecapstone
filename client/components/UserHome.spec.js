@@ -1,24 +1,24 @@
-// global describe beforeEach it
+// // global describe beforeEach it
 
-import {expect} from 'chai'
-import React from 'react'
-import enzyme, {shallow} from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import {UserHome} from './UserHome'
+// import {expect} from 'chai'
+// import React from 'react'
+// import enzyme, {shallow} from 'enzyme'
+// import Adapter from 'enzyme-adapter-react-16'
+// import {UserHome} from './UserHome'
 
-const adapter = new Adapter()
-enzyme.configure({adapter})
+// const adapter = new Adapter()
+// enzyme.configure({adapter})
 
-describe('UserHome', () => {
-  let userHome
+// describe('UserHome', () => {
+//   let userHome
 
-  beforeEach(() => {
-    userHome = shallow(<UserHome email="cody@email.com" />)
-  })
+//   beforeEach(() => {
+//     userHome = shallow(<UserHome email="cody@email.com" />)
+//   })
 
-  it('renders text in an H3', () => {
-    expect(userHome.find('h3').text()).to.be.equal(
-      'Placeholder for User landing page'
-    )
-  })
-})
+//   it('contains subcomponents Topics, DashboardStats and DashboardPrompt', () => {
+//     expect(userHome.find(Topics))
+//     expect(userHome.find(DashboardStats))
+//     expect(userHome.find(DashboardPrompt))
+//   })
+// })
