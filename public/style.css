@@ -179,3 +179,12 @@ form div {
   justify-content: space-around;
   margin-top: 40px;
 }
+
+#solutionDiv {
+  margin: 30pt;
+}
+
+#solution {
+  display: flex;
+  flex-wrap: wrap;
+}
