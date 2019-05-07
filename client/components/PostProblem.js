@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {postProblem} from '../store/problems'
+import {makeAdmin} from '../store/admin'
 
 class PostProblem extends React.Component {
   constructor() {
@@ -14,13 +15,14 @@ class PostProblem extends React.Component {
       solutions: [],
       keywords: [],
       examples: '',
-
       topic: '',
-      creditTo: ''
+      creditTo: '',
+      email: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleChange2 = this.handleChange2.bind(this)
+    this.handleSubmit2 = this.handleSubmit2.bind(this)
   }
 
   handleChange(evt) {
@@ -32,8 +34,11 @@ class PostProblem extends React.Component {
     this.setState({solutions: arr})
   }
   handleSubmit() {
-    console.log(this.state)
     this.props.postProblem(this.state)
+  }
+  handleSubmit2() {
+    console.log(this.state.email)
+    this.props.makeAdmin({email: this.state.email})
   }
   render() {
     const {user} = this.props
@@ -143,16 +148,32 @@ class PostProblem extends React.Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
+
+        <h3>You can also add other admin users:</h3>
+        <form>
+          <label>
+            New Admin's Email (they must already be a signed-up user):
+            <input
+              type="email"
+              name="email"
+              required={true}
+              onChange={this.handleChange}
+            />
+          </label>
+          <button onClick={this.handleSubmit2}>Submit</button>
+        </form>
       </div>
     )
   }
 }
 
 const mapState = state => ({
-  user: state.user
+  user: state.user,
+  newAdmin: state.admin
 })
 const mapDispatch = {
-  postProblem
+  postProblem,
+  makeAdmin
 }
 
 export default connect(mapState, mapDispatch)(PostProblem)
