@@ -46,7 +46,7 @@ export const postProblem = problem => async dispatch => {
 }
 
 // REDUCER
-const initialState = {all: {}, selected: exampleProblem, newProblem: {}}
+const initialState = {all: [], selected: exampleProblem, newProblem: {}}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
