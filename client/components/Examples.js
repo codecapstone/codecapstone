@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
 import {Link} from 'react-router-dom'
 
 class Examples extends React.Component {
@@ -41,7 +40,9 @@ class Examples extends React.Component {
             </p>
           </div>
         </div>
+
         <div />
+
         <Link to="/approach">Next: Approach</Link>
       </div>
     )
