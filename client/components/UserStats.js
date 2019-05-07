@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 export class UserStats extends React.Component {
@@ -13,7 +13,8 @@ export class UserStats extends React.Component {
   }
 
   render() {
-    const {problem, keywordsGot, keywordsNotGot} = this.props
+    const {problem, keywordsGot, keywordsNotGot, problemId} = this.props
+    console.log('problemId', problemId)
 
     return (
       <div className="content">
@@ -33,12 +34,30 @@ export class UserStats extends React.Component {
 
         <p>Did you pass the test specs?</p>
         <p>{this.state.testsPassed}</p>
-        <button onClick={() => this.setState({testsPassed: 'Yes'})}>Yes</button>
-        <button onClick={() => this.setState({testsPassed: 'No'})}>No</button>
+        <button
+          type="button"
+          onClick={() => this.setState({testsPassed: 'Yes'})}
+        >
+          Yes
+        </button>
+        <button
+          type="button"
+          onClick={() => this.setState({testsPassed: 'No'})}
+        >
+          No
+        </button>
         <p>Do you want to mark this challenge as complete?</p>
         <p>{this.state.completed}</p>
-        <button onClick={() => this.setState({completed: 'Yes'})}>Yes</button>
-        <button onClick={() => this.setState({completed: 'No'})}>No</button>
+        <button type="button" onClick={() => this.setState({completed: 'Yes'})}>
+          Yes
+        </button>
+        <button type="button" onClick={() => this.setState({completed: 'No'})}>
+          No
+        </button>
+
+        <div id="solutionBtn">
+          <Link to="/solutions">Click here to see the solution</Link>
+        </div>
       </div>
     )
   }
@@ -52,7 +71,8 @@ const mapState = state => {
     email: state.user.email,
     problem: state.problems.selected.name,
     keywordsGot: state.userStats.keywords.gotKeywords,
-    keywordsNotGot: state.userStats.keywords.notGotKeywords
+    keywordsNotGot: state.userStats.keywords.notGotKeywords,
+    problemId: state.problems.selected.id
   }
 }
 
