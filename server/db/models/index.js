@@ -1,5 +1,6 @@
 const User = require('./user')
 const Challenge = require('./challenge')
+const Lesson = require('./lessons')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -17,5 +18,6 @@ Challenge.belongsToMany(User, {through: 'UserStats'})
  */
 module.exports = {
   User,
-  Challenge
+  Challenge,
+  Lesson
 }

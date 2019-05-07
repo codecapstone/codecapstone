@@ -32,7 +32,6 @@ router.get('/topic/:topic', async (req, res, next) => {
 
 //getting a single challenge
 router.get('/:challengeId', async (req, res, next) => {
-  console.log('requset params', req.params)
   try {
     const oneChallenge = await Challenge.findByPk(req.params.challengeId)
     res.json(oneChallenge)
@@ -41,7 +40,7 @@ router.get('/:challengeId', async (req, res, next) => {
   }
 })
 
-//getting
+//getting a 
 
 //posting a challenge
 
