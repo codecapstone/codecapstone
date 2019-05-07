@@ -9,8 +9,8 @@ export class Challenges extends React.Component {
   }
 
   chooseProblem(id) {
-    setProblem(id)
-    props.history.push('/prompt')
+    this.props.setProblem(id)
+    this.props.history.push('/prompt')
   }
 
   render() {
@@ -20,9 +20,9 @@ export class Challenges extends React.Component {
           <div>Pick Your Challenge</div>
           <br />
           <div>
-            {props.problems.all.map(problem => (
-              <div onClick={() => chooseProblem(problem.id)}>
-                {problem.name}
+            {this.props.problems.all.map(problem => (
+              <div onClick={() => this.chooseProblem(this.props.problem.id)}>
+                {this.props.problem.name}
               </div>
             ))}
           </div>
