@@ -28,6 +28,7 @@ router.get('/:challengeId', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
+    console.log('example in the challenge api', req.body)
     const newChallenge = await Challenge.create(req.body)
     res.send(newChallenge)
   } catch (err) {
