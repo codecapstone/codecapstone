@@ -46,4 +46,20 @@ const Challenge = db.define('challenge', {
   }
 })
 
+Challenge.findByLevel = function (specificLevel) {
+  return this.findAll({
+    where: {
+      level:{[Sequelize.Op.eq]: specificLevel}
+    }
+  })
+}
+
+
+Challenge.findByTopic = function(specificTopic) {
+  return this.findAll({
+    where: {
+      level: {[Sequelize.Op.eq]: specificTopic}
+    }
+  })
+}
 module.exports = Challenge
