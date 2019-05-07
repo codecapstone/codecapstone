@@ -63,7 +63,9 @@ async function seed() {
         'memoize'
     ],
       examples: `Example:
-      fib(4) === 3, fib(2)=== 1`
+      fib(4) === 3, fib(2)=== 1`,
+      level: 'Easy',
+      topic: 'Number'
     }),
     Challenge.create({
       name: 'Anagrams',
@@ -119,7 +121,9 @@ async function seed() {
       examples: `Example:
       anagrams('rail safety', 'fairy tales') --> True
       anagrams('RAIL! SAFETY!', 'fairy tales') --> True
-      anagrams('Hi there', 'Bye there') --> False`
+      anagrams('Hi there', 'Bye there') --> False`,
+      level: 'Easy',
+      topic: 'String'
     })
   ])
   console.log(`seeded ${users.length} users`)
