@@ -28,18 +28,20 @@ router.get('/:userId', async (req, res, next) => {
 
 router.put('/', async (req, res, next) => {
   try {
-    const update = await User.update(
-      {
-        isAdmin: true
-      },
-      {
-        where: {email: req.body.email},
-        returning: true,
-        plain: true
-      }
-    )
+    if (req.user.isAdmin) {
+      const update = await User.update(
+        {
+          isAdmin: true
+        },
+        {
+          where: {email: req.body.email},
+          returning: true,
+          plain: true
+        }
+      )
 
-    res.send(update)
+      res.send(update)
+    }
   } catch (err) {
     next(err)
   }
