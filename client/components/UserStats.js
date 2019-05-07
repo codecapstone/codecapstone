@@ -13,7 +13,7 @@ export class UserStats extends React.Component {
   }
 
   render() {
-    const {email, problem, keywordsGot, keywordsNotGot} = this.props
+    const {problem, keywordsGot, keywordsNotGot} = this.props
 
     return (
       <div className="content">
