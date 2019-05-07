@@ -13,11 +13,10 @@ export class UserStats extends React.Component {
   }
 
   render() {
-    const {email, problem, keywordsGot, keywordsNotGot} = this.props
+    const {problem, keywordsGot, keywordsNotGot} = this.props
 
     return (
       <div className="content">
-        <h3>Welcome, {email}</h3>
         <p>Your problem was: {problem}</p>
         <p>In your approach you got the following keywords:</p>
         {keywordsGot.map((word, idx) => (
