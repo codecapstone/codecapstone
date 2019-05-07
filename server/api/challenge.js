@@ -40,3 +40,16 @@ router.get('/:challengeId', async (req, res, next) => {
     next(err)
   }
 })
+
+//getting
+
+//posting a challenge
+
+router.post('/', async (req, res, next) => {
+  try {
+    const newChallenge = await Challenge.create(req.body)
+    res.send(newChallenge)
+  } catch (err) {
+    next(err)
+  }
+})

@@ -18,7 +18,6 @@ export class Challenges extends React.Component {
   }
 
   render() {
-    console.log('PROPS', this.props)
     return (
       <div className="content">
         <div className="userHomeCard">

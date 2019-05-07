@@ -10,6 +10,7 @@ import {
   UserStats,
   Code,
   Challenges,
+  PostProblem,
   Solution
 } from './components'
 import Prompt from './components/Prompt'
@@ -42,6 +43,7 @@ class Routes extends Component {
             <Route path="/examples" component={Examples} />
             <Route path="/stats" component={UserStats} />
             <Route path="/code" component={Code} />
+            <Route path="/admin" component={PostProblem} />
             <Route path="/solutions" component={Solution} />
           </Switch>
         )}
