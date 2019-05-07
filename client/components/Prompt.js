@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {InterviewBot} from './interviewBot'
 import {Link} from 'react-router-dom'
 
 class Prompt extends React.Component {
@@ -16,9 +15,6 @@ class Prompt extends React.Component {
           <p>The prompt is: </p>
           <p className="prompt">{prompt}</p>
           <h3>Say/type 'hello' to your InterviewBot to get started!</h3>
-        </div>
-        <div>
-          <InterviewBot />
         </div>
         <Link to="/approach">Next: Approach</Link>
       </div>
