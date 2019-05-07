@@ -10,11 +10,8 @@ import {
   UserStats,
   Code,
   Challenges,
-<<<<<<< HEAD
-  PostProblem
-=======
+  PostProblem,
   Solution
->>>>>>> master
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
