@@ -1,4 +1,5 @@
 import exampleProblem from '../ExampleProblem/example'
+import axios from 'axios'
 
 //ACTION TYPES
 const GET_PROBLEMS = 'GET_PROBLEMS'
@@ -13,8 +14,7 @@ const setProblem = selected => ({type: SET_PROBLEM, selected})
 export const fetchProblems = isLoggedIn => async dispatch => {
   try {
     if (isLoggedIn) {
-      const data = 'placeholder'
-      // = axios or other db call goes here to get names and id#s
+      const data = await axios.get('/challenges')
       dispatch(getProblems(data))
     }
   } catch (error) {
@@ -24,8 +24,7 @@ export const fetchProblems = isLoggedIn => async dispatch => {
 
 export const selectProblem = id => async dispatch => {
   try {
-    const data = 'placeholder'
-    // axios or other db call to get full problem data
+    const data = await axios.get(`/challenges/${id}`)
     dispatch(setProblem(data))
   } catch (error) {
     console.error(error)
