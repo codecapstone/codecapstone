@@ -43,13 +43,15 @@ describe('User model', () => {
     'big o',
     'memoize',],
   examples: `Example:
-  fib(4) === 3, fib(2)=== 1`
+  fib(4) === 3, fib(2)=== 1`,
+      level: 'Easy',
+  topic: 'Number'
       });
 
   })
   
   describe('definition of atttributes', () => {
-    it('includes `name`,`prompt`,`functionName`,`tests`,`solutions`, `keywords`,`examples`', () => {
+    it('includes `name`,`prompt`,`functionName`,`tests`,`solutions`, `keywords`,`examples`,`level`,`topic`', () => {
       expect(example.name).to.equal('Fibonacci Series')
     })
   })
