@@ -19,6 +19,7 @@ nav {
   margin: 1em;
   background-color: '#';
   color: white;
+  /* padding: 10px; */
 }
 
 nav a {
@@ -127,30 +128,30 @@ form div {
   flex-direction: column;
   width: 500px;
   height: 300px;
-  background-color: #757780;
+  background-color: #b8bbc7;
   margin-top: 20px;
   margin-right: 20px;
-  color: white;
+  color: #404146;
   text-align: center;
   box-shadow: 3px 3px 5px grey;
 }
 
 .userHomeCard a {
-  color: white;
+  color: #404146;
 }
 
 #dashboardPrompt {
   width: 980px;
   margin-top: 20px;
-  background-color: #757780;
+  background-color: #b8bbc7;
   box-shadow: 3px 3px 5px grey;
-  color: white;
+  color: #404146;
   height: 400px;
   padding: 20px;
 }
 
 #dashboardPrompt a {
-  color: white;
+  color: #404146;
 }
 
 .dashBtn {
@@ -166,9 +167,11 @@ form div {
   border-radius: 5px;
   color: white;
   /* align-self: flex-end; */
+  box-shadow: 3px 3px 5px grey;
 }
 .dashBtn h4 {
   margin-top: 10px;
+  color: white;
 }
 .promptButtons {
   display: flex;
