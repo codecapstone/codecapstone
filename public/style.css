@@ -117,3 +117,12 @@ form div {
   display: flex;
   background-size: cover;
 }
+
+#solutionDiv {
+  margin: 30pt;
+}
+
+#solution {
+  display: flex;
+  flex-wrap: wrap;
+}
