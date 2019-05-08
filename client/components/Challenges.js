@@ -1,35 +1,27 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchProblems, selectProblem} from '../store/problems'
+import {Link} from 'react-router-dom'
 
 export class Challenges extends React.Component {
-  constructor(props) {
-    super(props)
-    this.chooseProblem = this.chooseProblem.bind(this)
-  }
-
   componentDidMount() {
     this.props.getProblems()
-  }
-
-  chooseProblem(id) {
-    this.props.setProblem(id)
-    this.props.history.push('/prompt')
   }
 
   render() {
     return (
       <div className="content">
         <div className="userHomeCard">
-          <h3>Pick Your Challenge</h3>
+          <h3>Pick Your Challenge!</h3>
           <br />
           <div>
             {this.props.problems.map(problem => (
               <div
+                className="challengeLink"
                 key={problem.id}
-                onClick={() => this.chooseProblem(problem.id)}
+                onClick={() => this.props.setProblem(problem.id)}
               >
-                {problem.name}
+                <Link to="/prompt">{problem.name}</Link>
               </div>
             ))}
           </div>
