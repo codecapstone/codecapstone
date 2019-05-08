@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Topics, DashboardPrompt, DashboardStats} from './index'
+import {Topics, DashboardPrompt, DashboardStats, Challenges} from './index'
 
 /**
  * COMPONENT
@@ -10,12 +10,12 @@ export const UserHome = props => {
   const {email} = props
 
   return (
-    <div className="bodyComponent" id="userHome">
+    <div className="bodyComponent content" id="userHome">
       <div>
         <Topics />
         <DashboardStats />
       </div>
-      <DashboardPrompt />
+      <Challenges />
     </div>
   )
 }

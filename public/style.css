@@ -2,9 +2,10 @@ body {
   font-family: sans-serif;
   margin: auto 0;
 }
-/* .content {
-  margin-left: 350px;
-} */
+.content {
+  margin-top: 120px;
+  justify-content: space-around
+}
 
 a {
   text-decoration: none;
@@ -92,6 +93,10 @@ form div {
   margin: 30px;
   max-width: 600;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 
 .btnContainer {
   display: flex;
@@ -105,10 +110,11 @@ form div {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
+  flex-shrink:1;
   background-color: #b8bbc7;
   box-shadow: 3px 3px 5px grey;
-  /* height: 200px; */
   align-items: center;
+  width: 100%;
 }
 
 #notGoogle {
@@ -187,7 +193,7 @@ form div {
 #bot {
   margin-top: 120px;
   margin-left: 10px;
-  align-self: flex-end;
+  align-self: flex-start;
 }
 
 #botDiv {
@@ -200,10 +206,11 @@ form div {
   background-size: cover;
 }
 
-/* #userHome {
+#userHome {
   display: flex;
   flex-wrap: wrap;
-} */
+  justify-content: space-around
+}
 .userHomeCard {
   display: flex;
   flex-direction: column;
@@ -216,6 +223,7 @@ form div {
   background-color: #b8bbc7;
   margin-top: 20px;
   margin-right: 20px;
+  padding:30px;
   color: #404146;
   text-align: center;
   box-shadow: 3px 3px 5px grey;

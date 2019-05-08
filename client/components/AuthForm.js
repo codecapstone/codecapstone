@@ -28,6 +28,8 @@ const AuthForm = props => {
           {displayName} with Google
         </a>
       </form>
+      CALLOUT FOR TRYING CHALLENGE --> PROMPT CALLOUT FOR READ A LESSON -->
+      LESSONS CALLOUT TO SIGN UP FOR NEW USERS
     </div>
   )
 }
