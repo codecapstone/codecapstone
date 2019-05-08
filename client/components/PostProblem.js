@@ -12,7 +12,9 @@ class PostProblem extends React.Component {
       prompt: '',
       functionName: '',
       tests: '',
+      solution: '',
       solutions: [],
+      keyword: '',
       keywords: [],
       examples: '',
       topic: '',
@@ -21,20 +23,36 @@ class PostProblem extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit3 = this.handleSubmit3.bind(this)
-    this.handleSubmit2 = this.handleSubmit2.bind(this)
+    this.addKeyword = this.addKeyword.bind(this)
+    this.handleEmailSubmit = this.handleEmailSubmit.bind(this)
+    this.addSolution = this.addSolution.bind(this)
   }
 
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
+    console.log(this.state)
   }
-  handleSubmit3(evt) {}
+  addKeyword(evt) {
+    evt.preventDefault()
+    const arr = this.state.keywords
+    arr.push(this.state.keyword)
+    this.setState({keywords: arr, keyword: ''})
+  }
+  addSolution(evt) {
+    evt.preventDefault()
+    const arr = this.state.solutions
+    arr.push(this.state.solution)
+    this.setState({solutions: arr, solution: ''})
+    console.log('state', this.state)
+  }
   handleSubmit() {
+    event.preventDefault()
     this.props.postProblem(this.state)
   }
-  handleSubmit2() {
+  handleEmailSubmit() {
     this.props.makeAdmin({email: this.state.email})
   }
+
   render() {
     const {user} = this.props
 
@@ -44,15 +62,44 @@ class PostProblem extends React.Component {
       <div className="content">
         <h3>Congratulations you have special powers!</h3>
         <p>Enter your challenge/problem details here:</p>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.addKeyword}>
           <label>
-            Name:
+            Keyword
             <input
               type="text"
-              name="name"
+              name="keyword"
+              required={true}
+              value={this.state.keyword}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
+        <p>Your keywords are:</p>
+        {this.state.keywords.map((keyword, idx) => <p key={idx}>{keyword}</p>)}
+        <form onSubmit={this.addSolution}>
+          <label>
+            Solution
+            <textarea
+              rows="10"
+              cols="100"
+              type="text"
+              name="solution"
+              value={this.state.solution}
               required={true}
               onChange={this.handleChange}
             />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
+        <p>Your solutions are:</p>
+        {this.state.solutions.map((solution, idx) => (
+          <p key={idx}>{solution}</p>
+        ))}
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" name="name" required={true} />
           </label>
           <label>
             Sandbox Id:
@@ -90,20 +137,6 @@ class PostProblem extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
-            Solution 1
-            <input
-              type="array"
-              name="solutions"
-              required={true}
-              onChange={this.handleChange2}
-            />
-          </label>
-          <label>
-            Keyword 1
-            <input type="array" name="keyword" required={true} />
-            <button onClick={this.handleSubmit2}>Add</button>
-          </label>
 
           <label>
             Examples:
@@ -116,17 +149,22 @@ class PostProblem extends React.Component {
           </label>
           <label>
             Level:
-            <input type="text" name="level" required={true} />
+            <select name="level" onChange={this.handleChange}>
+              <option defautvalue="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
           </label>
           <label>
             Topic:
-            <input
-              type="text"
-              name="topic"
-              required={true}
-              onChange={this.handleChange}
-            />
+            <select name="topic" onChange={this.handleChange}>
+              <option defautvalue="none">None</option>
+              <option value="dynamic arrays">Dynamic Arrays</option>
+              <option value="linked lists">Linked Lists</option>
+              <option value="trees">Trees</option>
+            </select>
           </label>
+
           <label>
             Creator (who should credit be given to):
             <input
@@ -140,7 +178,6 @@ class PostProblem extends React.Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
-
         <h3>You can also add other admin users:</h3>
         <form>
           <label>
@@ -152,7 +189,7 @@ class PostProblem extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <button onClick={this.handleSubmit2}>Submit</button>
+          <button onClick={this.handleEmailSubmit}>Submit</button>
         </form>
       </div>
     )
