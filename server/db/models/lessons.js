@@ -8,7 +8,8 @@ const Lesson = db.define('lesson', {
       'Arrays',
       'Linked Lists',
       'Hash Tables',
-      'Trees'
+      'Trees',
+      'None'
     ),
     allowNull: false
   },
