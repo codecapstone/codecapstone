@@ -48,6 +48,9 @@ class Routes extends Component {
             <Route path="/challenges" component={Challenges} />
             <Route path="/admin" component={PostProblem} />
           </Switch>
+
+         
+
         )}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
