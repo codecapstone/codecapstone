@@ -11,13 +11,14 @@ class DashboardPrompt extends React.Component {
     return (
       <div id="dashboardPrompt">
         <div>
+          <h2>Welcome, {this.props.email}</h2>
           <h3>Your next challenge is: {name}</h3>
           <p className="prompt">{prompt}</p>
         </div>
         <div />
         <div className="promptButtons">
           <div className="dashBtn">
-            <Link to="/examples">
+            <Link to="/prompt">
               <h4>Let's Go!</h4>
             </Link>
           </div>
@@ -35,7 +36,8 @@ class DashboardPrompt extends React.Component {
 }
 
 const mapState = state => ({
-  challenge: state.problems.selected
+  challenge: state.problems.selected,
+  email: state.user.email
 })
 
 export default connect(mapState)(DashboardPrompt)
