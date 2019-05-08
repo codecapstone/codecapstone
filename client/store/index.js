@@ -7,8 +7,9 @@ import problems from './problems'
 import userStats from './userStats'
 import admin from './admin'
 import agent from './chatbot'
+import lesson from './lesson'
 
-const reducer = combineReducers({user, problems, userStats, admin, agent})
+const reducer = combineReducers({user, problems, userStats, admin, agent,lesson})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
@@ -17,3 +18,4 @@ const store = createStore(reducer, middleware)
 export default store
 export * from './user'
 export * from './problems'
+export * from './lesson'

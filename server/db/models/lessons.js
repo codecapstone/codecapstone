@@ -10,7 +10,7 @@ const Lesson = db.define('lesson', {
       'Hash Tables',
       'Trees','None'
     ),
-    allowNull: false
+    
   },
   name: {
     type: Sequelize.STRING,
