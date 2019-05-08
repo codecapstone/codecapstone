@@ -13,6 +13,15 @@ async function seed() {
     User.create({email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
+  const lessons = await Promise.all([
+    Lesson.create({
+      title: 'Dynamic Programming',
+      name: 'Fibonacci Number',
+      description: 'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
+      reference: ['https://en.wikipedia.org/wiki/Fibonacci_number'] 
+    }),
+    
+  ])
   const challenges = await Promise.all([
     Challenge.create({
       name: 'Fibonacci Series',
@@ -66,7 +75,8 @@ async function seed() {
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
       topic: 'Number',
-      creditTo: 'StephenGrider/AlgoCasts'
+      creditTo: 'StephenGrider/AlgoCasts',
+      lessonId:1
     }),
     Challenge.create({
       name: 'Anagrams',
@@ -129,14 +139,7 @@ async function seed() {
     })
   ])
 
-  const lessons = await Promise.all([
-    Lesson.create({
-      name: 'Fibonacci Number',
-      description: 'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
-      reference: ['https://en.wikipedia.org/wiki/Fibonacci_number']
-    }),
-    
-  ])
+  
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${challenges.length} challenges`)
   console.log(`seeded ${lessons.length} lessons`)
