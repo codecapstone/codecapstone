@@ -36,7 +36,7 @@ class Examples extends React.Component {
             <p>
               Type your examples into Interview-Bot making sure you use the key
               word "example" before you write your actual example. E.g. "example
-              my example is ....."{' '}
+              my example is ..... If you're stuck, type 'sample'..."{' '}
             </p>
           </div>
         </div>

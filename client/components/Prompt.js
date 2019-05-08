@@ -15,12 +15,11 @@ class Prompt extends React.Component {
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>
           <p id="prompt">{prompt}</p>
-          <h3>Say/type 'hello' to your InterviewBot to get started!</h3>
+          <h3>Say/type 'start' to your InterviewBot to get started!</h3>
         </div>
 
         <div />
         <Link to="/examples">Next: Examples</Link>
-
       </div>
     )
   }
