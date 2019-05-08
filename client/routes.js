@@ -48,7 +48,7 @@ class Routes extends Component {
               <Route path="/stats" component={UserStats} />
               <Route path="/code" component={Code} />
               <Route path="/admin" component={PostProblem} />
-              <Route path="/solutions" component={Solution} />
+              <Route path="/solutions" component={Solutions} />
             </Switch>
           </div>
         )}
