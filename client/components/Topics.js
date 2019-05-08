@@ -13,7 +13,7 @@ export const Topics = props => {
   const topics = ['binary search', 'big O', 'stacks & queues']
 
   return (
-    <div id="topics" className="userHomeCard">
+    <div className="userHomeCard">
       <h3>Topics</h3>
       <div>
         {topics.map(topic => (

@@ -3,6 +3,7 @@ import React from 'react'
 export const InterviewBot = () => {
   return (
     <iframe
+      id="bot"
       allow="microphone;"
       width="300"
       height="500"
