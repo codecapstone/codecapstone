@@ -8,18 +8,19 @@ class PostProblem extends React.Component {
     super()
     this.state = {
       name: '',
-      sandBoxId: '',
+      sandboxId: '',
       prompt: '',
       functionName: '',
-      tests: '',
+      tests: ``,
       solution: '',
       solutions: [],
       keyword: '',
       keywords: [],
       examples: '',
       topic: '',
-      creditTo: '',
-      email: ''
+      creditTo: 'Stephen Grider',
+      email: '',
+      level: 'Easy'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -29,7 +30,8 @@ class PostProblem extends React.Component {
   }
 
   handleChange(evt) {
-    this.setState({[evt.target.name]: evt.target.value})
+    let str = evt.target.value.replace(/\//g, '')
+    this.setState({[evt.target.name]: str})
     console.log(this.state)
   }
   addKeyword(evt) {
@@ -47,7 +49,27 @@ class PostProblem extends React.Component {
   }
   handleSubmit() {
     event.preventDefault()
-    this.props.postProblem(this.state)
+    let functionName = this.state.functionName
+    this.props.postProblem({
+      ...this.state,
+      tests: `import ${functionName} from './index' ${this.state.tests}`
+    })
+    this.setState({
+      name: '',
+      sandboxId: '',
+      prompt: '',
+      functionName: '',
+      tests: '',
+      solution: '',
+      solutions: [],
+      keyword: '',
+      keywords: [],
+      examples: '',
+      topic: '',
+      creditTo: 'Stephen Grider',
+      email: '',
+      level: ''
+    })
   }
   handleEmailSubmit() {
     this.props.makeAdmin({email: this.state.email})
@@ -61,10 +83,28 @@ class PostProblem extends React.Component {
     return (
       <div className="content">
         <h3>Congratulations you have special powers!</h3>
-        <p>Enter your challenge/problem details here:</p>
+        <p>Enter your challenge/problem details here.</p>
+        <h5>Instructions</h5>
+
+        <a
+          href="https://github.com/codecapstone/AlgoCasts/tree/master/completed_exercises"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The git repo is here
+        </a>
+        <p>You can get all the info from the completed exercises folder.</p>
+        <a
+          href="https://codesandbox.io/s/4x86845n37"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The code sandbox template is here.
+        </a>
+
         <form onSubmit={this.addKeyword}>
           <label>
-            Keyword
+            Keyword (remember to click on add after each entry)
             <input
               type="text"
               name="keyword"
@@ -79,10 +119,10 @@ class PostProblem extends React.Component {
         {this.state.keywords.map((keyword, idx) => <p key={idx}>{keyword}</p>)}
         <form onSubmit={this.addSolution}>
           <label>
-            Solution
+            Solution (remember to click on add after entry)
             <textarea
-              rows="10"
-              cols="100"
+              rows="5"
+              cols="80"
               type="text"
               name="solution"
               value={this.state.solution}
@@ -99,7 +139,13 @@ class PostProblem extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input type="text" name="name" required={true} />
+            <input
+              type="text"
+              name="name"
+              required={true}
+              value={this.state.name}
+              onChange={this.handleChange}
+            />
           </label>
           <label>
             Sandbox Id:
@@ -107,15 +153,19 @@ class PostProblem extends React.Component {
               type="text"
               name="sandboxId"
               required={true}
+              value={this.state.sandboxId}
               onChange={this.handleChange}
             />
           </label>
           <label>
             Prompt:
-            <input
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="prompt"
               required={true}
+              value={this.state.prompt}
               onChange={this.handleChange}
             />
           </label>
@@ -125,25 +175,32 @@ class PostProblem extends React.Component {
               type="text"
               name="functionName"
               required={true}
+              value={this.state.functionName}
               onChange={this.handleChange}
             />
           </label>
           <label>
-            Tests
-            <input
+            Tests:
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="tests"
               required={true}
+              value={this.state.tests}
               onChange={this.handleChange}
             />
           </label>
 
           <label>
             Examples:
-            <input
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="examples"
               required={true}
+              value={this.state.examples}
               onChange={this.handleChange}
             />
           </label>
@@ -159,7 +216,8 @@ class PostProblem extends React.Component {
             Topic:
             <select name="topic" onChange={this.handleChange}>
               <option defautvalue="none">None</option>
-              <option value="dynamic arrays">Dynamic Arrays</option>
+              <option value="dynamic programming">Dynamic</option>
+              <option value="arrays">Arrays</option>
               <option value="linked lists">Linked Lists</option>
               <option value="trees">Trees</option>
             </select>
@@ -171,6 +229,7 @@ class PostProblem extends React.Component {
               type="text"
               name="creditTo"
               required={true}
+              value={this.state.creditTo}
               onChange={this.handleChange}
             />
           </label>
