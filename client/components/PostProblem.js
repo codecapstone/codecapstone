@@ -215,8 +215,8 @@ class PostProblem extends React.Component {
           <label>
             Topic:
             <select name="topic" onChange={this.handleChange}>
-              <option defautvalue="None">None</option>
-              <option value="Dynamic Programming">Dynamic</option>
+              <option defaultvalue="Dynamic Programming">Dynamic</option>
+              <option value="None">None</option>
               <option value="Arrays">Arrays</option>
               <option value="Linked Lists">Linked Lists</option>
               <option value="Hash Tables">Hash Tables</option>
