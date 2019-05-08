@@ -37,10 +37,6 @@ const Challenge = db.define('challenge', {
   level: {
     type: Sequelize.ENUM('Easy', 'Medium', 'Hard')
   },
-  topic: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
   creditTo: {
     type: Sequelize.STRING
   }

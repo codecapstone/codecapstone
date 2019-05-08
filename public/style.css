@@ -312,6 +312,7 @@ form div {
   color: white;
 }
 
+
 .challengeLink {
   margin: 20px;
 }
@@ -319,4 +320,9 @@ form div {
 .challengeLink a:hover {
   font-size: 20px;
   color: #142d58;
+
+#individualSolution {
+  border: 1px solid black;
+  padding: 10pt;
+
 }

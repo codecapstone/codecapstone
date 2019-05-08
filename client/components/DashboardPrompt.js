@@ -18,7 +18,7 @@ class DashboardPrompt extends React.Component {
         <div />
         <div className="promptButtons">
           <div className="dashBtn">
-            <Link to="/examples">
+            <Link to="/prompt">
               <h4>Let's Go!</h4>
             </Link>
           </div>
