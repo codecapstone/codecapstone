@@ -17,7 +17,7 @@ class PostProblem extends React.Component {
       keyword: '',
       keywords: [],
       examples: '',
-      topic: '',
+      topic: 'Dynamic Programming',
       creditTo: 'Stephen Grider',
       email: '',
       level: 'Easy'
@@ -215,11 +215,12 @@ class PostProblem extends React.Component {
           <label>
             Topic:
             <select name="topic" onChange={this.handleChange}>
-              <option defautvalue="none">None</option>
-              <option value="dynamic programming">Dynamic</option>
-              <option value="arrays">Arrays</option>
-              <option value="linked lists">Linked Lists</option>
-              <option value="trees">Trees</option>
+              <option defaultvalue="Dynamic Programming">Dynamic</option>
+              <option value="None">None</option>
+              <option value="Arrays">Arrays</option>
+              <option value="Linked Lists">Linked Lists</option>
+              <option value="Hash Tables">Hash Tables</option>
+              <option value="Trees">Trees</option>
             </select>
           </label>
 
