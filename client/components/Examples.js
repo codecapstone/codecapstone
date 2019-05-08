@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {getAgent} from '../store/chatbot'
 
 class Examples extends React.Component {
   constructor() {
@@ -8,6 +9,9 @@ class Examples extends React.Component {
     this.state = {
       examples: ''
     }
+  }
+  componentDidMount() {
+    this.props.getAgent()
   }
 
   render() {
@@ -40,6 +44,11 @@ class Examples extends React.Component {
             </p>
           </div>
         </div>
+        {this.props.agent.example ? (
+          <p>Your example was: {this.props.agent.example}</p>
+        ) : (
+          <p />
+        )}
 
         <div />
 
@@ -50,7 +59,10 @@ class Examples extends React.Component {
 }
 
 const mapState = state => ({
-  challenge: state.problems.selected
+  challenge: state.problems.selected,
+  agent: state.agent
 })
 
-export default connect(mapState)(Examples)
+const mapDispatch = {getAgent}
+
+export default connect(mapState, mapDispatch)(Examples)
