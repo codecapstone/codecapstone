@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
+import {GuestCallout} from './GuestCallout'
 
 /**
  * COMPONENT
@@ -10,7 +11,7 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
+    <div className="bodyComponent">
       <form onSubmit={handleSubmit} name={name} id="login">
         <div>
           <input name="email" type="text" placeholder="Email" />
@@ -28,8 +29,7 @@ const AuthForm = props => {
           {displayName} with Google
         </a>
       </form>
-      CALLOUT FOR TRYING CHALLENGE --> PROMPT CALLOUT FOR READ A LESSON -->
-      LESSONS CALLOUT TO SIGN UP FOR NEW USERS
+      <GuestCallout />
     </div>
   )
 }

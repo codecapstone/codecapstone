@@ -1,10 +1,11 @@
 body {
   font-family: sans-serif;
   margin: auto 0;
+  background-color: #442838;
 }
 .content {
   margin-top: 120px;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 a {
@@ -38,11 +39,11 @@ nav a {
 #navigation {
   flex-direction: row;
   color: white;
-  background-color: #465775;
+  background-color: #321325;
   position: fixed;
   width: 100%;
   top: 0;
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 3px 3px 5px black;
 }
 
 .navLinks {
@@ -70,7 +71,7 @@ form div {
 }
 
 #prompt {
-  color: blue;
+  /* color: blue; */
 }
 
 #app {
@@ -110,9 +111,9 @@ form div {
   flex-direction: row;
   flex-wrap: wrap;
   flex-grow: 1;
-  flex-shrink:1;
-  background-color: #b8bbc7;
-  box-shadow: 3px 3px 5px grey;
+  flex-shrink: 1;
+  background-color: #5f0f40;
+  box-shadow: 3px 3px 5px black;
   align-items: center;
   width: 100%;
 }
@@ -132,15 +133,16 @@ form div {
   /* min-width: 50%;
   max-width: 140px; */
   min-height: 30px;
-  background-color: #ef6f6c;
+  background-color: #c1aba6;
+  border-color: #c1aba6;
   /* margin-top: 10px;
   margin-right: 50px; */
   border-radius: 5px;
-  color: white;
+  color: #442838;
   font-size: 14px;
   padding-left: 5px;
   padding-right: 5px;
-  box-shadow: 3px 3px 5px grey;
+  /* box-shadow: 3px 3px 5px grey; */
 }
 
 .loginBtn a {
@@ -158,6 +160,16 @@ form div {
   font-size: 16px;
 }
 
+#guestCard {
+  color: #321325;
+  background-color: #c1aba6;
+}
+
+#goBtn {
+  background-color: #5f0f40;
+  box-shadow: none;
+}
+
 .nextBtn {
   display: flex;
   justify-content: center;
@@ -165,12 +177,12 @@ form div {
   text-align: center;
   width: 200px;
   height: 50px;
-  background-color: #ef6f6c;
+  background-color: #c1aba6;
   margin-top: 20px;
   margin-right: 50px;
   border-radius: 5px;
   color: white;
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 3px 3px 5px black;
   align-self: flex-end;
 }
 
@@ -209,7 +221,7 @@ form div {
 #userHome {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around
+  justify-content: space-around;
 }
 .userHomeCard {
   display: flex;
@@ -220,17 +232,17 @@ form div {
   min-width: 100px;
   max-width: 500px;
   height: 300px;
-  background-color: #b8bbc7;
+  background-color: #c1aba6;
   margin-top: 20px;
   margin-right: 20px;
-  padding:30px;
-  color: #404146;
+  padding: 30px;
+  color: white;
   text-align: center;
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 3px 3px 5px black;
 }
 
 .userHomeCard a {
-  color: #404146;
+  color: white;
 }
 
 #dashboardPrompt {
@@ -239,15 +251,15 @@ form div {
   flex-grow: 1;
   flex-shrink: 2;
   margin-top: 20px;
-  background-color: #b8bbc7;
+  background-color: #7cafc4;
   box-shadow: 3px 3px 5px grey;
-  color: #404146;
+  color: white;
   height: 400px;
   padding: 20px;
 }
 
 #dashboardPrompt a {
-  color: #404146;
+  color: white;
 }
 
 .dashBtn {
@@ -257,7 +269,7 @@ form div {
   text-align: center;
   width: 200px;
   height: 50px;
-  background-color: #e3b505;
+  background-color: #c1aba6;
   /* margin-top:  */
   margin-top: 20px;
   border-radius: 5px;
@@ -279,8 +291,8 @@ form div {
 
 #solutionBtn {
   box-sizing: border-box;
-  background-color: #34d1bf;
-  border: 2px solid #34d1bf;
+  background-color: #c1aba6;
+  border: 2px solid #c1aba6;
   border-radius: 0.6em;
   font-size: 1rem;
   font-weight: 400;
@@ -303,8 +315,8 @@ form div {
 
 .nextChallengeBtn {
   box-sizing: border-box;
-  background-color: purple;
-  border: 2px solid purple;
+  background-color: #5f0f40;
+  border: 2px solid #5f0f40;
   border-radius: 0.6em;
   font-size: 1rem;
   font-weight: 400;
@@ -320,7 +332,6 @@ form div {
   color: white;
 }
 
-
 .challengeLink {
   margin: 20px;
 }
@@ -328,9 +339,9 @@ form div {
 .challengeLink a:hover {
   font-size: 20px;
   color: #142d58;
+}
 
 #individualSolution {
   border: 1px solid black;
   padding: 10pt;
-
 }
