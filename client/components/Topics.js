@@ -12,6 +12,7 @@ export class Topics extends Component {
   //   }
   // }, [])
 
+<<<<<<< HEAD
   // const topics = ['binary search', 'big O', 'stacks & queues']
   componentDidMount() {
     this.props.getLessons()
@@ -23,6 +24,14 @@ export class Topics extends Component {
       <div id="topics" className="userHomeCard">
         <h3>Topics</h3>
         <div>
+=======
+  const topics = ['binary search', 'big O', 'stacks & queues']
+
+  return (
+    <div className="userHomeCard">
+      <h3>Topics</h3>
+      <div>
+>>>>>>> 65f36c0c843f5372f70bcbb587041ecafa349664
         {topics.map(topic => (
           <div key={topic.id}>
             <Link to={topic.title} >

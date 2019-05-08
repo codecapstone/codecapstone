@@ -4,12 +4,9 @@ import {Link} from 'react-router-dom'
 
 export const DashboardStats = props => {
   return (
-    <div id="dashboardStats" className="userHomeCard">
+    <div className="userHomeCard">
       <h3>Your Stats</h3>
-      <div>
-        This is a placeholder for user stats. Should include # of challenges
-        completed, time since last login
-      </div>
+      <div className="container">This is a placeholder for user stats.</div>
     </div>
   )
 }

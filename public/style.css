@@ -3,7 +3,8 @@ body {
   margin: auto 0;
 }
 .content {
-  margin-left: 350px;
+  margin-top: 120px;
+  justify-content: space-around
 }
 
 a {
@@ -31,18 +32,31 @@ nav a {
 
 #logo {
   margin-left: 10px;
+  font-size: 40px;
 }
 
 #navigation {
-  flex-direction: column;
-  height: 1300px;
+  flex-direction: row;
   color: white;
   background-color: #465775;
-  width: 320px;
   position: fixed;
+  width: 100%;
   top: 0;
-  height: 100%;
-  margin-right: 20px;
+  box-shadow: 3px 3px 5px grey;
+}
+
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.bodyComponent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-around;
 }
 
 form div {
@@ -61,6 +75,7 @@ form div {
 
 #app {
   display: flex;
+  flex-direction: column;
 }
 
 #code {
@@ -78,14 +93,74 @@ form div {
   margin: 30px;
   max-width: 600;
 }
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 
 .btnContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+#login {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink:1;
+  background-color: #b8bbc7;
+  box-shadow: 3px 3px 5px grey;
+  align-items: center;
+  width: 100%;
+}
+
+#notGoogle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.loginBtn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* min-width: 50%;
+  max-width: 140px; */
+  min-height: 30px;
+  background-color: #ef6f6c;
+  /* margin-top: 10px;
+  margin-right: 50px; */
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 3px 3px 5px grey;
+}
+
+.loginBtn a {
+  color: white;
+}
+
+.loginSignup {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginInput {
+  height: 20px;
+  width: 200px;
+  font-size: 16px;
 }
 
 .nextBtn {
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
   width: 200px;
@@ -98,6 +173,12 @@ form div {
   box-shadow: 3px 3px 5px grey;
   align-self: flex-end;
 }
+
+.nextBtn a {
+  text-align: center;
+  color: white;
+}
+
 #keywordsGot {
   color: green;
 }
@@ -107,6 +188,12 @@ form div {
 
 .containsABot {
   display: flex;
+}
+
+#bot {
+  margin-top: 120px;
+  margin-left: 10px;
+  align-self: flex-start;
 }
 
 #botDiv {
@@ -122,15 +209,21 @@ form div {
 #userHome {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around
 }
 .userHomeCard {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  max-width: 500px;
   height: 300px;
   background-color: #b8bbc7;
   margin-top: 20px;
   margin-right: 20px;
+  padding:30px;
   color: #404146;
   text-align: center;
   box-shadow: 3px 3px 5px grey;
@@ -141,7 +234,10 @@ form div {
 }
 
 #dashboardPrompt {
-  width: 980px;
+  min-width: 200px;
+  max-width: 500px;
+  flex-grow: 1;
+  flex-shrink: 2;
   margin-top: 20px;
   background-color: #b8bbc7;
   box-shadow: 3px 3px 5px grey;
@@ -163,7 +259,7 @@ form div {
   height: 50px;
   background-color: #e3b505;
   /* margin-top:  */
-  margin-right: 50px;
+  margin-top: 20px;
   border-radius: 5px;
   color: white;
   /* align-self: flex-end; */
@@ -176,8 +272,9 @@ form div {
 .promptButtons {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 40px;
+  /* margin: 20px; */
 }
 
 #solutionBtn {
@@ -223,7 +320,17 @@ form div {
   color: white;
 }
 
+
+.challengeLink {
+  margin: 20px;
+}
+
+.challengeLink a:hover {
+  font-size: 20px;
+  color: #142d58;
+
 #individualSolution {
   border: 1px solid black;
   padding: 10pt;
+
 }

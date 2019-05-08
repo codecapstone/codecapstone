@@ -16,6 +16,7 @@ import {
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
 import {me} from './store'
+import {InterviewBot} from './components/interviewBot'
 
 /**
  * COMPONENT
@@ -33,20 +34,23 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        
+        <Route path="/prompt" component={Prompt} />
+        <Route path="/approach" component={Annyang} />
+        <Route path="/examples" component={Examples} />
+        <Route path="/stats" component={UserStats} />
+        <Route path="/code" component={Code} />
+        <Route path="/solutions" component={Solutions} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
+            <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
             <Route path="/challenges" component={Challenges} />
-            <Route path="/approach" component={Annyang} />
-            <Route path="/prompt" component={Prompt} />
-            <Route path="/examples" component={Examples} />
-            <Route path="/stats" component={UserStats} />
-            <Route path="/code" component={Code} />
-            <Route path="/solutions" component={Solutions} />
             <Route path="/admin" component={PostProblem} />
           </Switch>
+
+         
+
         )}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
