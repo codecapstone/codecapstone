@@ -11,12 +11,13 @@ import {
   Code,
   Challenges,
   Solutions,
-  PostProblem
+  PostProblem,
+  Topics
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
 import {me} from './store'
-import {InterviewBot} from './components/interviewBot'
+//import {InterviewBot} from './components/interviewBot'
 
 /**
  * COMPONENT
@@ -40,6 +41,7 @@ class Routes extends Component {
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
+        <Route path="/topics" component={Topics} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
