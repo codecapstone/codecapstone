@@ -3,7 +3,13 @@ const db = require('../db')
 
 const Lesson = db.define('lesson', {
   title: {
-    type: Sequelize.STRING,
+    type: Sequelize.ENUM(
+      'Dynamic Programming',
+      'Arrays',
+      'Linked Lists',
+      'Hash Tables',
+      'Trees'
+    ),
     allowNull: false
   },
   name: {

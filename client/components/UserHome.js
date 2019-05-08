@@ -10,9 +10,11 @@ export const UserHome = props => {
   const {email} = props
 
   return (
-    <div className="content" id="userHome">
-      <Topics />
-      <DashboardStats />
+    <div className="bodyComponent" id="userHome">
+      <div>
+        <Topics />
+        <DashboardStats />
+      </div>
       <DashboardPrompt />
     </div>
   )

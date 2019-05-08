@@ -3,14 +3,16 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {InterviewBot} from './interviewBot'
+import {Login, Signup} from './AuthForm'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
   <div id="navigation">
-    <h1 id="logo">Code Aloud</h1>
     <nav>
+      <div>
+        <h1>{`Code { Aloud }`}</h1>
+      </div>
       {isLoggedIn ? (
-        <div>
+        <div className="navLinks">
           {/* The navbar will show these links after you log in */}
           <div>Welcome, {email}!</div>
           <Link to="/home">Home</Link>
@@ -19,10 +21,9 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
           <a href="#" onClick={handleClick}>
             Logout
           </a>
-          <InterviewBot />
         </div>
       ) : (
-        <div>
+        <div className="navLinks">
           {/* The navbar will show these links before you log in */}
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
