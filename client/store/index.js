@@ -6,8 +6,9 @@ import user from './user'
 import problems from './problems'
 import userStats from './userStats'
 import admin from './admin'
+import agent from './chatbot'
 
-const reducer = combineReducers({user, problems, userStats, admin})
+const reducer = combineReducers({user, problems, userStats, admin, agent})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
