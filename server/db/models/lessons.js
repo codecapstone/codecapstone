@@ -8,9 +8,9 @@ const Lesson = db.define('lesson', {
       'Arrays',
       'Linked Lists',
       'Hash Tables',
-      'Trees'
-    ),
-    allowNull: false
+      'Trees',
+      'None'
+    )
   },
   name: {
     type: Sequelize.STRING,
