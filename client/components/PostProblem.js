@@ -21,23 +21,18 @@ class PostProblem extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleChange2 = this.handleChange2.bind(this)
+    this.handleSubmit3 = this.handleSubmit3.bind(this)
     this.handleSubmit2 = this.handleSubmit2.bind(this)
   }
 
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
   }
-  handleChange2(evt) {
-    const arr = this.state[evt.target.name]
-    arr.push(evt.target.value)
-    this.setState({solutions: arr})
-  }
+  handleSubmit3(evt) {}
   handleSubmit() {
     this.props.postProblem(this.state)
   }
   handleSubmit2() {
-    console.log(this.state.email)
     this.props.makeAdmin({email: this.state.email})
   }
   render() {
@@ -96,23 +91,20 @@ class PostProblem extends React.Component {
             />
           </label>
           <label>
-            Solution1
+            Solution 1
             <input
-              type="text"
+              type="array"
               name="solutions"
               required={true}
               onChange={this.handleChange2}
             />
           </label>
           <label>
-            Keyword1:
-            <input
-              type="text"
-              name="keywords"
-              required={true}
-              onChange={this.handleChange2}
-            />
+            Keyword 1
+            <input type="array" name="keyword" required={true} />
+            <button onClick={this.handleSubmit2}>Add</button>
           </label>
+
           <label>
             Examples:
             <input
