@@ -9,7 +9,12 @@ const Lesson = require('./lessons')
  *    BlogPost.belongsTo(User)
  */
 User.belongsToMany(Challenge, {through: 'UserStats'})
-Challenge.belongsToMany(User, {through: 'UserStats'})
+Challenge.belongsToMany(User, { through: 'UserStats' })
+
+Lesson.hasMany(Challenge)
+Challenge.belongsTo(Lesson)
+
+
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'
