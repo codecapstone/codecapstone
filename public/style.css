@@ -34,22 +34,9 @@ nav a {
   color: lightgray;
 }
 
-/* #logo {
-  margin-left: 10px;
-  font-size: 40px;
-} */
-
 @media screen and (max-width: 600px) {
-  #logo {
-    width: 100px;
-    height: 38px;
-  }
 }
 @media screen and (min-width: 600px) {
-  #logo {
-    width: 200px;
-    height: 75px;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -57,11 +44,33 @@ nav a {
     font-size: 20px;
     margin: 5px;
   }
+
+  #logo {
+    width: 100px;
+    height: 38px;
+  }
+
+  #sandbox {
+    margin: 10px;
+    width: 350px;
+    height: 1000px;
+  }
 }
 @media screen and (min-width: 600px) {
   .fa-comments {
     font-size: 50px;
     margin: 5px;
+  }
+
+  #logo {
+    width: 200px;
+    height: 75px;
+  }
+
+  #sandbox {
+    margin: 10px;
+    width: 800px;
+    height: 1000px;
   }
 }
 
@@ -118,21 +127,6 @@ nav a {
 #code {
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (max-width: 600px) {
-  #sandbox {
-    margin: 10px;
-    width: 350px;
-    height: 1000px;
-  }
-}
-@media screen and (min-width: 600px) {
-  #sandbox {
-    margin: 10px;
-    width: 800px;
-    height: 1000px;
-  }
 }
 
 .challengeDetails {
