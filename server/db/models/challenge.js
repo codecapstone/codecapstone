@@ -51,10 +51,10 @@ Challenge.findByLevel = function (specificLevel) {
 }
 
 
-Challenge.findByTopic = function(specificTopic) {
+Challenge.findByTopic = function(topicId) {
   return this.findAll({
     where: {
-      level: {[Sequelize.Op.eq]: specificTopic}
+      topicId: {[Sequelize.Op.eq]: topicId}
     }
   })
 }

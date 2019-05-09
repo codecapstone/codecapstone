@@ -18,7 +18,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
           <div>Welcome, {email}!</div>
           <Link to="/home">Home</Link>
           <Link to="/challenges">Challenges</Link>
-          <Link to="/lessons">Lessons</Link>
+          <Link to="/topics">Topics</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
