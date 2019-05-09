@@ -11,6 +11,7 @@ class CodeView extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.checker = this.checker.bind(this)
   }
   componentDidMount() {
     this.props.getAgent()
@@ -27,9 +28,12 @@ class CodeView extends React.Component {
   }
   handleSubmit() {
     console.log(this.state)
+    this.checker(this.state.input, this.state.output)
   }
+  checker(input, output) {}
   render() {
     const {agent, problem} = this.props
+    console.log(problem.solutions[0])
     return (
       <div id="code" className="content">
         <div className="container">
