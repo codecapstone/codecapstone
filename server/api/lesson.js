@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Lesson, Challenge} = require('../db/models')
+const {Lesson} = require('../db/models')
 module.exports = router
 
 //getting all Lessons for a logged in user
@@ -55,14 +55,14 @@ router.get('/:topicId', async (req, res, next) => {
 // })
 // //getting a lesson based of title
 
-router.get('/users/:title', async (req, res, next) => {
-  try {
-    const lesson = await Lesson.findByTitle(req.params.title, {
-      include: [{model: Challenge}]
-    })
-    res.json(lesson)
-  }
-  catch (err) {
-    next(err)
-  }
-})
+// router.get('/users/:title', async (req, res, next) => {
+//   try {
+//     const lesson = await Lesson.findByTitle(req.params.title, {
+//       include: [{model: Challenge}]
+//     })
+//     res.json(lesson)
+//   }
+//   catch (err) {
+//     next(err)
+//   }
+// })
