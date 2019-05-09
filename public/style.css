@@ -384,3 +384,7 @@ hr {
   text-decoration: underline;
   color: #5f0f40;
 }
+
+#exmplPgBtns {
+  display: flex;
+}
