@@ -12,7 +12,7 @@ import {
   Challenges,
   Solutions,
   PostProblem,
-  Topics,Topic
+  Topics
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -39,18 +39,16 @@ class Routes extends Component {
         <Route path="/examples" component={Examples} />
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
-      <Route path="/solutions" component={Solutions} />
-      {/* Confirm if the topics should be visible for the guest or niot */}
-        {/* <Route path="/topics" component={Topics} /> */}
-        {isLoggedIn && <Switch>
+        <Route path="/solutions" component={Solutions} />
+      {isLoggedIn &&
+        <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
             <Route path="/challenges" component={Challenges} />
             <Route path="/admin" component={PostProblem} />
-        <Route path="/topics" component={Topics} />
-        <Route exact path="/topics/:id" component ={Topic} />
-          </Switch>}
+          <Route path="/topics" component={Topics} />
+        </Switch>}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>

@@ -2,6 +2,7 @@ const User = require('./user')
 const Challenge = require('./challenge')
 const Lesson = require('./lessons')
 const Topic = require('./topic')
+const UserStats = require('./userstats')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -10,7 +11,7 @@ const Topic = require('./topic')
  *    BlogPost.belongsTo(User)
  */
 User.belongsToMany(Challenge, {through: 'UserStats'})
-Challenge.belongsToMany(User, { through: 'UserStats' })
+Challenge.belongsToMany(User, {through: 'UserStats'})
 
 // Lesson.hasMany(Challenge)
 // Challenge.belongsTo(Lesson)
@@ -30,5 +31,6 @@ module.exports = {
   User,
   Challenge,
   Lesson,
-  Topic
+  Topic,
+  UserStats
 }
