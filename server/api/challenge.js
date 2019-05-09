@@ -32,7 +32,15 @@ router.get('/:challengeId', async (req, res, next) => {
   }
 })
 
-//getting a 
+//getting a challenge based on the topic
+router.get('/topic/:topicId', async (req, res, next) => {
+  try {
+    const challenges = await Challenge.findByTopic(req.params.topicId)
+    res.json(challenges)
+  } catch (err) {
+    next(err)
+  }
+})
 
 //posting a challenge
 

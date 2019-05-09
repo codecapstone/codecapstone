@@ -2,16 +2,6 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Lesson = db.define('lesson', {
-  title: {
-    type: Sequelize.ENUM(
-      'Dynamic Programming',
-      'Arrays',
-      'Linked Lists',
-      'Hash Tables',
-      'Trees',
-      'None'
-    )
-  },
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -27,12 +17,12 @@ const Lesson = db.define('lesson', {
     type: Sequelize.ARRAY(Sequelize.STRING)
   }
 })
-Lesson.findByTitle = function(title) {
+
+Lesson.findByTopic = function(topicId) {
   return this.findAll({
     where: {
-      level: {[Sequelize.Op.eq]: title}
+      topicId: {[Sequelize.Op.eq]: topicId}
     }
   })
 }
-
 module.exports = Lesson

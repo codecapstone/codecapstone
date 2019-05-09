@@ -10,7 +10,7 @@ class Topics extends Component {
     this.props.getLessons()
   }
   render() {
-    console.log('props:', this.props)
+    //console.log('props:', this.props)
     const topics = this.props.topics
     return <div id="topics" className="userHomeCard">
         <h3>Topics</h3>
@@ -27,7 +27,7 @@ class Topics extends Component {
 }
 
 const mapState = state => {
-  console.log('state: ', state)
+  //console.log('state: ', state)
   return {
     topics: state.lesson.all,
     user: state.user
