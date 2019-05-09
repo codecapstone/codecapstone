@@ -106,8 +106,20 @@ nav a {
   display: flex;
   flex-direction: column;
 }
-#sandbox {
-  margin: 30px;
+
+@media screen and (max-width: 600px) {
+  #sandbox {
+    margin: 10px;
+    width: 350px;
+    height: 1000px;
+  }
+}
+@media screen and (min-width: 600px) {
+  #sandbox {
+    margin: 10px;
+    width: 800px;
+    height: 1000px;
+  }
 }
 
 .challengeDetails {

@@ -29,9 +29,7 @@ class CodeView extends React.Component {
             Next Step - Check Your Stats!
           </div>
         </div>
-        <div id="sandbox">
-          <ConnectedSandbox />
-        </div>
+        <ConnectedSandbox />
       </div>
     )
   }

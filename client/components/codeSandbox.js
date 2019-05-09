@@ -10,7 +10,8 @@ export const Sandbox = props => {
 
   return (
     <div id="main">
-      <embed src={url} style={{width: 800, height: 1000}} />
+      {/* <embed src={url} style={{width: 800, height: 1000}} /> */}
+      <embed src={url} id="sandbox" />
     </div>
   )
 }
