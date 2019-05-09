@@ -8,38 +8,73 @@ class PostProblem extends React.Component {
     super()
     this.state = {
       name: '',
-      sandBoxId: '',
+      sandboxId: '',
       prompt: '',
       functionName: '',
-      tests: '',
+      tests: ``,
+      solution: '',
       solutions: [],
+      keyword: '',
       keywords: [],
       examples: '',
-      topic: '',
-      creditTo: '',
-      email: ''
+      topic: 'Dynamic Programming',
+      creditTo: 'Stephen Grider',
+      email: '',
+      level: 'Easy'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleChange2 = this.handleChange2.bind(this)
-    this.handleSubmit2 = this.handleSubmit2.bind(this)
+    this.addKeyword = this.addKeyword.bind(this)
+    this.handleEmailSubmit = this.handleEmailSubmit.bind(this)
+    this.addSolution = this.addSolution.bind(this)
   }
 
   handleChange(evt) {
-    this.setState({[evt.target.name]: evt.target.value})
+    let str = evt.target.value.replace(/\//g, '')
+    this.setState({[evt.target.name]: str})
+    console.log(this.state)
   }
-  handleChange2(evt) {
-    const arr = this.state[evt.target.name]
-    arr.push(evt.target.value)
-    this.setState({solutions: arr})
+  addKeyword(evt) {
+    evt.preventDefault()
+    const arr = this.state.keywords
+    arr.push(this.state.keyword)
+    this.setState({keywords: arr, keyword: ''})
+  }
+  addSolution(evt) {
+    evt.preventDefault()
+    const arr = this.state.solutions
+    arr.push(this.state.solution)
+    this.setState({solutions: arr, solution: ''})
+    console.log('state', this.state)
   }
   handleSubmit() {
-    this.props.postProblem(this.state)
+    event.preventDefault()
+    let functionName = this.state.functionName
+    this.props.postProblem({
+      ...this.state,
+      tests: `import ${functionName} from './index' ${this.state.tests}`
+    })
+    this.setState({
+      name: '',
+      sandboxId: '',
+      prompt: '',
+      functionName: '',
+      tests: '',
+      solution: '',
+      solutions: [],
+      keyword: '',
+      keywords: [],
+      examples: '',
+      topic: '',
+      creditTo: 'Stephen Grider',
+      email: '',
+      level: ''
+    })
   }
-  handleSubmit2() {
-    console.log(this.state.email)
+  handleEmailSubmit() {
     this.props.makeAdmin({email: this.state.email})
   }
+
   render() {
     const {user} = this.props
 
@@ -48,7 +83,59 @@ class PostProblem extends React.Component {
     return (
       <div className="content">
         <h3>Congratulations you have special powers!</h3>
-        <p>Enter your challenge/problem details here:</p>
+        <p>Enter your challenge/problem details here.</p>
+        <h5>Instructions</h5>
+
+        <a
+          href="https://github.com/codecapstone/AlgoCasts/tree/master/completed_exercises"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The git repo is here
+        </a>
+        <p>You can get all the info from the completed exercises folder.</p>
+        <a
+          href="https://codesandbox.io/s/4x86845n37"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The code sandbox template is here.
+        </a>
+
+        <form onSubmit={this.addKeyword}>
+          <label>
+            Keyword (remember to click on add after each entry)
+            <input
+              type="text"
+              name="keyword"
+              required={true}
+              value={this.state.keyword}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
+        <p>Your keywords are:</p>
+        {this.state.keywords.map((keyword, idx) => <p key={idx}>{keyword}</p>)}
+        <form onSubmit={this.addSolution}>
+          <label>
+            Solution (remember to click on add after entry)
+            <textarea
+              rows="5"
+              cols="80"
+              type="text"
+              name="solution"
+              value={this.state.solution}
+              required={true}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Add" />
+        </form>
+        <p>Your solutions are:</p>
+        {this.state.solutions.map((solution, idx) => (
+          <p key={idx}>{solution}</p>
+        ))}
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
@@ -56,6 +143,7 @@ class PostProblem extends React.Component {
               type="text"
               name="name"
               required={true}
+              value={this.state.name}
               onChange={this.handleChange}
             />
           </label>
@@ -65,15 +153,19 @@ class PostProblem extends React.Component {
               type="text"
               name="sandboxId"
               required={true}
+              value={this.state.sandboxId}
               onChange={this.handleChange}
             />
           </label>
           <label>
             Prompt:
-            <input
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="prompt"
               required={true}
+              value={this.state.prompt}
               onChange={this.handleChange}
             />
           </label>
@@ -83,64 +175,62 @@ class PostProblem extends React.Component {
               type="text"
               name="functionName"
               required={true}
+              value={this.state.functionName}
               onChange={this.handleChange}
             />
           </label>
           <label>
-            Tests
-            <input
+            Tests:
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="tests"
               required={true}
+              value={this.state.tests}
               onChange={this.handleChange}
             />
           </label>
-          <label>
-            Solution1
-            <input
-              type="text"
-              name="solutions"
-              required={true}
-              onChange={this.handleChange2}
-            />
-          </label>
-          <label>
-            Keyword1:
-            <input
-              type="text"
-              name="keywords"
-              required={true}
-              onChange={this.handleChange2}
-            />
-          </label>
+
           <label>
             Examples:
-            <input
+            <textarea
+              rows="10"
+              cols="80"
               type="text"
               name="examples"
               required={true}
+              value={this.state.examples}
               onChange={this.handleChange}
             />
           </label>
           <label>
             Level:
-            <input type="text" name="level" required={true} />
+            <select name="level" onChange={this.handleChange}>
+              <option defautvalue="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
           </label>
           <label>
             Topic:
-            <input
-              type="text"
-              name="topic"
-              required={true}
-              onChange={this.handleChange}
-            />
+            <select name="topic" onChange={this.handleChange}>
+              <option defaultvalue="Dynamic Programming">Dynamic</option>
+              <option value="None">None</option>
+              <option value="Arrays">Arrays</option>
+              <option value="Linked Lists">Linked Lists</option>
+              <option value="Hash Tables">Hash Tables</option>
+              <option value="Trees">Trees</option>
+            </select>
           </label>
+
           <label>
             Creator (who should credit be given to):
             <input
               type="text"
               name="creditTo"
               required={true}
+              value={this.state.creditTo}
               onChange={this.handleChange}
             />
           </label>
@@ -148,7 +238,6 @@ class PostProblem extends React.Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
-
         <h3>You can also add other admin users:</h3>
         <form>
           <label>
@@ -160,7 +249,7 @@ class PostProblem extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <button onClick={this.handleSubmit2}>Submit</button>
+          <button onClick={this.handleEmailSubmit}>Submit</button>
         </form>
       </div>
     )

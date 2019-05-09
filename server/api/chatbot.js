@@ -1,34 +1,17 @@
 const router = require('express').Router()
-const {WebhookClient} = require('dialogflow-fulfillment')
-const functions = require('firebase-functions')
+
+let agent = {hello: 'hi there'}
 
 //Create an instance
 
 module.exports = router
 
-router.post('/', (request, response, next) => {
+router.post('/', (req, res, next) => {
   try {
-    console.log('req.body in chatbot api', request.body)
-    const agent = new WebhookClient({request: request.body, response})
-    console.log('chatbot api', agent)
-    const add = agent => {
-      agent.add(`Nice`)
-      console.log('did it add?', agent)
-    }
-    let intentMap = new Map()
-    intentMap.set('challenge.example.save', add)
-
-    agent.handleRequest(intentMap)
-
-    //     const addResp = agent => { add .
-
-    //       agent.add('BLAH BLAH BLAH')
-    //     }
-    //     agent.handleRequest(addResp)
-    //   }
-    // )
-
-    response.send(agent)
+    console.log('req.body in chatbot api', req.body)
+    agent.example = req.body.queryResult.queryText
+    console.log('agent in the chatbot api', agent)
+    res.sendStatus(200)
   } catch (err) {
     next(err)
   }
@@ -36,7 +19,7 @@ router.post('/', (request, response, next) => {
 
 router.get('/', (req, res, next) => {
   try {
-    res.json('hello')
+    res.send(agent)
   } catch (err) {
     next(err)
   }

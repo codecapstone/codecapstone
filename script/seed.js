@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const { User } = require('../server/db/models')
+const {User} = require('../server/db/models')
 const {Challenge} = require('../server/db/models')
 const {Lesson} = require('../server/db/models')
 
@@ -10,23 +10,24 @@ async function seed() {
   console.log('db synced!')
 
   const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
+    User.create({email: 'cody@email.com', password: '123', isAdmin: 'true'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
   const lessons = await Promise.all([
     Lesson.create({
       title: 'Dynamic Programming',
       name: 'Fibonacci Number',
-      description: 'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
-      reference: ['https://en.wikipedia.org/wiki/Fibonacci_number'] 
-    }),
-    
+      description:
+        'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
+      reference: ['https://en.wikipedia.org/wiki/Fibonacci_number']
+    })
   ])
   const challenges = await Promise.all([
     Challenge.create({
       name: 'Fibonacci Series',
       sandboxId: '10rzrjn007',
-      prompt: 'Print out the n-th entry in the fibonacci series.The Fibonacci series is an ordering of numbers where each number is the sum of the preceeding two. For example, the sequence [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] forms the first ten entries of the fibonacci series.',
+      prompt:
+        'Print out the n-th entry in the fibonacci series.The Fibonacci series is an ordering of numbers where each number is the sum of the preceeding two. For example, the sequence [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] forms the first ten entries of the fibonacci series.',
       functionName: 'fib(n)',
       tests: `import fib from './index';
 
@@ -65,18 +66,15 @@ async function seed() {
           }
 
           return result[n];
-        }`],
-      keywords: [
-        'cache',
-        'big o',
-        'memoize'
-    ],
+        }`
+      ],
+      keywords: ['cache', 'big o', 'memoize'],
       examples: `Example:
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
       topic: 'Number',
       creditTo: 'StephenGrider/AlgoCasts',
-      lessonId:1
+      lessonId: 1
     }),
     Challenge.create({
       name: 'Anagrams',
@@ -111,7 +109,7 @@ async function seed() {
         ).toBeFalsy();
       });`,
       solutions: [
-      `function anagrams(stringA, stringB) {
+        `function anagrams(stringA, stringB) {
         return cleanString(stringA) === cleanString(stringB);
       }
       function cleanString(str) {
@@ -121,14 +119,9 @@ async function seed() {
         .split('')
         .sort()
         .join('');
-      }`,
+      }`
       ],
-      keywords: [
-        'string',
-        'big o',
-        'lowercase',
-        'split'
-      ],
+      keywords: ['string', 'big o', 'lowercase', 'split'],
       examples: `Example:
       anagrams('rail safety', 'fairy tales') --> True
       anagrams('RAIL! SAFETY!', 'fairy tales') --> True
@@ -139,7 +132,6 @@ async function seed() {
     })
   ])
 
-  
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${challenges.length} challenges`)
   console.log(`seeded ${lessons.length} lessons`)

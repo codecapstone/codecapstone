@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
+import {GuestCallout} from './GuestCallout'
 
 /**
  * COMPONENT
@@ -10,26 +11,35 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div className="content">
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
+    <div className="userHomeCard" id="login">
+      <form onSubmit={handleSubmit} name={name} id="loginForm">
+        {/* <div> */}
+        <input
+          name="email"
+          type="text"
+          placeholder="Email"
+          className="loginInput"
+        />
+        {/* </div> */}
+        {/* <div> */}
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          className="loginInput"
+        />
+        {/* </div> */}
+        {/* <div> */}
+        <button className="loginBtn" type="submit">
+          {displayName}
+        </button>
+        {/* </div> */}
         {error && error.response && <div> {error.response.data} </div>}
+        <a href="/auth/google" className="loginBtn">
+          {displayName} with Google
+        </a>
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      <GuestCallout />
     </div>
   )
 }

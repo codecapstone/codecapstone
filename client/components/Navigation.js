@@ -3,33 +3,35 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {InterviewBot} from './interviewBot'
+import {Login, Signup} from './AuthForm'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
-  <div id="navigation">
-    <h1 id="logo">Code Aloud</h1>
-    <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <div>Welcome, {email}!</div>
-          <Link to="/home">Home</Link>
-          <Link to="/challenges">Challenges</Link>
-          <Link to="/lessons">Lessons</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-          <InterviewBot />
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-  </div>
+  <nav id="navigation">
+    <i className="far fa-comments" />
+    <div id="codeAloudNameDiv">
+      <h1 className="codeAloud">{`Code`}</h1>
+
+      <h1 className="codeAloud">{`{ Aloud }`}</h1>
+    </div>
+    {isLoggedIn ? (
+      <div className="navLinks">
+        {/* The navbar will show these links after you log in */}
+        <div>Welcome, {email}!</div>
+        <Link to="/home">Home</Link>
+        <Link to="/challenges">Challenges</Link>
+        <Link to="/lessons">Lessons</Link>
+        <a href="#" onClick={handleClick}>
+          Logout
+        </a>
+      </div>
+    ) : (
+      <div className="navLinks">
+        {/* The navbar will show these links before you log in */}
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign Up</Link>
+      </div>
+    )}
+  </nav>
 )
 
 /**
