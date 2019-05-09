@@ -82,7 +82,7 @@ async function seed() {
       examples: `Example:
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
-      topic: 'Number',
+      topicId: 1,
       creditTo: 'StephenGrider/AlgoCasts',
       // lessonId: 1
     }),
@@ -137,7 +137,7 @@ async function seed() {
       anagrams('RAIL! SAFETY!', 'fairy tales') --> True
       anagrams('Hi there', 'Bye there') --> False`,
       level: 'Easy',
-      topic: 'String',
+      topicId: 2,
       creditTo: 'StephenGrider/AlgoCasts'
     })
   ])

@@ -7,7 +7,11 @@ import {connect} from 'react-redux'
 export class Annyang extends React.Component {
   constructor() {
     super()
-    this.state = {wordsGot: [], said: ''}
+    this.state = {
+      wordsGot: [],
+      said: '',
+      buttonClass: 'notRec'
+    }
     this.handleChange = this.handleChange.bind(this)
     this.annyangStart = this.annyangStart.bind(this)
     this.annyangStop = this.annyangStop.bind(this)
@@ -50,9 +54,15 @@ export class Annyang extends React.Component {
     this.props.history.push('/code')
   }
   annyangStart() {
+    this.setState({
+      buttonClass: 'Rec'
+    })
     annyang.start()
   }
   annyangStop() {
+    this.setState({
+      buttonClass: 'notRec'
+    })
     annyang.abort()
   }
   render() {
@@ -65,30 +75,40 @@ export class Annyang extends React.Component {
           <p id="prompt">{prompt}</p>
 
           <p>Now say how you'd solve the problem!</p>
-          <button onClick={this.annyangStart}>Start Recording</button>
-          <button onClick={this.annyangStop}>Stop Recording</button>
-          <form
-            style={{
-              width: 500,
-              height: 80
-            }}
-            onSubmit={this.handleSubmit}
-          >
-            <label>You said:</label>
-            <textarea
-              rows="10"
-              cols="100"
-              type="text"
-              name="said"
-              value={this.state.said}
-              onChange={this.handleChange}
-              id="Annyang"
-            />
-
-            <input type="submit" />
-          </form>
+          <div id="recording">
+            <button
+              className={this.state.buttonClass}
+              type="button"
+              onClick={this.annyangStart}
+            >
+              Start Recording
+            </button>
+            <button id="stopRec" type="button" onClick={this.annyangStop}>
+              Stop Recording
+            </button>
+          </div>
+          <div id="submitApproach">
+            <form
+              style={{
+                width: 500,
+                height: 80
+              }}
+              onSubmit={this.handleSubmit}
+            >
+              <label>You said:</label>
+              <textarea
+                rows="7"
+                cols="75"
+                type="text"
+                name="said"
+                value={this.state.said}
+                onChange={this.handleChange}
+                id="Annyang"
+              />
+              <input type="submit" />
+            </form>
+          </div>
         </div>
-        <div id="botDiv" />
       </div>
     )
   }

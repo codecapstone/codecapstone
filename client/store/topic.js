@@ -22,7 +22,9 @@ export const fetchTopics = () => async dispatch => {
 
 export const singleTopic = id => async dispatch => {
   try {
-    const {data} = await axios.get(`/api/topics/${id}`)
+    
+    const { data } = await axios.get(`/api/topics/${id}`)
+   
     dispatch(selectedTopic(data))
   } catch (error) {
     console.error(error)
