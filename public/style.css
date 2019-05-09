@@ -267,9 +267,13 @@ form div {
   box-shadow: 3px 3px 5px black;
 }
 
-.userHomeCard a {
+.userHomeCard h2 {
   color: #4b4b4b;
   text-decoration: underline;
+}
+
+.userHomeCard i {
+  color: #4b4b4b;
 }
 
 #dashboardPrompt {

@@ -12,10 +12,10 @@ export const GuestCallout = props => {
         Our approach encourages users to talk through the problem and their
         thinking before getting into the coding details.
       </p>
-      <div className="container">
+      <Link to="./prompt" className="container">
         <i className="far fa-comments" />
         <h2>Get Started!</h2>
-      </div>
+      </Link>
     </div>
   )
 }
