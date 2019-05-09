@@ -10,10 +10,10 @@ const formatDate = lastLogin => {
   return monthDay.concat(year)
 }
 
-export const DashboardStats = props => {
+ export const DashboardStats = props => {
   const {lastLogin} = props
 
-  return (
+   return (
     <div className="userHomeCard" id="dashboardStats">
       <h3>Your Stats</h3>
       <h5 id="lastLogin">Last Login: {formatDate(lastLogin)}</h5>
@@ -23,8 +23,8 @@ export const DashboardStats = props => {
 
 const mapState = state => {
   return {
-    problems: state.problems.all,
-    lastLogin: state.user.lastLoginDate
+    // problems: state.problems.all,
+    // lastLogin: state.user.lastLoginDate
   }
 }
 

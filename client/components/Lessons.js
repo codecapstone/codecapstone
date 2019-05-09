@@ -13,7 +13,7 @@ class Lessons extends Component {
     //console.log('props:', this.props)
     const lessons = this.props.lessons
     return <div id="topics" className="userHomeCard">
-        <h3>Topics</h3>
+        <h3>Lessons</h3>
         <div>
           {lessons.map(lesson => <div key={lesson.id}>
               

@@ -1,23 +1,23 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {fetchTopics} from '../store/topic'
+import {singleTopic} from '../store/topic'
 
 class Topics extends Component {
   componentDidMount() {
-    this.props.getTopics()
+    this.props.getTopic()
   }
   render() {
-    const topics = this.props.topics
+    const topic = this.props.topic
+    console.log('topic', topic)
     return (
       <div id="topics" className="userHomeCard">
-        <h3>Topics</h3>
         <div>
-          {topics.map(topic => (
+          {/* {topics.map(topic => (
             <div key={topic.id}>
               <Link to={`topics/${topic.id}`}>{topic.name}</Link>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     )
@@ -26,13 +26,13 @@ class Topics extends Component {
 const mapState = state => {
   //console.log('state: ', state)
   return {
-    topics: state.topic.all
+    topic: state.topic.selected
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    getTopics: () => dispatch(fetchTopics())
+    getTopic: () => dispatch(singleTopic())
   }
 }
 export default connect(mapState, mapDispatch)(Topics)
