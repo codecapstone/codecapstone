@@ -440,3 +440,14 @@ hr {
 #exmplPgBtns {
   display: flex;
 }
+
+#dashboardStats {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#lastLogin {
+  justify-self: flex-end;
+  align-self: flex-end;
+}

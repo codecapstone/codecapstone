@@ -30,6 +30,9 @@ const User = db.define('user', {
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  lastLoginDate: {
+    type: Sequelize.DATE
   }
 })
 
