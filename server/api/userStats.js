@@ -18,6 +18,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
+    console.log('REQ BODY', req.body)
     const data = await UserStats.create(req.body)
     res.send(data).status(201)
   } catch (error) {

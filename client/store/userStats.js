@@ -23,10 +23,10 @@ export const getStats = userId => async dispatch => {
 
 export const addChallengeToStats = (userId, challengeId) => async dispatch => {
   try {
-    console.log('IN THE THUNK')
     const challenge = {userId, challengeId, isCompleted: 'false'}
+    console.log('challenge', challenge)
     const {data} = await axios.post('/api/userStats', challenge)
-    console.log(data)
+    console.log('DATA', data)
     dispatch(addChallenge(data))
   } catch (error) {
     console.log(error)

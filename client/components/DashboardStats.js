@@ -10,24 +10,43 @@ const formatDate = lastLogin => {
   return monthDay.concat(year)
 }
 
+const completedCheck = (all, startedOrCompleted) => {
+  let probNamesIds = {}
+  all.forEach(el => {
+    probNamesIds[el.id] = el.name
+  })
+
+  let started = startedOrCompleted.map(el => {
+    if (!el.isCompleted) {
+      return probNamesIds[el.challengeId]
+    }
+  })
+  return started
+}
+
 export const DashboardStats = props => {
-  let {lastLogin} = props
+  let {lastLogin} = props.lastLoggedIn
   if (!lastLogin) {
     lastLogin = 'Today'
   } else lastLogin = formatDate(lastLogin)
 
-   return (
+  let startedOrCompleted = props.stats.challenges
+  let started = completedCheck(props.problems, startedOrCompleted)
+
+  return (
     <div className="userHomeCard" id="dashboardStats">
       <h3>Your Stats</h3>
       <h5 id="lastLogin">Last Login: {lastLogin}</h5>
+      <div>{started.map(el => <div>{el.name}</div>)}</div>
     </div>
   )
 }
 
 const mapState = state => {
   return {
-    // problems: state.problems.all,
-    // lastLogin: state.user.lastLoginDate
+    problems: state.problems.all,
+    stats: state.userStats.userStats,
+    lastLogin: state.user.lastLoginDate
   }
 }
 
