@@ -1,19 +1,30 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+
+const formatDate = lastLogin => {
+  const shortDate = lastLogin.slice(0, 10)
+  const year = shortDate.slice(0, 4)
+
+  const monthDay = shortDate.slice(6).concat('-')
+
+  return monthDay.concat(year)
+}
 
 export const DashboardStats = props => {
+  const {lastLogin} = props
+
   return (
-    <div className="userHomeCard">
+    <div className="userHomeCard" id="dashboardStats">
       <h3>Your Stats</h3>
-      <div className="container">This is a placeholder for user stats.</div>
+      <h5 id="lastLogin">Last Login: {formatDate(lastLogin)}</h5>
     </div>
   )
 }
 
 const mapState = state => {
   return {
-    problems: state.problems.all
+    problems: state.problems.all,
+    lastLogin: state.user.lastLoginDate
   }
 }
 
