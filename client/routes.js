@@ -12,7 +12,8 @@ import {
   Challenges,
   Solutions,
   PostProblem,
-  Topics
+  Topics,
+  ExampleCheck
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -30,7 +31,8 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
 
-    return <Switch>
+    return (
+      <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
@@ -40,18 +42,21 @@ class Routes extends Component {
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
-      {isLoggedIn &&
-        <Switch>
+        <Route path="/example-check" component={ExampleCheck} />
+        {isLoggedIn && (
+          <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
             <Route path="/challenges" component={Challenges} />
             <Route path="/admin" component={PostProblem} />
-          <Route path="/topics" component={Topics} />
-        </Switch>}
+            <Route path="/topics" component={Topics} />
+          </Switch>
+        )}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>
+    )
   }
 }
 

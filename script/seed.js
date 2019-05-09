@@ -3,7 +3,7 @@
 const db = require('../server/db')
 const {User} = require('../server/db/models')
 const {Challenge} = require('../server/db/models')
-const { Lesson } = require('../server/db/models')
+const {Lesson} = require('../server/db/models')
 const {Topic} = require('../server/db/models')
 
 async function seed() {
@@ -16,12 +16,12 @@ async function seed() {
   ])
 
   const topics = await Promise.all([
-    Topic.create({ name: 'Dynamic Programming' }),
-    Topic.create({ name: 'Arrays' }),
-    Topic.create({ name: 'Linked Lists' }),
-    Topic.create({ name: 'Hash Tables' }),
-    Topic.create({ name: 'Trees' }),
-    Topic.create({ name: 'None' }),
+    Topic.create({name: 'Dynamic Programming'}),
+    Topic.create({name: 'Arrays'}),
+    Topic.create({name: 'Linked Lists'}),
+    Topic.create({name: 'Hash Tables'}),
+    Topic.create({name: 'Trees'}),
+    Topic.create({name: 'None'})
   ])
   const lessons = await Promise.all([
     Lesson.create({
@@ -38,7 +38,7 @@ async function seed() {
       sandboxId: '10rzrjn007',
       prompt:
         'Print out the n-th entry in the fibonacci series.The Fibonacci series is an ordering of numbers where each number is the sum of the preceeding two. For example, the sequence [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] forms the first ten entries of the fibonacci series.',
-      functionName: 'fib(n)',
+      functionName: 'fib',
       tests: `import fib from './index';
 
       test('Fib function is defined', () => {
@@ -83,14 +83,14 @@ async function seed() {
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
       topic: 'Number',
-      creditTo: 'StephenGrider/AlgoCasts',
+      creditTo: 'StephenGrider/AlgoCasts'
       // lessonId: 1
     }),
     Challenge.create({
       name: 'Anagrams',
       sandboxId: 'j1woxpv2o5',
       prompt: `Check to see if two provided strings are anagrams of eachother. One string is an anagram of another if it uses the same characters in the same quantity. Only consider characters, not spaces or punctuation.  Consider capital letters to be the same as lower case series.`,
-      functionName: 'anagrams(stringA, stringB)',
+      functionName: 'anagrams',
       tests: `import anagrams from './index';
 
       test('anagrams function exists', () => {

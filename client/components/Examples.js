@@ -52,6 +52,11 @@ class Examples extends React.Component {
             Click here to see our example!
           </button>
         </div>
+        <div id="exmplPgBtns">
+          <Link to="/example-check" className="nextBtn">
+            Check Your Examples
+          </Link>
+        </div>
       </div>
     )
   }
