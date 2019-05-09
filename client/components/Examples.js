@@ -6,12 +6,18 @@ class Examples extends React.Component {
   constructor() {
     super()
     this.state = {
-      examples: ''
+      examples: null
     }
   }
 
+  handleClick(examples) {
+    this.setState({
+      examples: examples
+    })
+  }
+
   render() {
-    const {name, prompt} = this.props.challenge
+    const {name, prompt, examples} = this.props.challenge
 
     if (!prompt) return <div>Loading your challenge...</div>
 
@@ -22,30 +28,30 @@ class Examples extends React.Component {
           <p>The prompt is: </p>
           <p id="prompt">{prompt}</p>
           <div>
-            {/* <form onSubmit={this.handleSubmit}>
-              <label htmlFor="examples" />
-              <input
-                onChange={this.handleChange}
-                name="examples"
-                type="text"
-                value={this.state.examples}
-              />
-              <button type="submit">Submit</button>
-            </form> */}
-
             <p>
-              Type your examples into Interview-Bot making sure you use the key
+              Type your examples into InterviewBot making sure you use the key
               word "example" before you write your actual example. E.g. "example
-              my example is ..... If you're stuck, type 'sample'..."{' '}
+              my example is ..."
             </p>
           </div>
+          {examples ? this.state.examples : null}
         </div>
 
         <div />
 
-        <Link to="/approach" className="nextBtn">
-          Next: Approach
-        </Link>
+        <div id="exmplPgBtns">
+          <Link to="/approach" className="nextBtn">
+            Next: Approach
+          </Link>
+
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick(examples)}
+          >
+            Click here to see our example!
+          </button>
+        </div>
       </div>
     )
   }
