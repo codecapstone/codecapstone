@@ -15,7 +15,7 @@ class Topics extends Component {
         <div>
           {topics.map(topic => (
             <div key={topic.id}>
-              <Link to={`lessons/${topic.id}`}>{topic.name}</Link>
+              <Link to={`topics/${topic.id}`}>{topic.name}</Link>
             </div>
           ))}
         </div>

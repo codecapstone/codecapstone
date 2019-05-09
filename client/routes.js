@@ -12,7 +12,9 @@ import {
   Challenges,
   Solutions,
   PostProblem,
-  Topics
+  Topics,
+  Lessons,
+  SingleTopic
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -40,15 +42,16 @@ class Routes extends Component {
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
-      {isLoggedIn &&
-        <Switch>
+        {isLoggedIn && <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
             <Route path="/challenges" component={Challenges} />
             <Route path="/admin" component={PostProblem} />
-          <Route path="/topics" component={Topics} />
-        </Switch>}
+            <Route exact path="/topics" component={Topics} />
+            <Route exact path="/topics/:topicId" component={SingleTopic} />
+            <Route path="/lessons" component={Lessons} />
+          </Switch>}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>

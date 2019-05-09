@@ -11,20 +11,23 @@ const formatDate = lastLogin => {
 }
 
 export const DashboardStats = props => {
-  const {lastLogin} = props
+  let {lastLogin} = props
+  if (!lastLogin) {
+    lastLogin = 'Today'
+  } else lastLogin = formatDate(lastLogin)
 
-  return (
+   return (
     <div className="userHomeCard" id="dashboardStats">
       <h3>Your Stats</h3>
-      <h5 id="lastLogin">Last Login: {formatDate(lastLogin)}</h5>
+      <h5 id="lastLogin">Last Login: {lastLogin}</h5>
     </div>
   )
 }
 
 const mapState = state => {
   return {
-    problems: state.problems.all,
-    lastLogin: state.user.lastLoginDate
+    // problems: state.problems.all,
+    // lastLogin: state.user.lastLoginDate
   }
 }
 
