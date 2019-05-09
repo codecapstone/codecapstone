@@ -3,7 +3,8 @@
 const db = require('../server/db')
 const {User} = require('../server/db/models')
 const {Challenge} = require('../server/db/models')
-const {Lesson} = require('../server/db/models')
+const { Lesson } = require('../server/db/models')
+const {Topic} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -13,9 +14,18 @@ async function seed() {
     User.create({email: 'cody@email.com', password: '123', isAdmin: 'true'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
+
+  const topics = await Promise.all([
+    Topic.create({ name: 'Dynamic Programming' }),
+    Topic.create({ name: 'Arrays' }),
+    Topic.create({ name: 'Linked Lists' }),
+    Topic.create({ name: 'Hash Tables' }),
+    Topic.create({ name: 'Trees' }),
+    Topic.create({ name: 'None' }),
+  ])
   const lessons = await Promise.all([
     Lesson.create({
-      title: 'Dynamic Programming',
+      // title: 'Dynamic Programming',
       name: 'Fibonacci Number',
       description:
         'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
@@ -74,7 +84,7 @@ async function seed() {
       level: 'Easy',
       topic: 'Number',
       creditTo: 'StephenGrider/AlgoCasts',
-      lessonId: 1
+      // lessonId: 1
     }),
     Challenge.create({
       name: 'Anagrams',
@@ -133,6 +143,7 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${topics.length} topics`)
   console.log(`seeded ${challenges.length} challenges`)
   console.log(`seeded ${lessons.length} lessons`)
   console.log(`seeded successfully`)
