@@ -75,7 +75,7 @@ export class Annyang extends React.Component {
           <p id="prompt">{prompt}</p>
 
           <p>Now say how you'd solve the problem!</p>
-          <div id="recording">
+          <div id="recordingDiv">
             <button
               className={this.state.buttonClass}
               type="button"
@@ -83,21 +83,13 @@ export class Annyang extends React.Component {
             >
               Start Recording
             </button>
-            <button id="stopRec" type="button" onClick={this.annyangStop}>
-              Stop Recording
-            </button>
+            <button id="pauseBtn" type="button" onClick={this.annyangStop} />
           </div>
           <div id="submitApproach">
-            <form
-              style={{
-                width: 500,
-                height: 80
-              }}
-              onSubmit={this.handleSubmit}
-            >
+            <form onSubmit={this.handleSubmit}>
               <label>You said:</label>
               <textarea
-                rows="7"
+                rows="8"
                 cols="75"
                 type="text"
                 name="said"
