@@ -11,27 +11,26 @@ class CodeView extends React.Component {
   render() {
     return (
       <div id="code" className="content">
-        <div className="challengeDetails">
-          <div>Your Challenge: {this.props.problem.name}</div>
-          <br />
-          <div>Prompt: {this.props.problem.prompt}</div>
-        </div>
-        {this.props.agent.example ? (
-          <p>Your example was: {this.props.agent.example}</p>
-        ) : (
-          <p />
-        )}
-
-        <div id="sandbox">
-          <ConnectedSandbox />
-        </div>
-        <div className="btnContainer">
+        <div className="container">
+          <div className="userHomeCard">
+            <div>Your Challenge: {this.props.problem.name}</div>
+            <br />
+            <div>Prompt: {this.props.problem.prompt}</div>
+          </div>
+          {this.props.agent.example ? (
+            <p>Your example was: {this.props.agent.example}</p>
+          ) : (
+            <p />
+          )}
           <div
             className="nextBtn"
             onClick={() => this.props.history.push('/stats')}
           >
             Next Step - Check Your Stats!
           </div>
+        </div>
+        <div id="sandbox">
+          <ConnectedSandbox />
         </div>
       </div>
     )

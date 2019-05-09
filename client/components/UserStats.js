@@ -17,46 +17,59 @@ export class UserStats extends React.Component {
     console.log('problemId', problemId)
 
     return (
-      <div className="content">
-        <p>Your problem was: {problem}</p>
-        <p>In your approach you got the following keywords:</p>
-        {keywordsGot.map((word, idx) => (
-          <p key={idx} id="keywordsGot">
-            {word}
-          </p>
-        ))}
-        <p>Other keywords you should consider are: </p>
-        {keywordsNotGot.map((word, idx) => (
-          <p key={idx} id="keywordsNotGot">
-            {word}
-          </p>
-        ))}
+      <div className="content" id="stats">
+        <div className="userHomeCard">
+          <p>Your problem was: {problem}</p>
+          <p>In your approach you got the following keywords:</p>
+          {keywordsGot.map((word, idx) => (
+            <p key={idx} id="keywordsGot">
+              {word}
+            </p>
+          ))}
+          <p>Other keywords you should consider are: </p>
+          {keywordsNotGot.map((word, idx) => (
+            <p key={idx} id="keywordsNotGot">
+              {word}
+            </p>
+          ))}
+          <hr />
+          <p>Did you pass the test specs?</p>
+          <div className="container">
+            <p>{this.state.testsPassed}</p>
+            <button
+              type="button"
+              onClick={() => this.setState({testsPassed: 'Yes'})}
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              onClick={() => this.setState({testsPassed: 'No'})}
+            >
+              No
+            </button>
+          </div>
+          <hr />
+          <p>Do you want to mark this challenge as complete?</p>
+          <div className="container">
+            <p>{this.state.completed}</p>
+            <button
+              type="button"
+              onClick={() => this.setState({completed: 'Yes'})}
+            >
+              Yes
+            </button>
+            <button
+              type="button"
+              onClick={() => this.setState({completed: 'No'})}
+            >
+              No
+            </button>
+          </div>
 
-        <p>Did you pass the test specs?</p>
-        <p>{this.state.testsPassed}</p>
-        <button
-          type="button"
-          onClick={() => this.setState({testsPassed: 'Yes'})}
-        >
-          Yes
-        </button>
-        <button
-          type="button"
-          onClick={() => this.setState({testsPassed: 'No'})}
-        >
-          No
-        </button>
-        <p>Do you want to mark this challenge as complete?</p>
-        <p>{this.state.completed}</p>
-        <button type="button" onClick={() => this.setState({completed: 'Yes'})}>
-          Yes
-        </button>
-        <button type="button" onClick={() => this.setState({completed: 'No'})}>
-          No
-        </button>
-
-        <div id="solutionBtn">
-          <Link to="/solutions">Click here to see the solution</Link>
+          <Link to="/solutions" id="solutionBtn">
+            <h2>Click here to see the solution</h2>
+          </Link>
         </div>
       </div>
     )
