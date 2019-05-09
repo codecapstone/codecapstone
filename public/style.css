@@ -1,7 +1,9 @@
 body {
   font-family: sans-serif;
   margin: auto 0;
-  background-color: #442838;
+  background-color: #664f5c;
+  color: lightgrey;
+  font-family: 'Roboto', sans-serif;
 }
 .content {
   margin-top: 120px;
@@ -20,15 +22,15 @@ nav {
   display: flex;
   margin: 1em;
   background-color: '#';
-  color: white;
-  /* padding: 10px; */
+  color: lightgray;
+  /* padding: ; */
 }
 
 nav a {
   display: flex;
   margin: 1em;
   background-color: '#';
-  color: white;
+  color: lightgray;
 }
 
 #logo {
@@ -38,7 +40,7 @@ nav a {
 
 #navigation {
   flex-direction: row;
-  color: white;
+  color: lightgray;
   background-color: #321325;
   position: fixed;
   width: 100%;
@@ -84,7 +86,7 @@ form div {
   flex-direction: column;
 }
 #sandbox {
-  margin-left: 30px;
+  margin: 30px;
 }
 
 .challengeDetails {
@@ -96,7 +98,20 @@ form div {
 }
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+#guestCard .container {
+  justify-content: center;
+  align-items: center;
+}
+
+#guestCard i {
+  font-size: 40px;
+}
+
+#guestCard h2 {
+  text-decoration: underline;
 }
 
 .btnContainer {
@@ -138,7 +153,7 @@ form div {
   /* margin-top: 10px;
   margin-right: 50px; */
   border-radius: 5px;
-  color: #442838;
+  color: #4b4b4b;
   font-size: 14px;
   padding-left: 5px;
   padding-right: 5px;
@@ -160,14 +175,20 @@ form div {
   font-size: 16px;
 }
 
+.fa-comments {
+  font-size: 60px;
+  margin: 5px;
+}
+
 #guestCard {
-  color: #321325;
+  color: #4b4b4b;
   background-color: #c1aba6;
 }
 
 #goBtn {
   background-color: #5f0f40;
   box-shadow: none;
+  color: lightgrey;
 }
 
 .nextBtn {
@@ -181,14 +202,14 @@ form div {
   margin-top: 20px;
   margin-right: 50px;
   border-radius: 5px;
-  color: white;
+  color: #4b4b4b;
   box-shadow: 3px 3px 5px black;
   align-self: flex-end;
 }
 
 .nextBtn a {
   text-align: center;
-  color: white;
+  color: #4b4b4b;
 }
 
 #keywordsGot {
@@ -206,6 +227,12 @@ form div {
   margin-top: 120px;
   margin-left: 10px;
   align-self: flex-start;
+}
+
+#botCard {
+  padding: 10px;
+  background-color: #5f0f40;
+  box-shadow: 3px 3px 5px black;
 }
 
 #botDiv {
@@ -231,18 +258,18 @@ form div {
   flex-wrap: wrap;
   min-width: 100px;
   max-width: 500px;
-  height: 300px;
   background-color: #c1aba6;
   margin-top: 20px;
   margin-right: 20px;
   padding: 30px;
-  color: white;
+  color: #4b4b4b;
   text-align: center;
   box-shadow: 3px 3px 5px black;
 }
 
 .userHomeCard a {
-  color: white;
+  color: #4b4b4b;
+  text-decoration: underline;
 }
 
 #dashboardPrompt {
@@ -251,7 +278,7 @@ form div {
   flex-grow: 1;
   flex-shrink: 2;
   margin-top: 20px;
-  background-color: #7cafc4;
+  /* background-color: #7cafc4; */
   box-shadow: 3px 3px 5px grey;
   color: white;
   height: 400px;
@@ -273,9 +300,9 @@ form div {
   /* margin-top:  */
   margin-top: 20px;
   border-radius: 5px;
-  color: white;
+  color: #4b4b4b;
   /* align-self: flex-end; */
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 3px 3px 5px black;
 }
 .dashBtn h4 {
   margin-top: 10px;
@@ -289,23 +316,8 @@ form div {
   /* margin: 20px; */
 }
 
-#solutionBtn {
-  box-sizing: border-box;
-  background-color: #c1aba6;
-  border: 2px solid #c1aba6;
-  border-radius: 0.6em;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  margin: 20px;
-  padding: 1.2em 2.8em;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-}
-
 #solutionBtn a {
-  color: white;
+  color: #5f0f40;
 }
 
 #solution {
@@ -332,6 +344,25 @@ form div {
   color: white;
 }
 
+hr {
+  border: 1px solid #4b4b4b;
+  width: 100%;
+}
+
+#stats button {
+  width: 50px;
+  height: 30px;
+  font-size: 14px;
+  background-color: #5f0f40;
+  border-color: #5f0f40;
+  border-radius: 5px;
+  color: lightgray;
+}
+
+#stats .container {
+  align-items: center;
+}
+
 .challengeLink {
   margin: 20px;
 }
@@ -344,4 +375,8 @@ form div {
 #individualSolution {
   border: 1px solid black;
   padding: 10pt;
+}
+#solutionsBtn {
+  text-decoration: underline;
+  color: #5f0f40;
 }

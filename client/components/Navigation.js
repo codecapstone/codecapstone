@@ -8,6 +8,7 @@ import {Login, Signup} from './AuthForm'
 const Navigation = ({handleClick, isLoggedIn, email}) => (
   <div id="navigation">
     <nav>
+      <i className="far fa-comments" />
       <div>
         <h1>{`Code { Aloud }`}</h1>
       </div>

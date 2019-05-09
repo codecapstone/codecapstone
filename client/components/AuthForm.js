@@ -14,10 +14,20 @@ const AuthForm = props => {
     <div className="bodyComponent">
       <form onSubmit={handleSubmit} name={name} id="login">
         <div>
-          <input name="email" type="text" placeholder="Email" />
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            className="loginInput"
+          />
         </div>
         <div>
-          <input name="password" type="password" placeholder="password" />
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            className="loginInput"
+          />
         </div>
         <div>
           <button className="loginBtn" type="submit">

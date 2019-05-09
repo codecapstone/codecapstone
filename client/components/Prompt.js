@@ -11,7 +11,7 @@ class Prompt extends React.Component {
 
     return (
       <div className="content">
-        <div>
+        <div className="userHomeCard">
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>
           <p id="prompt">{prompt}</p>
@@ -19,7 +19,9 @@ class Prompt extends React.Component {
         </div>
 
         <div />
-        <Link to="/examples">Next: Examples</Link>
+        <Link to="/examples" className="nextBtn">
+          Next: Examples
+        </Link>
       </div>
     )
   }
