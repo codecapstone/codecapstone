@@ -1,17 +1,18 @@
 import React from 'react'
 import {getAgent} from '../store/chatbot'
 import {connect} from 'react-redux'
+import checkers from '../checkerFunctions'
 
 class CodeView extends React.Component {
   constructor() {
     super()
     this.state = {
       input: '',
-      output: ''
+      output: '',
+      correct: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.checker = this.checker.bind(this)
   }
   componentDidMount() {
     this.props.getAgent()
@@ -27,13 +28,28 @@ class CodeView extends React.Component {
     this.setState({[evt.target.name]: evt.target.value})
   }
   handleSubmit() {
+    if (checkers[this.props.problem.functionName]) {
+      const calculated = checkers[this.props.problem.functionName](
+        this.state.input
+      )
+      if (calculated === this.state.output) {
+        this.setState({correct: 'Your examples pass our tests'})
+      } else {
+        this.setState({
+          correct: 'Check your examples again.  They do not pass our tests.'
+        })
+      }
+    } else {
+      this.setState({
+        correct: 'Sorry we do not have a checker for this problem yet.'
+      })
+    }
     console.log(this.state)
-    this.checker(this.state.input, this.state.output)
   }
-  checker(input, output) {}
+
   render() {
     const {agent, problem} = this.props
-    console.log(problem.solutions[0])
+
     return (
       <div id="code" className="content">
         <div className="container">
@@ -83,6 +99,7 @@ class CodeView extends React.Component {
                 Check
               </button>
             </form>
+            <p>{this.state.correct}</p>
           </div>
 
           <div
