@@ -19,5 +19,7 @@ export {default as DashboardStats} from './DashboardStats'
 export {default as Examples} from './Examples'
 export {default as Solutions} from './Solutions'
 export {default as PostProblem} from './PostProblem'
-export { default as Topics } from './Topics'
+export {default as Topics} from './Topics'
 export {default as SingleTopic} from './SingleTopic'
+
+export {default as ExampleCheck} from './ExampleCheck'

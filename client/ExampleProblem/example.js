@@ -9,7 +9,7 @@ const exampleProblem = {
       [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
      forms the first ten entries of the fibonacci series.
      `,
-  functionName: 'fib(n)',
+  functionName: 'fib',
   tests: `import fib from './index';
 
       test('Fib function is defined', () => {
