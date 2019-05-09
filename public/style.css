@@ -451,3 +451,51 @@ hr {
   justify-self: flex-end;
   align-self: flex-end;
 }
+
+.notRec {
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  margin: 18px;
+  outline: none;
+  background-color: darkred;
+}
+
+.Rec {
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  margin: 18px;
+  outline: none;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 5px 0px rgba(24, 8, 8, 0.3);
+  }
+  65% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.3);
+  }
+  90% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0);
+  }
+}
+
+#stopRec {
+  width: 70px;
+  height: 30px;
+}
+
+#promptAnnyang {
+  /* sizing */
+}
