@@ -15,7 +15,7 @@ export const UserHome = props => {
         <Topics />
         <DashboardStats />
       </div>
-      <Lessons />
+      {/* <Lessons /> */}
       <Challenges />
     </div>
   )
