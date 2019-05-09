@@ -6,32 +6,32 @@ import {logout} from '../store'
 import {Login, Signup} from './AuthForm'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
-  <div id="navigation">
-    <nav>
-      <i className="far fa-comments" />
-      <div>
-        <h1>{`Code { Aloud }`}</h1>
+  <nav id="navigation">
+    <i className="far fa-comments" />
+    <div id="codeAloudNameDiv">
+      <h1 className="codeAloud">{`Code`}</h1>
+
+      <h1 className="codeAloud">{`{ Aloud }`}</h1>
+    </div>
+    {isLoggedIn ? (
+      <div className="navLinks">
+        {/* The navbar will show these links after you log in */}
+        <div>Welcome, {email}!</div>
+        <Link to="/home">Home</Link>
+        <Link to="/challenges">Challenges</Link>
+        <Link to="/lessons">Lessons</Link>
+        <a href="#" onClick={handleClick}>
+          Logout
+        </a>
       </div>
-      {isLoggedIn ? (
-        <div className="navLinks">
-          {/* The navbar will show these links after you log in */}
-          <div>Welcome, {email}!</div>
-          <Link to="/home">Home</Link>
-          <Link to="/challenges">Challenges</Link>
-          <Link to="/lessons">Lessons</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div className="navLinks">
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      )}
-    </nav>
-  </div>
+    ) : (
+      <div className="navLinks">
+        {/* The navbar will show these links before you log in */}
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign Up</Link>
+      </div>
+    )}
+  </nav>
 )
 
 /**

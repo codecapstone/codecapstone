@@ -2,7 +2,7 @@ import React from 'react'
 
 export const InterviewBot = () => {
   return (
-    <div id="botCard">
+    <div>
       <iframe
         id="bot"
         allow="microphone;"
