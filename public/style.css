@@ -4,6 +4,7 @@ body {
   background-color: #664f5c;
   color: lightgrey;
   font-family: 'Roboto', sans-serif;
+  padding-top: 40px;
 }
 .content {
   margin-top: 120px;
@@ -38,6 +39,30 @@ nav a {
   font-size: 40px;
 }
 
+@media screen and (max-width: 600px) {
+  .fa-comments {
+    font-size: 20px;
+    margin: 5px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .fa-comments {
+    font-size: 50px;
+    margin: 5px;
+  }
+}
+
+#codeAloudNameDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.codeAloud {
+  margin-right: 15px;
+  height: 10px;
+  margin-bottom: 0px;
+}
+
 #navigation {
   flex-direction: row;
   color: lightgray;
@@ -46,6 +71,7 @@ nav a {
   width: 100%;
   top: 0;
   box-shadow: 3px 3px 5px black;
+  margin: 0 auto;
 }
 
 .navLinks {
@@ -60,11 +86,6 @@ nav a {
   flex-wrap: wrap;
   flex-grow: 1;
   justify-content: space-around;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
 }
 
 #Annyang {
@@ -99,6 +120,14 @@ form div {
 .container {
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.containerColumn {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 #guestCard .container {
@@ -120,17 +149,24 @@ form div {
   justify-content: flex-end;
 }
 
+input {
+  margin-bottom: 10px;
+}
 #login {
-  margin-top: 100px;
+  margin-top: 60px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  flex-grow: 1;
   flex-shrink: 1;
   background-color: #5f0f40;
   box-shadow: 3px 3px 5px black;
   align-items: center;
   width: 100%;
+  min-height: 50px;
+}
+#loginForm {
+  display: flex;
+  flex-direction: column;
 }
 
 #notGoogle {
@@ -150,8 +186,7 @@ form div {
   min-height: 30px;
   background-color: #c1aba6;
   border-color: #c1aba6;
-  /* margin-top: 10px;
-  margin-right: 50px; */
+  margin-bottom: 10px;
   border-radius: 5px;
   color: #4b4b4b;
   font-size: 14px;
@@ -173,11 +208,6 @@ form div {
   height: 20px;
   width: 200px;
   font-size: 16px;
-}
-
-.fa-comments {
-  font-size: 60px;
-  margin: 5px;
 }
 
 #guestCard {
@@ -252,7 +282,7 @@ form div {
 }
 .userHomeCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-grow: 2;
   flex-shrink: 1;
   flex-wrap: wrap;
@@ -260,11 +290,14 @@ form div {
   max-width: 500px;
   background-color: #c1aba6;
   margin-top: 20px;
-  margin-right: 20px;
   padding: 30px;
   color: #4b4b4b;
   text-align: center;
   box-shadow: 3px 3px 5px black;
+}
+
+.userHomeCard #login {
+  flex-direction: column;
 }
 
 .userHomeCard h2 {

@@ -11,29 +11,29 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div className="bodyComponent">
-      <form onSubmit={handleSubmit} name={name} id="login">
-        <div>
-          <input
-            name="email"
-            type="text"
-            placeholder="Email"
-            className="loginInput"
-          />
-        </div>
-        <div>
-          <input
-            name="password"
-            type="password"
-            placeholder="password"
-            className="loginInput"
-          />
-        </div>
-        <div>
-          <button className="loginBtn" type="submit">
-            {displayName}
-          </button>
-        </div>
+    <div className="userHomeCard" id="login">
+      <form onSubmit={handleSubmit} name={name} id="loginForm">
+        {/* <div> */}
+        <input
+          name="email"
+          type="text"
+          placeholder="Email"
+          className="loginInput"
+        />
+        {/* </div> */}
+        {/* <div> */}
+        <input
+          name="password"
+          type="password"
+          placeholder="password"
+          className="loginInput"
+        />
+        {/* </div> */}
+        {/* <div> */}
+        <button className="loginBtn" type="submit">
+          {displayName}
+        </button>
+        {/* </div> */}
         {error && error.response && <div> {error.response.data} </div>}
         <a href="/auth/google" className="loginBtn">
           {displayName} with Google
