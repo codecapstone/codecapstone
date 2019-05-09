@@ -34,9 +34,22 @@ nav a {
   color: lightgray;
 }
 
-#logo {
+/* #logo {
   margin-left: 10px;
   font-size: 40px;
+} */
+
+@media screen and (max-width: 600px) {
+  #logo {
+    width: 100px;
+    height: 38px;
+  }
+}
+@media screen and (min-width: 600px) {
+  #logo {
+    width: 200px;
+    height: 75px;
+  }
 }
 
 @media screen and (max-width: 600px) {

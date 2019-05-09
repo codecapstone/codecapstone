@@ -9,9 +9,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
   <nav id="navigation">
     <i className="far fa-comments" />
     <div id="codeAloudNameDiv">
-      <h1 className="codeAloud">{`Code`}</h1>
-
-      <h1 className="codeAloud">{`{ Aloud }`}</h1>
+      <img id="logo" src="./CAlogo.png" />
     </div>
     {isLoggedIn ? (
       <div className="navLinks">
