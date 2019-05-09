@@ -7,17 +7,19 @@ router.get('/', async (req, res, next) => {
   try {
     const allLessons = await Lesson.findAll()
     res.json(allLessons)
-  }catch (err) {
+  } catch (err) {
     next(err)
   }
 })
+
+/** TEST FOR TRAVIS */
 
 //getting a single lesson from the landingpage for guest user
 router.get('/:lessonId', async (req, res, next) => {
   try {
     const SingleLesson = await Lesson.findByPk(req.params.lessonId)
     res.json(SingleLesson)
-  }catch (err) {
+  } catch (err) {
     next(err)
   }
 })
@@ -38,8 +40,10 @@ router.get('/users', async (req, res, next) => {
 
 router.get('/users/:lessonId', async (req, res, next) => {
   try {
-    const SingleLesson = await Lesson.findByPk(req.params.lessonId,{include: [{model: Challenge}]} )
-     res.json(SingleLesson)
+    const SingleLesson = await Lesson.findByPk(req.params.lessonId, {
+      include: [{model: Challenge}]
+    })
+    res.json(SingleLesson)
   } catch (err) {
     next(err)
   }
@@ -52,8 +56,7 @@ router.get('/users/:title', async (req, res, next) => {
       include: [{model: Challenge}]
     })
     res.json(lesson)
-  }
-  catch (err) {
+  } catch (err) {
     next(err)
   }
 })
