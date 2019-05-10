@@ -33,7 +33,6 @@ export const singleLesson = id => async dispatch => {
 export const postLesson = lesson => async dispatch => {
   try {
     let newLesson = await axios.post('/api/lessons', lesson)
-    console.log('new lesson in thunk', newLesson)
     dispatch(postedLesson(newLesson))
   } catch (err) {
     console.error(err)
