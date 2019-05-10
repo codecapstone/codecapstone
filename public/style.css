@@ -445,6 +445,9 @@ hr {
   margin: 20px;
 }
 
+.lessonLink {
+  margin: 20px;
+}
 .challengeLink a:hover {
   /* font-size: 20px; */
   text-decoration: underline;

@@ -11,20 +11,18 @@ class Lessons extends Component {
   render() {
     //console.log('props:', this.props)
     const lessons = this.props.lessons
-    return (
-      <div id="topics" className="content">
+    return <div id="topics" className="content">
         <div className="userHomeCard">
           <h3>Lessons</h3>
           <div>
             {lessons.map(lesson => (
-              <div key={lesson.id}>
+              <div className="lessonLink" key={lesson.id}>
                 <Link to={`lessons/${lesson.id}`}>{lesson.name}</Link>
               </div>
             ))}
           </div>
         </div>
       </div>
-    )
   }
 }
 
