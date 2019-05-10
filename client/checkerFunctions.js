@@ -14,7 +14,28 @@ const fib = n => {
   return num.toString()
 }
 
+function anagrams(string) {
+  const stringArr = string.split(',')
+  let stringA = stringArr[0]
+  let stringB = stringArr[1]
+  if (cleanString(stringA) === cleanString(stringB)) {
+    return 'true'
+  } else {
+    return 'false'
+  }
+}
+
+function cleanString(str) {
+  return str
+    .replace(/[^\w]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('')
+}
+
 const checkers = {
-  fib
+  fib,
+  anagrams
 }
 export default checkers

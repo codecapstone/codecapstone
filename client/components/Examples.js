@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import checkers from '../checkerFunctions'
 
 class Examples extends React.Component {
   constructor() {
@@ -17,7 +18,7 @@ class Examples extends React.Component {
   }
 
   render() {
-    const {name, prompt, examples} = this.props.challenge
+    const {name, prompt, examples, functionName} = this.props.challenge
 
     if (!prompt) return <div>Loading your challenge...</div>
 
@@ -43,14 +44,17 @@ class Examples extends React.Component {
           <Link to="/approach" className="nextBtn">
             Next: Approach
           </Link>
-
-          <button
-            type="button"
-            className="nextBtn"
-            onClick={() => this.handleClick(examples)}
-          >
-            Click here to see our example!
-          </button>
+          {checkers[functionName] ? (
+            <button
+              type="button"
+              className="nextBtn"
+              onClick={() => this.handleClick(examples)}
+            >
+              Click here to see our example!
+            </button>
+          ) : (
+            <p />
+          )}
         </div>
         <div id="exmplPgBtns">
           <Link to="/example-check" className="nextBtn">
