@@ -37,7 +37,6 @@ export const selectProblem = id => async dispatch => {
 
 export const postProblem = problem => async dispatch => {
   try {
-    console.log('example problem for problem store', problem)
     let newProblem = await axios.post('/api/challenges', problem)
     dispatch(postedProblem(newProblem))
   } catch (err) {

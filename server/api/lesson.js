@@ -36,9 +36,7 @@ router.get('/:topicId', async (req, res, next) => {
 //posting a lesson
 router.post('/', async (req, res, next) => {
   try {
-    console.log('hitting?', req.body)
     const newLesson = await Lesson.create(req.body)
-    console.log('newLesson?', newLesson)
     res.send(newLesson)
   } catch (err) {
     next(err)

@@ -18,11 +18,15 @@ class PostLesson extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.addReference = this.addReference.bind(this)
     this.handleEmailSubmit = this.handleEmailSubmit.bind(this)
+    this.selectTopic = this.selectTopic.bind(this)
   }
 
   handleChange(evt) {
-    // let str = evt.target.value.replace(/\//g, '')
     this.setState({[evt.target.name]: evt.target.value})
+  }
+
+  selectTopic(evt) {
+    this.setState({topicId: evt.target.value})
   }
 
   addReference(evt) {
@@ -96,13 +100,13 @@ class PostLesson extends React.Component {
 
           <label>
             Topic:
-            <select name="topic" onChange={this.handleChange}>
-              <option defaultvalue="Dynamic Programming">Dynamic</option>
-              <option value="None">None</option>
-              <option value="Arrays">Arrays</option>
-              <option value="Linked Lists">Linked Lists</option>
-              <option value="Hash Tables">Hash Tables</option>
-              <option value="Trees">Trees</option>
+            <select name="topic" onChange={this.selectTopic}>
+              <option defaultvalue="1">Dynamic Programming</option>
+              <option value="6">None</option>
+              <option value="2">Arrays</option>
+              <option value="3">Linked Lists</option>
+              <option value="4">Hash Tables</option>
+              <option value="5">Trees</option>
             </select>
           </label>
 
