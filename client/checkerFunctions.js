@@ -1,17 +1,21 @@
 const fib = n => {
-  const n1 = Number(n)
-  const result = [0, 1]
+  try {
+    const n1 = Number(n)
+    const result = [0, 1]
 
-  for (let i = 2; i <= n1; i++) {
-    const a = result[i - 1]
-    const b = result[i - 2]
+    for (let i = 2; i <= n1; i++) {
+      const a = result[i - 1]
+      const b = result[i - 2]
 
-    result.push(a + b)
+      result.push(a + b)
+    }
+
+    let num = result[n1]
+
+    return num.toString()
+  } catch (err) {
+    return `Ooops.  There's an error.  Check your input is of the correct type!`
   }
-
-  let num = result[n1]
-
-  return num.toString()
 }
 
 function anagrams(string) {

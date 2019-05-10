@@ -32,7 +32,12 @@ class CodeView extends React.Component {
       const calculated = checkers[this.props.problem.functionName](
         this.state.input
       )
-      if (calculated === this.state.output) {
+      if (
+        calculated ===
+        `Ooops.  There's an error.  Check your input is of the correct type!`
+      ) {
+        this.setState({correct: calculated})
+      } else if (calculated === this.state.output) {
         this.setState({correct: 'Your examples pass our tests'})
       } else {
         this.setState({
