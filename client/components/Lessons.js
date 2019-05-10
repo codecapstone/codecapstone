@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 import {fetchLessons} from '../store/lesson'
 
 class Lessons extends Component {
-  
   componentDidMount() {
     this.props.getLessons()
   }
@@ -13,15 +12,16 @@ class Lessons extends Component {
     //console.log('props:', this.props)
     const lessons = this.props.lessons
     return (
-      <div id="topics" className="userHomeCard">
-        <h3>Lessons</h3>
-        <div>
-          {lessons.map(lesson => <div key={lesson.id}>
-              
-            <Link to={`lessons/${lesson.id}`}>
-                {lesson.name}
-              </Link>
-            </div>)}
+      <div id="topics" className="content">
+        <div className="userHomeCard">
+          <h3>Lessons</h3>
+          <div>
+            {lessons.map(lesson => (
+              <div key={lesson.id}>
+                <Link to={`lessons/${lesson.id}`}>{lesson.name}</Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )
@@ -38,7 +38,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     getLessons: () => dispatch(fetchLessons())
-   }
+  }
 }
 
 export default connect(mapState, mapDispatch)(Lessons)

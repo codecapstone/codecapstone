@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import { singleTopic } from '../store/topic'
+import {singleTopic} from '../store/topic'
 import {selectProblem} from '../store/problems'
 
 class SingleTopic extends Component {
@@ -12,16 +12,24 @@ class SingleTopic extends Component {
     const topic = this.props.topic
     const challenges = topic.challenges
     console.log('topic', this.props)
-    return challenges ? <div id="topic" className="userHomeCard">
-        <div>
+    return challenges ? (
+      <div id="topic" className="content">
+        <div className="userHomeCard">
           <h3>{topic.name}</h3>
-          {challenges.map(challenge => <div key={challenge.id}>
-            <div className="challengeLink" key={challenge.id} onClick={() => this.props.setProblem(challenge.id)}>
+          {challenges.map(challenge => (
+            <div key={challenge.id}>
+              <div
+                className="challengeLink"
+                key={challenge.id}
+                onClick={() => this.props.setProblem(challenge.id)}
+              >
                 <Link to="/prompt">{challenge.name}</Link>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
-      </div> : null
+      </div>
+    ) : null
   }
 }
 const mapState = state => {
@@ -36,7 +44,7 @@ const mapDispatch = (dispatch, ownProps) => {
   //console.log('id in dispatch', id)
   return {
     getTopic: () => dispatch(singleTopic(topicId)),
-    setProblem: (challengeId) => dispatch(selectProblem(challengeId))
+    setProblem: challengeId => dispatch(selectProblem(challengeId))
   }
 }
 export default connect(mapState, mapDispatch)(SingleTopic)
