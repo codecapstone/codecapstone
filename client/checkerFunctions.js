@@ -42,8 +42,41 @@ function cleanString(str) {
     .join('')
 }
 
+function palindrome(str) {
+  const reversed = str
+    .split('')
+    .reverse()
+    .join('')
+  if (str === reversed) {
+    return 'true'
+  } else {
+    return 'false'
+  }
+}
+function fizzBuzz(n) {
+  let answerArray = []
+  for (let i = 1; i <= n; i++) {
+    // Is the number a multiple of 3 and 5?
+    if (i % 3 === 0 && i % 5 === 0) {
+      answerArray.push('fizzbuzz')
+    } else if (i % 3 === 0) {
+      // Is the number a multiple of 3?
+      answerArray.push('fizz')
+    } else if (i % 5 === 0) {
+      answerArray.push('buzz')
+    } else {
+      answerArray.push(i)
+    }
+  }
+  const str = answerArray.toString().filter('[', ',')
+  console.log('string in fizzbuzz', str)
+  return str
+}
 const checkers = {
   fib,
-  anagrams
+  anagrams,
+  palindrome,
+  fizzBuzz
 }
+
 export default checkers
