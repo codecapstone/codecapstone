@@ -151,7 +151,7 @@ async function seed() {
     }),
     Challenge.create({
       name: 'FizzBuzz',
-      sandboxId: '',
+      sandboxId: 'xl5j8lknnq',
       prompt: `Write a program that console logs the numbers from 1 to n. But for multiples of three print “fizz” instead of the number and for the multiples of five print “buzz”. For numbers which are multiples of both three and five print “fizzbuzz”.`,
       functionName: 'fizzBuzz',
       tests: `import fizzBuzz from './index';
@@ -223,10 +223,10 @@ afterEach(() => {
       topicId: 1,
       creditTo: 'StephenGrider/AlgoCasts'
     }),
-     Challenge.create({
+    Challenge.create({
       name: ' Palindrome',
-      sandboxId: '',
-       prompt: `Given a string, return true if the string is a palindrome or false if it is not.  Palindromes are strings that form the same word if it is reversed. *Do* include spaces and punctuation in determining if the string is a palindrome.
+      sandboxId: '7y8j334y0',
+      prompt: `Given a string, return true if the string is a palindrome or false if it is not.  Palindromes are strings that form the same word if it is reversed. *Do* include spaces and punctuation in determining if the string is a palindrome.
        `,
       functionName: 'palindrome',
       tests: `import palindrome from './index';
@@ -284,11 +284,11 @@ test('"pennep" a palindrome', () => {
       level: 'Easy',
       topicId: 2,
       creditTo: 'StephenGrider/AlgoCasts'
-     }),
-       Challenge.create({
+    }),
+    Challenge.create({
       name: ' Binary Tree',
-      sandboxId: '',
-       prompt: ` 1) Implement the Node class to create a binary search tree.  The constructor should initialize values 'data', 'left', and 'right'.
+      sandboxId: '2xo7v0l9wp',
+      prompt: ` 1) Implement the Node class to create a binary search tree.  The constructor should initialize values 'data', 'left', and 'right'.
                  2) Implement the 'insert' method for the Node class.  Insert should accept an argument 'data', then create an insert a new node at the appropriate location in the tree.
                 3) Implement the 'contains' method for the Node class.  Contains should accept a 'data' argument and return the Node in the tree with the same value.
                If the value isn't in the tree return null. `,
@@ -372,17 +372,17 @@ test('Contains returns null if value not found', () => {
 module.exports = Node;
 `
       ],
-      keywords: ['class', 'constructor','optimization', 'tree', 'recursive'],
+      keywords: ['class', 'constructor', 'optimization', 'tree', 'recursive'],
       examples: `Example:
         `,
       level: 'Hard',
       topicId: 5,
       creditTo: 'StephenGrider/AlgoCasts'
-       }),
-       Challenge.create({
+    }),
+    Challenge.create({
       name: ' chunk',
-      sandboxId: '',
-       prompt: `Given an array and chunk size, divide the array into many subarrays where each subarray is of length size`,
+      sandboxId: '4x86845n37',
+      prompt: `Given an array and chunk size, divide the array into many subarrays where each subarray is of length size`,
       functionName: 'chunk',
       tests: `import chunk from './index';
         test('function chunk exists', () => {
@@ -430,7 +430,8 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
   }
 
   return chunked;
-}`, `function chunk(array, size) {
+}`,
+        `function chunk(array, size) {
    const chunked = [];
 
   for (let element of array) {
@@ -445,8 +446,16 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
 
    return chunked;
  }
-`  ],
-      keywords: ['array', 'set','optimization', 'subset', 'recursive','iterative'],
+`
+      ],
+      keywords: [
+        'array',
+        'set',
+        'optimization',
+        'subset',
+        'recursive',
+        'iterative'
+      ],
       examples: `Example:
         chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]],
         chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]],
@@ -454,7 +463,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       level: 'Medium',
       topicId: 2,
       creditTo: 'StephenGrider/AlgoCasts'
-    }),
+    })
   ])
 
   console.log(`seeded ${challenges.length} challenges`)
