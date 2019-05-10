@@ -9,7 +9,6 @@ import {
   Annyang,
   UserStats,
   Code,
-  Challenges,
   Solutions,
   PostProblem,
   Topics,
@@ -22,6 +21,7 @@ import {
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
 import {me} from './store'
+import {ChallengesView} from './components/ChallengesView'
 //import {InterviewBot} from './components/interviewBot'
 
 /**
@@ -52,7 +52,7 @@ class Routes extends Component {
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
-            <Route path="/challenges" component={Challenges} />
+            <Route path="/challenges" component={ChallengesView} />
             <Route path="/admin" component={PostProblem} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
