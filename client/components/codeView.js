@@ -18,7 +18,7 @@ class CodeView extends React.Component {
             <div>Prompt: {this.props.problem.prompt}</div>
           </div>
           {this.props.agent.example ? (
-            <p>Your example was: {this.props.agent.example}</p>
+            <p>Your example was: {this.props.agent.example.example}</p>
           ) : (
             <p />
           )}
