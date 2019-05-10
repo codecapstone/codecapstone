@@ -9,9 +9,9 @@ module.exports = router
 router.post('/', (req, res, next) => {
   try {
     console.log('req.body in chatbot api', req.body)
-    let counter = 0
-    agent.example[counter] = req.body.queryResult.queryText
-    counter++
+
+    agent = req.body.queryResult.parameters
+
     console.log('agent in the chatbot api', agent)
     res.sendStatus(200)
   } catch (err) {
