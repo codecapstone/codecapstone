@@ -57,7 +57,8 @@ class Routes extends Component {
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route exact path="/lessons" component={Lessons} />
             <Route exact path="/lessons/:lessonId" component={LessonDetail} />
-          </Switch>}
+          </Switch>)}
+        
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>
