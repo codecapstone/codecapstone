@@ -16,8 +16,8 @@ class Detail extends Component {
         <p>{lesson.description}</p>
         <h4>
           Reference:
-          {lesson.reference.map(refer => <div key={refer.id}>
-              <a>{refer}</a>
+          {lesson.reference.map((refer,idx) => <div key={idx}>
+              <a href={refer}>Wikipedia</a>
             </div>)}
         </h4>
       </div> : null

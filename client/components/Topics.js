@@ -10,14 +10,17 @@ class Topics extends Component {
   render() {
     const topics = this.props.topics
     return (
-      <div id="topics" className="userHomeCard">
-        <h3>Topics</h3>
-        <div>
-          {topics.map(topic => (
-            <div key={topic.id}>
-              <Link to={`topics/${topic.id}`}>{topic.name}</Link>
-            </div>
-          ))}
+      <div className="content">
+        <div className="userHomeCard">
+          <h3>Topics</h3>
+          <div>
+            {topics.map(topic => (
+              <div className="challengeLink"
+                key={topic.id}>
+                <Link to={`topics/${topic.id}`}>{topic.name}</Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )

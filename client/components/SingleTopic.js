@@ -15,11 +15,11 @@ class SingleTopic extends Component {
     return challenges ? <div id="topic" className="userHomeCard">
         <div>
           <h3>{topic.name}</h3>
-          {challenges.map(challenge => <div key={challenge.id}>
+          {challenges.map(challenge => 
             <div className="challengeLink" key={challenge.id} onClick={() => this.props.setProblem(challenge.id)}>
                 <Link to="/prompt">{challenge.name}</Link>
               </div>
-            </div>)}
+          )}
         </div>
       </div> : null
   }
