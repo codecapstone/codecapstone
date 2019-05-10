@@ -19,13 +19,17 @@ const fib = n => {
 }
 
 function anagrams(string) {
-  const stringArr = string.split(',')
-  let stringA = stringArr[0]
-  let stringB = stringArr[1]
-  if (cleanString(stringA) === cleanString(stringB)) {
-    return 'true'
-  } else {
-    return 'false'
+  try {
+    const stringArr = string.split(',')
+    let stringA = stringArr[0]
+    let stringB = stringArr[1]
+    if (cleanString(stringA) === cleanString(stringB)) {
+      return 'true'
+    } else {
+      return 'false'
+    }
+  } catch (err) {
+    return `Ooops.  There's an error.  Check your input is of the correct type!`
   }
 }
 
