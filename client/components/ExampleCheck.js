@@ -18,8 +18,8 @@ class CodeView extends React.Component {
     this.props.getAgent()
     if (this.props.agent.example) {
       this.setState({
-        input: this.props.agent.example[2],
-        output: this.props.agent.example[1],
+        input: this.props.agent.input,
+        output: this.props.agent.output,
         correct: false
       })
     }
@@ -61,18 +61,12 @@ class CodeView extends React.Component {
             <div>Your Challenge: {problem.name}</div>
             <br />
             <div>
-              {agent.example ? (
-                <div>
-                  <p>
-                    Your example was:{' '}
-                    {agent.map((example, idx) => <p key={idx}>{example}</p>)}
-                  </p>
-                  <p>
-                    Please check (and edit if needed - sorry interviewBot is
-                    still learning) the entries in the form below and then press
-                    'Check'{' '}
-                  </p>
-                </div>
+              {agent.input ? (
+                <p>
+                  Please check the entries in the form below and edit them if
+                  necessary. (Sorry if there's an error - interviewBot is still
+                  learning!) Then press 'Check' .
+                </p>
               ) : (
                 <p>
                   Our bot is still learning so please enter your example's input
