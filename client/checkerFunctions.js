@@ -83,6 +83,40 @@ function fizzBuzz(n) {
     return `Ooops.  There's an error.  Check your input is of the correct type!`
   }
 }
+
+// chunk not included in export until I can work out how to convert array into a String and keep the brackets...
+function chunk(str) {
+  try {
+    const regex1 = /,/g
+    const regex2 = / /g
+    const stra = str
+      .replace('[', '')
+      .replace(regex1, '')
+      .replace(']', '')
+      .replace(regex2, '')
+
+    const size = stra.slice(stra.length - 1)
+
+    const array = []
+    for (let i = 0; i < stra.length - 1; i++) {
+      array.push(Number(stra[i]))
+    }
+
+    const chunked = []
+    let index = 0
+
+    while (index < array.length) {
+      chunked.push(array.slice(index, index + size))
+      index += size
+    }
+
+    return chunked
+  } catch (err) {
+    console.log('error in checker functions', err)
+    return `Ooops.  There's an error.  Check your input is of the correct type!`
+  }
+}
+
 const checkers = {
   fib,
   anagrams,
