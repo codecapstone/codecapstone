@@ -44,7 +44,6 @@ class CodeView extends React.Component {
         correct: 'Sorry we do not have a checker for this problem yet.'
       })
     }
-    console.log(this.state)
   }
 
   render() {

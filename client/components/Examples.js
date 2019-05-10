@@ -44,23 +44,24 @@ class Examples extends React.Component {
           <Link to="/approach" className="nextBtn">
             Next: Approach
           </Link>
-          {checkers[functionName] ? (
-            <button
-              type="button"
-              className="nextBtn"
-              onClick={() => this.handleClick(examples)}
-            >
-              Click here to see our example!
-            </button>
-          ) : (
-            <p />
-          )}
+
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick(examples)}
+          >
+            Click here to see our example!
+          </button>
         </div>
-        <div id="exmplPgBtns">
-          <Link to="/example-check" className="nextBtn">
-            Check Your Examples
-          </Link>
-        </div>
+        {checkers[functionName] ? (
+          <div id="exmplPgBtns">
+            <Link to="/example-check" className="nextBtn">
+              Check Your Examples
+            </Link>
+          </div>
+        ) : (
+          <p />
+        )}
       </div>
     )
   }
