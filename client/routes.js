@@ -16,7 +16,8 @@ import {
   SingleTopic,
   LessonDetail,
   ExampleCheck,
-  Page404
+  Page404,
+  PostLesson
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -52,8 +53,14 @@ class Routes extends Component {
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
+<<<<<<< HEAD
             <Route path="/challenges" component={ChallengesView} />
             <Route path="/admin" component={PostProblem} />
+=======
+            <Route path="/challenges" component={Challenges} />
+            <Route exact path="/admin" component={PostProblem} />
+            <Route exact path="/admin/lesson" component={PostLesson} />
+>>>>>>> cae5335c545deabc340d2846984af92610ad3c27
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route exact path="/lessons" component={Lessons} />

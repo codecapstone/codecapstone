@@ -7,20 +7,28 @@ class Detail extends Component {
     this.props.selectedLesson()
   }
   render() {
-//    console.log('props', this.props)
+    //    console.log('props', this.props)
     const lesson = this.props.lesson
     const topic = lesson.topic
-    return topic ? <div className="userHomeCard">
-        <h3>{lesson.name}</h3>
-        <h4>{lesson.topic.name}</h4>
-        <p>{lesson.description}</p>
-        <h4>
-          Reference:
-          {lesson.reference.map((refer,idx) => <div key={idx}>
-              <a href={refer}>Wikipedia</a>
-            </div>)}
-        </h4>
-      </div> : null
+    return topic ? (
+      <div className="content">
+        <div className="userHomeCard">
+          <h3>{lesson.name}</h3>
+          <h4>{lesson.topic.name}</h4>
+          <p>{lesson.description}</p>
+          <h4>
+            Reference:
+            {lesson.reference.map((refer, idx) => (
+              <div key={idx}>
+                <a href={refer} target="_blank" rel="noopener noreferrer">
+                  Wikipedia
+                </a>
+              </div>
+            ))}
+          </h4>
+        </div>
+      </div>
+    ) : null
   }
 }
 const mapState = state => {
