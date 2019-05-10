@@ -380,7 +380,7 @@ module.exports = Node;
       creditTo: 'StephenGrider/AlgoCasts'
     }),
     Challenge.create({
-      name: ' chunk',
+      name: 'Chunk',
       sandboxId: '4x86845n37',
       prompt: `Given an array and chunk size, divide the array into many subarrays where each subarray is of length size`,
       functionName: 'chunk',
