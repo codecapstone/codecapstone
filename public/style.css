@@ -308,7 +308,7 @@ input {
   min-width: 100px;
   max-width: 500px;
   background-color: #c1aba6;
-  margin-top: 20px;
+  margin: 20px;
   padding: 30px;
   color: #4b4b4b;
   text-align: center;
@@ -329,6 +329,23 @@ input {
   color: #4b4b4b;
 }
 
+.userHomeCard a {
+  color: #6d2451;
+}
+
+.userHomeCard a:hover {
+  text-decoration: underline;
+}
+
+#topics {
+  flex-direction: column;
+}
+
+#challenges {
+  flex-direction: column;
+}
+/*
+
 #dashboardPrompt {
   min-width: 200px;
   max-width: 500px;
@@ -336,15 +353,15 @@ input {
   flex-shrink: 2;
   margin-top: 20px;
   /* background-color: #7cafc4; */
-  box-shadow: 3px 3px 5px grey;
+/* box-shadow: 3px 3px 5px grey;
   color: white;
   height: 400px;
-  padding: 20px;
-}
+  padding: 20px; */
+/* } */
 
-#dashboardPrompt a {
+/* #dashboardPrompt a {
   color: white;
-}
+} */
 
 .dashBtn {
   display: flex;
@@ -425,8 +442,8 @@ hr {
 }
 
 .challengeLink a:hover {
-  font-size: 20px;
-  color: #142d58;
+  /* font-size: 20px; */
+  text-decoration: underline;
 }
 
 #individualSolution {
