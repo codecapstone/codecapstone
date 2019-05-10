@@ -390,6 +390,10 @@ input {
   /* margin: 20px; */
 }
 
+.ynButton {
+  margin: 10px;
+}
+
 #solutionBtn a {
   color: #5f0f40;
 }

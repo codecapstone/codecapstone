@@ -26,13 +26,28 @@ router.post('/', async (req, res, next) => {
   }
 })
 
-router.put('/:id', async (req, res, next) => {
+router.put('/', async (req, res, next) => {
+  console.log('REQ BODY', req.body)
   try {
-    await UserStats.update({
+    const existingChallenge = await UserStats.findOne({
       where: {
-        completed: req.body.completed
+        userId: req.body.userId,
+        challengeId: req.body.challengeId
       }
     })
+
+    const markedDone = await UserStats.update(
+      {
+        isCompleted: req.body.isCompleted
+      },
+      {
+        where: {
+          userId: existingChallenge.userId,
+          challengeId: existingChallenge.challengeId
+        }
+      }
+    )
+
     res.sendStatus(202)
   } catch (err) {
     next(err)

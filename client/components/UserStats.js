@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {markChallengeDone} from '../store/userStats'
 
 export class UserStats extends React.Component {
   constructor() {
@@ -10,6 +11,12 @@ export class UserStats extends React.Component {
       completed: 'No',
       testsPassed: 'No'
     }
+    this.markComplete = this.markComplete.bind(this)
+  }
+
+  markComplete(userId, challengeId) {
+    this.setState({...this.state, completed: 'Yes'})
+    this.props.markDone(userId, challengeId)
   }
 
   render() {
@@ -36,12 +43,14 @@ export class UserStats extends React.Component {
           <div className="container">
             <p>{this.state.testsPassed}</p>
             <button
+              className="ynButton"
               type="button"
               onClick={() => this.setState({testsPassed: 'Yes'})}
             >
               Yes
             </button>
             <button
+              className="ynButton"
               type="button"
               onClick={() => this.setState({testsPassed: 'No'})}
             >
@@ -53,12 +62,16 @@ export class UserStats extends React.Component {
           <div className="container">
             <p>{this.state.completed}</p>
             <button
+              className="ynButton"
               type="button"
-              onClick={() => this.setState({completed: 'Yes'})}
+              onClick={() =>
+                this.markComplete(this.props.userId, this.props.problemId)
+              }
             >
               Yes
             </button>
             <button
+              className="ynButton"
               type="button"
               onClick={() => this.setState({completed: 'No'})}
             >
@@ -80,6 +93,7 @@ export class UserStats extends React.Component {
  */
 const mapState = state => {
   return {
+    userId: state.user.id,
     email: state.user.email,
     problem: state.problems.selected.name,
     keywordsGot: state.userStats.keywords.gotKeywords,
@@ -88,4 +102,11 @@ const mapState = state => {
   }
 }
 
-export default connect(mapState)(UserStats)
+const mapDispatch = dispatch => {
+  return {
+    markDone: (userId, challengeId) =>
+      dispatch(markChallengeDone(userId, challengeId))
+  }
+}
+
+export default connect(mapState, mapDispatch)(UserStats)
