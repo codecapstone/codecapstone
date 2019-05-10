@@ -15,7 +15,8 @@ import {
   Topics,
   Lessons,
   SingleTopic,
-  LessonDetail
+  LessonDetail,
+  ExampleCheck
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -33,7 +34,8 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
 
-    return <Switch>
+    return (
+      <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
@@ -43,7 +45,9 @@ class Routes extends Component {
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
-        {isLoggedIn && <Switch>
+        <Route path="/example-check" component={ExampleCheck} />
+        {isLoggedIn && (
+          <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
@@ -51,12 +55,19 @@ class Routes extends Component {
             <Route path="/admin" component={PostProblem} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
+<<<<<<< HEAD
             <Route exact path="/lessons" component={Lessons} />
             <Route exact path="/lessons/:lessonId" component={LessonDetail} />
           </Switch>}
+=======
+            <Route path="/lessons" component={Lessons} />
+          </Switch>
+        )}
+>>>>>>> 3bd22ff9796dd750fefa9a0b348c5737d0335046
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>
+    )
   }
 }
 
