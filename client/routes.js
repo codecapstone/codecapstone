@@ -17,7 +17,8 @@ import {
   SingleTopic,
   LessonDetail,
   ExampleCheck,
-  Page404
+  Page404,
+  PostLesson
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -53,7 +54,8 @@ class Routes extends Component {
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
             <Route path="/challenges" component={Challenges} />
-            <Route path="/admin" component={PostProblem} />
+            <Route exact path="/admin" component={PostProblem} />
+            <Route exact path="/admin/lesson" component={PostLesson} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route exact path="/lessons" component={Lessons} />
