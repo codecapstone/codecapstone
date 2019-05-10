@@ -36,7 +36,14 @@ class DashboardStats extends React.Component {
         <div>Completed Challenges: </div>
         {challengeStats[0].length > 0 ? (
           <div>
-            {challengeStats[0].map(challenge => <div>{challenge.name}</div>)}
+            {challengeStats[0].map(challenge => (
+              <div
+                key={challenge.id}
+                onClick={id => this.props.setProblem(challenge.id)}
+              >
+                <Link to="/prompt">{challenge.name}</Link>
+              </div>
+            ))}
           </div>
         ) : (
           'None yet!'
