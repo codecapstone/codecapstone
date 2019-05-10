@@ -12,5 +12,6 @@ export const keywordCheck = (text, keywordArray) => {
       keyWordsNotSaid.push(keywordArray[i])
     }
   }
+
   return [keywordsSaid, keyWordsNotSaid]
 }
