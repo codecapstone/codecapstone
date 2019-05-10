@@ -9,10 +9,12 @@ export {default as UserHome} from './UserHome'
 
 export {Login, Signup} from './AuthForm'
 
+export {default as Challenges} from './Challenges'
+
 export {default as Annyang} from './Annyang'
 export {default as UserStats} from './UserStats'
 export {default as Code} from './codeView'
-export {default as Challenges} from './Challenges'
+export {ChallengesView} from './ChallengesView'
 export {default as Lessons} from './Lessons'
 export {default as DashboardPrompt} from './DashboardPrompt'
 export {default as DashboardStats} from './DashboardStats'

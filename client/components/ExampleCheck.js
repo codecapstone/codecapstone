@@ -41,7 +41,7 @@ class CodeView extends React.Component {
         `Ooops.  There's an error.  Check your input is of the correct type!`
       ) {
         this.setState({correct: calculated})
-      } else if (calculated === this.state.output) {
+      } else if (calculated.toString() === this.state.output.toString()) {
         this.setState({correct: 'Your examples pass our tests'})
       } else {
         this.setState({

@@ -1,38 +1,84 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {getStats} from '../store/userStats'
+import {formatDate, completedCheck} from '../utilFunctions'
+import {fetchProblems, selectProblem} from '../store'
+import {Link} from 'react-router-dom'
 
-const formatDate = lastLogin => {
-  const shortDate = lastLogin.slice(0, 10)
-  const year = shortDate.slice(0, 4)
+class DashboardStats extends React.Component {
+  constructor() {
+    super()
+  }
+  componentDidMount() {
+    this.props.getProblems()
+    this.props.fetchStats()
+  }
 
-  const monthDay = shortDate.slice(6).concat('-')
+  render() {
+    let {lastLogin} = this.props
+    !lastLogin
+      ? (lastLogin = 'Today')
+      : (lastLogin = this.props.formatDate(lastLogin))
 
-  return monthDay.concat(year)
-}
+    let challengeStats = this.props.completedCheck(
+      this.props.problems,
+      this.props.challenges
+    )
 
-export const DashboardStats = props => {
-  let {lastLogin} = props
-  if (!lastLogin) {
-    lastLogin = 'Today'
-  } else lastLogin = formatDate(lastLogin)
-
-   return (
-    <div className="userHomeCard" id="dashboardStats">
-      <h3>Your Stats</h3>
-      <h5 id="lastLogin">Last Login: {lastLogin}</h5>
-    </div>
-  )
+    console.log(challengeStats)
+    return (
+      <div className="userHomeCard" id="dashboardStats">
+        <h3>Your Stats</h3>
+        <div>
+          <div id="lastLogin">Last Login: {lastLogin}</div>
+        </div>
+        <br />
+        <div>Completed Challenges: </div>
+        {challengeStats[0].length > 0 ? (
+          <div>
+            {challengeStats[0].map(challenge => <div>{challenge.name}</div>)}
+          </div>
+        ) : (
+          'None yet!'
+        )}
+        <br />
+        <br />
+        <div>Challenges You've Started: </div>
+        {challengeStats[1].length > 0 ? (
+          <div>
+            {challengeStats[1].map(challenge => (
+              <div
+                key={challenge.id}
+                onClick={id => this.props.setProblem(challenge.id)}
+              >
+                <Link to="/prompt">{challenge.name}</Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          'None yet!'
+        )}
+      </div>
+    )
+  }
 }
 
 const mapState = state => {
   return {
-    // problems: state.problems.all,
-    // lastLogin: state.user.lastLoginDate
+    problems: state.problems.all,
+    challenges: state.userStats.challenges,
+    lastLogin: state.user.lastLoginDate
   }
 }
 
-// const mapDispatch = dispatch => {
+const mapDispatch = dispatch => {
+  return {
+    fetchStats: () => dispatch(getStats()),
+    getProblems: () => dispatch(fetchProblems()),
+    setProblem: id => dispatch(selectProblem(id)),
+    formatDate: date => formatDate(date),
+    completedCheck: (allProbs, userStats) => completedCheck(allProbs, userStats)
+  }
+}
 
-// }
-
-export default connect(mapState, null)(DashboardStats)
+export default connect(mapState, mapDispatch)(DashboardStats)
