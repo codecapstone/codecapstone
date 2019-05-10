@@ -16,7 +16,8 @@ import {
   Lessons,
   SingleTopic,
   LessonDetail,
-  ExampleCheck
+  ExampleCheck,
+  Page404
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -57,10 +58,12 @@ class Routes extends Component {
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route exact path="/lessons" component={Lessons} />
             <Route exact path="/lessons/:lessonId" component={LessonDetail} />
-          </Switch>)}
-        
+            <Route component={Page404} />
+          </Switch>
+        )}
+
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        <Route component={Page404} />
       </Switch>
     )
   }
