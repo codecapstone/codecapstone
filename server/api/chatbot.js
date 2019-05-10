@@ -10,7 +10,7 @@ router.post('/', (req, res, next) => {
   try {
     console.log('req.body in chatbot api', req.body)
 
-    agent.example = req.body.queryResult.parameters
+    agent = req.body.queryResult.parameters
 
     console.log('agent in the chatbot api', agent)
     res.sendStatus(200)

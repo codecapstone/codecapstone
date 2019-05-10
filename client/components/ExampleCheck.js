@@ -18,8 +18,8 @@ class CodeView extends React.Component {
     this.props.getAgent()
     if (this.props.agent.example) {
       this.setState({
-        input: this.props.agent.example.input,
-        output: this.props.agent.example.output,
+        input: this.props.agent.input,
+        output: this.props.agent.output,
         correct: false
       })
     }
@@ -61,7 +61,7 @@ class CodeView extends React.Component {
             <div>Your Challenge: {problem.name}</div>
             <br />
             <div>
-              {agent.example ? (
+              {agent.input ? (
                 <p>
                   Please check the entries in the form below and edit them if
                   necessary. (Sorry if there's an error - interviewBot is still

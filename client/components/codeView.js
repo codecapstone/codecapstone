@@ -9,16 +9,17 @@ class CodeView extends React.Component {
     this.props.getAgent()
   }
   render() {
+    const {agent, problem} = this.props
     return (
       <div id="code" className="content">
         <div className="container">
           <div className="userHomeCard">
-            <div>Your Challenge: {this.props.problem.name}</div>
+            <div>Your Challenge: {problem.name}</div>
             <br />
-            <div>Prompt: {this.props.problem.prompt}</div>
+            <div>Prompt: {problem.prompt}</div>
           </div>
           {this.props.agent.example ? (
-            <p>Your example was: {this.props.agent.example.example}</p>
+            <p>Your example was: {agent.example}</p>
           ) : (
             <p />
           )}
