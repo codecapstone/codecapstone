@@ -55,15 +55,9 @@ class Routes extends Component {
             <Route path="/admin" component={PostProblem} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
-<<<<<<< HEAD
             <Route exact path="/lessons" component={Lessons} />
             <Route exact path="/lessons/:lessonId" component={LessonDetail} />
           </Switch>}
-=======
-            <Route path="/lessons" component={Lessons} />
-          </Switch>
-        )}
->>>>>>> 3bd22ff9796dd750fefa9a0b348c5737d0335046
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>
