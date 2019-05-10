@@ -47,6 +47,7 @@ class Routes extends Component {
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
         <Route path="/example-check" component={ExampleCheck} />
+        <Route component={Page404} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -63,7 +64,7 @@ class Routes extends Component {
         )}
 
         {/* Displays our Login component as a fallback */}
-        <Route component={Page404} />
+        <Route component={Login} />
       </Switch>
     )
   }
