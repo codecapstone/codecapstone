@@ -2,9 +2,9 @@ const {expect} = require('chai')
 const db = require('../index')
 const Challenge = db.model('challenge')
 
-describe('User model', () => {
+describe('Challenge model', () => {
   beforeEach(() => {
-    return db.sync({ force: true })
+    return db.sync({force: true})
   })
   let example
   beforeEach(async () => {
@@ -18,15 +18,15 @@ describe('User model', () => {
       [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
      forms the first ten entries of the fibonacci series.
      `,
-  functionName: 'fib(n)',
-  tests: `import fib from './index';
+      functionName: 'fib(n)',
+      tests: `import fib from './index';
 
       test('Fib function is defined', () => {
         expect(typeof fib).toEqual('function');
       });`,
 
-  solutions: [
-    `function fib(n) {
+      solutions: [
+        `function fib(n) {
           const result = [0, 1];
 
           for (let i = 2; i <= n; i++) {
@@ -37,25 +37,19 @@ describe('User model', () => {
           }
 
           return result[n];
-        }`],
-  keywords: [
-    'cache',
-    'big o',
-    'memoize',],
-  examples: `Example:
+        }`
+      ],
+      keywords: ['cache', 'big o', 'memoize'],
+      examples: `Example:
   fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
-  topic: 'Number'
-      });
-
+      topic: 'Number'
+    })
   })
-  
+
   describe('definition of atttributes', () => {
     it('includes `name`,`prompt`,`functionName`,`tests`,`solutions`, `keywords`,`examples`,`level`,`topic`', () => {
       expect(example.name).to.equal('Fibonacci Series')
     })
   })
-  })
-
-
-
+})
