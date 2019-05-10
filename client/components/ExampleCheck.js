@@ -16,13 +16,17 @@ class CodeView extends React.Component {
   }
   componentDidMount() {
     this.props.getAgent()
-    if (this.props.agent.example) {
-      this.setState({
-        input: this.props.agent.input,
-        output: this.props.agent.output,
-        correct: false
-      })
-    }
+
+    setTimeout(
+      this.props.agent.example
+        ? this.setState({
+            input: this.props.agent.input,
+            output: this.props.agent.output,
+            correct: false
+          })
+        : null,
+      1000
+    )
   }
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
