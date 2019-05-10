@@ -12,7 +12,8 @@ class Lessons extends Component {
   render() {
     //console.log('props:', this.props)
     const lessons = this.props.lessons
-    return <div id="topics" className="userHomeCard">
+    return (
+      <div id="topics" className="userHomeCard">
         <h3>Lessons</h3>
         <div>
           {lessons.map(lesson => <div key={lesson.id}>
@@ -23,6 +24,7 @@ class Lessons extends Component {
             </div>)}
         </div>
       </div>
+    )
   }
 }
 

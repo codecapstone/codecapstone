@@ -21,5 +21,5 @@ export {default as Solutions} from './Solutions'
 export {default as PostProblem} from './PostProblem'
 export {default as Topics} from './Topics'
 export {default as SingleTopic} from './SingleTopic'
-
+export {default as LessonDetail} from './LessonDetail'
 export {default as ExampleCheck} from './ExampleCheck'

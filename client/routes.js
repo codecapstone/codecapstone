@@ -15,6 +15,7 @@ import {
   Topics,
   Lessons,
   SingleTopic,
+  LessonDetail,
   ExampleCheck
 } from './components'
 import Prompt from './components/Prompt'
@@ -54,9 +55,10 @@ class Routes extends Component {
             <Route path="/admin" component={PostProblem} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
-            <Route path="/lessons" component={Lessons} />
-          </Switch>
-        )}
+            <Route exact path="/lessons" component={Lessons} />
+            <Route exact path="/lessons/:lessonId" component={LessonDetail} />
+          </Switch>)}
+        
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>

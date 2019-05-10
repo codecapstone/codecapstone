@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {Lesson} = require('../db/models')
+const {Lesson, Topic} = require('../db/models')
 module.exports = router
 
 //getting all Lessons for a logged in user
@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
 //getting a single lesson for a logged in user
 router.get('/:lessonId', async (req, res, next) => {
   try {
-    const SingleLesson = await Lesson.findByPk(req.params.lessonId)
+    const SingleLesson = await Lesson.findByPk(req.params.lessonId,{include: [{model: Topic}] })
     res.json(SingleLesson)
   }catch (err) {
     next(err)
