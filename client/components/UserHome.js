@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import { Topics, DashboardStats, Challenges, Lessons} from './index'
+import {Topics, DashboardStats, Challenges, Lessons} from './index'
 
 /**
  * COMPONENT
@@ -11,11 +11,8 @@ export const UserHome = props => {
 
   return (
     <div className="bodyComponent content" id="userHome">
-      <div>
-        <Topics />
-        <DashboardStats />
-      </div>
-      {/* <Lessons /> */}
+      <Topics />
+      <DashboardStats />
       <Challenges />
     </div>
   )

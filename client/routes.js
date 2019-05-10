@@ -9,7 +9,6 @@ import {
   Annyang,
   UserStats,
   Code,
-  Challenges,
   Solutions,
   PostProblem,
   Topics,
@@ -19,6 +18,7 @@ import {
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
 import {me} from './store'
+import {ChallengesView} from './components/ChallengesView'
 //import {InterviewBot} from './components/interviewBot'
 
 /**
@@ -32,7 +32,8 @@ class Routes extends Component {
   render() {
     const {isLoggedIn} = this.props
 
-    return <Switch>
+    return (
+      <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
@@ -42,19 +43,22 @@ class Routes extends Component {
         <Route path="/stats" component={UserStats} />
         <Route path="/code" component={Code} />
         <Route path="/solutions" component={Solutions} />
-        {isLoggedIn && <Switch>
+        {isLoggedIn && (
+          <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/" component={UserHome} />
             <Route path="/home" component={UserHome} />
-            <Route path="/challenges" component={Challenges} />
+            <Route path="/challenges" component={ChallengesView} />
             <Route path="/admin" component={PostProblem} />
             <Route exact path="/topics" component={Topics} />
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route path="/lessons" component={Lessons} />
-          </Switch>}
+          </Switch>
+        )}
         {/* Displays our Login component as a fallback */}
         <Route component={Login} />
       </Switch>
+    )
   }
 }
 
