@@ -48,6 +48,11 @@ const createApp = () => {
   // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
   app.use(redirectToHTTPS([/localhost:8080/], [/\/insecure/], 301))
 
+  //IBM suggested approach - but heroku says to use a package manager?
+  // app.get("*", function(request, response){
+  //   response.redirect("https://" + request.headers.host + request.url);
+  // });
+
   // body parsing middleware
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
