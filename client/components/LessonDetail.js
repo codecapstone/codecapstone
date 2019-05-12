@@ -11,7 +11,7 @@ class Detail extends Component {
     const lesson = this.props.lesson
     const topic = lesson.topic
     return topic ? (
-      <div className="content">
+      <div className="borderCard">
         <div className="userHomeCard">
           <h3>{lesson.name}</h3>
           <h4>{lesson.topic.name}</h4>
