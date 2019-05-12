@@ -362,6 +362,10 @@ input {
 #challenges {
   flex-direction: column;
 }
+
+#instructions {
+  flex-direction: column;
+}
 /*
 
 #dashboardPrompt {
@@ -506,7 +510,7 @@ hr {
   background-color: red;
   border: 0;
   border-radius: 30px;
-  margin: 10px;
+  margin: 2px;
   outline: none;
   background-color: darkred;
   justify-self: center;
@@ -520,7 +524,7 @@ hr {
   background-color: red;
   border: 0;
   border-radius: 30px;
-  margin: 10px;
+  margin: 2px;
   outline: none;
   animation-name: pulse;
   animation-duration: 1.5s;
@@ -550,18 +554,20 @@ hr {
   border-style: solid;
   border-width: 4px;
   background-color: white;
-  margin: 10px;
+  margin: 2px;
 }
 
-#recordingDiv {
+#rec-stopDiv {
   display: flex;
   align-items: center;
   background-color: #202020;
   border-radius: 12px;
   margin: 10px;
-  width: 140px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   margin-bottom: 15px;
+  flex-direction: row;
 }
 
 #submitBtn {
@@ -572,4 +578,18 @@ hr {
   font-size: 1.5em;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
+}
+
+#recBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+}
+
+#stopBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
 }

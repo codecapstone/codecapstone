@@ -59,56 +59,40 @@ class CodeView extends React.Component {
     const {agent, problem} = this.props
 
     return (
-      <div id="code" className="borderCard">
+      <div id="code">
         <div className="container">
-          <div className="userHomeCard">
-            <div>Your Challenge: {problem.name}</div>
+          <div>
             <br />
             <div>
-              {agent.input ? (
-                <p>
-                  Please check the entries in the form below and edit them if
-                  necessary. (Sorry if there's an error - interviewBot is still
-                  learning!) Then press 'Check' .
-                </p>
-              ) : (
-                <p>
-                  Our bot is still learning so please enter your example's input
-                  and output into the form below. Then press 'Check'
-                </p>
-              )}
+              Please enter your example by giving a sample input and output.
             </div>
+            <br />
             <form>
               {/* <div> */}
               <label>
-                function {problem.functionName} ({' '}
+                Input
                 <input
                   name="input"
                   type="text"
                   value={this.state.input}
                   onChange={this.handleChange}
-                />)
+                />
               </label>
 
-              <label>returns</label>
-              <input
-                name="output"
-                type="text"
-                value={this.state.output}
-                onChange={this.handleChange}
-              />
+              <label>
+                Output
+                <input
+                  name="output"
+                  type="text"
+                  value={this.state.output}
+                  onChange={this.handleChange}
+                />
+              </label>
               <button type="button" onClick={this.handleSubmit}>
                 Check
               </button>
             </form>
             <p>{this.state.correct}</p>
-          </div>
-
-          <div
-            className="nextBtn"
-            onClick={() => this.props.history.push('/approach')}
-          >
-            Next: approach
           </div>
         </div>
       </div>

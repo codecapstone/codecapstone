@@ -31,6 +31,7 @@ class DashboardStats extends React.Component {
         <div className="userHomeCard" id="dashboardStats">
           <h3>Your Stats</h3>
           <div>
+            <br />
             <div id="lastLogin">Last Login: {lastLogin}</div>
           </div>
           <br />

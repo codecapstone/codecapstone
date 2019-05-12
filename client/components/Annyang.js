@@ -71,19 +71,25 @@ export class Annyang extends React.Component {
       <div id="approachDiv" className="borderCard">
         <div id="promptAnnyang" className="userHomeCard">
           <h3>Your challenge is {name}</h3>
-          <p>As a reminder, the prompt is: </p>
           <p id="prompt">{prompt}</p>
 
-          <p>Now say how you'd solve the problem!</p>
-          <div id="recordingDiv">
-            <button
-              className={this.state.buttonClass}
-              type="button"
-              onClick={this.annyangStart}
-            >
-              Start Recording
-            </button>
-            <button id="pauseBtn" type="button" onClick={this.annyangStop} />
+          <p>
+            Now say how you'd solve the problem! You can record your approach or
+            type it, and you can edit your approach before hitting submit.
+          </p>
+          <div id="rec-stopDiv">
+            <div id="recBtn">
+              <button
+                className={this.state.buttonClass}
+                type="button"
+                onClick={this.annyangStart}
+              />
+              <p>Rec.</p>
+            </div>
+            <div id="stopBtn">
+              <button id="pauseBtn" type="button" onClick={this.annyangStop} />
+              <p>Stop</p>
+            </div>
           </div>
           <div id="submitApproach">
             <form onSubmit={this.handleSubmit}>
