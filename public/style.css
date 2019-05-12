@@ -7,7 +7,7 @@ body {
   padding-top: 40px;
 }
 .content {
-  margin-top: 120px;
+  /* margin-top: 120px; */
   justify-content: space-around;
 }
 
@@ -126,6 +126,7 @@ h1 {
 #code {
   display: flex;
   flex-direction: column;
+  max-width: 800px;
 }
 
 .challengeDetails {
@@ -186,19 +187,6 @@ input {
   display: flex;
   flex-direction: column;
 }
-
-/* .borderCard {
-  margin-top: 120px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-shrink: 1;
-  background-color: #5f0f40;
-  box-shadow: 3px 3px 5px black;
-  align-items: center;
-  width: 100%;
-  min-height: 50px;
-} */
 
 .borderCard {
   display: flex;
@@ -282,11 +270,20 @@ input {
   color: #4b4b4b;
 }
 
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 #keywordsGot {
   color: green;
+  margin: 5px;
 }
 #keywordsNotGot {
   color: red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
 }
 
 .containsABot {
@@ -313,6 +310,7 @@ input {
 #approachDiv {
   display: flex;
   background-size: cover;
+  max-width: 600px;
 }
 
 #userHome {

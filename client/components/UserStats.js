@@ -23,7 +23,7 @@ export class UserStats extends React.Component {
     const {problem, keywordsGot, keywordsNotGot} = this.props
 
     return (
-      <div className="content" id="stats">
+      <div className="borderCard" id="stats">
         <div className="userHomeCard">
           <p>Your problem was: {problem}</p>
           <p>In your approach you got the following keywords:</p>
@@ -33,11 +33,13 @@ export class UserStats extends React.Component {
             </p>
           ))}
           <p>Other keywords you should consider are: </p>
-          {keywordsNotGot.map((word, idx) => (
-            <p key={idx} id="keywordsNotGot">
-              {word}
-            </p>
-          ))}
+          <div className="keywords">
+            {keywordsNotGot.map((word, idx) => (
+              <p key={idx} id="keywordsNotGot">
+                {word}
+              </p>
+            ))}
+          </div>
           <hr />
           <p>Did you pass the test specs?</p>
           <div className="container">

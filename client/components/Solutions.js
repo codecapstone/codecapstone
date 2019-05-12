@@ -10,7 +10,7 @@ class Solutions extends React.Component {
     if (!solutions) return <div>Loading the solution...</div>
 
     return (
-      <div className="content">
+      <div className="borderCard">
         <div id="solutionFormat">
           <h3>Solutions for {name}</h3>
           {solutions.map((solution, idx) => {
