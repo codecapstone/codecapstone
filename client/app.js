@@ -10,7 +10,7 @@ const App = () => {
       <Navigation />
       <div className="container">
         <Routes />
-        <InterviewBot />
+        {/* <InterviewBot /> */}
       </div>
     </div>
   )
