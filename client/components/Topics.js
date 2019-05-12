@@ -10,19 +10,18 @@ class Topics extends Component {
   render() {
     const topics = this.props.topics
     return (
-      
+      <div className="borderCard">
         <div className="userHomeCard">
           <h3>Topics</h3>
           <div>
             {topics.map(topic => (
-              <div className="topicLink"
-                key={topic.id}>
+              <div className="topicLink" key={topic.id}>
                 <Link to={`topics/${topic.id}`}>{topic.name}</Link>
               </div>
             ))}
           </div>
         </div>
-      
+      </div>
     )
   }
 }

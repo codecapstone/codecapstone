@@ -13,7 +13,7 @@ class SingleTopic extends Component {
     const challenges = topic.challenges
     console.log('topic', this.props)
     return challenges ? (
-      <div id="topic" className="content">
+      <div id="topic" className="borderCard">
         <div className="userHomeCard">
           <h3>{topic.name}</h3>
           {challenges.map(challenge => (

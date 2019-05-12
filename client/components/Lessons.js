@@ -11,7 +11,8 @@ class Lessons extends Component {
   render() {
     //console.log('props:', this.props)
     const lessons = this.props.lessons
-    return <div id="topics" className="content">
+    return (
+      <div id="topics" className="borderCard">
         <div className="userHomeCard">
           <h3>Lessons</h3>
           <div>
@@ -23,6 +24,7 @@ class Lessons extends Component {
           </div>
         </div>
       </div>
+    )
   }
 }
 
