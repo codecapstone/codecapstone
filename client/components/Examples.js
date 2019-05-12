@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import checkers from '../checkerFunctions'
+import {getAgent} from '../store/chatbot'
 
 class Examples extends React.Component {
   constructor() {
@@ -9,12 +10,17 @@ class Examples extends React.Component {
     this.state = {
       examples: null
     }
+    this.exampleCheck = this.exampleCheck.bind(this)
   }
 
   handleClick(examples) {
     this.setState({
       examples: examples
     })
+  }
+  exampleCheck() {
+    this.props.history.push('/example-check')
+    this.props.getAgent()
   }
 
   render() {
@@ -54,11 +60,9 @@ class Examples extends React.Component {
           </button>
         </div>
         {checkers[functionName] ? (
-          <div id="exmplPgBtns">
-            <Link to="/example-check" className="nextBtn">
-              Check Your Examples
-            </Link>
-          </div>
+          <button type="button" className="nextBtn" onClick={this.exampleCheck}>
+            Check Your Examples
+          </button>
         ) : (
           <p />
         )}
@@ -70,5 +74,6 @@ class Examples extends React.Component {
 const mapState = state => ({
   challenge: state.problems.selected
 })
+const mapDispatch = {getAgent}
 
-export default connect(mapState)(Examples)
+export default connect(mapState, mapDispatch)(Examples)
