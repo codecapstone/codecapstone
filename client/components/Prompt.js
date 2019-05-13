@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import annyang from 'annyang'
-import {Link} from 'react-router-dom'
-import {setApproach} from '../store/userInput'
+import Help from './Help'
+import {setPrompt} from '../store/userInput'
 
 class Prompt extends React.Component {
   constructor() {
@@ -46,7 +46,7 @@ class Prompt extends React.Component {
   }
   handleSubmit() {
     event.preventDefault()
-    this.props.setApproach(this.state.said)
+    this.props.setPrompt(this.state.said)
     this.setState({
       said: '',
       buttonClass: 'notRec'
@@ -106,6 +106,7 @@ class Prompt extends React.Component {
             </form>
           </div>
         </div>
+        <Help />
       </div>
     )
   }
@@ -115,6 +116,6 @@ const mapState = state => ({
   challenge: state.problems.selected
 })
 
-const mapDispatch = {setApproach}
+const mapDispatch = {setPrompt}
 
 export default connect(mapState, mapDispatch)(Prompt)
