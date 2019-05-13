@@ -52,7 +52,7 @@ class DashboardStats extends React.Component {
                   ))}
                 </div>
               ) : (
-                `${' '}None Yet!`
+                <div> --</div>
               )}
             </div>
             <br />
@@ -73,7 +73,7 @@ class DashboardStats extends React.Component {
                   ))}
                 </div>
               ) : (
-                `${' '}None Yet!`
+                `${' '}--`
               )}
             </div>
           </div>

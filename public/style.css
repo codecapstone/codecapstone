@@ -339,6 +339,14 @@ input {
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
+  height: 75%;
+}
+
+#userHome .userHomeCard {
+  max-width: 500px;
+}
+#userHome .borderCard {
+  max-width: 500px;
 }
 
 .userHomeCard #login {
@@ -522,13 +530,13 @@ hr {
 .statsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
 }
 .challengeComplete {
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+  /* width: 75%; */
   margin-left: 10px;
   align-items: center;
 }
