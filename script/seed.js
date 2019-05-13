@@ -16,12 +16,12 @@ async function seed() {
   ])
 
   const topics = await Promise.all([
-    Topic.create({name: 'Dynamic Programming'}),
-    Topic.create({name: 'Arrays'}),
-    Topic.create({name: 'Linked Lists'}),
-    Topic.create({name: 'Hash Tables'}),
-    Topic.create({name: 'Trees'}),
-    Topic.create({name: 'None'})
+   await Topic.create({name: 'Dynamic Programming'}),
+   await Topic.create({name: 'Arrays'}),
+    await Topic.create({name: 'Linked Lists'}),
+    await Topic.create({name: 'Hash Tables'}),
+    await Topic.create({name: 'Trees'}),
+    await Topic.create({name: 'Miscellaneous'})
   ])
   const lessons = await Promise.all([
     Lesson.create({
