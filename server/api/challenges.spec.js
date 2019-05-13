@@ -126,9 +126,11 @@ describe('Challenge routes', () => {
     it('GET /api/challenges', async () => {
       const res = await request(app)
         .get('/api/challenges')
+        .redirects(1)
         .expect(200)
 
       expect(res.body).to.be.an('array')
+
       expect(res.body[0].name).to.be.equal(exampleProblem.name)
     })
     it('POST /api/challenges', async () => {
