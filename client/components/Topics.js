@@ -13,7 +13,7 @@ class Topics extends Component {
       <div className="borderCard">
         <div className="userHomeCard">
           <h3>Topics</h3>
-          <div>
+          <div className="container">
             {topics.map(topic => (
               <div className="topicLink" key={topic.id}>
                 <Link to={`topics/${topic.id}`}>{topic.name}</Link>
