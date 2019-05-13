@@ -25,48 +25,58 @@ class DashboardStats extends React.Component {
       this.props.challenges
     )
 
-    console.log(challengeStats)
     return (
       <div className="borderCard">
-        <div className="userHomeCard" id="dashboardStats">
+        <div className="userHomeCard">
           <h3>Your Stats</h3>
-          <div>
+          <div id="dashboardStats">
+            <br />
             <br />
             <div id="lastLogin">Last Login: {lastLogin}</div>
+            <br />
+            <hr />
+            <br />
+
+            <div className="statsContainer">
+              <div>Completed: </div>
+              {challengeStats[0].length > 0 ? (
+                <div className="challengeComplete">
+                  {challengeStats[0].map(challenge => (
+                    <div
+                      className="challengeLinkComplete"
+                      key={challenge.id}
+                      onClick={id => this.props.setProblem(challenge.id)}
+                    >
+                      <Link to="/prompt">{challenge.name}</Link>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                `${' '}None Yet!`
+              )}
+            </div>
+            <br />
+            <hr />
+            <br />
+            <div className="statsContainer">
+              Started:
+              {challengeStats[1].length > 0 ? (
+                <div className="challengeComplete">
+                  {challengeStats[1].map(challenge => (
+                    <div
+                      className="challengeLinkComplete"
+                      key={challenge.id}
+                      onClick={id => this.props.setProblem(challenge.id)}
+                    >
+                      <Link to="/prompt">{challenge.name}</Link>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                `${' '}None Yet!`
+              )}
+            </div>
           </div>
-          <br />
-          <div>Completed Challenges: </div>
-          {challengeStats[0].length > 0 ? (
-            <div>
-              {challengeStats[0].map(challenge => (
-                <div
-                  key={challenge.id}
-                  onClick={id => this.props.setProblem(challenge.id)}
-                >
-                  <Link to="/prompt">{challenge.name}</Link>
-                </div>
-              ))}
-            </div>
-          ) : (
-            'None yet!'
-          )}
-          <br />
-          <br />
-          <div>Challenges You've Started: </div>
-          {challengeStats[1].length > 0 ? (
-            <div>
-              {challengeStats[1].map(challenge => (
-                <div
-                  key={challenge.id}
-                  onClick={id => this.props.setProblem(challenge.id)}
-                >
-                  <Link to="/prompt">{challenge.name}</Link>
-                </div>
-              ))}
-            </div>
-          ) : (
-            'None - start a new one!'
-          )}
         </div>
       </div>
     )
