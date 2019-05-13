@@ -20,6 +20,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
         <Link to="/home">Home</Link>
         <Link to="/challenges">Challenges</Link>
         <Link to="/lessons">Lessons</Link>
+        <Link to="/instructions">Instructions</Link>
         <a href="#" onClick={handleClick}>
           Logout
         </a>
@@ -28,6 +29,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
       <div className="navLinks">
         {/* The navbar will show these links before you log in */}
         <Link to="/login">Login</Link>
+        <Link to="/instructions">Instructions</Link>
         <Link to="/signup">Sign Up</Link>
       </div>
     )}

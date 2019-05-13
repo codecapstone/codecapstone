@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import checkers from '../checkerFunctions'
-import {getAgent} from '../store/chatbot'
+
+import {ExampleCheck} from '../components'
 
 class Examples extends React.Component {
   constructor() {
@@ -24,7 +24,7 @@ class Examples extends React.Component {
   }
 
   render() {
-    const {name, prompt, examples, functionName} = this.props.challenge
+    const {name, prompt, examples} = this.props.challenge
 
     if (!prompt) return <div>Loading your challenge...</div>
 
@@ -34,14 +34,9 @@ class Examples extends React.Component {
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>
           <p id="prompt">{prompt}</p>
-          <div>
-            <p>
-              Type your examples into InterviewBot making sure you use the key
-              word "example" before you write your actual example. E.g. "example
-              my example is ..."
-            </p>
-          </div>
           {examples ? this.state.examples : null}
+
+          <ExampleCheck />
         </div>
 
         <div />
@@ -59,13 +54,6 @@ class Examples extends React.Component {
             Click here to see our example!
           </button>
         </div>
-        {checkers[functionName] ? (
-          <button type="button" className="nextBtn" onClick={this.exampleCheck}>
-            Check Your Examples
-          </button>
-        ) : (
-          <p />
-        )}
       </div>
     )
   }
@@ -74,6 +62,5 @@ class Examples extends React.Component {
 const mapState = state => ({
   challenge: state.problems.selected
 })
-const mapDispatch = {getAgent}
 
-export default connect(mapState, mapDispatch)(Examples)
+export default connect(mapState)(Examples)
