@@ -9,7 +9,8 @@ export class UserStats extends React.Component {
 
     this.state = {
       completed: 'No',
-      testsPassed: 'No'
+      testsPassed: 'No',
+      className: ''
     }
     this.markComplete = this.markComplete.bind(this)
   }
@@ -45,7 +46,8 @@ export class UserStats extends React.Component {
           <div className="container">
             <p>{this.state.testsPassed}</p>
             <button
-              className="ynButton"
+              className="ynbutton"
+              style={{backgroundColor: 'red'}}
               type="button"
               onClick={() => this.setState({testsPassed: 'Yes'})}
             >
