@@ -19,7 +19,8 @@ import {
   ExampleCheck,
   Page404,
   PostLesson,
-  Instructions
+  Instructions,
+  Optimization
 } from './components'
 import Prompt from './components/Prompt'
 import Examples from './components/Examples'
@@ -51,6 +52,7 @@ class Routes extends Component {
         <Route path="/solutions" component={Solutions} />
         <Route path="/example-check" component={ExampleCheck} />
         <Route path="/instructions" component={Instructions} />
+        <Route exact path="/optimization" component={Optimization} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -63,7 +65,8 @@ class Routes extends Component {
             <Route exact path="/topics/:topicId" component={SingleTopic} />
             <Route exact path="/lessons" component={Lessons} />
             <Route exact path="/lessons/:lessonId" component={LessonDetail} />
-            <Route path="/instructions" component={Instructions} />
+            <Route exact path="/instructions" component={Instructions} />
+            <Route exact path="/optimization" component={Optimization} />
             <Route component={Page404} />
           </Switch>
         )}
