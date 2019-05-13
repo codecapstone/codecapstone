@@ -373,7 +373,7 @@ module.exports = Node;
 `
       ],
       keywords: ['class', 'constructor', 'optimization', 'tree', 'recursive'],
-      examples: `Example:
+      examples: `Sorry there is no example for binary search tree.
         `,
       level: 'Hard',
       topicId: 5,
