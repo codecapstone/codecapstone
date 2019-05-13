@@ -14,7 +14,7 @@ const fib = n => {
 
     return num.toString()
   } catch (err) {
-    return `Ooops.  There's an error.  Check your input is of the correct type!`
+    return `Error`
   }
 }
 
@@ -29,7 +29,7 @@ function anagrams(string) {
       return 'false'
     }
   } catch (err) {
-    return `Ooops.  There's an error.  Check your input is of the correct type!`
+    return `Error`
   }
 }
 
@@ -54,7 +54,7 @@ function palindrome(str) {
       return 'false'
     }
   } catch (err) {
-    return `Ooops.  There's an error.  Check your input is of the correct type!`
+    return `Error`
   }
 }
 
@@ -80,7 +80,7 @@ function fizzBuzz(n) {
 
     return str
   } catch (err) {
-    return `Ooops.  There's an error.  Check your input is of the correct type!`
+    return `Error`
   }
 }
 
@@ -113,7 +113,7 @@ function chunk(str) {
     return chunked
   } catch (err) {
     console.log('error in checker functions', err)
-    return `Ooops.  There's an error.  Check your input is of the correct type!`
+    return `Error`
   }
 }
 

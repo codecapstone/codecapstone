@@ -8,6 +8,7 @@ class CodeView extends React.Component {
   componentDidMount() {
     this.props.getAgent()
   }
+
   render() {
     const {agent, problem} = this.props
     return (

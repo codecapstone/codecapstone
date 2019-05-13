@@ -9,7 +9,7 @@ const AGENT = 'AGENT'
  * ACTION CREATORS
  */
 const addAgent = agent => ({type: AGENT, agent})
-
+export const clearExample = () => ({type: AGENT, agent: {}})
 /**
  * THUNK CREATORS
  */

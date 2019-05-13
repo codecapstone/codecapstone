@@ -15,18 +15,13 @@ class CodeView extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
-    this.props.getAgent()
-
-    setTimeout(
-      this.props.agent.example
-        ? this.setState({
-            input: this.props.agent.input,
-            output: this.props.agent.output,
-            correct: false
-          })
-        : null,
-      1000
-    )
+    if (this.props.agent.example) {
+      this.setState({
+        input: this.props.agent.input,
+        output: this.props.agent.output,
+        correct: false
+      })
+    }
   }
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
@@ -36,12 +31,13 @@ class CodeView extends React.Component {
       const calculated = checkers[this.props.problem.functionName](
         this.state.input
       )
-      if (
-        calculated ===
-        `Ooops.  There's an error.  Check your input is of the correct type!`
+      if (calculated === `Error`) {
+        this.setState({
+          correct: `Ooops.  There's an error.  Check your input is of the correct type!`
+        })
+      } else if (
+        calculated.toString() === this.state.output.toString().toLowerCase()
       ) {
-        this.setState({correct: calculated})
-      } else if (calculated.toString() === this.state.output.toString()) {
         this.setState({correct: 'Your examples pass our tests'})
       } else {
         this.setState({

@@ -101,6 +101,10 @@ h1 {
   margin-left: 15px;
 }
 
+#errorMessage {
+  color: lightgray;
+}
+
 .bodyComponent {
   display: flex;
   flex-wrap: wrap;
