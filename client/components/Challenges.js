@@ -24,14 +24,16 @@ class Challenges extends React.Component {
       <div className="borderCard">
         <div className="userHomeCard" id="challenges">
           <h3>Pick Your Challenge!</h3>
-          <div>
+          <div className="container">
             {this.props.problems.map(problem => (
               <div
                 className="challengeLink"
                 key={problem.id}
                 onClick={() => this.startProblem(this.props.userId, problem.id)}
               >
-                <Link to="/prompt">{problem.name}</Link>
+                <Link to="/prompt">
+                  {problem.name} - {problem.level}
+                </Link>
               </div>
             ))}
           </div>

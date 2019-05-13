@@ -499,12 +499,32 @@ hr {
 #dashboardStats {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 #lastLogin {
-  justify-self: flex-end;
-  align-self: flex-end;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+
+.statsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.challengeComplete {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.challengeLinkComplete {
+  margin-left: 10px;
 }
 
 .notRec {
