@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import ExampleChart from './bigOChart'
+import {LineChart, Line, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts'
 
 class Optimization extends React.Component {
   render() {
