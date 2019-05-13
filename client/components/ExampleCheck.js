@@ -1,7 +1,8 @@
 import React from 'react'
-import {getAgent} from '../store/chatbot'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import checkers from '../checkerFunctions'
+import {setExamples} from '../store/userInput'
 
 class exampleCheck extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class exampleCheck extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleCheck = this.handleCheck.bind(this)
   }
   componentDidMount() {
     if (this.props.agent.example) {
@@ -26,7 +28,7 @@ class exampleCheck extends React.Component {
   handleChange(evt) {
     this.setState({[evt.target.name]: evt.target.value})
   }
-  handleSubmit() {
+  handleCheck() {
     if (checkers[this.props.problem.functionName]) {
       const calculated = checkers[this.props.problem.functionName](
         this.state.input
@@ -50,52 +52,63 @@ class exampleCheck extends React.Component {
       })
     }
   }
+  handleSubmit() {
+    this.props.setExamples(this.state)
+  }
 
   render() {
     const {functionName} = this.props.problem
 
     return (
-      <div id="code">
-        <div className="container">
-          <br />
-          <div>
-            Please enter your example by giving a sample input and output.
-          </div>
-          <br />
-          <form>
-            {/* <div> */}
-            <label>
-              Input
-              <input
-                name="input"
-                type="text"
-                value={this.state.input}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              Output
-              <input
-                name="output"
-                type="text"
-                value={this.state.output}
-                onChange={this.handleChange}
-              />
-            </label>
-          </form>
-          {checkers[functionName] ? (
-            <div>
-              <button type="button" onClick={this.handleSubmit}>
-                Check
-              </button>
-
-              <p>{this.state.correct}</p>
-            </div>
-          ) : (
-            <button type="button">Submit</button>
-          )}
+      <div>
+        <br />
+        <div>
+          <p>Please enter your example by giving a sample input and output. </p>
         </div>
+        <br />
+        <form>
+          <label>
+            Input(s)
+            <input
+              name="input"
+              type="text"
+              value={this.state.input}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label>
+            Output{' '}
+            <input
+              name="output"
+              type="text"
+              value={this.state.output}
+              onChange={this.handleChange}
+            />
+          </label>
+        </form>
+        {checkers[functionName] ? (
+          <div>
+            <button
+              className="nextBtn"
+              type="button"
+              onClick={this.handleCheck}
+            >
+              Check My Example
+            </button>
+
+            <p>{this.state.correct}</p>
+          </div>
+        ) : null}
+
+        <Link
+          to="/approach"
+          className="nextBtn"
+          type="button"
+          onClick={this.handleSubmit}
+        >
+          Submit My Example and Move-on to Approach
+        </Link>
       </div>
     )
   }
@@ -108,7 +121,7 @@ const mapState = state => {
   }
 }
 
-const mapDispatch = {getAgent}
+const mapDispatch = {setExamples}
 
 export const Code = connect(mapState, mapDispatch)(exampleCheck)
 

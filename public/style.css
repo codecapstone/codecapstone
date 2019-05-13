@@ -197,12 +197,13 @@ input {
 
 .borderCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   flex-grow: 2;
   flex-shrink: 1;
   flex-wrap: wrap;
   min-width: 100px;
-  max-width: 500px;
+
   background-color: #5f0f40;
   margin-top: 120px;
   margin-left: 10px;
@@ -210,6 +211,8 @@ input {
   padding: 30px;
   box-shadow: 3px 3px 5px black;
   align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
 }
 
 .bigOBorderCard {
@@ -541,6 +544,13 @@ hr {
 #solutionsBtn {
   text-decoration: underline;
   color: #5f0f40;
+}
+
+#checkbox {
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  margin-bottom: 0px;
 }
 
 #exmplPgBtns {

@@ -9,8 +9,18 @@ import admin from './admin'
 import agent from './chatbot'
 import lesson from './lesson'
 import topic from './topic'
+import userInput from './userInput'
 
-const reducer = combineReducers({user, problems, userStats, admin, agent,lesson, topic})
+const reducer = combineReducers({
+  user,
+  problems,
+  userStats,
+  admin,
+  agent,
+  lesson,
+  topic,
+  userInput
+})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

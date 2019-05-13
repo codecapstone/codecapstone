@@ -16,7 +16,6 @@ class Challenges extends React.Component {
   startProblem(userId, probId) {
     this.props.addProblemToStats(userId, probId)
     this.props.setProblem(probId)
-    this.props.clearExample()
   }
 
   render() {
@@ -53,8 +52,7 @@ const mapDispatch = dispatch => {
     getProblems: () => dispatch(fetchProblems()),
     setProblem: id => dispatch(selectProblem(id)),
     addProblemToStats: (userId, probId) =>
-      dispatch(addChallengeToStats(userId, probId)),
-    clearExample: () => dispatch(clearExample())
+      dispatch(addChallengeToStats(userId, probId))
   }
 }
 

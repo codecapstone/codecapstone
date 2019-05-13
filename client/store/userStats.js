@@ -36,11 +36,15 @@ export const addChallengeToStats = (userId, challengeId) => async dispatch => {
   }
 }
 
-export const markChallengeDone = (userId, challengeId) => async dispatch => {
+export const markChallengeDone = (
+  userId,
+  challengeId,
+  isCompleted
+) => async dispatch => {
   try {
-    const challenge = {userId, challengeId, isCompleted: true}
+    const challenge = {userId, challengeId, isCompleted}
     const {data} = await axios.put('/api/userStats', challenge)
-    dispatch(completeChallenge(data))
+    dispatch(completeChallenge(data[1]))
   } catch (error) {
     console.error(error)
   }
@@ -66,6 +70,14 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         challenges: [...state.challenges, action.challenge]
+      }
+    case COMPLETE_CHALLENGE:
+      const otherchallenges = state.challenges.filter(
+        challenge => challenge.challengeId !== action.challenge.challengeId
+      )
+      return {
+        ...state,
+        challenges: [...otherchallenges, action.challenge]
       }
     default:
       return state
