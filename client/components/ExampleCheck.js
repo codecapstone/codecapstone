@@ -55,7 +55,7 @@ class CodeView extends React.Component {
     const {agent, problem} = this.props
 
     return (
-      <div id="code" className="content">
+      <div id="code" className="borderCard">
         <div className="container">
           <div className="userHomeCard">
             <div>Your Challenge: {problem.name}</div>

@@ -6,6 +6,7 @@ import {
   Login,
   Signup,
   UserHome,
+  GuestHome,
   Annyang,
   UserStats,
   Code,
@@ -39,8 +40,8 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        <Route path="/login" component={GuestHome} />
+        <Route path="/signup" component={GuestHome} />
         <Route path="/prompt" component={Prompt} />
         <Route path="/approach" component={Annyang} />
         <Route path="/examples" component={Examples} />
@@ -65,7 +66,7 @@ class Routes extends Component {
         )}
 
         {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
+        <Route component={GuestHome} />
       </Switch>
     )
   }

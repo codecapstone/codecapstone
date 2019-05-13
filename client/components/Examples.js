@@ -29,7 +29,7 @@ class Examples extends React.Component {
     if (!prompt) return <div>Loading your challenge...</div>
 
     return (
-      <div className="content">
+      <div className="borderCard">
         <div className="userHomeCard">
           <h3>Your challenge is {name}</h3>
           <p>The prompt is: </p>

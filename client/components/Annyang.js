@@ -68,7 +68,7 @@ export class Annyang extends React.Component {
   render() {
     const {name, prompt} = this.props.challenge
     return (
-      <div id="approachDiv" className="content">
+      <div id="approachDiv" className="borderCard">
         <div id="promptAnnyang" className="userHomeCard">
           <h3>Your challenge is {name}</h3>
           <p>As a reminder, the prompt is: </p>

@@ -6,10 +6,9 @@ body {
   font-family: 'Roboto', sans-serif;
   padding-top: 40px;
 }
-.content {
-  margin-top: 120px;
+/* .content {
   justify-content: space-around;
-}
+} */
 
 a {
   text-decoration: none;
@@ -34,9 +33,8 @@ nav a {
   color: lightgray;
 }
 
-@media screen and (max-width: 600px) {
-}
-@media screen and (min-width: 600px) {
+h1 {
+  color: #5f0f40;
 }
 
 @media screen and (max-width: 600px) {
@@ -79,11 +77,11 @@ nav a {
   flex-wrap: wrap;
 }
 
-.codeAloud {
+/* .codeAloud {
   margin-right: 15px;
   height: 10px;
   margin-bottom: 0px;
-}
+} */
 
 #navigation {
   flex-direction: row;
@@ -131,15 +129,16 @@ nav a {
 #code {
   display: flex;
   flex-direction: column;
+  max-width: 800px;
 }
 
-.challengeDetails {
+/* .challengeDetails {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin: 30px;
   max-width: 600;
-}
+} */
 .container {
   display: flex;
   justify-content: space-around;
@@ -147,13 +146,13 @@ nav a {
   flex-wrap: wrap;
 }
 
-.containerColumn {
+/* .containerColumn {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-}
+} */
 
-#guestCard .container {
+/* #guestCard .container {
   justify-content: center;
   align-items: center;
 }
@@ -164,19 +163,19 @@ nav a {
 
 #guestCard h2 {
   text-decoration: underline;
-}
+} */
 
-.btnContainer {
+/* .btnContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-}
+} */
 
 input {
   margin-bottom: 10px;
 }
 #login {
-  margin-top: 60px;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -192,11 +191,28 @@ input {
   flex-direction: column;
 }
 
-#notGoogle {
+.borderCard {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  max-width: 500px;
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 30px;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+}
+
+/* #notGoogle {
   display: flex;
   flex-direction: row;
   width: 100%;
-}
+} */
 
 .loginBtn {
   display: flex;
@@ -204,28 +220,25 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* min-width: 50%;
-  max-width: 140px; */
   min-height: 30px;
   background-color: #c1aba6;
   border-color: #c1aba6;
   margin-bottom: 10px;
   border-radius: 5px;
-  color: #4b4b4b;
+  color: #5f0f40;
   font-size: 14px;
   padding-left: 5px;
   padding-right: 5px;
-  /* box-shadow: 3px 3px 5px grey; */
 }
 
 .loginBtn a {
   color: white;
 }
 
-.loginSignup {
+/* .loginSignup {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .loginInput {
   height: 20px;
@@ -233,16 +246,11 @@ input {
   font-size: 16px;
 }
 
-#guestCard {
-  color: #4b4b4b;
-  background-color: #c1aba6;
-}
-
-#goBtn {
+/* #goBtn {
   background-color: #5f0f40;
   box-shadow: none;
   color: lightgrey;
-}
+} */
 
 .nextBtn {
   display: flex;
@@ -265,16 +273,25 @@ input {
   color: #4b4b4b;
 }
 
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 #keywordsGot {
   color: green;
+  margin: 5px;
 }
 #keywordsNotGot {
   color: red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
 }
 
-.containsABot {
+/* .containsABot {
   display: flex;
-}
+} */
 
 #bot {
   margin-top: 120px;
@@ -282,20 +299,21 @@ input {
   align-self: flex-start;
 }
 
-#botCard {
+/* #botCard {
   padding: 10px;
   background-color: #aa767c;
   box-shadow: 3px 3px 5px black;
-}
+} */
 
-#botDiv {
+/* #botDiv {
   justify-self: flex-end;
   align-self: center;
-}
+} */
 
 #approachDiv {
   display: flex;
   background-size: cover;
+  max-width: 600px;
 }
 
 #userHome {
@@ -315,7 +333,7 @@ input {
   margin: 20px;
   padding: 30px;
   color: #4b4b4b;
-  text-align: center;
+  text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
 }
@@ -367,7 +385,7 @@ input {
   color: white;
 } */
 
-.dashBtn {
+/* .dashBtn {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -375,11 +393,11 @@ input {
   width: 200px;
   height: 50px;
   background-color: #c1aba6;
-  /* margin-top:  */
+  margin-top:
   margin-top: 20px;
   border-radius: 5px;
   color: #4b4b4b;
-  /* align-self: flex-end; */
+  align-self: flex-end;
   box-shadow: 3px 3px 5px black;
 }
 .dashBtn h4 {
@@ -391,8 +409,8 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* margin: 20px; */
-}
+  margin: 20px;
+} */
 
 .ynButton {
   margin: 10px;

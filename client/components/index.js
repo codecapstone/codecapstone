@@ -8,6 +8,8 @@ export {default as Navigation} from './Navigation'
 export {default as UserHome} from './UserHome'
 
 export {Login, Signup} from './AuthForm'
+export {AboutUs} from './AboutUs'
+export {GuestHome} from './GuestHome'
 
 export {default as Challenges} from './Challenges'
 

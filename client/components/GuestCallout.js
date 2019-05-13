@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom'
 
 export const GuestCallout = props => {
   return (
-    <div className="bodyComponent userHomeCard" id="guestCard">
+    <div className="userHomeCard">
       <h1>Hello programmers!</h1>
-      <p>
+      <h3>
         Code Aloud is here to help you improve your algorithm and technical
         interviewing skills. <br /> <br />
-        Our approach encourages users to talk through the problem and their
-        thinking before getting into the coding details.
-      </p>
+        You can try an example problem by following the link below, or sign up
+        for free to access our library of challenges and lessons.
+      </h3>
       <Link to="./prompt" className="container">
         <i className="far fa-comments" />
         <h2>Get Started!</h2>
