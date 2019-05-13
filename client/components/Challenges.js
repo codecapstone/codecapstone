@@ -24,7 +24,6 @@ class Challenges extends React.Component {
       <div className="borderCard">
         <div className="userHomeCard" id="challenges">
           <h3>Pick Your Challenge!</h3>
-          <br />
           <div>
             {this.props.problems.map(problem => (
               <div

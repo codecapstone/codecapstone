@@ -3,7 +3,7 @@ import {getAgent} from '../store/chatbot'
 import {connect} from 'react-redux'
 import checkers from '../checkerFunctions'
 
-class CodeView extends React.Component {
+class exampleCheck extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -52,60 +52,49 @@ class CodeView extends React.Component {
   }
 
   render() {
-    const {agent, problem} = this.props
+    const {functionName} = this.props.problem
 
     return (
-      <div id="code" className="borderCard">
+      <div id="code">
         <div className="container">
-          <div className="userHomeCard">
-            <div>Your Challenge: {problem.name}</div>
-            <br />
-            <div>
-              {agent.input ? (
-                <p>
-                  Please check the entries in the form below and edit them if
-                  necessary. (Sorry if there's an error - interviewBot is still
-                  learning!) Then press 'Check' .
-                </p>
-              ) : (
-                <p>
-                  Our bot is still learning so please enter your example's input
-                  and output into the form below. Then press 'Check'
-                </p>
-              )}
-            </div>
-            <form>
-              {/* <div> */}
-              <label>
-                function {problem.functionName} ({' '}
-                <input
-                  name="input"
-                  type="text"
-                  value={this.state.input}
-                  onChange={this.handleChange}
-                />)
-              </label>
+          <br />
+          <div>
+            Please enter your example by giving a sample input and output.
+          </div>
+          <br />
+          <form>
+            {/* <div> */}
+            <label>
+              Input
+              <input
+                name="input"
+                type="text"
+                value={this.state.input}
+                onChange={this.handleChange}
+              />
+            </label>
 
-              <label>returns</label>
+            <label>
+              Output
               <input
                 name="output"
                 type="text"
                 value={this.state.output}
                 onChange={this.handleChange}
               />
+            </label>
+          </form>
+          {checkers[functionName] ? (
+            <div>
               <button type="button" onClick={this.handleSubmit}>
                 Check
               </button>
-            </form>
-            <p>{this.state.correct}</p>
-          </div>
 
-          <div
-            className="nextBtn"
-            onClick={() => this.props.history.push('/approach')}
-          >
-            Next: approach
-          </div>
+              <p>{this.state.correct}</p>
+            </div>
+          ) : (
+            <button type="button">Submit</button>
+          )}
         </div>
       </div>
     )
@@ -121,6 +110,6 @@ const mapState = state => {
 
 const mapDispatch = {getAgent}
 
-export const Code = connect(mapState, mapDispatch)(CodeView)
+export const Code = connect(mapState, mapDispatch)(exampleCheck)
 
 export default Code
