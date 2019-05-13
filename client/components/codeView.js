@@ -26,9 +26,9 @@ class CodeView extends React.Component {
           )}
           <div
             className="nextBtn"
-            onClick={() => this.props.history.push('/stats')}
+            onClick={() => this.props.history.push('/optimization')}
           >
-            Next Step - Check Your Stats!
+            Next Step - Optimization!
           </div>
         </div>
         <ConnectedSandbox />
