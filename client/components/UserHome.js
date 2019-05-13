@@ -11,9 +11,9 @@ export const UserHome = props => {
 
   return (
     <div className="bodyComponent content" id="userHome">
-      <Topics />
-      <DashboardStats />
       <Challenges />
+      <DashboardStats />
+      <Topics />
     </div>
   )
 }

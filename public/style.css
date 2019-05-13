@@ -492,6 +492,13 @@ hr {
   color: #5f0f40;
 }
 
+#checkbox {
+  width: 25px;
+  height: 25px;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
 #exmplPgBtns {
   display: flex;
 }
