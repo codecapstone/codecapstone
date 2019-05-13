@@ -8,21 +8,35 @@ export class UserStats extends React.Component {
     super()
 
     this.state = {
-      completed: 'No',
-      testsPassed: 'No',
-      className: ''
+      isCompleted: false
     }
-    this.markComplete = this.markComplete.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  markComplete(userId, challengeId) {
-    this.setState({...this.state, completed: 'Yes'})
-    this.props.markDone(userId, challengeId)
+  componentDidMount() {
+    const {userId, challengeId} = this.props
+    this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
+  }
+
+  handleInputChange(event, userId, challengeId, isCompleted) {
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
+
+    this.setState({[name]: value})
+    this.props.markDone(userId, challengeId, isCompleted)
   }
 
   render() {
-    const {problem, keywordsGot, keywordsNotGot} = this.props
+    const {
+      problem,
+      keywordsGot,
+      keywordsNotGot,
+      userId,
+      challengeId
+    } = this.props
 
+    console.log('STATE', this.state)
     return (
       <div className="borderCard" id="stats">
         <div className="userHomeCard">
@@ -42,45 +56,22 @@ export class UserStats extends React.Component {
             ))}
           </div>
           <hr />
-          <p>Did you pass the test specs?</p>
           <div className="container">
-            <p>{this.state.testsPassed}</p>
-            <button
-              className="ynbutton"
-              style={{backgroundColor: 'red'}}
-              type="button"
-              onClick={() => this.setState({testsPassed: 'Yes'})}
-            >
-              Yes
-            </button>
-            <button
-              className="ynButton"
-              type="button"
-              onClick={() => this.setState({testsPassed: 'No'})}
-            >
-              No
-            </button>
-          </div>
-          <hr />
-          <p>Do you want to mark this challenge as complete?</p>
-          <div className="container">
-            <p>{this.state.completed}</p>
-            <button
-              className="ynButton"
-              type="button"
-              onClick={() =>
-                this.markComplete(this.props.userId, this.props.problemId)
+            <input
+              id="checkbox"
+              name="isCompleted"
+              type="checkbox"
+              checked={this.state.completed}
+              onChange={() =>
+                this.handleInputChange(
+                  event,
+                  userId,
+                  challengeId,
+                  !this.state.isCompleted
+                )
               }
-            >
-              Yes
-            </button>
-            <button
-              className="ynButton"
-              type="button"
-              onClick={() => this.setState({completed: 'No'})}
-            >
-              No
-            </button>
+            />
+            I've completed this challenge
           </div>
 
           <Link to="/solutions" id="solutionBtn">
@@ -102,14 +93,15 @@ const mapState = state => {
     problem: state.problems.selected.name,
     keywordsGot: state.userStats.keywords.gotKeywords,
     keywordsNotGot: state.userStats.keywords.notGotKeywords,
-    problemId: state.problems.selected.id
+    selected: state.problems.selected,
+    challengeId: state.problems.selected.id
   }
 }
 
 const mapDispatch = dispatch => {
   return {
-    markDone: (userId, challengeId) =>
-      dispatch(markChallengeDone(userId, challengeId))
+    markDone: (userId, challengeId, completed) =>
+      dispatch(markChallengeDone(userId, challengeId, completed))
   }
 }
 

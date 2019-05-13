@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const {UserStats} = require('../db/models')
-const {Challenge} = require('../db/models')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
@@ -27,7 +26,7 @@ router.post('/', async (req, res, next) => {
 })
 
 router.put('/', async (req, res, next) => {
-  console.log('REQ BODY', req.body)
+  console.log('API REQ BODY', req.body)
   try {
     const existingChallenge = await UserStats.findOne({
       where: {
@@ -36,7 +35,7 @@ router.put('/', async (req, res, next) => {
       }
     })
 
-    const markedDone = await UserStats.update(
+    const updated = await UserStats.update(
       {
         isCompleted: req.body.isCompleted
       },
@@ -44,11 +43,12 @@ router.put('/', async (req, res, next) => {
         where: {
           userId: existingChallenge.userId,
           challengeId: existingChallenge.challengeId
-        }
+        },
+        returning: true
       }
     )
 
-    res.sendStatus(202)
+    res.send(updated).status(201)
   } catch (err) {
     next(err)
   }

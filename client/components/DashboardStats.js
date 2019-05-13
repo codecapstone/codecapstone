@@ -65,7 +65,7 @@ class DashboardStats extends React.Component {
               ))}
             </div>
           ) : (
-            'None yet!'
+            'None - start a new one!'
           )}
         </div>
       </div>
