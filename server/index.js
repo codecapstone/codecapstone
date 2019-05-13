@@ -45,14 +45,6 @@ const createApp = () => {
   // logging middleware
   app.use(morgan('dev'))
 
-  // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
-  app.use(redirectToHTTPS([/localhost:8080/], [/\/insecure/], 301))
-
-  //IBM suggested approach - but heroku says to use a package manager?
-  // app.get("*", function(request, response){
-  //   response.redirect("https://" + request.headers.host + request.url);
-  // });
-
   // body parsing middleware
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
@@ -75,6 +67,14 @@ const createApp = () => {
   // auth and api routes
   app.use('/auth', require('./auth'))
   app.use('/api', require('./api'))
+
+  // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
+  app.use(redirectToHTTPS([/localhost:8080/], [/\/insecure/], 301))
+
+  //IBM suggested approach - but heroku says to use a package manager?
+  // app.get('*', function(request, response) {
+  //   response.redirect('https://' + request.headers.host + request.url)
+  // })
 
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'public')))
