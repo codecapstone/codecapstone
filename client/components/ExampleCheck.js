@@ -63,52 +63,62 @@ class exampleCheck extends React.Component {
       <div>
         <br />
         <div>
-          <p>Please enter your example by giving a sample input and output. </p>
+          <h3>
+            Please enter your example by giving a sample input and output.{' '}
+          </h3>
         </div>
         <br />
-        <form>
-          <label>
-            Input(s)
-            <input
-              name="input"
-              type="text"
-              value={this.state.input}
-              onChange={this.handleChange}
-            />
-          </label>
+        <div />
+        <div className="container">
+          <form id="exampleCheck">
+            <label>
+              {/* Input(s) */}
+              <input
+                name="input"
+                type="text"
+                value={this.state.input}
+                onChange={this.handleChange}
+                placeholder="Input(s) here"
+              />
+            </label>
 
-          <label>
-            Output{' '}
-            <input
-              name="output"
-              type="text"
-              value={this.state.output}
-              onChange={this.handleChange}
-            />
-          </label>
-        </form>
-        {checkers[functionName] ? (
-          <div>
-            <button
-              className="nextBtn"
-              type="button"
-              onClick={this.handleCheck}
-            >
-              Check My Example
-            </button>
+            <label>
+              {/* Output{' '} */}
+              <input
+                name="output"
+                type="text"
+                value={this.state.output}
+                onChange={this.handleChange}
+                placeholder="Expected output here"
+              />
+            </label>
+          </form>
+          <div className="exampleBtns">
+            {checkers[functionName] ? (
+              <div>
+                <button
+                  className="nextBtn"
+                  type="button"
+                  onClick={this.handleCheck}
+                >
+                  Check My Example
+                </button>
 
-            <p>{this.state.correct}</p>
+                <div>{this.state.correct}</div>
+              </div>
+            ) : null}
+            <div>
+              <Link
+                to="/approach"
+                className="nextBtn"
+                type="button"
+                onClick={this.handleSubmit}
+              >
+                Submit My Example and Move-on to Approach
+              </Link>
+            </div>
           </div>
-        ) : null}
-
-        <Link
-          to="/approach"
-          className="nextBtn"
-          type="button"
-          onClick={this.handleSubmit}
-        >
-          Submit My Example and Move-on to Approach
-        </Link>
+        </div>
       </div>
     )
   }
