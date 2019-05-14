@@ -567,6 +567,14 @@ hr {
   justify-self: center;
   align-self: center;
 }
+.form {
+  width: 100%;
+}
+.textBox {
+  width: 100%;
+
+  box-sizing: border-box;
+}
 
 @keyframes pulse {
   0% {

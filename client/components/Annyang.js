@@ -90,20 +90,22 @@ export class Annyang extends React.Component {
               <p>Stop</p>
             </div>
           </div>
-          <div id="submitApproach">
-            <form onSubmit={this.handleSubmit}>
-              <label>You said:</label>
-              <textarea
-                type="text"
-                name="said"
-                value={this.state.said}
-                onChange={this.handleChange}
-                id="Annyang"
-              />
-              <i className="far fa-comments" />
-              <input id="submitBtn" type="submit" />
-            </form>
-          </div>
+
+          <form onSubmit={this.handleSubmit} className="form">
+            <label>You said:</label>
+
+            <textarea
+              className="textBox"
+              type="text"
+              name="said"
+              value={this.state.said}
+              onChange={this.handleChange}
+              id="Annyang"
+            />
+
+            <i className="far fa-comments" />
+            <input id="submitBtn" type="submit" />
+          </form>
         </div>
         <Help />
       </div>
