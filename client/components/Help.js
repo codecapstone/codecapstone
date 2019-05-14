@@ -12,10 +12,6 @@ class Help extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.props.singleLesson(this.props.challenge.topicId)
-  }
-
   handleClick(evt) {
     if (evt === 'prompt') {
       let userPrompt = `You haven't restated the question yet. Look for key phrases (for
