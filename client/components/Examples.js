@@ -10,13 +10,13 @@ class Examples extends React.Component {
     if (!prompt) return <div>Loading your challenge...</div>
 
     return (
-      <div className="borderCard">
-        <div className="userHomeCard">
+      <div className="largeViewBorderCard">
+        <div className="largeViewCard">
           <h3>Your challenge is {name}</h3>
-          <p>The prompt is: </p>
+          {/* <p>The prompt is: </p> */}
           <p id="prompt">{prompt}</p>
         </div>
-        <div className="userHomeCard">
+        <div className="largeViewCard">
           <ExampleCheck />
         </div>
         <Help />

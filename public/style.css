@@ -273,37 +273,26 @@ input {
   color: white;
 }
 
-/* .loginSignup {
-  display: flex;
-  flex-direction: row;
-} */
-
 .loginInput {
   height: 20px;
   width: 200px;
   font-size: 16px;
 }
 
-/* #goBtn {
-  background-color: #5f0f40;
-  box-shadow: none;
-  color: lightgrey;
-} */
-
 .nextBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 14px;
   width: 200px;
   height: 50px;
   background-color: #c1aba6;
-  margin-top: 20px;
-  margin-right: 50px;
+  margin: 20px;
   border-radius: 5px;
   color: #4b4b4b;
   box-shadow: 3px 3px 5px black;
-  align-self: flex-end;
+  /* align-self: flex-end; */
 }
 
 .nextBtn a {
@@ -634,4 +623,20 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+}
+
+#exampleCheck {
+  display: flex;
+  align-content: center;
+}
+
+#exampleCheck input {
+  font-size: 16px;
+  width: 200px;
+  margin: 10px;
+}
+.exampleBtns {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
 }
