@@ -28,7 +28,7 @@ export const fetchProblems = () => async dispatch => {
 export const selectProblem = id => async dispatch => {
   try {
     const {data} = await axios.get(`/api/challenges/${id}`)
-    console.log('challenge in store', data)
+
     dispatch(setProblem(data))
   } catch (error) {
     console.error(error)
