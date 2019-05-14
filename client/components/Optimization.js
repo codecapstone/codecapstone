@@ -1,21 +1,26 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import ExampleChart from './bigOChart'
-import {LineChart, Line, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts'
+import LineChart from './bigOChart'
+import BarChart from './bigOBarChart'
 
 class Optimization extends React.Component {
   render() {
     return (
       <div className="bigOContent">
         <div className="bigOBorderCard">
-          <div className="bigOCard">
-            Big-O Complexity
-            <ExampleChart />
+          <div className="bigOChartCard">
+            Big-O Ranks
+            <BarChart />
           </div>
         </div>
-        <div className="bigODetailsBorderCard">
-          <div className="userHomeCard">
+        <div className="bigOBorderCard">
+          <div className="bigOChartCard">
+            Big-O Complexity
+            <LineChart />
+          </div>
+        </div>
+        <div className="bigOBorderCard">
+          <div className="bigOAboutCard">
             <h3>About Big-O Complexity</h3>
             <p>
               Big-O notation is used to classify algorithms according to their
@@ -36,7 +41,7 @@ class Optimization extends React.Component {
             </h4>
           </div>
           <div
-            className="nextBtn"
+            className="bigONextBtn"
             onClick={() => this.props.history.push('/stats')}
           >
             Next Step - Check Your Stats!

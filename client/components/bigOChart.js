@@ -1,5 +1,14 @@
 import React, {PureComponent} from 'react'
-import {LineChart, Line, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts'
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Label,
+  ResponsiveContainer
+} from 'recharts'
 
 const data = [
   {
@@ -142,65 +151,65 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <LineChart
-        width={600}
-        height={600}
-        data={data}
-        margin={{
-          top: 30,
-          right: 30,
-          left: 20,
-          bottom: 10
-        }}
-      >
-        <XAxis>
-          <Label angle={0} position="bottom" style={{textAnchor: 'middle'}}>
-            Input Size
-          </Label>
-        </XAxis>
-        <YAxis>
-          <Label angle={270} position="left" style={{textAnchor: 'middle'}}>
-            Time
-          </Label>
-        </YAxis>
-        <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="O(1)"
-          stroke="#3FBF00"
-          strokeWidth={3}
-          dot={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="O(log n)"
-          stroke="#93FF96"
-          strokeWidth={3}
-          dot={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="O(n)"
-          stroke="#F2D398"
-          strokeWidth={3}
-          dot={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="O(n log n)"
-          stroke="#D78521"
-          strokeWidth={3}
-          dot={false}
-        />
-        <Line
-          type="monotone"
-          dataKey="O(n^2)"
-          stroke="#DE1A1A"
-          strokeWidth={3}
-          dot={false}
-        />
-        <Legend layout="vertical" verticalAlign="bottom" align="bottom" />
-      </LineChart>
+      <ResponsiveContainer height="90%" width="99%">
+        <LineChart
+          data={data}
+          margin={{
+            top: 30,
+            right: 30,
+            left: 20,
+            bottom: 10
+          }}
+        >
+          <XAxis>
+            <Label angle={0} position="bottom" style={{textAnchor: 'middle'}}>
+              Input Size
+            </Label>
+          </XAxis>
+          <YAxis>
+            <Label angle={270} position="left" style={{textAnchor: 'middle'}}>
+              Time
+            </Label>
+          </YAxis>
+          <Tooltip />
+          <Line
+            type="monotone"
+            dataKey="O(1)"
+            stroke="#3FBF00"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="O(log n)"
+            stroke="#93FF96"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="O(n)"
+            stroke="#F2D398"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="O(n log n)"
+            stroke="#D78521"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Line
+            type="monotone"
+            dataKey="O(n^2)"
+            stroke="#DE1A1A"
+            strokeWidth={3}
+            dot={false}
+          />
+          <Legend layout="vertical" verticalAlign="bottom" align="bottom" />
+        </LineChart>
+      </ResponsiveContainer>
     )
   }
 }
