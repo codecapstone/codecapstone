@@ -12,7 +12,7 @@ export const GuestCallout = props => {
         You can try an example problem by following the link below, or sign up
         for free to access our library of challenges and lessons.
       </h3>
-      <Link to="./prompt" className="container">
+      <Link to="/prompt" className="container">
         <i className="far fa-comments" />
         <h2>Get Started!</h2>
       </Link>

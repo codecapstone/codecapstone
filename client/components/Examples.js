@@ -16,9 +16,9 @@ class Examples extends React.Component {
           {/* <p>The prompt is: </p> */}
           <p id="prompt">{prompt}</p>
         </div>
-        <div className="largeViewCard">
-          <ExampleCheck />
-        </div>
+
+        <ExampleCheck />
+
         <Help />
       </div>
     )

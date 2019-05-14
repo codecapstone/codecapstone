@@ -78,9 +78,9 @@ async function seed() {
       ],
       keywords: [
         'cache',
-        'big o',
+
         'memoize',
-        'for loop',
+        'loop',
         'fibonacci',
         'recursion',
         'recursive',
@@ -140,7 +140,7 @@ async function seed() {
         .join('');
       }`
       ],
-      keywords: ['string', 'big o', 'lowercase', 'split'],
+      keywords: ['string', 'lowercase', 'split'],
       examples: `Example:
       anagrams('rail safety', 'fairy tales') --> True
       anagrams('RAIL! SAFETY!', 'fairy tales') --> True
@@ -210,7 +210,7 @@ afterEach(() => {
           }
         }`
       ],
-      keywords: ['number', 'big o', 'for-loop', 'iterative'],
+      keywords: ['number', 'loop', 'iterative'],
       examples: `Example:
         fizzBuzz(5);
           1
@@ -276,7 +276,7 @@ test('"pennep" a palindrome', () => {
         return str === reversed;
  }`
       ],
-      keywords: ['palindrome', 'big o', 'string', 'iterative', 'split'],
+      keywords: ['palindrome', 'string', 'iterative', 'split'],
       examples: `Example:
         palindrome("abba") === true,
         palindrome("abcdefg") === false

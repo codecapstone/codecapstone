@@ -450,6 +450,7 @@ input {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   height: 75%;
+  justify-content: space-evenly;
 }
 
 .bigOCard {
@@ -582,6 +583,9 @@ hr {
 #exmplPgBtns {
   display: flex;
 }
+#linkText {
+  color: #4b4b4b;
+}
 
 #dashboardStats {
   display: flex;
@@ -643,6 +647,14 @@ hr {
   animation-timing-function: linear;
   justify-self: center;
   align-self: center;
+}
+.form {
+  width: 100%;
+}
+.textBox {
+  width: 100%;
+
+  box-sizing: border-box;
 }
 
 @keyframes pulse {
@@ -707,6 +719,7 @@ hr {
 
 #exampleCheck {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
 }
 
