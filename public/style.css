@@ -46,6 +46,7 @@ h1 {
 
   #slides {
     margin: 20px;
+    box-shadow: 3px 3px 5px black;
   }
 
   iframe {

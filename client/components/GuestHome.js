@@ -13,6 +13,7 @@ export const GuestHome = props => {
             width="532"
             height="300"
             margin="20"
+            frameBorder="0"
           />
           <div id="getStarted">
             <div>
