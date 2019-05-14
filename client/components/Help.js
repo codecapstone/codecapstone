@@ -28,7 +28,7 @@ class Help extends React.Component {
 
   render() {
     return (
-      <div className="userHomeCard">
+      <div className="largeViewCard">
         <h3>Could I get a little help?</h3>
         <button
           type="button"

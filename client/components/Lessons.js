@@ -15,7 +15,7 @@ class Lessons extends Component {
       <div id="topics" className="borderCard">
         <div className="userHomeCard">
           <h3>Lessons</h3>
-          <div>
+          <div className="container">
             {lessons.map(lesson => (
               <div className="lessonLink" key={lesson.id}>
                 <Link to={`lessons/${lesson.id}`}>{lesson.name}</Link>

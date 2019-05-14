@@ -59,19 +59,22 @@ class Prompt extends React.Component {
     if (!prompt) return <div>Loading your challenge...</div>
 
     return (
-      <div className="borderCard">
-        <div className="content">
-          <div className="userHomeCard">
-            <h3>Your challenge is {name}</h3>
-            <p>The prompt is: </p>
-            <p id="prompt">{prompt}</p>
-          </div>
+      <div className="largeViewBorderCard">
+        {/* <div className="content"> */}
+        <div className="largeViewCard">
+          <h3>Your challenge is {name}</h3>
+          {/* <p>The prompt is: </p> */}
+          <div id="prompt">{prompt}</div>
+          {/* </div> */}
         </div>
 
-        <div className="content">
-          <div className="userHomeCard">
-            <h3>Now show you understand the example.</h3>
-            <p>Re-state the prompt in your own words.</p>
+        {/* <div className="content"> */}
+        <div className="largeViewCard" id="promptAnnyang">
+          <h3>
+            Now show you understand the example - Re-state the prompt in your
+            own words.
+          </h3>
+          <div className="annyangContainer">
             <div id="rec-stopDiv">
               <div id="recBtn">
                 <button
@@ -90,22 +93,25 @@ class Prompt extends React.Component {
                 <p>Stop</p>
               </div>
             </div>
+
             <form onSubmit={this.handleSubmit}>
-              <label>You said:</label>
+              {/* <label>You said:</label> */}
               <textarea
-                rows="3"
-                cols="25"
+                rows="8"
+                cols="50"
                 type="text"
                 name="said"
                 value={this.state.said}
                 onChange={this.handleChange}
                 id="Annyang"
+                placeholder="Hit the record button to begin verbalizing your approach, or type it here."
               />
               <i className="far fa-comments" />
               <input id="submitBtn" type="submit" />
             </form>
           </div>
         </div>
+        {/* </div> */}
         <Help />
       </div>
     )
