@@ -288,7 +288,25 @@ input {
   align-content: space-around;
   justify-content: space-evenly;
 }
-
+.biggerBorderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  /* max-width: 90%; */
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* padding: 30px; */
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
 .largeViewBorderCard {
   display: flex;
   flex-direction: row;
@@ -420,8 +438,9 @@ input {
   min-height: 500px;
   background-color: #c1aba6;
   margin: 20px;
+  font-family: 'Roboto Mono', monospace;
   padding: 30px;
-  color: #37383a;
+  color: #202020;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -441,6 +460,21 @@ input {
   justify-content: center;
   align-items: center;
   background-image: url(https://imgur.com/a/rnQPFiF);
+}
+#getStarted2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #c1aba6;
+  width: 80%;
+  height: 290px;
+  background-color: #664f5c;
+  box-shadow: 3px 3px 5px black;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://imgur.com/a/rnQPFiF);
+  align-self: center;
 }
 
 #getStarted a {
@@ -468,7 +502,8 @@ input {
   background-color: #c1aba6;
   margin: 10px;
   padding: 30px;
-  color: #4b4b4b;
+  color: #202020;
+  font-family: 'Roboto Mono', monospace;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -506,7 +541,33 @@ input {
 }
 
 #instructions {
-  flex-direction: column;
+  display: flex;
+  color: #202020;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+
+  min-height: 500px;
+  background-color: #c1aba6;
+  margin: 20px;
+  padding: 30px;
+
+  text-align: justify;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  justify-content: center;
+}
+.innerInstructions {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.instructionText {
+  flex: 0 1 auto;
 }
 
 .ynButton {
@@ -746,6 +807,14 @@ hr {
   justify-content: space-around;
 }
 
+.image {
+  height: 30%;
+  max-height: 400px;
+  width: 80%;
+  max-width: 700px;
+  align-self: center;
+  margin-bottom: 30px;
+  
 .bigOContent {
   display: flex;
   flex-direction: row;
