@@ -1,8 +1,7 @@
 const db = require('../server/db')
-//const {User} = require('../server/db/models')
+
 const {Challenge} = require('../server/db/models')
-//const {Lesson} = require('../server/db/models')
-const {Topic} = require('../server/db/models')
+
 
 async function seed() {
   await db.sync()
