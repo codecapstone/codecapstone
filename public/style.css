@@ -234,7 +234,25 @@ input {
   align-content: space-around;
   justify-content: space-evenly;
 }
-
+.biggerBorderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  /* max-width: 90%; */
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* padding: 30px; */
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
 .largeViewBorderCard {
   display: flex;
   flex-direction: row;
@@ -494,7 +512,21 @@ input {
 }
 
 #instructions {
-  flex-direction: column;
+  display: flex;
+
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+
+  min-height: 500px;
+  background-color: #c1aba6;
+  margin: 20px;
+  padding: 30px;
+  color: #4b4b4b;
+  text-align: justify;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
 }
 
 .ynButton {

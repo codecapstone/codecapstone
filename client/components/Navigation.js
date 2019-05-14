@@ -16,7 +16,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
     {isLoggedIn ? (
       <div className="navLinks">
         {/* The navbar will show these links after you log in */}
-        <div>Welcome, {email}</div>
+
         <Link to="/home">Home</Link>
         <Link to="/instructions">Instructions</Link>
         <Link to="/challenges">Challenges</Link>
