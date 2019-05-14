@@ -95,8 +95,8 @@ export class Annyang extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <label>You said:</label>
               <textarea
-                rows="8"
-                cols="75"
+                rows="5%"
+                cols="75%"
                 type="text"
                 name="said"
                 value={this.state.said}
