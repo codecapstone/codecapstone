@@ -6,13 +6,20 @@ export const Instructions = () => {
       <div id="instructions">
         <h3>The Code Aloud Interview Process</h3>
         <div>
-          <div>
-            For each challenge, you will be guided through several steps. The
-            idea of these steps is to help you think about the problem and how
-            you could solve it before you start writing any code. It also
-            encourages you to communicate key parts of your thinking.
+          <div className="innerInstructions">
+            <img
+              src="https://power.pereless.com/wp-content/uploads/2016/12/photo_video-job-interview.jpg"
+              className="image"
+            />
+            <br />
+            <div className="textBox">
+              For each challenge, you will be guided through several steps. The
+              idea of these steps is to help you think about the problem and how
+              you could solve it before you start writing any code. It also
+              encourages you to communicate key parts of your thinking.
+            </div>
           </div>
-          <br />
+
           <div>
             For each challenge, there are several steps. The steps should also
             deepen your understanding of the challenge. They also mirror key

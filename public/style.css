@@ -528,6 +528,16 @@ input {
   box-shadow: 3px 3px 5px black;
   align-items: center;
 }
+.innerInstructions {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.instructionText {
+  flex: 0 1 auto;
+}
 
 .ynButton {
   margin: 10px;
@@ -764,4 +774,12 @@ hr {
   display: flex;
   align-content: center;
   justify-content: space-around;
+}
+
+.image {
+  height: 30%;
+  max-height: 400px;
+  width: 80%;
+  max-width: 700px;
+  align-self: center;
 }
