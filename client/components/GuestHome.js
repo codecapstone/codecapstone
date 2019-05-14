@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Link} from 'react-router-dom'
 import {Login, Signup, AboutUs} from './index'
 
 export const GuestHome = props => {
@@ -16,14 +16,14 @@ export const GuestHome = props => {
             frameBorder="0"
           />
           <div id="getStarted">
-            <div>
-              <h3>Sign up for full access</h3>
-            </div>
-            <i className="fas fa-comments" />
-            <div>
-              <a href="/prompt">
-                <h2>...or check out our example challenge!</h2>
-              </a>
+            <div className="serifFont">
+              Sign up, or check out our example challenge!
+              <div id="goButton">
+                <Link to="/instructions">
+                  <h3>Let's Go!</h3>
+                </Link>
+              </div>
+              <i className="far fa-comments" />
             </div>
           </div>
         </div>
