@@ -36,6 +36,42 @@ nav a {
 
 h1 {
   color: #5f0f40;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 30px;
+}
+
+.serifFont {
+  /* display: flex; */
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+
+  /* text-align: justify; */
+}
+
+#about .serifFont {
+  font-size: 17px;
+  color: #37383a;
+}
+
+#getStarted .serifFont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 30px;
+  /* background-color: #37383a; */
+  /* opacity: 0.8; */
+  height: 70%;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 600px) {
@@ -47,6 +83,8 @@ h1 {
   #slides {
     margin: 20px;
     box-shadow: 3px 3px 5px black;
+    width: 350px;
+    height: 197px;
   }
 
   iframe {
@@ -65,6 +103,10 @@ h1 {
 
   nav a {
     margin: 5px;
+  }
+
+  .homeBorderCard {
+    padding: 0px;
   }
 }
 @media screen and (min-width: 600px) {
@@ -161,15 +203,10 @@ input {
   margin-bottom: 10px;
 }
 #login {
-  /* margin-top: 120px; */
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   flex-shrink: 1;
-  /* background-color: #5f0f40; */
-  /* box-shadow: 3px 3px 5px black; */
   align-content: center;
-  /* min-height: 50px; */
   width: 100%;
 }
 .largeViewBorderCard #login {
@@ -212,7 +249,28 @@ input {
   justify-content: space-between;
   height: 100%;
   margin: 20px;
-  height: 560px;
+  height: 615px;
+}
+
+#goButton {
+  display: flex;
+  color: white;
+  width: 100%;
+  background-color: #202020;
+  border-radius: 5px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 5px black;
+}
+
+#goButton h3 {
+  color: white;
+  background-color: #202020;
+}
+
+#about h1 {
+  color: #37383a;
 }
 
 .borderCard {
@@ -420,7 +478,7 @@ input {
   background-color: #c1aba6;
   margin: 20px;
   padding: 30px;
-  color: #4b4b4b;
+  color: #37383a;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -431,24 +489,28 @@ input {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  color: #4b4b4b;
-  height: 225px;
-  background-color: #c1aba6;
+  color: #c1aba6;
+  max-width: 532px;
+  height: 290px;
+  background-color: #664f5c;
   box-shadow: 3px 3px 5px black;
   margin-top: 20px;
   justify-content: center;
   align-items: center;
+  background-image: url(https://imgur.com/a/rnQPFiF);
 }
 
 #getStarted a {
   color: #4b4b4b;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 #signature {
-  width: 280px;
-  height: 40px;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 28px;
+  color: #37383a;
   align-self: flex-end;
+  margin-top: 20px;
 }
 
 .largeViewCard {
