@@ -458,7 +458,7 @@ input {
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
-  height: 75%;
+  height: 85%;
 }
 
 #getStarted {
@@ -636,7 +636,7 @@ hr {
 }
 
 .challengeLink {
-  margin: 10px;
+  margin: 5px;
 }
 
 .topicLink {
