@@ -29,7 +29,7 @@ nav {
 
 nav a {
   display: flex;
-  margin: 1em;
+  /* margin: 1em; */
   background-color: '#';
   color: lightgray;
 }
@@ -100,8 +100,10 @@ h1 {
 .navLinks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   margin-left: 15px;
+  width: 50%;
 }
 
 #errorMessage {
@@ -147,20 +149,29 @@ input {
   margin-bottom: 10px;
 }
 #login {
-  margin-top: 120px;
+  /* margin-top: 120px; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   flex-shrink: 1;
-  background-color: #5f0f40;
-  box-shadow: 3px 3px 5px black;
-  align-items: center;
+  /* background-color: #5f0f40; */
+  /* box-shadow: 3px 3px 5px black; */
+  align-content: center;
+  /* min-height: 50px; */
   width: 100%;
-  min-height: 50px;
 }
+.largeViewBorderCard #login {
+  max-width: 500px;
+}
+
 #loginForm {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  /* flex-direction: column; */
 }
 
 .borderCard {
@@ -262,7 +273,7 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 30px;
+  min-height: 26px;
   background-color: #c1aba6;
   border-color: #c1aba6;
   margin-bottom: 10px;

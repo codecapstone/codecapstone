@@ -11,7 +11,7 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div className="borderCard" id="login">
+    <div id="login">
       <form onSubmit={handleSubmit} name={name} id="loginForm">
         {/* <div> */}
         <input
@@ -42,7 +42,7 @@ const AuthForm = props => {
           {displayName} with Google
         </a>
       </form>
-      <GuestCallout />
+      {/* <GuestCallout /> */}
     </div>
   )
 }
