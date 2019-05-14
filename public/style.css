@@ -814,7 +814,8 @@ hr {
   max-width: 700px;
   align-self: center;
   margin-bottom: 30px;
-  
+}
+
 .bigOContent {
   display: flex;
   flex-direction: row;
