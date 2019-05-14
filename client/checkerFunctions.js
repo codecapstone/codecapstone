@@ -117,11 +117,32 @@ function chunk(str) {
   }
 }
 
+function capitalize(str) {
+  try {
+    console.log(str)
+    let result = str[0].toUpperCase()
+
+    for (let i = 1; i < str.length; i++) {
+      if (str[i - 1] === ' ') {
+        result += str[i].toUpperCase()
+      } else {
+        result += str[i]
+      }
+    }
+    console.log(result)
+    return result
+  } catch (err) {
+    console.log('error in checker functions', err)
+    return `Error`
+  }
+}
+
 const checkers = {
   fib,
   anagrams,
   palindrome,
-  fizzBuzz
+  fizzBuzz,
+  capitalize
 }
 
 export default checkers
