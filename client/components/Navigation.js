@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {Route, Link, Switch} from 'react-router-dom'
 import {logout} from '../store'
 import {Login, Signup} from './AuthForm'
 
@@ -18,19 +18,26 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
         {/* The navbar will show these links after you log in */}
         <div>Welcome, {email}</div>
         <Link to="/home">Home</Link>
+        <Link to="/instructions">Instructions</Link>
         <Link to="/challenges">Challenges</Link>
         <Link to="/lessons">Lessons</Link>
-        <Link to="/instructions">Instructions</Link>
         <a href="#" onClick={handleClick}>
           Logout
         </a>
       </div>
     ) : (
-      <div className="navLinks">
-        {/* The navbar will show these links before you log in */}
-        <Link to="/login">Login</Link>
-        <Link to="/instructions">Instructions</Link>
-        <Link to="/signup">Sign Up</Link>
+      <div className="linksAndLogin">
+        <div className="navLinks">
+          {/* The navbar will show these links before you log in */}
+          <Link to="/instructions">Instructions</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route exact path="/" component={Login} />
+        </Switch>
       </div>
     )}
   </nav>
