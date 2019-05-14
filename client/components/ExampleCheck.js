@@ -108,13 +108,8 @@ class exampleCheck extends React.Component {
               </div>
             ) : null}
             <div>
-              <Link
-                to="/approach"
-                className="nextBtn"
-                type="button"
-                onClick={this.handleSubmit}
-              >
-                Submit My Example and Move-on to Approach
+              <Link to="/approach" onClick={this.handleSubmit} id="linkText">
+                <i className="far fa-comments" /> Submit
               </Link>
             </div>
           </div>

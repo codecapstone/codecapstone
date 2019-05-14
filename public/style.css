@@ -502,6 +502,9 @@ hr {
 #exmplPgBtns {
   display: flex;
 }
+#linkText {
+  color: #4b4b4b;
+}
 
 #dashboardStats {
   display: flex;

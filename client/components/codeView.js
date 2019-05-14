@@ -1,8 +1,10 @@
 import React from 'react'
 import {ConnectedSandbox} from './codeSandbox'
-
+import Prompt from './Prompt'
+import Help from './Help'
 import {connect} from 'react-redux'
 import {getAgent} from '../store/chatbot'
+import {Link} from 'react-router-dom'
 
 class CodeView extends React.Component {
   componentDidMount() {
@@ -10,28 +12,22 @@ class CodeView extends React.Component {
   }
 
   render() {
-    const {agent, problem} = this.props
     return (
-      <div id="code" className="content">
-        <div className="borderCard">
-          <div className="userHomeCard">
-            <div>Your Challenge: {problem.name}</div>
-            <br />
-            <div>Prompt: {problem.prompt}</div>
-          </div>
-          {this.props.agent.example ? (
-            <p>Your example was: {agent.example}</p>
-          ) : (
-            <p />
-          )}
-          <div
-            className="nextBtn"
-            onClick={() => this.props.history.push('/optimization')}
-          >
-            Next Step - Optimization!
-          </div>
+      <div className="largeViewBorderCard">
+        <Prompt />
+        <div className="largeViewCard" id="promptAnnyang">
+          <p>
+            Now you can code out your problem. Type your code into the code-box
+            below and check to see if it passes our tests. If you need help,
+            scroll down to the help section at the bottom of the page. When you
+            are done, click on submit.
+          </p>
+          <Link to="/optimization" id="linkText">
+            <i className="far fa-comments" /> Submit
+          </Link>
         </div>
         <ConnectedSandbox />
+        <Help />
       </div>
     )
   }
@@ -39,8 +35,7 @@ class CodeView extends React.Component {
 
 const mapState = state => {
   return {
-    problem: state.problems.selected,
-    agent: state.agent
+    problem: state.problems.selected
   }
 }
 

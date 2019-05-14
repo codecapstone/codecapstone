@@ -3,6 +3,8 @@ import annyang from 'annyang'
 import {keywordCheck} from '../utilFunctions'
 import {getKeyWords} from '../store/userStats'
 import {connect} from 'react-redux'
+import Prompt from './Prompt'
+import Help from './Help'
 
 export class Annyang extends React.Component {
   constructor() {
@@ -66,13 +68,10 @@ export class Annyang extends React.Component {
     annyang.abort()
   }
   render() {
-    const {name, prompt} = this.props.challenge
     return (
-      <div id="approachDiv" className="borderCard">
-        <div id="promptAnnyang" className="userHomeCard">
-          <h3>Your challenge is {name}</h3>
-          <p id="prompt">{prompt}</p>
-
+      <div className="largeViewBorderCard">
+        <Prompt />
+        <div className="largeViewCard" id="promptAnnyang">
           <p>
             Now say how you'd solve the problem! You can record your approach or
             type it, and you can edit your approach before hitting submit.
@@ -95,8 +94,6 @@ export class Annyang extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <label>You said:</label>
               <textarea
-                rows="5%"
-                cols="75%"
                 type="text"
                 name="said"
                 value={this.state.said}
@@ -108,6 +105,7 @@ export class Annyang extends React.Component {
             </form>
           </div>
         </div>
+        <Help />
       </div>
     )
   }
