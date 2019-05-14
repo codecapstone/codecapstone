@@ -3,7 +3,7 @@ import Challenges from './Challenges'
 
 export function ChallengesView() {
   return (
-    <div className="bodyComponent content">
+    <div>
       <Challenges />
     </div>
   )

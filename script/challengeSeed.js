@@ -2,7 +2,6 @@ const db = require('../server/db')
 
 const {Challenge} = require('../server/db/models')
 
-
 async function seed() {
   await db.sync()
   console.log('db synced!')
@@ -423,7 +422,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
   expect(chunked).toEqual([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]);
 });
 
-  
+
 `,
       solutions: [
         `function chunk(array, size) {
@@ -761,7 +760,7 @@ test("prints a pryamid for n = 4", () => {
       createdAt: '2019-05-13T20:34:25.593Z',
       updatedAt: '2019-05-13T20:34:25.593Z',
       topicId: 6
-      creditTo: 'StephenGrider/AlgoCasts'
+      // creditTo: 'StephenGrider/AlgoCasts'
     })
   ])
 
