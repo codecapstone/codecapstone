@@ -39,33 +39,37 @@ class Help extends React.Component {
   render() {
     return (
       <div className="largeViewCard">
-        <h3>Could I get a little help?</h3>
-        <button
-          type="button"
-          className="nextBtn"
-          onClick={() => this.handleClick('prompt')}
-        >
-          Remind me how I restated this problem.
-        </button>
-        <p>{this.state.userPrompt}</p>
+        <div>
+          <h3>Could I get a little help?</h3>
+        </div>
+        <div>
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick('prompt')}
+          >
+            Remind me how I restated this problem.
+          </button>
+          <p>{this.state.userPrompt}</p>
 
-        <button
-          type="button"
-          className="nextBtn"
-          onClick={() => this.handleClick('examples')}
-        >
-          Show me a working example for this problem.
-        </button>
-        <p>{this.state.examples}</p>
-        <button
-          type="button"
-          className="nextBtn"
-          name="lesson"
-          onClick={() => this.handleClick('lessons')}
-        >
-          Show me the lesson for this problem.
-        </button>
-        <p>{this.state.lesson}</p>
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick('examples')}
+          >
+            Show me a working example for this problem.
+          </button>
+          <p>{this.state.examples}</p>
+          <button
+            type="button"
+            className="nextBtn"
+            name="lesson"
+            onClick={() => this.handleClick('lessons')}
+          >
+            Show me the lesson for this problem.
+          </button>
+          <p>{this.state.lesson}</p>
+        </div>
       </div>
     )
   }

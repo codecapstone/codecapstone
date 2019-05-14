@@ -68,43 +68,39 @@ class Read extends React.Component {
             Now show you understand the example - Re-state the prompt in your
             own words.
           </h3>
-          <div className="annyangContainer">
-            <div id="rec-stopDiv">
-              <div id="recBtn">
-                <button
-                  className={this.state.buttonClass}
-                  type="button"
-                  onClick={this.annyangStart}
-                />
-                <p>Rec.</p>
-              </div>
-              <div id="stopBtn">
-                <button
-                  id="pauseBtn"
-                  type="button"
-                  onClick={this.annyangStop}
-                />
-                <p>Stop</p>
-              </div>
-            </div>
 
-            <form onSubmit={this.handleSubmit}>
-              {/* <label>You said:</label> */}
-              <textarea
-                rows="5"
-                type="text"
-                name="said"
-                value={this.state.said}
-                onChange={this.handleChange}
-                id="Annyang"
-                placeholder="Hit the record button to say the problem in your own words, or type it here."
+          <div id="rec-stopDiv">
+            <div id="recBtn">
+              <button
+                className={this.state.buttonClass}
+                type="button"
+                onClick={this.annyangStart}
               />
-              <i className="far fa-comments" />
-              <input id="submitBtn" type="submit" />
-            </form>
+              <p>Rec.</p>
+            </div>
+            <div id="stopBtn">
+              <button id="pauseBtn" type="button" onClick={this.annyangStop} />
+              <p>Stop</p>
+            </div>
           </div>
+
+          <form onSubmit={this.handleSubmit} className="form">
+            {/* <label>You said:</label> */}
+            <textarea
+              className="textBox"
+              rows="5"
+              type="text"
+              name="said"
+              value={this.state.said}
+              onChange={this.handleChange}
+              id="Annyang"
+              placeholder="Hit the record button to say the problem in your own words, or type it here."
+            />
+            <i className="far fa-comments" />
+            <input id="submitBtn" type="submit" />
+          </form>
         </div>
-        {/* </div> */}
+
         <Help />
       </div>
     )

@@ -96,6 +96,7 @@ export class Annyang extends React.Component {
 
             <textarea
               className="textBox"
+              rows="5"
               type="text"
               name="said"
               value={this.state.said}

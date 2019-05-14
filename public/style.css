@@ -370,6 +370,7 @@ input {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   height: 75%;
+  justify-content: space-evenly;
 }
 
 .bigOCard {
@@ -638,6 +639,7 @@ hr {
 
 #exampleCheck {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
 }
 

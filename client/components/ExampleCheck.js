@@ -60,58 +60,50 @@ class exampleCheck extends React.Component {
     const {functionName} = this.props.problem
 
     return (
-      <div>
-        <br />
-        <div>
-          <h3>
-            Please enter your example by giving a sample input and output.{' '}
-          </h3>
-        </div>
-        <br />
-        <div />
-        <div className="container">
-          <form id="exampleCheck">
-            <label>
-              {/* Input(s) */}
-              <input
-                name="input"
-                type="text"
-                value={this.state.input}
-                onChange={this.handleChange}
-                placeholder="Input(s) here"
-              />
-            </label>
+      <div className="largeViewCard">
+        <h3>Please enter your example by giving a sample input and output. </h3>
 
-            <label>
-              {/* Output{' '} */}
-              <input
-                name="output"
-                type="text"
-                value={this.state.output}
-                onChange={this.handleChange}
-                placeholder="Expected output here"
-              />
-            </label>
-          </form>
-          <div className="exampleBtns">
-            {checkers[functionName] ? (
-              <div>
-                <button
-                  className="nextBtn"
-                  type="button"
-                  onClick={this.handleCheck}
-                >
-                  Check My Example
-                </button>
+        <form id="exampleCheck" className="form">
+          <label>
+            {/* Input(s) */}
+            <input
+              name="input"
+              type="text"
+              value={this.state.input}
+              onChange={this.handleChange}
+              placeholder="Input(s) here"
+            />
+          </label>
 
-                <div>{this.state.correct}</div>
-              </div>
-            ) : null}
+          <label>
+            {/* Output{' '} */}
+            <input
+              name="output"
+              type="text"
+              value={this.state.output}
+              onChange={this.handleChange}
+              placeholder="Expected output here"
+            />
+          </label>
+        </form>
+        <div className="exampleBtns">
+          {checkers[functionName] ? (
             <div>
-              <Link to="/approach" onClick={this.handleSubmit} id="linkText">
-                <i className="far fa-comments" /> Submit
-              </Link>
+              <button
+                className="nextBtn"
+                type="button"
+                onClick={this.handleCheck}
+              >
+                Check My Example
+              </button>
+
+              <div>{this.state.correct}</div>
             </div>
+          ) : null}
+          <div>
+            <Link to="/approach" onClick={this.handleSubmit} id="linkText">
+              <i className="far fa-comments" /> Submit
+            </Link>
           </div>
         </div>
       </div>
