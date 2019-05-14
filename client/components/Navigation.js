@@ -26,12 +26,12 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
         </a>
       </div>
     ) : (
-      <div className="container">
+      <div className="linksAndLogin">
         <div className="navLinks">
           {/* The navbar will show these links before you log in */}
+          <Link to="/instructions">Instructions</Link>
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
-          <Link to="/instructions">Instructions</Link>
         </div>
         <Switch>
           <Route path="/login" component={Login} />
