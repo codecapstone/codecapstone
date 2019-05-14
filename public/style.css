@@ -36,6 +36,13 @@ nav a {
 
 h1 {
   color: #5f0f40;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -402,7 +409,7 @@ input {
   background-color: #c1aba6;
   margin: 20px;
   padding: 30px;
-  color: #4b4b4b;
+  color: #37383a;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;

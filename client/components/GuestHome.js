@@ -17,7 +17,7 @@ export const GuestHome = props => {
           />
           <div id="getStarted">
             <div>
-              <h2>Sign up for full access</h2>
+              <h3>Sign up for full access</h3>
             </div>
             <i className="fas fa-comments" />
             <div>
