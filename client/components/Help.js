@@ -1,13 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {singleLesson} from '../store/lesson'
 
 class Help extends React.Component {
   constructor() {
     super()
     this.state = {
-      examples: null,
-      userPrompt: null
+      examples: '',
+      userPrompt: '',
+      lesson: ''
     }
+  }
+
+  componentDidMount() {
+    this.props.singleLesson(this.props.challenge.topicId)
   }
 
   handleClick(evt) {
@@ -21,32 +27,49 @@ class Help extends React.Component {
       this.setState({
         userPrompt: userPrompt
       })
-    } else {
+    }
+    if (evt === 'examples') {
       this.setState({examples: this.props.challenge.examples})
+    }
+    if (evt === 'lessons') {
+      this.setState({lesson: this.props.lesson.description})
     }
   }
 
   render() {
     return (
-      <div className="userHomeCard">
-        <h3>Could I get a little help?</h3>
-        <button
-          type="button"
-          className="nextBtn"
-          onClick={() => this.handleClick('prompt')}
-        >
-          Remind me how I restated this problem.
-        </button>
-        <p>{this.state.userPrompt}</p>
+      <div className="largeViewCard">
+        <div>
+          <h3>Could I get a little help?</h3>
+        </div>
+        <div>
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick('prompt')}
+          >
+            Remind me how I restated this problem.
+          </button>
+          <p>{this.state.userPrompt}</p>
 
-        <button
-          type="button"
-          className="nextBtn"
-          onClick={() => this.handleClick('examples')}
-        >
-          Show me a working example for this problem.
-        </button>
-        <p>{this.state.examples}</p>
+          <button
+            type="button"
+            className="nextBtn"
+            onClick={() => this.handleClick('examples')}
+          >
+            Show me a working example for this problem.
+          </button>
+          <p>{this.state.examples}</p>
+          <button
+            type="button"
+            className="nextBtn"
+            name="lesson"
+            onClick={() => this.handleClick('lessons')}
+          >
+            Show me the lesson for this problem.
+          </button>
+          <p>{this.state.lesson}</p>
+        </div>
       </div>
     )
   }
@@ -54,7 +77,10 @@ class Help extends React.Component {
 
 const mapState = state => ({
   challenge: state.problems.selected,
-  userPrompt: state.userInput.userPrompt
+  userPrompt: state.userInput.userPrompt,
+  lesson: state.lesson.selected
 })
 
-export default connect(mapState)(Help)
+const mapDispatch = {singleLesson}
+
+export default connect(mapState, mapDispatch)(Help)

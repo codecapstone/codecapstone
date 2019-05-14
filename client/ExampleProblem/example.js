@@ -74,7 +74,7 @@ const exampleProblem = {
   ],
   keywords: [
     'cache',
-    'o',
+
     'optimize',
     'memoize',
 
@@ -86,6 +86,7 @@ const exampleProblem = {
     'iterative',
     'memoization'
   ],
+  topicId: 1,
   examples: `Example:
   fib(4) === 3, fib(2)=== 1`
 }

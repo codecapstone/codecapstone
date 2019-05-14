@@ -1,22 +1,21 @@
 import React from 'react'
-import annyang from 'annyang'
-import {keywordCheck} from '../utilFunctions'
-import {getKeyWords} from '../store/userStats'
 import {connect} from 'react-redux'
-import Prompt from './Prompt'
+import annyang from 'annyang'
 import Help from './Help'
+import {setPrompt} from '../store/userInput'
+import Prompt from './Prompt'
 
-export class Annyang extends React.Component {
+class Read extends React.Component {
   constructor() {
     super()
     this.state = {
-      wordsGot: [],
       said: '',
       buttonClass: 'notRec'
     }
-    this.handleChange = this.handleChange.bind(this)
+
     this.annyangStart = this.annyangStart.bind(this)
     this.annyangStop = this.annyangStop.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
@@ -25,35 +24,11 @@ export class Annyang extends React.Component {
         'Speech recognition is not yet working on some browsers. Try using the site in Chrome or you can type your answers.'
       )
     } else {
-      // Let's define a command.
-      var commands = {}
-
-      // Add our commands to annyang
-      annyang.addCommands(commands)
-
       // Start listening.
-
       annyang.addCallback('result', phrases => {
         this.setState({said: this.state.said + phrases[0]})
       })
     }
-  }
-  handleChange() {
-    this.setState({said: event.target.value})
-  }
-  handleSubmit(event) {
-    event.preventDefault()
-
-    let [wordsGot, wordsNotGot] = keywordCheck(
-      this.state.said,
-      this.props.challenge.keywords
-    )
-
-    this.props.getKeyWords({
-      gotKeywords: wordsGot,
-      notGotKeywords: wordsNotGot
-    })
-    this.props.history.push('/code')
   }
   annyangStart() {
     this.setState({
@@ -67,15 +42,33 @@ export class Annyang extends React.Component {
     })
     annyang.abort()
   }
+  handleChange() {
+    this.setState({said: event.target.value})
+  }
+  handleSubmit() {
+    event.preventDefault()
+    this.props.setPrompt(this.state.said)
+    this.setState({
+      said: '',
+      buttonClass: 'notRec'
+    })
+    this.props.history.push('/examples')
+  }
   render() {
+    const {prompt} = this.props.challenge
+
+    if (!prompt) return <div>Loading your challenge...</div>
+
     return (
       <div className="largeViewBorderCard">
+        {/* <div className="content"> */}
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
-          <p>
-            Now say how you'd solve the problem! You can record your approach or
-            type it, and you can edit your approach before hitting submit.
-          </p>
+          <h3>
+            Now show you understand the example - Re-state the prompt in your
+            own words.
+          </h3>
+
           <div id="rec-stopDiv">
             <div id="recBtn">
               <button
@@ -92,8 +85,7 @@ export class Annyang extends React.Component {
           </div>
 
           <form onSubmit={this.handleSubmit} className="form">
-            <label>You said:</label>
-
+            {/* <label>You said:</label> */}
             <textarea
               className="textBox"
               rows="5"
@@ -102,12 +94,13 @@ export class Annyang extends React.Component {
               value={this.state.said}
               onChange={this.handleChange}
               id="Annyang"
+              placeholder="Hit the record button to say the problem in your own words, or type it here."
             />
-
             <i className="far fa-comments" />
             <input id="submitBtn" type="submit" />
           </form>
         </div>
+
         <Help />
       </div>
     )
@@ -118,6 +111,6 @@ const mapState = state => ({
   challenge: state.problems.selected
 })
 
-const mapDispatch = {getKeyWords}
+const mapDispatch = {setPrompt}
 
-export default connect(mapState, mapDispatch)(Annyang)
+export default connect(mapState, mapDispatch)(Read)

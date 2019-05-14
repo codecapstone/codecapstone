@@ -20,9 +20,10 @@ import {
   Page404,
   PostLesson,
   Instructions,
-  Optimization
+  Optimization,
+  Read
 } from './components'
-import Prompt from './components/Prompt'
+
 import Examples from './components/Examples'
 import {me} from './store'
 import {ChallengesView} from './components/ChallengesView'
@@ -44,7 +45,7 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={GuestHome} />
         <Route path="/signup" component={GuestHome} />
-        <Route path="/prompt" component={Prompt} />
+        <Route path="/prompt" component={Read} />
         <Route path="/approach" component={Annyang} />
         <Route path="/examples" component={Examples} />
         <Route path="/stats" component={UserStats} />

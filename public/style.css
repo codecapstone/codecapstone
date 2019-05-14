@@ -6,9 +6,6 @@ body {
   font-family: 'Roboto', sans-serif;
   padding-top: 40px;
 }
-/* .content {
-  justify-content: space-around;
-} */
 
 .bigOContent {
   display: flex;
@@ -32,7 +29,7 @@ nav {
 
 nav a {
   display: flex;
-  margin: 1em;
+  /* margin: 1em; */
   background-color: '#';
   color: lightgray;
 }
@@ -47,6 +44,14 @@ h1 {
     margin: 5px;
   }
 
+  #slides {
+    margin: 20px;
+    box-shadow: 3px 3px 5px black;
+  }
+
+  iframe {
+    margin: 20px;
+  }
   #logo {
     width: 100px;
     height: 38px;
@@ -56,6 +61,10 @@ h1 {
     margin: 10px;
     width: 350px;
     height: 1000px;
+  }
+
+  nav a {
+    margin: 5px;
   }
 }
 @media screen and (min-width: 600px) {
@@ -81,12 +90,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* .codeAloud {
-  margin-right: 15px;
-  height: 10px;
-  margin-bottom: 0px;
-} */
-
 #navigation {
   flex-direction: row;
   color: lightgray;
@@ -96,13 +99,23 @@ h1 {
   top: 0;
   box-shadow: 3px 3px 5px black;
   margin: 0 auto;
+  min-height: 100px;
+  padding: 5px;
+}
+
+.linksAndLogin {
+  display: flex;
+  width: 100%;
+  align-content: center;
 }
 
 .navLinks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   margin-left: 15px;
+  width: 50%;
 }
 
 #errorMessage {
@@ -119,6 +132,7 @@ h1 {
 #Annyang {
   height: 350;
   width: 800;
+  margin-right: 15px;
 }
 
 #prompt {
@@ -136,13 +150,6 @@ h1 {
   max-width: 800px;
 }
 
-/* .challengeDetails {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 30px;
-  max-width: 600;
-} */
 .container {
   display: flex;
   justify-content: space-around;
@@ -150,49 +157,62 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* .containerColumn {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-} */
-
-/* #guestCard .container {
-  justify-content: center;
-  align-items: center;
-}
-
-#guestCard i {
-  font-size: 40px;
-}
-
-#guestCard h2 {
-  text-decoration: underline;
-} */
-
-/* .btnContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-} */
-
 input {
   margin-bottom: 10px;
 }
 #login {
-  margin-top: 120px;
+  /* margin-top: 120px; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   flex-shrink: 1;
-  background-color: #5f0f40;
-  box-shadow: 3px 3px 5px black;
-  align-items: center;
+  /* background-color: #5f0f40; */
+  /* box-shadow: 3px 3px 5px black; */
+  align-content: center;
+  /* min-height: 50px; */
   width: 100%;
-  min-height: 50px;
 }
+.largeViewBorderCard #login {
+  max-width: 500px;
+}
+
 #loginForm {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  margin-left: 25px;
+  /* flex-direction: column; */
+}
+
+.homeBorderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* flex-grow: 2; */
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  max-width: 1100px;
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 5px black;
+  align-items: flex-start;
+  /* height: 100%; */
+}
+
+.homeLeft {
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin: 20px;
+  height: 560px;
 }
 
 .borderCard {
@@ -203,16 +223,36 @@ input {
   flex-shrink: 1;
   flex-wrap: wrap;
   min-width: 100px;
-
+  max-width: 420px;
   background-color: #5f0f40;
   margin-top: 120px;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 30px;
+  /* padding: 30px; */
   box-shadow: 3px 3px 5px black;
   align-items: center;
   align-content: space-around;
   justify-content: space-evenly;
+}
+
+.largeViewBorderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* flex-grow: 2; */
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  max-width: 900px;
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 5px black;
+  align-content: space-around;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
 .bigOBorderCard {
@@ -227,7 +267,7 @@ input {
   margin-top: 120px;
   margin-left: 10px;
   margin-right: 10px;
-  padding: 30px;
+  /* padding: 30px; */
   box-shadow: 3px 3px 5px black;
   align-items: center;
 }
@@ -250,11 +290,23 @@ input {
   max-height: 700px;
 }
 
-/* #notGoogle {
-  display: flex;
-  flex-direction: row;
+#promptAnnyang {
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+}
+
+#promptAnnyang textarea {
+  font-size: 16px;
+}
+
+.annyangContainer {
+  align-items: center;
   width: 100%;
-} */
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .loginBtn {
   display: flex;
@@ -262,12 +314,12 @@ input {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 30px;
-  background-color: #c1aba6;
+  min-height: 26px;
+  background-color: #5f0f40;
   border-color: #c1aba6;
   margin-bottom: 10px;
   border-radius: 5px;
-  color: #5f0f40;
+  color: white;
   font-size: 14px;
   padding-left: 5px;
   padding-right: 5px;
@@ -277,37 +329,26 @@ input {
   color: white;
 }
 
-/* .loginSignup {
-  display: flex;
-  flex-direction: row;
-} */
-
 .loginInput {
   height: 20px;
   width: 200px;
   font-size: 16px;
 }
 
-/* #goBtn {
-  background-color: #5f0f40;
-  box-shadow: none;
-  color: lightgrey;
-} */
-
 .nextBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 14px;
   width: 200px;
   height: 50px;
   background-color: #c1aba6;
-  margin-top: 20px;
-  margin-right: 50px;
+  margin: 20px;
   border-radius: 5px;
   color: #4b4b4b;
   box-shadow: 3px 3px 5px black;
-  align-self: flex-end;
+  /* align-self: flex-end; */
 }
 
 .nextBtn a {
@@ -331,26 +372,11 @@ input {
   margin: 5px;
 }
 
-/* .containsABot {
-  display: flex;
-} */
-
 #bot {
   margin-top: 120px;
   margin-left: 10px;
   align-self: flex-start;
 }
-
-/* #botCard {
-  padding: 10px;
-  background-color: #aa767c;
-  box-shadow: 3px 3px 5px black;
-} */
-
-/* #botDiv {
-  justify-self: flex-end;
-  align-self: center;
-} */
 
 #approachDiv {
   display: flex;
@@ -371,7 +397,8 @@ input {
   flex-shrink: 1;
   flex-wrap: wrap;
   min-width: 100px;
-  max-width: 500px;
+  max-width: 400px;
+  min-height: 500px;
   background-color: #c1aba6;
   margin: 20px;
   padding: 30px;
@@ -382,11 +409,48 @@ input {
   height: 75%;
 }
 
-#userHome .userHomeCard {
-  max-width: 500px;
+#getStarted {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #4b4b4b;
+  height: 225px;
+  background-color: #c1aba6;
+  box-shadow: 3px 3px 5px black;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
-#userHome .borderCard {
-  max-width: 500px;
+
+#getStarted a {
+  color: #4b4b4b;
+  text-decoration: underline;
+}
+
+#signature {
+  width: 280px;
+  height: 40px;
+  align-self: flex-end;
+}
+
+.largeViewCard {
+  display: flex;
+  /* flex-direction: column; */
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  /* min-height: 500px; */
+  max-width: 800px;
+  background-color: #c1aba6;
+  margin: 10px;
+  padding: 30px;
+  color: #4b4b4b;
+  text-align: justify;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  height: 75%;
+  justify-content: space-evenly;
 }
 
 .bigOCard {
@@ -432,51 +496,6 @@ input {
 #instructions {
   flex-direction: column;
 }
-/*
-
-#dashboardPrompt {
-  min-width: 200px;
-  max-width: 500px;
-  flex-grow: 1;
-  flex-shrink: 2;
-  margin-top: 20px;
-  /* background-color: #7cafc4; */
-/* box-shadow: 3px 3px 5px grey;
-  color: white;
-  height: 400px;
-  padding: 20px; */
-/* } */
-
-/* #dashboardPrompt a {
-  color: white;
-} */
-
-/* .dashBtn {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  text-align: center;
-  width: 200px;
-  height: 50px;
-  background-color: #c1aba6;
-  margin-top:
-  margin-top: 20px;
-  border-radius: 5px;
-  color: #4b4b4b;
-  align-self: flex-end;
-  box-shadow: 3px 3px 5px black;
-}
-.dashBtn h4 {
-  margin-top: 10px;
-  color: white;
-}
-.promptButtons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
-} */
 
 .ynButton {
   margin: 10px;
@@ -530,7 +549,7 @@ hr {
 }
 
 .challengeLink {
-  margin: 20px;
+  margin: 10px;
 }
 
 .topicLink {
@@ -563,6 +582,9 @@ hr {
 
 #exmplPgBtns {
   display: flex;
+}
+#linkText {
+  color: #4b4b4b;
 }
 
 #dashboardStats {
@@ -626,6 +648,14 @@ hr {
   justify-self: center;
   align-self: center;
 }
+.form {
+  width: 100%;
+}
+.textBox {
+  width: 100%;
+
+  box-sizing: border-box;
+}
 
 @keyframes pulse {
   0% {
@@ -685,4 +715,21 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+}
+
+#exampleCheck {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#exampleCheck input {
+  font-size: 16px;
+  width: 200px;
+  margin: 10px;
+}
+.exampleBtns {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
 }

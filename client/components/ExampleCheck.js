@@ -61,55 +61,52 @@ class exampleCheck extends React.Component {
     const {functionName} = this.props.problem
    // console.log(functionName)
     return (
-      <div>
-        <br />
-        <div>
-          <p>Please enter your example by giving a sample input and output. </p>
-        </div>
-        <br />
-        <form>
+      <div className="largeViewCard">
+        <h3>Please enter your example by giving a sample input and output. </h3>
+
+        <form id="exampleCheck" className="form">
           <label>
-            Input(s)
+            {/* Input(s) */}
             <input
               name="input"
               type="text"
               value={this.state.input}
               onChange={this.handleChange}
+              placeholder="Input(s) here"
             />
           </label>
 
           <label>
-            Output{' '}
+            {/* Output{' '} */}
             <input
               name="output"
               type="text"
               value={this.state.output}
               onChange={this.handleChange}
+              placeholder="Expected output here"
             />
           </label>
         </form>
-        {checkers[functionName] ? (
+        <div className="exampleBtns">
+          {checkers[functionName] ? (
+            <div>
+              <button
+                className="nextBtn"
+                type="button"
+                onClick={this.handleCheck}
+              >
+                Check My Example
+              </button>
+
+              <div>{this.state.correct}</div>
+            </div>
+          ) : null}
           <div>
-            <button
-              className="nextBtn"
-              type="button"
-              onClick={this.handleCheck}
-            >
-              Check My Example
-            </button>
-
-            <p>{this.state.correct}</p>
+            <Link to="/approach" onClick={this.handleSubmit} id="linkText">
+              <i className="far fa-comments" /> Submit
+            </Link>
           </div>
-        ) : null}
-
-        <Link
-          to="/approach"
-          className="nextBtn"
-          type="button"
-          onClick={this.handleSubmit}
-        >
-          Submit My Example and Move-on to Approach
-        </Link>
+        </div>
       </div>
     )
   }
