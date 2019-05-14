@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchProblems, selectProblem} from '../store/problems'
+import {singleLesson} from '../store/lesson'
 import {addChallengeToStats} from '../store/userStats'
 import {Link} from 'react-router-dom'
 
@@ -13,9 +14,10 @@ class Challenges extends React.Component {
     this.props.getProblems()
   }
 
-  startProblem(userId, probId) {
+  startProblem(userId, probId, topicId) {
     this.props.addProblemToStats(userId, probId)
     this.props.setProblem(probId)
+    this.props.singleLesson(topicId)
   }
 
   render() {
@@ -28,7 +30,13 @@ class Challenges extends React.Component {
               <div
                 className="challengeLink"
                 key={problem.id}
-                onClick={() => this.startProblem(this.props.userId, problem.id)}
+                onClick={() =>
+                  this.startProblem(
+                    this.props.userId,
+                    problem.id,
+                    problem.topicId
+                  )
+                }
               >
                 <Link to="/prompt">
                   {problem.name} - {problem.level}
@@ -54,7 +62,8 @@ const mapDispatch = dispatch => {
     getProblems: () => dispatch(fetchProblems()),
     setProblem: id => dispatch(selectProblem(id)),
     addProblemToStats: (userId, probId) =>
-      dispatch(addChallengeToStats(userId, probId))
+      dispatch(addChallengeToStats(userId, probId)),
+    singleLesson: id => dispatch(singleLesson(id))
   }
 }
 

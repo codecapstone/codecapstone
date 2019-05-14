@@ -1,4 +1,5 @@
 import axios from 'axios'
+import exampleLesson from '../ExampleProblem/exampleLesson.js'
 
 // ACTION TYPES
 const GET_LESSONS = 'GET_LESSONS'
@@ -40,7 +41,7 @@ export const postLesson = lesson => async dispatch => {
 }
 
 //Initial State
-const initialState = {all: [], selected: {}, newLesson: {}}
+const initialState = {all: [], selected: exampleLesson, newLesson: {}}
 
 //REDUCER
 
