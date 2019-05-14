@@ -410,13 +410,26 @@ input {
 
 #getStarted {
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #4b4b4b;
   height: 225px;
   background-color: #c1aba6;
   box-shadow: 3px 3px 5px black;
   margin-top: 20px;
   justify-content: center;
   align-items: center;
+}
+
+#getStarted a {
+  color: #4b4b4b;
+  text-decoration: underline;
+}
+
+#signature {
+  width: 280px;
+  height: 40px;
+  align-self: flex-end;
 }
 
 .largeViewCard {

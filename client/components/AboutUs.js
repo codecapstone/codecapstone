@@ -19,8 +19,9 @@ export const AboutUs = props => {
           <li>Verbalizing an approach</li>
         </ul>
         These are skills that will help you nail your technical interviews and
-        achieve your dream job.
+        achieve your dream job. Best of luck!
       </h3>
+      <img id="signature" src="https://i.imgur.com/CN19B7W.png?1" />
     </div>
     // </div>
   )

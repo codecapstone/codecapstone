@@ -15,7 +15,15 @@ export const GuestHome = props => {
             margin="20"
           />
           <div id="getStarted">
-            <h1>Get Started!</h1>
+            <div>
+              <h2>Sign up for full access</h2>
+            </div>
+            <i className="fas fa-comments" />
+            <div>
+              <a href="/prompt">
+                <h2>...or check out our example challenge!</h2>
+              </a>
+            </div>
           </div>
         </div>
         <AboutUs />
