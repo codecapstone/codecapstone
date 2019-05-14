@@ -2,7 +2,6 @@ const db = require('../server/db')
 
 const {Challenge} = require('../server/db/models')
 
-
 async function seed() {
   await db.sync()
   console.log('db synced!')
@@ -761,7 +760,6 @@ test("prints a pryamid for n = 4", () => {
       createdAt: '2019-05-13T20:34:25.593Z',
       updatedAt: '2019-05-13T20:34:25.593Z',
       topicId: 6
-      creditTo: 'StephenGrider/AlgoCasts'
     })
   ])
 
