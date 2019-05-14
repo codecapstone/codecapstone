@@ -26,6 +26,7 @@ router.get('/level/:level', async (req, res, next) => {
 router.get('/:challengeId', async (req, res, next) => {
   try {
     const oneChallenge = await Challenge.findByPk(req.params.challengeId)
+
     res.json(oneChallenge)
   } catch (err) {
     next(err)
