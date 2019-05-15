@@ -16,10 +16,10 @@ class Challenges extends React.Component {
   }
 
   startProblem(userId, probId, topicId) {
+    this.props.clearInput()
     this.props.addProblemToStats(userId, probId)
     this.props.setProblem(probId)
     this.props.singleLesson(topicId)
-    this.props.clearInput()
   }
 
   render() {
