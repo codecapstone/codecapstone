@@ -17,13 +17,17 @@ export const GuestHome = props => {
           />
           <div id="getStarted">
             <div className="serifFont">
-              Sign up, or check out our example challenge!
               <div id="goButton">
-                <Link to="/instructions">
+                <Link to="/prompt">
                   <h3>Let's Go!</h3>
                 </Link>
               </div>
               <i className="far fa-comments" />
+              <div id="goButton">
+                <Link to="/instructions">
+                  <h3>More Info</h3>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ class CodeView extends React.Component {
             <p>
               The built-in tests will let you know if your code passes. If you
               need help, scroll down to the help section. When you are done,
-              click on submit.
+              click the link below.
             </p>
             <Link to="/optimization" id="linkText">
               <i className="far fa-comments" /> I'm Finished
