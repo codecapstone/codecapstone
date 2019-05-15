@@ -10,7 +10,7 @@ const Navigation = ({handleClick, isLoggedIn, email}) => (
     <i className="far fa-comments" />
     <div id="codeAloudNameDiv">
       <Link to="/">
-        <img id="logo" src="https://i.imgur.com/8z5667d.png" />
+        <img id="logo" src="https://i.imgur.com/qeRJ1zZ.png" />
       </Link>
     </div>
     {isLoggedIn ? (

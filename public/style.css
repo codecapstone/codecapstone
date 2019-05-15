@@ -3,12 +3,16 @@ body {
   margin: auto 0;
   background-color: #664f5c;
   color: lightgrey;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding-top: 40px;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 label {
@@ -32,23 +36,27 @@ nav a {
 
 h1 {
   color: #5f0f40;
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
 }
 
 h3 {
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
 }
 
 .serifFont {
   /* display: flex; */
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
   padding: 10px;
   color: white;
 
   /* text-align: justify; */
+}
+
+#about {
+  height: 80%;
 }
 
 #about .serifFont {
@@ -237,13 +245,12 @@ input {
   padding: 10px;
   box-shadow: 3px 3px 5px black;
   align-items: flex-start;
-  /* height: 100%; */
+  height: 80%;
 }
 
 .homeLeft {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   margin: 20px;
   height: 615px;
@@ -440,7 +447,7 @@ input {
   min-height: 500px;
   background-color: #c1aba6;
   margin: 20px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   padding: 30px;
   color: #202020;
   text-align: justify;
@@ -455,7 +462,7 @@ input {
   flex-wrap: wrap;
   color: #c1aba6;
   max-width: 532px;
-  height: 290px;
+  height: 240px;
   background-color: #664f5c;
   box-shadow: 3px 3px 5px black;
   margin-top: 20px;
@@ -505,7 +512,7 @@ input {
   margin: 10px;
   padding: 30px;
   color: #202020;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -566,7 +573,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
 }
 .instructionText {
   flex: 0 1 auto;
@@ -596,7 +603,7 @@ input {
   margin: 20px;
   padding: 1.2em 2.8em;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
 

@@ -13,10 +13,10 @@ export class UserStats extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  componentDidMount() {
-    const {userId, challengeId} = this.props
-    this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
-  }
+  // componentDidMount() {
+  //   const {userId, challengeId} = this.props
+  //   // this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
+  // }
 
   handleInputChange(event, userId, challengeId, isCompleted) {
     const target = event.target
@@ -40,7 +40,7 @@ export class UserStats extends React.Component {
     return (
       <div className="borderCard" id="stats">
         <div className="userHomeCard">
-          <p>Your problem was: {problem}</p>
+          <h3>Your problem was: {problem}</h3>
           <p>In your approach you got the following keywords:</p>
           {keywordsGot.map((word, idx) => (
             <p key={idx} id="keywordsGot">
