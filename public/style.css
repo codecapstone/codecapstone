@@ -139,6 +139,7 @@ h3 {
   margin: 0 auto;
   min-height: 100px;
   padding: 5px;
+  z-index: 1;
 }
 
 .linksAndLogin {
@@ -288,6 +289,7 @@ input {
   align-content: space-around;
   justify-content: space-evenly;
 }
+
 .biggerBorderCard {
   display: flex;
   flex-direction: row;
@@ -781,6 +783,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #stopBtn {
@@ -788,6 +791,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #exampleCheck {
@@ -825,7 +829,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.bigOBorderCard {
+.bigOChartBorderCard {
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -839,11 +843,25 @@ hr {
   margin-top: 13%;
 }
 
+.bigOBorderCard {
+  display: flex;
+  flex-direction: column;
+  /* width: 33%;
+  height: 33%; */
+  background-color: #5f0f40;
+  box-shadow: 3px 3px 5px black;
+  align-self: flex-end;
+  padding: 1%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 13%;
+}
+
 .bigOAboutBorderCard {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 37%;
+  /* width: 33%;
+  height: 37%; */
   background-color: #5f0f40;
   box-shadow: 3px 3px 5px black;
   align-self: flex-end;
@@ -876,8 +894,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 85%;
-  width: 85%;
+  /* height: 85%;
+  width: 85%; */
   flex-direction: column;
   justify-content: center;
 }
@@ -891,8 +909,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 80%;
-  width: 80%;
+  /* height: 80%;
+  width: 80%; */
   flex-direction: column;
   font-size: 95%;
   text-align: center;
@@ -903,8 +921,6 @@ hr {
   text-align: center;
   align-items: center;
   font-size: 95%;
-  width: 32%;
-  height: 5%;
   padding: 2%;
   background-color: #c1aba6;
   margin-bottom: 7%;
@@ -938,4 +954,62 @@ td {
 
 li {
   text-align: left;
+}
+
+.solutionCard {
+  display: flex;
+  background-color: #c1aba6;
+  margin: 2%;
+  padding: 5%;
+  width: 90%;
+  color: #202020;
+  box-shadow: 3px 3px 5px black;
+  font-size: 95%;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsBorderCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #5f0f40;
+  margin: 5%;
+  padding: 5%;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsNextBtn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 95%;
+  padding: 5%;
+  background-color: #c1aba6;
+  margin-bottom: 7%;
+  border-radius: 5px;
+  color: #4b4b4b;
+  box-shadow: 3px 3px 5px black;
+  align-self: center;
+  width: -webkit-fit-content;
+}
+
+pre {
+  text-align: left;
+}
+
+#solutionsContainer {
+  margin: 7%;
+}
+
+#solutionsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
