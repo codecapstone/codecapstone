@@ -42,7 +42,7 @@ export const setApproach = approach => async dispatch => {
 export const getUserInput = () => async dispatch => {
   try {
     const {data} = await axios.get('/api/userInput')
-    console.log('userInput from session in userInput store', data)
+
     dispatch(setInput(data))
   } catch (err) {
     console.error(err)
