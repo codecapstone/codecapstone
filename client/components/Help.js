@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {singleLesson} from '../store'
+import {singleLesson, getUserInput, setLoading} from '../store'
 
 class Help extends React.Component {
   constructor() {
@@ -11,6 +11,10 @@ class Help extends React.Component {
       lesson: '',
       approach: ''
     }
+  }
+  componentDidMount() {
+    // this.props.setLoading(true)
+    this.props.getUserInput()
   }
 
   handleClick(evt) {
@@ -95,6 +99,6 @@ const mapState = state => ({
   lesson: state.lesson.selected
 })
 
-const mapDispatch = {singleLesson}
+const mapDispatch = {singleLesson, getUserInput, setLoading}
 
 export default connect(mapState, mapDispatch)(Help)

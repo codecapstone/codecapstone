@@ -10,6 +10,7 @@ import agent from './chatbot'
 import lesson from './lesson'
 import topic from './topic'
 import userInput from './userInput'
+import loading from './loading'
 
 const reducer = combineReducers({
   user,
@@ -19,7 +20,8 @@ const reducer = combineReducers({
   agent,
   lesson,
   topic,
-  userInput
+  userInput,
+  loading
 })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
@@ -33,3 +35,4 @@ export * from './lesson'
 export * from './topic'
 export * from './userStats'
 export * from './userInput'
+export * from './loading'
