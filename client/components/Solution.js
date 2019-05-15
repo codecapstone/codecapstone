@@ -5,7 +5,7 @@ export const Solution = props => {
     <div className="solutionsBorderCard">
       <div className="solutionCard">
         Solution #{props.idx + 1}
-        <pre>{props.solution}</pre>
+        <pre style={{fontSize: '120%'}}>{props.solution}</pre>
       </div>
     </div>
   )
