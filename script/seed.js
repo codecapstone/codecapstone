@@ -16,62 +16,63 @@ async function seed() {
   ])
 
   const topics = await Promise.all([
-   await Topic.create({name: 'Dynamic Programming'}),
-   await Topic.create({name: 'Arrays'}),
+    await Topic.create({name: 'Strings'}),
+    await Topic.create({name: 'Numbers'}),
     await Topic.create({name: 'Linked Lists'}),
-    await Topic.create({name: 'Hash Tables'}),
+    //await Topic.create({name: 'Hash Tables'}),
     await Topic.create({name: 'Trees'}),
     await Topic.create({name: 'Miscellaneous'})
   ])
   const lessons = await Promise.all([
-    Lesson.create({
-      name: 'Fibonacci Number',
-      description:
-        'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
-      reference: ['https://en.wikipedia.org/wiki/Fibonacci_number'],
-      topicId:1
+    await Lesson.create({
+      name: 'Strings',
+      description: `     In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable. The latter may allow its elements to be mutated and the length changed, or it may be fixed (after creation). A string is generally considered a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. String may also denote more general arrays or other sequence (or list) data types and structures.
+             Some examples of String Problems are Anagrams, Palindrome, Reverse String`,
+      reference: [
+        'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'
+      ],
+      topicId: 1
     }),
-    Lesson.create({
-      name: 'Anagrams',
-      description:
-        'An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.[1] For example, the word anagram can be rearranged into nag a ram, or the word binary into brainy or the word `adobe` into `abode`.',
-      reference: ['https://en.wikipedia.org/wiki/Anagram'],
-      topicId:2
+    await Lesson.create({
+      name: 'Numbers',
+      description: `In computer programming, numbers can be of different types - DECIMAL, BINARY, HEXADECIMAL.
+         Computers represent data in sets of BINARY digits. The representation is composed of bits, which in turn are grouped into larger sets such as bytes.A bit is a binary digit that represents one of two states. The concept of a bit can be understood as a value of either 1 or 0, on or off, yes or no, true or false, or encoded by a switch or toggle of some kind.
+         The HEXADECIMAL numeral system, often shortened to "hex", is a numeral system made up of 16 symbols (base 16). The standard numeral system is called decimal (base 10) and uses ten symbols: 0,1,2,3,4,5,6,7,8,9. Hexadecimal uses the decimal numbers and six extra symbols. There are no numerical symbols that represent values greater than ten, so letters taken from the English alphabet are used, specifically A, B, C, D, E and F. Hexadecimal A = decimal 10, and hexadecimal F = decimal 15.
+         The DECIMAL numeral system (also called base-ten positional numeral system, and occasionally called denary) is the standard system for denoting integer and non-integer numbers. 
+            Some examples are Fibonacci sequence, Matrix, reverse an Integer`,
+      reference: [
+        'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number'
+      ],
+      topicId: 2
     }),
-    Lesson.create({
-      name: 'FizzBuzz',
-      description:
-        'Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word "fizz", and any number divisible by five with the word "buzz"..',
-      reference: ['https://en.wikipedia.org/wiki/Fizz_buzz'],
-      topicId:1
-    }),
-    Lesson.create({
-      name: 'Binary Tree',
-      description:
-        'In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[1] Some authors allow the binary tree to be the empty set as well.',
-      reference: ['https://en.wikipedia.org/wiki/Binary_tree'],
-      topicId:5
-    }),
-        Lesson.create({
+    await Lesson.create({
       name: 'Linked List',
       description:
         'In computer science, a Linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains: data, and a reference (in other words, a link) to the next node in the sequence.',
       reference: ['https://en.wikipedia.org/wiki/Linked_list'],
-      topicId:3
-        }),
-         Lesson.create({
-      name: 'Palindrome',
-      description:
-        'A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10801. Sentence-length palindromes may be written when allowances are made for adjustments to capital letters, punctuation, and word dividers, such as "A man, a plan, a canal, Panama!", "Was it a car or a cat I saw?" .',
-      reference: ['https://en.wikipedia.org/wiki/Palindrome'],
-      topicId:3
+      topicId: 3
     }),
+    await Lesson.create({
+      name: 'Binary Tree',
+      description:
+        'In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[1] Some authors allow the binary tree to be the empty set as well.',
+      reference: ['https://en.wikipedia.org/wiki/Binary_tree'],
+      topicId: 4
+    }),
+    await Lesson.create({
+      name: 'Miscellaneous',
+      description: `Apart from data structure-based questions, most of the programming job interviews also ask algorithm, design, bit manipulation, and general logic-based questions. These type of questions come under this topic.
+        Some examples are Pyramid, implementing the sort algorithms, etc`,
+      reference: [
+        'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects'
+      ],
+      topicId: 5
+    })
   ])
-  
 
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${topics.length} topics`)
-  
+
   console.log(`seeded ${lessons.length} lessons`)
   console.log(`seeded successfully`)
 }

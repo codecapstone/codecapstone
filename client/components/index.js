@@ -13,7 +13,7 @@ export {GuestHome} from './GuestHome'
 
 export {default as Challenges} from './Challenges'
 
-export {default as Annyang} from './Annyang'
+export {default as Approach} from './Approach'
 export {default as UserStats} from './UserStats'
 export {default as Code} from './codeView'
 export {ChallengesView} from './ChallengesView'

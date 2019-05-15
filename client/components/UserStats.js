@@ -13,10 +13,10 @@ export class UserStats extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  componentDidMount() {
-    const {userId, challengeId} = this.props
-    // this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
-  }
+  // componentDidMount() {
+  //   const {userId, challengeId} = this.props
+  //   // this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
+  // }
 
   handleInputChange(event, userId, challengeId, isCompleted) {
     const target = event.target
