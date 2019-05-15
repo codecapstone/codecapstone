@@ -760,7 +760,62 @@ test("prints a pryamid for n = 4", () => {
       createdAt: '2019-05-13T20:34:25.593Z',
       updatedAt: '2019-05-13T20:34:25.593Z',
       topicId: 5
-      
+    }),
+    Challenge.create({
+      name: 'Hello',
+      sandboxId: 'jp733',
+      prompt: 'Given a string return `Hello {string}`',
+      functionName: 'hello',
+      tests:`import hello from "./index.js";
+
+        test("hello function is defined", () => {
+          expect(typeof hello).toEqual("function");
+        });
+        test('"world" ', () => {
+          expect(hello("world")).toEqual("Hello world");
+        });
+`
+        ,
+      solutions: [
+        `export default function hello(str) {
+            let result = "Hello ";
+            return result + str;
+          }`
+      ],
+      keywords: ['string'],
+      examples:
+        'hello(world) === Hello world',
+      level: 'Easy',
+      creditTo: 'codeAloud Team',
+      createdAt: '2019-05-13T19:14:52.137Z',
+      updatedAt: '2019-05-13T19:14:52.137Z',
+      topicId: 5
+    }),
+    Challenge.create({
+      name: 'Addition',
+      sandboxId: 'addition-3ycjc',
+      prompt: 'Given 2 numbers, return the sum',
+      functionName: 'add',
+      tests: `import add from "./index.js";
+        test("2 + 3 is equal to 5", () => {
+          expect(add(2, 3)).toEqual(5);
+        });`  ,
+      solutions: [
+        `export default function add(a, b) {
+            let sum = 0
+            sum = sum + a
+            sum = sum + b
+            return sum
+          }`
+      ],
+      keywords: ['number', 'add', 'return'],
+      examples:
+        'add(2, 3) === 5',
+      level: 'Easy',
+      creditTo: 'codeAloud Team',
+      createdAt: '2019-05-13T19:14:52.137Z',
+      updatedAt: '2019-05-13T19:14:52.137Z',
+      topicId: 5
     })
   ])
 
