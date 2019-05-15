@@ -6,7 +6,7 @@ router.post('/:method', (req, res, next) => {
   try {
     req.session.userInput = {}
     req.session.userInput[req.params.method] = req.body.info
-    console.log('req.session', req.session)
+
     res.send(req.session.userInput[req.params.method])
   } catch (err) {
     next(err)

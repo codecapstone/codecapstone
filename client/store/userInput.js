@@ -20,7 +20,7 @@ export const setPrompt = userPrompt => async dispatch => {
     const {data} = await axios.post('/api/userInput/userPrompt', {
       info: userPrompt
     })
-    console.log('prompt from session in userInput store', data)
+
     dispatch(promptSet(data))
   } catch (err) {
     console.error(err)
@@ -32,7 +32,7 @@ export const setApproach = approach => async dispatch => {
     const {data} = await axios.post('/api/userInput/approach', {
       info: approach
     })
-    console.log('approach from session in userInput store', data)
+
     dispatch(approachSet(data))
   } catch (err) {
     console.error(err)

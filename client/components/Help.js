@@ -13,7 +13,6 @@ class Help extends React.Component {
     }
   }
   componentDidMount() {
-    // this.props.setLoading(true)
     this.props.getUserInput()
   }
 
