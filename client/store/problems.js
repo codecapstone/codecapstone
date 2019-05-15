@@ -1,6 +1,5 @@
 import exampleProblem from '../ExampleProblem/example'
 import axios from 'axios'
-import {nextTick} from 'q'
 
 //ACTION TYPES
 const GET_PROBLEMS = 'GET_PROBLEMS'
