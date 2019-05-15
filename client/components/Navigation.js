@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Route, Link, Switch} from 'react-router-dom'
-import {logout} from '../store'
+import {logout, clearInput} from '../store'
 import {Login, Signup} from './AuthForm'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
@@ -57,6 +57,7 @@ const mapDispatch = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
+      dispatch(clearInput())
     }
   }
 }
