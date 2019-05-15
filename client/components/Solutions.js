@@ -1,9 +1,17 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Solution} from './Solution'
+
 import Prompt from './Prompt'
 
+import {getCurrentProblem} from '../store/problems'
+
+
 class Solutions extends React.Component {
+  componentDidMount() {
+    this.props.getCurrentProblem()
+  }
+
   render() {
     const {solutions, name} = this.props.challenge
 
@@ -28,8 +36,10 @@ class Solutions extends React.Component {
   }
 }
 
+const mapDispatch = {getCurrentProblem}
+
 const mapState = state => ({
   challenge: state.problems.selected
 })
 
-export default connect(mapState)(Solutions)
+export default connect(mapState, mapDispatch)(Solutions)
