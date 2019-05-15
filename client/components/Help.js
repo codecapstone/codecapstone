@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {singleLesson} from '../store/lesson'
+import {singleLesson} from '../store'
 
 class Help extends React.Component {
   constructor() {
@@ -8,7 +8,8 @@ class Help extends React.Component {
     this.state = {
       examples: '',
       userPrompt: '',
-      lesson: ''
+      lesson: '',
+      approach: ''
     }
   }
 
@@ -29,6 +30,13 @@ class Help extends React.Component {
     }
     if (evt === 'lessons') {
       this.setState({lesson: this.props.lesson.description})
+    }
+    if (evt === 'approach') {
+      let userApproach = `You haven't set out your approach yet. Think about what a brute-force solution might look like (don't worry about optimization yet!)  Consider a simple or base case for your challenge to help get you started. You could also take a look at the lesson.`
+      if (this.props.approach) {
+        userApproach = this.props.approach
+      }
+      this.setState({approach: userApproach})
     }
   }
 
@@ -62,9 +70,18 @@ class Help extends React.Component {
             name="lesson"
             onClick={() => this.handleClick('lessons')}
           >
-            Show me the lesson for this problem.
+            Show me the lesson for this challenge.
           </button>
           <p>{this.state.lesson}</p>
+          <button
+            type="button"
+            className="nextBtn"
+            name="approach"
+            onClick={() => this.handleClick('approach')}
+          >
+            Remind me how I would approach this challenge.
+          </button>
+          <p>{this.state.approach}</p>
         </div>
       </div>
     )
@@ -74,6 +91,7 @@ class Help extends React.Component {
 const mapState = state => ({
   challenge: state.problems.selected,
   userPrompt: state.userInput.userPrompt,
+  approach: state.userInput.approach,
   lesson: state.lesson.selected
 })
 
