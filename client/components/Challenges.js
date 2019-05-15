@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchProblems, selectProblem} from '../store/problems'
 import {singleLesson} from '../store/lesson'
 import {addChallengeToStats} from '../store/userStats'
+import {clearInput} from '../store/userInput'
 import {Link} from 'react-router-dom'
 
 class Challenges extends React.Component {
@@ -18,6 +19,7 @@ class Challenges extends React.Component {
     this.props.addProblemToStats(userId, probId)
     this.props.setProblem(probId)
     this.props.singleLesson(topicId)
+    this.props.clearInput()
   }
 
   render() {
@@ -63,7 +65,8 @@ const mapDispatch = dispatch => {
     setProblem: id => dispatch(selectProblem(id)),
     addProblemToStats: (userId, probId) =>
       dispatch(addChallengeToStats(userId, probId)),
-    singleLesson: id => dispatch(singleLesson(id))
+    singleLesson: id => dispatch(singleLesson(id)),
+    clearInput: () => dispatch(clearInput)
   }
 }
 
