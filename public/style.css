@@ -116,6 +116,10 @@ h3 {
   #code {
     flex-direction: column;
   }
+
+  .bigOContent {
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 600px) {
   .fa-comments {
@@ -889,6 +893,7 @@ hr {
   align-items: center;
   margin-top: 7%;
   margin: 4%;
+  height: 100%;
 }
 
 .bigOChartCard {
