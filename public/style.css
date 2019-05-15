@@ -3,12 +3,16 @@ body {
   margin: auto 0;
   background-color: #664f5c;
   color: lightgrey;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding-top: 40px;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 label {
@@ -32,23 +36,27 @@ nav a {
 
 h1 {
   color: #5f0f40;
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
 }
 
 h3 {
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
 }
 
 .serifFont {
   /* display: flex; */
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
   padding: 10px;
   color: white;
 
   /* text-align: justify; */
+}
+
+#about {
+  height: 80%;
 }
 
 #about .serifFont {
@@ -139,6 +147,7 @@ h3 {
   margin: 0 auto;
   min-height: 100px;
   padding: 5px;
+  z-index: 1;
 }
 
 .linksAndLogin {
@@ -236,13 +245,12 @@ input {
   padding: 10px;
   box-shadow: 3px 3px 5px black;
   align-items: flex-start;
-  /* height: 100%; */
+  height: 80%;
 }
 
 .homeLeft {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   margin: 20px;
   height: 615px;
@@ -288,6 +296,7 @@ input {
   align-content: space-around;
   justify-content: space-evenly;
 }
+
 .biggerBorderCard {
   display: flex;
   flex-direction: row;
@@ -438,7 +447,7 @@ input {
   min-height: 500px;
   background-color: #c1aba6;
   margin: 20px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   padding: 30px;
   color: #202020;
   text-align: justify;
@@ -453,7 +462,7 @@ input {
   flex-wrap: wrap;
   color: #c1aba6;
   max-width: 532px;
-  height: 290px;
+  height: 240px;
   background-color: #664f5c;
   box-shadow: 3px 3px 5px black;
   margin-top: 20px;
@@ -503,7 +512,7 @@ input {
   margin: 10px;
   padding: 30px;
   color: #202020;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -564,7 +573,7 @@ input {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Raleway', sans-serif;
 }
 .instructionText {
   flex: 0 1 auto;
@@ -594,7 +603,7 @@ input {
   margin: 20px;
   padding: 1.2em 2.8em;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
 
@@ -781,6 +790,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #stopBtn {
@@ -788,6 +798,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #exampleCheck {
@@ -825,7 +836,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.bigOBorderCard {
+.bigOChartBorderCard {
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -839,11 +850,25 @@ hr {
   margin-top: 13%;
 }
 
+.bigOBorderCard {
+  display: flex;
+  flex-direction: column;
+  /* width: 33%;
+  height: 33%; */
+  background-color: #5f0f40;
+  box-shadow: 3px 3px 5px black;
+  align-self: flex-end;
+  padding: 1%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 13%;
+}
+
 .bigOAboutBorderCard {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 37%;
+  /* width: 33%;
+  height: 37%; */
   background-color: #5f0f40;
   box-shadow: 3px 3px 5px black;
   align-self: flex-end;
@@ -876,8 +901,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 85%;
-  width: 85%;
+  /* height: 85%;
+  width: 85%; */
   flex-direction: column;
   justify-content: center;
 }
@@ -891,8 +916,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 80%;
-  width: 80%;
+  /* height: 80%;
+  width: 80%; */
   flex-direction: column;
   font-size: 95%;
   text-align: center;
@@ -903,8 +928,6 @@ hr {
   text-align: center;
   align-items: center;
   font-size: 95%;
-  width: 32%;
-  height: 5%;
   padding: 2%;
   background-color: #c1aba6;
   margin-bottom: 7%;
@@ -938,4 +961,62 @@ td {
 
 li {
   text-align: left;
+}
+
+.solutionCard {
+  display: flex;
+  background-color: #c1aba6;
+  margin: 2%;
+  padding: 5%;
+  width: 90%;
+  color: #202020;
+  box-shadow: 3px 3px 5px black;
+  font-size: 95%;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsBorderCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #5f0f40;
+  margin: 5%;
+  padding: 5%;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsNextBtn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 95%;
+  padding: 5%;
+  background-color: #c1aba6;
+  margin-bottom: 7%;
+  border-radius: 5px;
+  color: #4b4b4b;
+  box-shadow: 3px 3px 5px black;
+  align-self: center;
+  width: -webkit-fit-content;
+}
+
+pre {
+  text-align: left;
+}
+
+#solutionsContainer {
+  margin: 7%;
+}
+
+#solutionsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

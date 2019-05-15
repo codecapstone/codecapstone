@@ -72,10 +72,10 @@ export class Annyang extends React.Component {
       <div className="largeViewBorderCard">
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
-          <p>
+          <h3>
             Now say how you'd solve the problem! You can record your approach or
             type it, and you can edit your approach before hitting submit.
-          </p>
+          </h3>
           <div id="rec-stopDiv">
             <div id="recBtn">
               <button
