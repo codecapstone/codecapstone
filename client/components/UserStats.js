@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {markChallengeDone} from '../store/userStats'
+import {getCurrentProblem} from '../store/problems'
 
 export class UserStats extends React.Component {
   constructor() {
@@ -13,10 +14,9 @@ export class UserStats extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  // componentDidMount() {
-  //   const {userId, challengeId} = this.props
-  //   // this.handleInputChange(event, userId, challengeId, this.state.isCompleted)
-  // }
+  componentDidMount() {
+    this.props.getCurrentProblem()
+  }
 
   handleInputChange(event, userId, challengeId, isCompleted) {
     const target = event.target
@@ -101,7 +101,8 @@ const mapState = state => {
 const mapDispatch = dispatch => {
   return {
     markDone: (userId, challengeId, completed) =>
-      dispatch(markChallengeDone(userId, challengeId, completed))
+      dispatch(markChallengeDone(userId, challengeId, completed)),
+    getCurrentProblem: () => dispatch(getCurrentProblem())
   }
 }
 
