@@ -75,18 +75,9 @@ export class Annyang extends React.Component {
             id="Annyang"
           />
 
-<<<<<<< HEAD
-            <i className="far fa-comments" />
-            <input id="submitBtn" type="submit" />
-          </form>
-        </div>
-
-        <Help />
-=======
           <i className="far fa-comments" />
           <input id="submitBtn" type="submit" />
         </form>
->>>>>>> 397bcc72c487c9fbc5939328607836acdf6bb269
       </div>
     )
   }
