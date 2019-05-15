@@ -3,7 +3,11 @@ module.exports = router
 
 router.get('/', (req, res, next) => {
   try {
-    res.json(req.session.selectedProblem)
+    if (req.session.selectedProblem) {
+      res.json(req.session.selectedProblem)
+    } else {
+      res.send('none')
+    }
   } catch (err) {
     next(err)
   }

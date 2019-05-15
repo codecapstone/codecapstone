@@ -5,11 +5,13 @@ import axios from 'axios'
 const GET_PROBLEMS = 'GET_PROBLEMS'
 const SET_PROBLEM = 'SET_PROBLEM'
 const NEW_PROBLEM = 'NEW_PROBLEM'
+const CLEAR = 'CLEAR'
 
 //ACTION CREATORS
 const getProblems = all => ({type: GET_PROBLEMS, all})
 const setProblem = selected => ({type: SET_PROBLEM, selected})
 const postedProblem = problem => ({type: NEW_PROBLEM, problem})
+export const clearSelectedChallenge = () => ({type: CLEAR})
 
 //THUNK CREATORS
 
@@ -28,8 +30,9 @@ export const fetchProblems = () => async dispatch => {
 export const getCurrentProblem = () => async dispatch => {
   try {
     const {data} = await axios.get('/api/currentChallenge')
-
-    dispatch(setProblem(data))
+    if (data !== 'none') {
+      dispatch(setProblem(data))
+    }
   } catch (err) {
     console.error(err)
   }
@@ -65,6 +68,8 @@ const reducer = (state = initialState, action) => {
       return {...state, selected: action.selected}
     case NEW_PROBLEM:
       return {...state, newProblem: action.problem}
+    case CLEAR:
+      return initialState
     default:
       return state
   }
