@@ -1,7 +1,7 @@
 import React from 'react'
 import Annyang from './Annyang'
 import {keywordCheck} from '../utilFunctions'
-import {getKeyWords} from '../store/userStats'
+import {getKeyWords, setApproach} from '../store'
 import {connect} from 'react-redux'
 import Prompt from './Prompt'
 import Help from './Help'
@@ -25,6 +25,7 @@ export class Approach extends React.Component {
       gotKeywords: wordsGot,
       notGotKeywords: wordsNotGot
     })
+    this.props.setApproach(said)
     this.props.history.push('/code')
   }
   render() {
@@ -48,6 +49,6 @@ const mapState = state => ({
   challenge: state.problems.selected
 })
 
-const mapDispatch = {getKeyWords}
+const mapDispatch = {getKeyWords, setApproach}
 
 export default connect(mapState, mapDispatch)(Approach)
