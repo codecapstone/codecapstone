@@ -89,7 +89,7 @@ async function seed() {
       examples: `Example:
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
-      topicId: 1,
+      topicId: 2,
       creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-10T18:57:18.219Z',
       updatedAt: '2019-05-10T18:57:18.219Z'
@@ -145,7 +145,7 @@ async function seed() {
       anagrams('RAIL! SAFETY!', 'fairy tales') --> True
       anagrams('Hi there', 'Bye there') --> False`,
       level: 'Easy',
-      topicId: 2,
+      topicId: 1,
       creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-10T18:57:18.227Z',
       updatedAt: '2019-05-10T18:57:18.227Z'
@@ -285,7 +285,7 @@ test('"pennep" a palindrome', () => {
         palindrome("abcdefg") === false
       `,
       level: 'Easy',
-      topicId: 2,
+      topicId: 1,
       creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-10T18:57:18.227Z',
       updatedAt: '2019-05-10T18:57:18.227Z'
@@ -381,7 +381,7 @@ module.exports = Node;
       examples: `Sorry there is no example for binary search tree.
         `,
       level: 'Hard',
-      topicId: 5,
+      topicId: 4,
       creditTo: 'StephenGrider/AlgoCasts'
     }),
     Challenge.create({
@@ -521,7 +521,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         "const list = new List();\n    list.insertLast('a');\n    list.insertLast('b');\n    list.insertLast('c');\n    list.insertLast('d');\n    fromLast(list, 2).data  =>'b'\n",
       level: 'Hard',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T18:46:25.854Z',
       updatedAt: '2019-05-13T18:46:25.854Z',
       topicId: 3
@@ -553,10 +553,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         "   reverse('apple') === 'leppa'\n   reverse('hello') === 'olleh'\n   reverse('Greetings!') === '!sgniteerG'",
       level: 'Easy',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T21:15:16.332Z',
       updatedAt: '2019-05-13T21:15:16.332Z',
-      topicId: 2
+      topicId: 1
     }),
     Challenge.create({
       name: 'Capitalize',
@@ -581,10 +581,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         "capitalize('a short sentence') --> 'A Short Sentence'\ncapitalize('look, it is working!') --> 'Look, It Is Working!'",
       level: 'Easy',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T17:17:18.277Z',
       updatedAt: '2019-05-13T17:17:18.277Z',
-      topicId: 2
+      topicId: 1
     }),
     Challenge.create({
       name: 'Level Width',
@@ -601,10 +601,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         'Given:\n     0\n    |  \\\n 1   2   3\n |       |\n 4       5\n Answer: [1, 3, 2]',
       level: 'Medium',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T18:15:33.886Z',
       updatedAt: '2019-05-13T18:15:33.886Z',
-      topicId: 5
+      topicId: 4
     }),
     Challenge.create({
       name: 'Max Character',
@@ -621,10 +621,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         'maxChar("abcccccccd") === "c"\n maxChar("apple 1231111") === "1"',
       level: 'Easy',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T19:14:52.137Z',
       updatedAt: '2019-05-13T19:14:52.137Z',
-      topicId: 2
+      topicId: 1
     }),
     Challenge.create({
       name: 'Circular',
@@ -641,7 +641,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         "const l = new List();\n   const a = new Node('a');\n   const b = new Node('b');\n   const c = new Node('c');\n   l.head = a;\n   a.next = b;\n   b.next = c;\n   c.next = b;\n   circular(l)  true",
       level: 'Medium',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T18:29:42.997Z',
       updatedAt: '2019-05-13T18:29:42.997Z',
       topicId: 3
@@ -661,10 +661,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         'matrix(3)\n     [[1, 2, 3],\n     [8, 9, 4],\n     [7, 6, 5]]\n  matrix(4)\n     [[1,   2,  3, 4],\n     [12, 13, 14, 5],\n     [11, 16, 15, 6],\n     [10,  9,  8, 7]]',
       level: 'Hard',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T19:08:31.180Z',
       updatedAt: '2019-05-13T19:08:31.180Z',
-      topicId: 1
+      topicId: 2
     }),
     Challenge.create({
       name: 'Reverse Integer',
@@ -681,7 +681,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         'reverseInt(15) === 51\nreverseInt(-15) === -51\n reverseInt(-90) === -9',
       level: 'Easy',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T20:54:11.586Z',
       updatedAt: '2019-05-13T20:54:11.586Z',
       topicId: 2
@@ -701,7 +701,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
       examples:
         "const l = new LinkedList();\n   l.insertLast('a')\n   l.insertLast('b')\n   l.insertLast('c')\n   midpoint(l); => returns { data: 'b' }",
       level: 'Medium',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T19:41:33.857Z',
       updatedAt: '2019-05-13T19:41:33.857Z',
       topicId: 3
@@ -756,11 +756,11 @@ test("prints a pryamid for n = 4", () => {
       examples:
         "   pyramid(1)\n     '#'\n  pyramid(2)\n      ' # '\n     '###'\n  pyramid(3)\n      '  #  '\n      ' ### '   \n    '#####'",
       level: 'Medium',
-      creditTo: 'Stephen Grider',
+      creditTo: 'StephenGrider/AlgoCasts',
       createdAt: '2019-05-13T20:34:25.593Z',
       updatedAt: '2019-05-13T20:34:25.593Z',
-      topicId: 6
-      // creditTo: 'StephenGrider/AlgoCasts'
+      topicId: 5
+      
     })
   ])
 

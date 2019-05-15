@@ -16,55 +16,51 @@ async function seed() {
   ])
 
   const topics = await Promise.all([
-   await Topic.create({name: 'Dynamic Programming'}),
-   await Topic.create({name: 'Arrays'}),
+   await Topic.create({name: 'Strings'}),
+   await Topic.create({name: 'Numbers'}),
     await Topic.create({name: 'Linked Lists'}),
-    await Topic.create({name: 'Hash Tables'}),
+    //await Topic.create({name: 'Hash Tables'}),
     await Topic.create({name: 'Trees'}),
     await Topic.create({name: 'Miscellaneous'})
   ])
   const lessons = await Promise.all([
     Lesson.create({
-      name: 'Fibonacci Number',
+      name: 'Strings',
       description:
-        'In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...',
+        `     In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable. The latter may allow its elements to be mutated and the length changed, or it may be fixed (after creation). A string is generally considered a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. String may also denote more general arrays or other sequence (or list) data types and structures.
+             Some examples of String Problems are Anagrams, Palindrome, Reverse String`,
+      reference: ['https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String'],
+      topicId:1
+    }),
+    Lesson.create({
+      name: 'Numbers',
+      description:
+        `need more description.
+            Some examples are Fibonacci sequence, Matrix, reverse an Integer`,
       reference: ['https://en.wikipedia.org/wiki/Fibonacci_number'],
       topicId:1
     }),
-    Lesson.create({
-      name: 'Anagrams',
-      description:
-        'An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.[1] For example, the word anagram can be rearranged into nag a ram, or the word binary into brainy or the word `adobe` into `abode`.',
-      reference: ['https://en.wikipedia.org/wiki/Anagram'],
-      topicId:2
-    }),
-    Lesson.create({
-      name: 'FizzBuzz',
-      description:
-        'Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word "fizz", and any number divisible by five with the word "buzz"..',
-      reference: ['https://en.wikipedia.org/wiki/Fizz_buzz'],
-      topicId:1
-    }),
-    Lesson.create({
-      name: 'Binary Tree',
-      description:
-        'In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[1] Some authors allow the binary tree to be the empty set as well.',
-      reference: ['https://en.wikipedia.org/wiki/Binary_tree'],
-      topicId:5
-    }),
-        Lesson.create({
+      Lesson.create({
       name: 'Linked List',
       description:
         'In computer science, a Linked list is a linear collection of data elements, whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence. In its most basic form, each node contains: data, and a reference (in other words, a link) to the next node in the sequence.',
       reference: ['https://en.wikipedia.org/wiki/Linked_list'],
       topicId:3
         }),
-         Lesson.create({
-      name: 'Palindrome',
+    Lesson.create({
+      name: 'Binary Tree',
       description:
-        'A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10801. Sentence-length palindromes may be written when allowances are made for adjustments to capital letters, punctuation, and word dividers, such as "A man, a plan, a canal, Panama!", "Was it a car or a cat I saw?" .',
-      reference: ['https://en.wikipedia.org/wiki/Palindrome'],
-      topicId:3
+        'In computer science, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set.[1] Some authors allow the binary tree to be the empty set as well.',
+      reference: ['https://en.wikipedia.org/wiki/Binary_tree'],
+      topicId:4
+    }),
+    Lesson.create({
+      name: 'Miscellaneous',
+      description:
+        `Apart from data structure-based questions, most of the programming job interviews also ask algorithm, design, bit manipulation, and general logic-based questions. These type of questions come under this topic.
+        Some examples are Pyramid, implementing the sort algorithms, etc`,
+      reference: ['https://en.wikipedia.org/wiki/Merge_sort'],
+      topicId:1
     }),
   ])
   

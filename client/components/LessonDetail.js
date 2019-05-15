@@ -14,14 +14,13 @@ class Detail extends Component {
       <div className="borderCard">
         <div className="userHomeCard">
           <h3>{lesson.name}</h3>
-          <h4>{lesson.topic.name}</h4>
           <p>{lesson.description}</p>
           <h4>
             Reference:
             {lesson.reference.map((refer, idx) => (
               <div key={idx}>
                 <a href={refer} target="_blank" rel="noopener noreferrer">
-                  Wikipedia
+                  {lesson.name}
                 </a>
               </div>
             ))}
