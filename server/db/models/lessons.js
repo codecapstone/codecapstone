@@ -10,9 +10,6 @@ const Lesson = db.define('lesson', {
     type: Sequelize.TEXT,
     allowNull: false
   },
-  complexities: {
-    type: Sequelize.TEXT
-  },
   reference: {
     type: Sequelize.ARRAY(Sequelize.STRING)
   }
