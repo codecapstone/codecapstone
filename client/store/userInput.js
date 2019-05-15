@@ -7,12 +7,7 @@ const SET_EXAMPLE = 'SET_EXAMPLE'
 const CLEAR_INPUT = 'CLEAR_INPUT'
 
 //ACTION CREATORS
-<<<<<<< HEAD
 const promptSet = userPrompt => ({type: SET_USERPROMPT, userPrompt})
-=======
-export const setPrompt = userPrompt => ({type: SET_USERPROMPT, userPrompt})
-export const setApproach = userApproach => ({type: SET_APPROACH, userApproach})
->>>>>>> master
 export const setExamples = example => ({type: SET_EXAMPLE, example})
 export const clearInput = () => ({type: CLEAR_INPUT})
 
