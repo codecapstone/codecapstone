@@ -1,21 +1,30 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {getCurrentProblem} from '../store/problems'
 
-function Prompt(props) {
-  const {name, prompt} = props.challenge
+class Prompt extends React.Component {
+  componentDidMount() {
+    this.props.getCurrentProblem()
+  }
 
-  if (!prompt) return <div>Loading your challenge...</div>
+  render() {
+    const {name, prompt} = this.props.challenge
 
-  return (
-    <div className="largeViewCard">
-      <h3>Challenge: {name}</h3>
-      <div id="prompt">{prompt}</div>
-    </div>
-  )
+    if (!prompt) return <div>Loading your challenge...</div>
+
+    return (
+      <div className="largeViewCard">
+        <h3>Your challenge is {name}</h3>
+        <div id="prompt">{prompt}</div>
+      </div>
+    )
+  }
 }
+
+const mapDispatch = {getCurrentProblem}
 
 const mapState = state => ({
   challenge: state.problems.selected
 })
 
-export default connect(mapState)(Prompt)
+export default connect(mapState, mapDispatch)(Prompt)

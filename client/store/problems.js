@@ -25,6 +25,16 @@ export const fetchProblems = () => async dispatch => {
   }
 }
 
+export const getCurrentProblem = () => async dispatch => {
+  try {
+    const {data} = await axios.get('/api/currentChallenge')
+
+    dispatch(setProblem(data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 export const selectProblem = id => async dispatch => {
   try {
     const {data} = await axios.get(`/api/challenges/${id}`)
