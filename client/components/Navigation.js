@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Route, Link, Switch} from 'react-router-dom'
 import {logout} from '../store'
 import {Login, Signup} from './AuthForm'
+import {clearInput} from './store'
 
 const Navigation = ({handleClick, isLoggedIn, email}) => (
   <nav id="navigation">
@@ -57,6 +58,7 @@ const mapDispatch = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
+      dispatch(clearInput())
     }
   }
 }
