@@ -68,7 +68,7 @@ const mapDispatch = dispatch => {
     addProblemToStats: (userId, probId) =>
       dispatch(addChallengeToStats(userId, probId)),
     singleLesson: id => dispatch(singleLesson(id)),
-    clearInput: () => dispatch(clearInput)
+    clearInput: () => dispatch(clearInput())
   }
 }
 
