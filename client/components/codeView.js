@@ -23,7 +23,7 @@ class CodeView extends React.Component {
               need help, scroll down to the help section. When you are done,
               click the link below.
             </p>
-            <Link to="/optimization" id="linkText">
+            <Link to="/optimization" className="submitBtn">
               <i className="far fa-comments" /> I'm Finished
             </Link>
           </div>

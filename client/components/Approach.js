@@ -33,9 +33,10 @@ export class Approach extends React.Component {
       <div className="largeViewBorderCard">
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
+          <h3>Tell us how you'd solve the problem!</h3>
           <p>
-            Now say how you'd solve the problem! You can record your approach or
-            type it, and you can edit your approach before hitting submit.
+            You can record your approach or type it, and you can edit your
+            approach before hitting submit.
           </p>
           <Annyang handleSubmit={this.handleSubmit} />
         </div>

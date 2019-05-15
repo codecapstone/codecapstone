@@ -74,9 +74,10 @@ export class Annyang extends React.Component {
             onChange={this.handleChange}
             id="Annyang"
           />
-
           <i className="far fa-comments" />
-          <input id="submitBtn" type="submit" />
+          <button className="submitBtn" type="submit" name="Continue">
+            Continue
+          </button>
         </form>
       </div>
     )
