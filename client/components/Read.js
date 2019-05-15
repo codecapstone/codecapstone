@@ -65,8 +65,8 @@ class Read extends React.Component {
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
           <h3>
-            Now show you understand the example - Re-state the prompt in your
-            own words.
+            Demonstrate your understanding: re-state the prompt in your own
+            words.
           </h3>
 
           <div id="rec-stopDiv">

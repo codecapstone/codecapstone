@@ -72,10 +72,12 @@ export class Annyang extends React.Component {
       <div className="largeViewBorderCard">
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
-          <h3>
-            Now say how you'd solve the problem! You can record your approach or
-            type it, and you can edit your approach before hitting submit.
-          </h3>
+          <h3>Now tell us how you'd solve the problem!</h3>
+          <p>
+            Record your approach, or type it. You can edit your words before
+            hitting submit.
+          </p>
+
           <div id="rec-stopDiv">
             <div id="recBtn">
               <button
@@ -108,6 +110,7 @@ export class Annyang extends React.Component {
             <input id="submitBtn" type="submit" />
           </form>
         </div>
+
         <Help />
       </div>
     )
