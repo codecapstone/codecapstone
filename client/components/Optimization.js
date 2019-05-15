@@ -7,16 +7,11 @@ class Optimization extends React.Component {
   render() {
     return (
       <div className="bigOContent">
-        <div className="bigOBorderCard">
-          <div className="bigOTableCard">
-            Big-O Ranges
-            <BigOTable />
-          </div>
-        </div>
         <div className="bigOChartBorderCard">
           <div className="bigOChartCard">
-            Big-O Complexity
+            Big-O Ranges
             <LineChart />
+            <BigOTable />
           </div>
         </div>
         <div className="bigOAboutBorderCard">
@@ -34,11 +29,11 @@ class Optimization extends React.Component {
               <li>Functions with no Loops -- O(1)</li>
               <li>Recursion with Input being Cut in Half -- O(n log n)</li>
             </ul>
-            <h4>Tips for Loops</h4>
+            <h4>Tips for Calculating Big O with Loops</h4>
             <ul>
-              <li>Stuff inside loop -- multiply</li>
-              <li>Nested Loops -- multiply</li>
-              <li>Sibling Loops -- add</li>
+              <li>Drop All Constants -- ex. 3n === n</li>
+              <li>Nested Loops - multiply Big O of each loop</li>
+              <li>Sibling Loops -- add Big O of each loop</li>
             </ul>
             <h4>What was the Big-O notation for your solution?</h4>
             <h4>
@@ -48,9 +43,9 @@ class Optimization extends React.Component {
           </div>
           <div
             className="bigONextBtn"
-            onClick={() => this.props.history.push('/stats')}
+            onClick={() => this.props.history.push('/solutions')}
           >
-            Next Step - Check Your Stats!
+            Next Step - Check The Solution!
           </div>
         </div>
       </div>

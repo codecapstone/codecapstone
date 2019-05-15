@@ -151,7 +151,7 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer height="90%" width="99%">
+      <ResponsiveContainer height="100%" width="100%">
         <LineChart
           data={data}
           margin={{

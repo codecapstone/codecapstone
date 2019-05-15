@@ -18,9 +18,9 @@ class Solutions extends React.Component {
         </div>
         <div
           className="solutionsNextBtn"
-          onClick={() => this.props.history.push('/challenges')}
+          onClick={() => this.props.history.push('/stats')}
         >
-          Click here to search for a new challenge!
+          Check your stats!
         </div>
       </div>
     )
