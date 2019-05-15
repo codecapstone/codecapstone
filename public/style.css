@@ -893,7 +893,7 @@ hr {
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 5%;
-  color: #4b4b4b;
+  color: #202020;
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
@@ -907,7 +907,7 @@ hr {
   background-color: #c1aba6;
   margin: 5%;
   padding: 5%;
-  color: #4b4b4b;
+  color: #202020;
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
@@ -924,7 +924,7 @@ hr {
   align-items: center;
   font-size: 95%;
   padding: 2%;
-  background-color: #2c2b2b;
+  background-color: #202020;
   margin-bottom: 7%;
   border-radius: 5px;
   color: white;
@@ -994,7 +994,7 @@ li {
   text-align: center;
   align-items: center;
   font-size: 95%;
-  padding: 5%;
+  padding: 3%;
   background-color: #2c2b2b;
   margin-bottom: 7%;
   border-radius: 5px;
