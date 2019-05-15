@@ -14,7 +14,7 @@ class Detail extends Component {
       <div className="borderCard">
         <div className="userHomeCard">
           <h3>{lesson.name}</h3>
-          <p>{lesson.description}</p>
+          <div>{lesson.description}</div>
           <h4>
             Reference:
             {lesson.reference.map((refer, idx) => (
