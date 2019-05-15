@@ -1,5 +1,6 @@
 import exampleProblem from '../ExampleProblem/example'
 import axios from 'axios'
+import {nextTick} from 'q'
 
 //ACTION TYPES
 const GET_PROBLEMS = 'GET_PROBLEMS'
@@ -22,6 +23,16 @@ export const fetchProblems = () => async dispatch => {
     // }
   } catch (error) {
     console.error(error)
+  }
+}
+
+export const getCurrentProblem = () => async dispatch => {
+  try {
+    const {data} = await axios.get('/api/currentChallenge')
+
+    dispatch(setProblem(data))
+  } catch (err) {
+    console.error(err)
   }
 }
 
