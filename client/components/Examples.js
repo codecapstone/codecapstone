@@ -1,23 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {ExampleCheck} from '../components'
+import {ExampleCheck, Prompt} from '../components'
 import Help from './Help'
 
 class Examples extends React.Component {
   render() {
-    const {name, prompt} = this.props.challenge
-
-    if (!prompt) return <div>Loading your challenge...</div>
-
     return (
       <div className="largeViewBorderCard">
-        <div className="largeViewCard">
-          <h3>Your challenge is {name}</h3>
-          <p id="prompt">{prompt}</p>
-        </div>
-
+        <Prompt />
         <ExampleCheck />
-
         <Help />
       </div>
     )
