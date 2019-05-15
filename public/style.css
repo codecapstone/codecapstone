@@ -139,6 +139,7 @@ h3 {
   margin: 0 auto;
   min-height: 100px;
   padding: 5px;
+  z-index: 1;
 }
 
 .linksAndLogin {
@@ -283,19 +284,6 @@ input {
   margin-left: 10px;
   margin-right: 10px;
   /* padding: 30px; */
-  box-shadow: 3px 3px 5px black;
-  align-items: center;
-  align-content: space-around;
-  justify-content: space-evenly;
-}
-
-.solutionsBorderCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #5f0f40;
-  margin: 5%;
-  padding: 2%;
   box-shadow: 3px 3px 5px black;
   align-items: center;
   align-content: space-around;
@@ -795,6 +783,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #stopBtn {
@@ -802,6 +791,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #exampleCheck {
@@ -970,13 +960,56 @@ li {
   display: flex;
   background-color: #c1aba6;
   margin: 2%;
-  padding: 2%;
+  padding: 5%;
+  width: 90%;
   color: #202020;
   box-shadow: 3px 3px 5px black;
   font-size: 95%;
   flex-direction: column;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsBorderCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #5f0f40;
+  margin: 5%;
+  padding: 5%;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsNextBtn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 95%;
+  padding: 5%;
+  background-color: #c1aba6;
+  margin-bottom: 7%;
+  border-radius: 5px;
+  color: #4b4b4b;
+  box-shadow: 3px 3px 5px black;
+  align-self: center;
+  width: -webkit-fit-content;
 }
 
 pre {
   text-align: left;
+}
+
+#solutionsContainer {
+  margin: 7%;
+}
+
+#solutionsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

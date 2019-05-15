@@ -9,13 +9,15 @@ class Solutions extends React.Component {
     if (!solutions) return <div>Loading the solution...</div>
 
     return (
-      <div className="solutionsBorderCard">
+      <div id="solutionsContainer">
         <h3>Solutions for {name}</h3>
-        {solutions.map((solution, idx) => {
-          return <Solution key={idx} idx={idx} solution={solution} />
-        })}
+        <div id="solutionsDiv">
+          {solutions.map((solution, idx) => {
+            return <Solution key={idx} idx={idx} solution={solution} />
+          })}
+        </div>
         <div
-          className="bigONextBtn"
+          className="solutionsNextBtn"
           onClick={() => this.props.history.push('/challenges')}
         >
           Click here to search for a new challenge!
