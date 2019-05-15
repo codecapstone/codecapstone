@@ -15,9 +15,7 @@ class Prompt extends React.Component {
     return (
       <div className="largeViewCard">
         <h3>Your challenge is {name}</h3>
-        {/* <p>The prompt is: </p> */}
         <div id="prompt">{prompt}</div>
-        {/* </div> */}
       </div>
     )
   }

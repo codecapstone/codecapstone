@@ -390,10 +390,11 @@ input {
   font-size: 14px;
   width: 200px;
   height: 50px;
-  background-color: #c1aba6;
+  background-color: #2c2b2b;
+  border-color: #202020;
   margin: 20px;
   border-radius: 5px;
-  color: #4b4b4b;
+  color: white;
   box-shadow: 3px 3px 5px black;
   /* align-self: flex-end; */
 }
@@ -802,11 +803,11 @@ hr {
   flex-direction: row;
 }
 
-#submitBtn {
+.submitBtn {
   border: none;
   background-color: #c1aba6;
   text-decoration: underline;
-  color: #4b4b4b;
+  color: #202020;
   font-size: 1.5em;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
@@ -832,6 +833,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: center;
 }
 
 #exampleCheck input {
@@ -922,10 +924,10 @@ hr {
   align-items: center;
   font-size: 95%;
   padding: 2%;
-  background-color: #c1aba6;
+  background-color: #2c2b2b;
   margin-bottom: 7%;
   border-radius: 5px;
-  color: #4b4b4b;
+  color: white;
   box-shadow: 3px 3px 5px black;
   align-self: center;
 }
@@ -993,26 +995,34 @@ li {
   align-items: center;
   font-size: 95%;
   padding: 5%;
-  background-color: #c1aba6;
+  background-color: #2c2b2b;
   margin-bottom: 7%;
   border-radius: 5px;
-  color: #4b4b4b;
+  color: white;
   box-shadow: 3px 3px 5px black;
   align-self: center;
   width: -webkit-fit-content;
 }
+/* .solutionsContainer h3 {
+  align-self: center;
+  text-align: center;
+} */
 
 pre {
   text-align: left;
 }
 
 #solutionsContainer {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
   margin: 7%;
 }
 
 #solutionsDiv {
   display: flex;
   flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
 }
 #AnnyangDiv {

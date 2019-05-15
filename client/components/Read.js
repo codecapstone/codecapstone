@@ -30,6 +30,10 @@ class Read extends React.Component {
             Demonstrate your understanding: re-state the prompt in your own
             words.
           </h3>
+          <p>
+            If you record your voice, please allow a few seconds delay before
+            the text shows up in the window below.
+          </p>
 
           <Annyang handleSubmit={this.handleSubmit} />
         </div>

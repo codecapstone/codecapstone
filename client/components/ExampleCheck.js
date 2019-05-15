@@ -38,10 +38,8 @@ class exampleCheck extends React.Component {
         this.setState({
           correct: `Ooops.  There's an error.  Check your input is of the correct type!`
         })
-      } else if (
-        calculated.toString() === this.state.output.toString()
-      ) {
-          this.setState({correct: 'Your examples pass our tests'})
+      } else if (calculated.toString() === this.state.output.toString()) {
+        this.setState({correct: 'Your examples pass our tests'})
       } else {
         this.setState({
           correct: 'Check your examples again.  They do not pass our tests.'
@@ -59,10 +57,14 @@ class exampleCheck extends React.Component {
 
   render() {
     const {functionName} = this.props.problem
-   // console.log(functionName)
+    // console.log(functionName)
     return (
       <div className="largeViewCard">
-        <h3>Please enter your example by giving a sample input and output. </h3>
+        <h3>Please enter your example </h3>
+        {/* <p>
+          Provide a sample input and output and we'll let you know if they are
+          valid.
+        </p> */}
 
         <form id="exampleCheck" className="form">
           <label>
@@ -102,8 +104,12 @@ class exampleCheck extends React.Component {
             </div>
           ) : null}
           <div>
-            <Link to="/approach" onClick={this.handleSubmit} id="linkText">
-              <i className="far fa-comments" /> Submit
+            <Link
+              to="/approach"
+              onClick={this.handleSubmit}
+              className="submitBtn"
+            >
+              <i className="far fa-comments" /> Continue
             </Link>
           </div>
         </div>
@@ -113,7 +119,7 @@ class exampleCheck extends React.Component {
 }
 
 const mapState = state => {
- // console.log('state:', state)
+  // console.log('state:', state)
   return {
     problem: state.problems.selected,
     agent: state.agent

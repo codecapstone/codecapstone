@@ -13,7 +13,6 @@ class Examples extends React.Component {
       <div className="largeViewBorderCard">
         <div className="largeViewCard">
           <h3>Your challenge is {name}</h3>
-          {/* <p>The prompt is: </p> */}
           <p id="prompt">{prompt}</p>
         </div>
 
