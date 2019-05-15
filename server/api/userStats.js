@@ -17,16 +17,22 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    console.log('REQ BODY', req.body)
-    const data = await UserStats.create(req.body)
-    res.send(data).status(201)
+    const existingChallenge = await UserStats.findOne({
+      where: {
+        userId: req.body.userId,
+        challengeId: req.body.challengeId
+      }
+    })
+    if (!existingChallenge) {
+      const data = await UserStats.create(req.body)
+      res.send(data).status(201)
+    }
   } catch (error) {
     console.error(error)
   }
 })
 
 router.put('/', async (req, res, next) => {
-  console.log('API REQ BODY', req.body)
   try {
     const existingChallenge = await UserStats.findOne({
       where: {
