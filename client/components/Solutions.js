@@ -1,7 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Solution} from './Solution'
+
+import Prompt from './Prompt'
+
 import {getCurrentProblem} from '../store/problems'
+
 
 class Solutions extends React.Component {
   componentDidMount() {
@@ -14,13 +18,13 @@ class Solutions extends React.Component {
     if (!solutions) return <div>Loading the solution...</div>
 
     return (
-      <div id="solutionsContainer">
-        <h3>Solutions for {name}</h3>
-        <div id="solutionsDiv">
-          {solutions.map((solution, idx) => {
-            return <Solution key={idx} idx={idx} solution={solution} />
-          })}
-        </div>
+      <div className="largeViewBorderCard">
+        <Prompt />
+
+        {solutions.map((solution, idx) => {
+          return <Solution key={idx} idx={idx} solution={solution} />
+        })}
+
         <div
           className="solutionsNextBtn"
           onClick={() => this.props.history.push('/stats')}
