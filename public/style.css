@@ -101,7 +101,7 @@ h3 {
 
   #sandbox {
     margin: 10px;
-    width: 350px;
+    width: 395px;
     height: 1000px;
   }
 
@@ -111,6 +111,10 @@ h3 {
 
   .homeBorderCard {
     padding: 0px;
+  }
+
+  #code {
+    flex-direction: column;
   }
 }
 @media screen and (min-width: 600px) {
@@ -597,7 +601,7 @@ input {
   margin-top: 120px;
   display: flex;
   flex-grow: 1;
-  flex-direction: row;
+  /* flex-direction: row; */
   width: 100%;
   justify-content: space-around;
   align-content: flex-start;
