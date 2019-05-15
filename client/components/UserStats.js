@@ -74,8 +74,8 @@ export class UserStats extends React.Component {
             I've completed this challenge
           </div>
 
-          <Link to="/solutions" id="solutionBtn">
-            <h2>Click here to see the solution</h2>
+          <Link to="/challenges" id="solutionBtn">
+            <h2>Click here to search for a new challenge!</h2>
           </Link>
         </div>
       </div>

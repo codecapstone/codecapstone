@@ -25,9 +25,16 @@ router.get('/level/:level', async (req, res, next) => {
 //getting a single challenge
 router.get('/:challengeId', async (req, res, next) => {
   try {
+    console.log('req.session before', req.session)
     const oneChallenge = await Challenge.findByPk(req.params.challengeId)
 
-    res.json(oneChallenge)
+    req.session.selectedProblem = oneChallenge
+
+    console.log('oneChall', oneChallenge)
+
+    console.log('req.sessions after', req.session)
+
+    res.json(req.session.selectedProblem)
   } catch (err) {
     next(err)
   }
