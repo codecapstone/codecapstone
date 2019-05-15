@@ -16,13 +16,14 @@ class CodeView extends React.Component {
       <div className="largeViewBorderCard">
         <Prompt />
         <div className="largeViewCard" id="promptAnnyang">
+          <h3>Time to code. Use our sandbox to test your ideas.</h3>
           <p>
-            Now you can code out your problem. Type your code into the code-box
-            below and check to see if it passes our tests. If you need help,
-            scroll down to the help section. When you are done, click on submit.
+            The built-in tests will let you know if your code passes. If you
+            need help, scroll down to the help section. When you are done, click
+            on submit.
           </p>
           <Link to="/optimization" id="linkText">
-            <i className="far fa-comments" /> Submit
+            <i className="far fa-comments" /> I'm Finished
           </Link>
         </div>
 
