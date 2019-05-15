@@ -13,7 +13,7 @@ class Optimization extends React.Component {
             <BigOTable />
           </div>
         </div>
-        <div className="bigOBorderCard">
+        <div className="bigOChartBorderCard">
           <div className="bigOChartCard">
             Big-O Complexity
             <LineChart />

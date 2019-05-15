@@ -139,6 +139,7 @@ h3 {
   margin: 0 auto;
   min-height: 100px;
   padding: 5px;
+  z-index: 1;
 }
 
 .linksAndLogin {
@@ -289,6 +290,25 @@ input {
   justify-content: space-evenly;
 }
 
+.biggerBorderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+  /* max-width: 90%; */
+  background-color: #5f0f40;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* padding: 30px; */
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+}
 .largeViewBorderCard {
   display: flex;
   flex-direction: row;
@@ -420,12 +440,13 @@ input {
   min-height: 500px;
   background-color: #c1aba6;
   margin: 20px;
+  font-family: 'Roboto Mono', monospace;
   padding: 30px;
-  color: #37383a;
+  color: #202020;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
-  height: 75%;
+  height: 85%;
 }
 
 #getStarted {
@@ -441,6 +462,21 @@ input {
   justify-content: center;
   align-items: center;
   background-image: url(https://imgur.com/a/rnQPFiF);
+}
+#getStarted2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #c1aba6;
+  width: 80%;
+  height: 290px;
+  background-color: #664f5c;
+  box-shadow: 3px 3px 5px black;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://imgur.com/a/rnQPFiF);
+  align-self: center;
 }
 
 #getStarted a {
@@ -468,7 +504,8 @@ input {
   background-color: #c1aba6;
   margin: 10px;
   padding: 30px;
-  color: #4b4b4b;
+  color: #202020;
+  font-family: 'Roboto Mono', monospace;
   text-align: justify;
   box-shadow: 3px 3px 5px black;
   align-items: center;
@@ -506,7 +543,33 @@ input {
 }
 
 #instructions {
-  flex-direction: column;
+  display: flex;
+  color: #202020;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 100px;
+
+  min-height: 500px;
+  background-color: #c1aba6;
+  margin: 20px;
+  padding: 30px;
+
+  text-align: justify;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  justify-content: center;
+}
+.innerInstructions {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.instructionText {
+  flex: 0 1 auto;
 }
 
 .ynButton {
@@ -561,7 +624,7 @@ hr {
 }
 
 .challengeLink {
-  margin: 10px;
+  margin: 5px;
 }
 
 .topicLink {
@@ -720,6 +783,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #stopBtn {
@@ -727,6 +791,7 @@ hr {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  color: lightgray;
 }
 
 #exampleCheck {
@@ -746,6 +811,15 @@ hr {
   justify-content: space-around;
 }
 
+.image {
+  height: 30%;
+  max-height: 400px;
+  width: 80%;
+  max-width: 700px;
+  align-self: center;
+  margin-bottom: 30px;
+}
+
 .bigOContent {
   display: flex;
   flex-direction: row;
@@ -755,7 +829,7 @@ hr {
   flex-wrap: wrap;
 }
 
-.bigOBorderCard {
+.bigOChartBorderCard {
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -769,11 +843,25 @@ hr {
   margin-top: 13%;
 }
 
+.bigOBorderCard {
+  display: flex;
+  flex-direction: column;
+  /* width: 33%;
+  height: 33%; */
+  background-color: #5f0f40;
+  box-shadow: 3px 3px 5px black;
+  align-self: flex-end;
+  padding: 1%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 13%;
+}
+
 .bigOAboutBorderCard {
   display: flex;
   flex-direction: column;
-  width: 33%;
-  height: 37%;
+  /* width: 33%;
+  height: 37%; */
   background-color: #5f0f40;
   box-shadow: 3px 3px 5px black;
   align-self: flex-end;
@@ -806,8 +894,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 85%;
-  width: 85%;
+  /* height: 85%;
+  width: 85%; */
   flex-direction: column;
   justify-content: center;
 }
@@ -821,8 +909,8 @@ hr {
   box-shadow: 3px 3px 5px black;
   align-items: center;
   justify-items: center;
-  height: 80%;
-  width: 80%;
+  /* height: 80%;
+  width: 80%; */
   flex-direction: column;
   font-size: 95%;
   text-align: center;
@@ -833,8 +921,6 @@ hr {
   text-align: center;
   align-items: center;
   font-size: 95%;
-  width: 32%;
-  height: 5%;
   padding: 2%;
   background-color: #c1aba6;
   margin-bottom: 7%;
@@ -868,4 +954,62 @@ td {
 
 li {
   text-align: left;
+}
+
+.solutionCard {
+  display: flex;
+  background-color: #c1aba6;
+  margin: 2%;
+  padding: 5%;
+  width: 90%;
+  color: #202020;
+  box-shadow: 3px 3px 5px black;
+  font-size: 95%;
+  flex-direction: column;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsBorderCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #5f0f40;
+  margin: 5%;
+  padding: 5%;
+  box-shadow: 3px 3px 5px black;
+  align-items: center;
+  align-content: space-around;
+  justify-content: space-evenly;
+  width: -webkit-fit-content;
+  height: -webkit-fit-content;
+}
+
+.solutionsNextBtn {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 95%;
+  padding: 5%;
+  background-color: #c1aba6;
+  margin-bottom: 7%;
+  border-radius: 5px;
+  color: #4b4b4b;
+  box-shadow: 3px 3px 5px black;
+  align-self: center;
+  width: -webkit-fit-content;
+}
+
+pre {
+  text-align: left;
+}
+
+#solutionsContainer {
+  margin: 7%;
+}
+
+#solutionsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

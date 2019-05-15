@@ -33,14 +33,15 @@ class exampleCheck extends React.Component {
       const calculated = checkers[this.props.problem.functionName](
         this.state.input
       )
+      console.log('calculated:', calculated)
       if (calculated === `Error`) {
         this.setState({
           correct: `Ooops.  There's an error.  Check your input is of the correct type!`
         })
       } else if (
-        calculated.toString() === this.state.output.toString().toLowerCase()
+        calculated.toString() === this.state.output.toString()
       ) {
-        this.setState({correct: 'Your examples pass our tests'})
+          this.setState({correct: 'Your examples pass our tests'})
       } else {
         this.setState({
           correct: 'Check your examples again.  They do not pass our tests.'
@@ -58,7 +59,7 @@ class exampleCheck extends React.Component {
 
   render() {
     const {functionName} = this.props.problem
-
+   // console.log(functionName)
     return (
       <div className="largeViewCard">
         <h3>Please enter your example by giving a sample input and output. </h3>
@@ -112,6 +113,7 @@ class exampleCheck extends React.Component {
 }
 
 const mapState = state => {
+ // console.log('state:', state)
   return {
     problem: state.problems.selected,
     agent: state.agent

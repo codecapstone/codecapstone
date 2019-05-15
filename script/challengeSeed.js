@@ -1,8 +1,6 @@
 const db = require('../server/db')
-//const {User} = require('../server/db/models')
+
 const {Challenge} = require('../server/db/models')
-//const {Lesson} = require('../server/db/models')
-const {Topic} = require('../server/db/models')
 
 async function seed() {
   await db.sync()
@@ -92,8 +90,9 @@ async function seed() {
       fib(4) === 3, fib(2)=== 1`,
       level: 'Easy',
       topicId: 1,
-      creditTo: 'StephenGrider/AlgoCasts'
-      // lessonId: 1
+      creditTo: 'StephenGrider/AlgoCasts',
+      createdAt: '2019-05-10T18:57:18.219Z',
+      updatedAt: '2019-05-10T18:57:18.219Z'
     }),
     Challenge.create({
       name: 'Anagrams',
@@ -147,7 +146,9 @@ async function seed() {
       anagrams('Hi there', 'Bye there') --> False`,
       level: 'Easy',
       topicId: 2,
-      creditTo: 'StephenGrider/AlgoCasts'
+      creditTo: 'StephenGrider/AlgoCasts',
+      createdAt: '2019-05-10T18:57:18.227Z',
+      updatedAt: '2019-05-10T18:57:18.227Z'
     }),
     Challenge.create({
       name: 'FizzBuzz',
@@ -221,7 +222,9 @@ afterEach(() => {
       `,
       level: 'Easy',
       topicId: 1,
-      creditTo: 'StephenGrider/AlgoCasts'
+      creditTo: 'StephenGrider/AlgoCasts',
+      createdAt: '2019-05-10T18:57:18.227Z',
+      updatedAt: '2019-05-10T18:57:18.227Z'
     }),
     Challenge.create({
       name: ' Palindrome',
@@ -283,7 +286,9 @@ test('"pennep" a palindrome', () => {
       `,
       level: 'Easy',
       topicId: 2,
-      creditTo: 'StephenGrider/AlgoCasts'
+      creditTo: 'StephenGrider/AlgoCasts',
+      createdAt: '2019-05-10T18:57:18.227Z',
+      updatedAt: '2019-05-10T18:57:18.227Z'
     }),
     Challenge.create({
       name: ' Binary Tree',
@@ -417,7 +422,7 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
   expect(chunked).toEqual([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]);
 });
 
-  
+
 `,
       solutions: [
         `function chunk(array, size) {
@@ -462,7 +467,299 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
         chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]`,
       level: 'Medium',
       topicId: 2,
-      creditTo: 'StephenGrider/AlgoCasts'
+      creditTo: 'StephenGrider/AlgoCasts',
+      createdAt: '2019-05-10T18:57:18.228Z',
+      updatedAt: '2019-05-10T18:57:18.228Z'
+    }),
+    Challenge.create({
+      name: 'From Last',
+      sandboxId: 'pylwokqop0',
+      prompt:
+        "Given a linked list and integer n, return the element n  spaces from the last node in the list.  Do not call the  'size' method of the linked list.  Assume that n will always  be less than the length of the list.",
+      functionName: 'fromLast',
+      tests: `import fromLast from "./index";
+              import L from "./linkedlist";
+              const List = L.LinkedList;
+              const Node = L.Node;
+
+              test("fromLast is a function", () => {
+                expect(typeof fromLast).toEqual("function");
+              });
+
+              test("fromLast returns the node n elements from the end", () => {
+                const l = new List();
+
+                l.insertLast("a");
+                l.insertLast("b");
+                l.insertLast("c");
+                l.insertLast("d");
+                l.insertLast("e");
+
+              expect(fromLast(l, 3).data).toEqual("b");
+            });`,
+      solutions: [
+        `function fromLast(list, n) {
+            let slow = list.getFirst();
+            let fast = list.getFirst();
+
+            while (n > 0) {
+              fast = fast.next;
+              n--;
+            }
+
+            while (fast.next) {
+              slow = slow.next;
+              fast = fast.next;
+            }
+
+            return slow;
+          }
+
+          module.exports = fromLast;`
+      ],
+      keywords: ['class ', 'Linked', 'List', 'node'],
+      examples:
+        "const list = new List();\n    list.insertLast('a');\n    list.insertLast('b');\n    list.insertLast('c');\n    list.insertLast('d');\n    fromLast(list, 2).data  =>'b'\n",
+      level: 'Hard',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T18:46:25.854Z',
+      updatedAt: '2019-05-13T18:46:25.854Z',
+      topicId: 3
+    }),
+    Challenge.create({
+      name: 'Reverse String',
+      sandboxId: 'q4zqwzq3pj',
+      prompt:
+        'Given a string, return a new string with the reversed  order of characters',
+      functionName: 'reverse',
+      tests: `import reverse from "./index.js";
+            test("Reverse function exists", () => {
+              expect(reverse).toBeDefined();
+            });
+
+            test("Reverse reverses a string", () => {
+              expect(reverse("abcd")).toEqual("dcba");
+            });
+
+            test("Reverse reverses a string", () => {
+              expect(reverse("  abcd")).toEqual("dcba  ");
+            });`,
+      solutions: [
+        `"function reverse(str) {\n  return str.split('').reduce((rev, char) => char + rev, '');\n}\n\nmodule.exports = reverse;",
+              "function reverse(str) {\n   return str\n     .split('')\n     .reverse()\n     .join('');\n }\n",
+              "function reverse(str) {\n   let reversed = '';\n\n   for (let character of str) {\n     reversed = character + reversed;\n   }\n\n   return reversed;\n }"`
+      ],
+      keywords: ['string', 'loop', 'array', 'split', 'reduce'],
+      examples:
+        "   reverse('apple') === 'leppa'\n   reverse('hello') === 'olleh'\n   reverse('Greetings!') === '!sgniteerG'",
+      level: 'Easy',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T21:15:16.332Z',
+      updatedAt: '2019-05-13T21:15:16.332Z',
+      topicId: 2
+    }),
+    Challenge.create({
+      name: 'Capitalize',
+      sandboxId: '81nm9y57vj',
+      prompt:
+        'Write a function that accepts a string.  The function should\n capitalize the first letter of each word in the string then\n return the capitalized string.',
+      functionName: 'capitalize',
+      tests:
+        'import capitalize from \'./index\' import capitalize from ".index.js";\n\ntest("Capitalize is a function", () => {\n  expect(typeof capitalize).toEqual("function");\n});\n\ntest("capitalizes the first letter of every word in a sentence", () => {\n  expect(capitalize("hi there, how is it going?")).toEqual(\n    "Hi There, How Is It Going?"\n  );\n});\n\ntest("capitalizes the first letter", () => {\n  expect(capitalize("i love breakfast at bill miller bbq")).toEqual(\n    "I Love Breakfast At Bill Miller Bbq"\n  );\n});',
+      solutions: [
+        "function capitalize(str) {\n  let result = str[0].toUpperCase();\n\n  for (let i = 1; i < str.length; i++) {\n    if (str[i - 1] === ' ') {\n      result += str[i].toUpperCase();\n    } else {\n      result += str[i];\n    }\n  }\n\n  return result;\n}\n\nmodule.exports = capitalize;\n",
+        "function capitalize(str) {\n   const words = [];\n\n   for (let word of str.split(' ')) {\n     words.push(word[0].toUpperCase() + word.slice(1));\n   }\n\n   return words.join(' ');\n }"
+      ],
+      keywords: [
+        'string',
+        'loop',
+        'iterative',
+        'array',
+        'split',
+        'toUpperCase'
+      ],
+      examples:
+        "capitalize('a short sentence') --> 'A Short Sentence'\ncapitalize('look, it is working!') --> 'Look, It Is Working!'",
+      level: 'Easy',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T17:17:18.277Z',
+      updatedAt: '2019-05-13T17:17:18.277Z',
+      topicId: 2
+    }),
+    Challenge.create({
+      name: 'Level Width',
+      sandboxId: 'm3ovokpvw8',
+      prompt:
+        'Given the root node of a tree, return  an array where each element is the width  of the tree at each level.',
+      functionName: 'levelWidth',
+      tests:
+        'import levelWidth from \'./index\' import levelWidth from ".index.js";\nimport node from ".node.js";\n\ntest("levelWidth is a function", () => {\n  expect(typeof levelWidth).toEqual("function");\n});\n\ntest("levelWidth returns number of nodes at widest point", () => {\n  const root = new Node(0);\n  root.add(1);\n  root.add(2);\n  root.add(3);\n  root.children[0].add(4);\n  root.children[2].add(5);\n\n  expect(levelWidth(root)).toEqual([1, 3, 2]);\n});\n\ntest("levelWidth returns number of nodes at widest point", () => {\n  const root = new Node(0);\n  root.add(1);\n  root.children[0].add(2);\n  root.children[0].add(3);\n  root.children[0].children[0].add(4);\n\n  expect(levelWidth(root)).toEqual([1, 1, 2, 1]);\n});\n',
+      solutions: [
+        "function levelWidth(root) {\n  const arr = [root, 's'];\n  const counters = [0];\n\n  while (arr.length > 1) {\n    const node = arr.shift();\n\n    if (node === 's') {\n      counters.push(0);\n      arr.push('s');\n    } else {\n      arr.push(...node.children);\n      counters[counters.length - 1]++;\n    }\n  }\n\n  return counters;\n}\n\nmodule.exports = levelWidth;"
+      ],
+      keywords: ['class ', 'node', 'tree', 'width', 'counter', 'breadth-first'],
+      examples:
+        'Given:\n     0\n    |  \\\n 1   2   3\n |       |\n 4       5\n Answer: [1, 3, 2]',
+      level: 'Medium',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T18:15:33.886Z',
+      updatedAt: '2019-05-13T18:15:33.886Z',
+      topicId: 5
+    }),
+    Challenge.create({
+      name: 'Max Character',
+      sandboxId: 'mzx3lwmoqp',
+      prompt:
+        'Given a string, return the character that is most   commonly used in the string.',
+      functionName: 'maxChar',
+      tests:
+        "import maxChar from './index' const maxChar = require('.index');\n\ntest('maxChar function exists', () => {\n  expect(typeof maxChar).toEqual('function');\n});\n\ntest('Finds the most frequently used char', () => {\n  expect(maxChar('a')).toEqual('a');\n  expect(maxChar('abcdefghijklmnaaaaa')).toEqual('a');\n});\n\ntest('Works with numbers in the string', () => {\n  expect(maxChar('ab1c1d1e1f1g1')).toEqual('1');\n});",
+      solutions: [
+        "function maxChar(str) {\n  const charMap = {};\n  let max = 0;\n  let maxChar = '';\n\n  for (let char of str) {\n    if (charMap[char]) {\n      charMap[char]++;\n    } else {\n      charMap[char] = 1;\n    }\n  }\n\n  for (let char in charMap) {\n    if (charMap[char] > max) {\n      max = charMap[char];\n      maxChar = char;\n    }\n  }\n\n  return maxChar;\n}\n\nmodule.exports = maxChar;"
+      ],
+      keywords: ['string', 'loop', 'object'],
+      examples:
+        'maxChar("abcccccccd") === "c"\n maxChar("apple 1231111") === "1"',
+      level: 'Easy',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T19:14:52.137Z',
+      updatedAt: '2019-05-13T19:14:52.137Z',
+      topicId: 2
+    }),
+    Challenge.create({
+      name: 'Circular',
+      sandboxId: '4xv9pzknq4',
+      prompt:
+        'Given a linked list, return true if the list   is circular, false if it is not.',
+      functionName: 'circular',
+      tests:
+        "import circular from './index' const circular = require('.index');\nconst L = require('.linkedlist');\nconst List = L.LinkedList;\nconst Node = L.Node;\n\ntest('circular function is defined', () => {\n  expect(typeof circular).toEqual('function');\n});\n\ntest('circular detects circular linked lists', () => {\n  const l = new List();\n  const a = new Node('a');\n  const b = new Node('b');\n  const c = new Node('c');\n\n  l.head = a;\n  a.next = b;\n  b.next = c;\n  c.next = b;\n\n  expect(circular(l)).toEqual(true);\n});\n\ntest('circular detects circular linked lists linked at the head', () => {\n  const l = new List();\n  const a = new Node('a');\n  const b = new Node('b');\n  const c = new Node('c');\n\n  l.head = a;\n  a.next = b;\n  b.next = c;\n  c.next = a;\n\n  expect(circular(l)).toEqual(true);\n});\n\ntest('circular detects non-circular linked lists', () => {\n  const l = new List();\n  const a = new Node('a');\n  const b = new Node('b');\n  const c = new Node('c');\n\n  l.head = a;\n  a.next = b;\n  b.next = c;\n  c.next = null;\n\n  expect(circular(l)).toEqual(false);\n});",
+      solutions: [
+        'function circular(list) {\n  let slow = list.getFirst();\n  let fast = list.getFirst();\n\n  while (fast.next && fast.next.next) {\n    slow = slow.next;\n    fast = fast.next.next;\n\n    if (slow === fast) {\n      return true;\n    }\n  }\n\n  return false;\n}\n\nmodule.exports = circular;'
+      ],
+      keywords: ['class ', 'list', 'linked'],
+      examples:
+        "const l = new List();\n   const a = new Node('a');\n   const b = new Node('b');\n   const c = new Node('c');\n   l.head = a;\n   a.next = b;\n   b.next = c;\n   c.next = b;\n   circular(l)  true",
+      level: 'Medium',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T18:29:42.997Z',
+      updatedAt: '2019-05-13T18:29:42.997Z',
+      topicId: 3
+    }),
+    Challenge.create({
+      name: 'Matrix',
+      sandboxId: 'vrx1lk4m5',
+      prompt:
+        'Write a function that accepts an integer N   and returns a NxN spiral matrix.',
+      functionName: 'matrix',
+      tests:
+        "import matrix from './index' const matrix = require('.index');\n\ntest('matrix is a function', () => {\n  expect(typeof matrix).toEqual('function');\n});\n\ntest('matrix produces a 2x2 array', () => {\n  const m = matrix(2);\n  expect(m.length).toEqual(2);\n  expect(m[0]).toEqual([1, 2]);\n  expect(m[1]).toEqual([4, 3]);\n});\n\ntest('matrix produces a 3x3 array', () => {\n  const m = matrix(3);\n  expect(m.length).toEqual(3);\n  expect(m[0]).toEqual([1, 2, 3]);\n  expect(m[1]).toEqual([8, 9, 4]);\n  expect(m[2]).toEqual([7, 6, 5]);\n});\n\ntest('matrix produces a 4x4 array', () => {\n  const m = matrix(4);\n  expect(m.length).toEqual(4);\n  expect(m[0]).toEqual([1, 2, 3, 4]);\n  expect(m[1]).toEqual([12, 13, 14, 5]);\n  expect(m[2]).toEqual([11, 16, 15, 6]);\n  expect(m[3]).toEqual([10, 9, 8, 7]);\n});\n",
+      solutions: [
+        'function matrix(n) {\n  const results = [];\n\n  for (let i = 0; i < n; i++) {\n    results.push([]);\n  }\n\n  let counter = 1;\n  let startColumn = 0;\n  let endColumn = n - 1;\n  let startRow = 0;\n  let endRow = n - 1;\n  while (startColumn <= endColumn && startRow <= endRow) {\n     Top row\n    for (let i = startColumn; i <= endColumn; i++) {\n      results[startRow][i] = counter;\n      counter++;\n    }\n    startRow++;\n\n     Right column\n    for (let i = startRow; i <= endRow; i++) {\n      results[i][endColumn] = counter;\n      counter++;\n    }\n    endColumn--;\n\n     Bottom row\n    for (let i = endColumn; i >= startColumn; i--) {\n      results[endRow][i] = counter;\n      counter++;\n    }\n    endRow--;\n\n     start column\n    for (let i = endRow; i >= startRow; i--) {\n      results[i][startColumn] = counter;\n      counter++;\n    }\n    startColumn++;\n  }\n\n  return results;\n}\n\nmodule.exports = matrix;\n'
+      ],
+      keywords: ['loop', 'iterative', 'pointer'],
+      examples:
+        'matrix(3)\n     [[1, 2, 3],\n     [8, 9, 4],\n     [7, 6, 5]]\n  matrix(4)\n     [[1,   2,  3, 4],\n     [12, 13, 14, 5],\n     [11, 16, 15, 6],\n     [10,  9,  8, 7]]',
+      level: 'Hard',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T19:08:31.180Z',
+      updatedAt: '2019-05-13T19:08:31.180Z',
+      topicId: 1
+    }),
+    Challenge.create({
+      name: 'Reverse Integer',
+      sandboxId: 'xvrpnly5v4',
+      prompt:
+        'Given an integer, return an integer that is the reverse  ordering of numbers.',
+      functionName: 'reverseInt',
+      tests:
+        'import reverseInt from \'./index\' import reverseInt from ".index.js";\ntest("ReverseInt function exists", () => {\n  expect(reverseInt).toBeDefined();\n});\n\ntest("ReverseInt handles 0 as an input", () => {\n  expect(reverseInt(0)).toEqual(0);\n});\n\ntest("ReverseInt flips a positive number", () => {\n  expect(reverseInt(5)).toEqual(5);\n  expect(reverseInt(15)).toEqual(51);\n  expect(reverseInt(90)).toEqual(9);\n  expect(reverseInt(2359)).toEqual(9532);\n});\n\ntest("ReverseInt flips a negative number", () => {\n  expect(reverseInt(-5)).toEqual(-5);\n  expect(reverseInt(-15)).toEqual(-51);\n  expect(reverseInt(-90)).toEqual(-9);\n  expect(reverseInt(-2359)).toEqual(-9532);\n});',
+      solutions: [
+        "function reverseInt(n) {\n  const reversed = n\n    .toString()\n    .split('')\n    .reverse()\n    .join('');\n\n  return parseInt(reversed) * Math.sign(n);\n}\n\nmodule.exports = reverseInt;"
+      ],
+      keywords: ['string', 'split', 'reverse', 'join'],
+      examples:
+        'reverseInt(15) === 51\nreverseInt(-15) === -51\n reverseInt(-90) === -9',
+      level: 'Easy',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T20:54:11.586Z',
+      updatedAt: '2019-05-13T20:54:11.586Z',
+      topicId: 2
+    }),
+    Challenge.create({
+      name: 'MidPoint of List',
+      sandboxId: '72xoz6njx',
+      prompt:
+        "Return the 'middle' node of a linked list.  If the list has an even number of elements, return\n the node at the end of the first half of the list.  *Do not* use a counter variable, *do not* retrieve  the size of the list, and only iterate  through the list one time.",
+      functionName: 'midpoint',
+      tests:
+        "import midpoint from './index' const midpoint = require('.index');\nconst L = require('.linkedlist');\nconst Node = L.Node;\nconst LinkedList = L.LinkedList;\n\ntest('Midpoint is a function', () => {\n  expect(typeof midpoint).toEqual('function');\n});\n\ndescribe('Midpoint returns the middle node of an odd numbered list', () => {\n  test('when the list has 3 elements', () => {\n    const l = new LinkedList();\n    l.insertLast('a');\n    l.insertLast('b');\n    l.insertLast('c');\n    expect(midpoint(l).data).toEqual('b');\n  });\n\n  test('when the list has 5 elements', () => {\n    const l = new LinkedList();\n    l.insertLast('a');\n    l.insertLast('b');\n    l.insertLast('c');\n    l.insertLast('d');\n    l.insertLast('e');\n    expect(midpoint(l).data).toEqual('c');\n  });\n});\n\ndescribe('Midpoint returns the middle node of an even numbered list', () => {\n  test('when the list has 2 elements', () => {\n    const l = new LinkedList();\n    l.insertLast('a');\n    l.insertLast('b');\n    expect(midpoint(l).data).toEqual('a');\n  });\n\n  test('when the list has 4 elements', () => {\n    const l = new LinkedList();\n    l.insertLast('a');\n    l.insertLast('b');\n    l.insertLast('c');\n    l.insertLast('d');\n    expect(midpoint(l).data).toEqual('b');\n  });\n});\n",
+      solutions: [
+        'function midpoint(list) {\n  let slow = list.getFirst();\n  let fast = list.getFirst();\n\n  while (fast.next && fast.next.next) {\n    slow = slow.next;\n    fast = fast.next.next;\n  }\n\n  return slow;\n}\n\nmodule.exports = midpoint;'
+      ],
+      keywords: ['class ', 'linked', 'list', 'iterative'],
+      examples:
+        "const l = new LinkedList();\n   l.insertLast('a')\n   l.insertLast('b')\n   l.insertLast('c')\n   midpoint(l); => returns { data: 'b' }",
+      level: 'Medium',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T19:41:33.857Z',
+      updatedAt: '2019-05-13T19:41:33.857Z',
+      topicId: 3
+    }),
+    Challenge.create({
+      name: 'Pyramid',
+      sandboxId: '6jn5qm4nzk',
+      prompt:
+        'Write a function that accepts a positive number N.   The function should console log a pyramid shape  with N levels using the # character.  Make sure the pyramid has spaces on both the left *and* right hand sides',
+      functionName: 'pyramid',
+      tests: `import pyramid from "./index.js";
+beforeEach(() => {
+  jest.spyOn(console, "log");
+});
+
+afterEach(() => {
+  console.log.mockRestore();
+});
+
+test("pyramid is a function", () => {
+  expect(typeof pyramid).toEqual("function");
+});
+
+test("prints a pryamid for n = 2", () => {
+  pyramid(2);
+  expect(console.log.mock.calls[0][0]).toEqual(" # ");
+  expect(console.log.mock.calls[1][0]).toEqual("###");
+  expect(console.log.mock.calls.length).toEqual(2);
+});
+
+test("prints a pryamid for n = 3", () => {
+  pyramid(3);
+  expect(console.log.mock.calls[0][0]).toEqual("  #  ");
+  expect(console.log.mock.calls[1][0]).toEqual(" ### ");
+  expect(console.log.mock.calls[2][0]).toEqual("#####");
+  expect(console.log.mock.calls.length).toEqual(3);
+});
+
+test("prints a pryamid for n = 4", () => {
+  pyramid(4);
+  expect(console.log.mock.calls[0][0]).toEqual("   #   ");
+  expect(console.log.mock.calls[1][0]).toEqual("  ###  ");
+  expect(console.log.mock.calls[2][0]).toEqual(" ##### ");
+  expect(console.log.mock.calls[3][0]).toEqual("#######");
+  expect(console.log.mock.calls.length).toEqual(4);
+});
+`,
+      solutions: [
+        "function pyramid(n, row = 0, level = '') {\n  if (row === n) {\n    return;\n  }\n\n  if (level.length === 2 * n - 1) {\n    console.log(level);\n    return pyramid(n, row + 1);\n  }\n\n  const midpoint = Math.floor((2 * n - 1) / 2);\n  let add;\n  if (midpoint - row <= level.length && midpoint + row >= level.length) {\n    add = '#';\n  } else {\n    add = ' ';\n  }\n  pyramid(n, row, level + add);\n}\n\nmodule.exports = pyramid;"
+      ],
+      keywords: ['loop', 'pointer', 'iterative'],
+      examples:
+        "   pyramid(1)\n     '#'\n  pyramid(2)\n      ' # '\n     '###'\n  pyramid(3)\n      '  #  '\n      ' ### '   \n    '#####'",
+      level: 'Medium',
+      creditTo: 'Stephen Grider',
+      createdAt: '2019-05-13T20:34:25.593Z',
+      updatedAt: '2019-05-13T20:34:25.593Z',
+      topicId: 6
     })
   ])
 

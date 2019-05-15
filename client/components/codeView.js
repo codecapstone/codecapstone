@@ -19,15 +19,15 @@ class CodeView extends React.Component {
           <p>
             Now you can code out your problem. Type your code into the code-box
             below and check to see if it passes our tests. If you need help,
-            click on one of the buttons in the help section. When you are done,
-            click on submit.
+            scroll down to the help section. When you are done, click on submit.
           </p>
           <Link to="/optimization" id="linkText">
             <i className="far fa-comments" /> Submit
           </Link>
         </div>
-        <Help />
+
         <ConnectedSandbox />
+        <Help />
       </div>
     )
   }
