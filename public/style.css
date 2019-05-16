@@ -1037,3 +1037,18 @@ pre {
 #AnnyangDiv {
   width: 100%;
 }
+
+#admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: flex-start;
+}
+
+#formlist {
+  font-style: italic;
+}
+
+#adminText {
+  margin-bottom: 0px;
+}
