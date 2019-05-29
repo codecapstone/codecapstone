@@ -1,19 +1,32 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {getCurrentProblem} from '../store/problems'
 
-export const Sandbox = props => {
-  const sandboxId = props.problem.sandboxId
+class Sandbox extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      sandboxId: null
+    }
+  }
+  async componentDidMount() {
+    await this.props.getProblem()
+    this.setState({sandboxId: this.props.problem.sandboxId})
+  }
 
-  const url = `https://codesandbox.io/embed/${sandboxId}?fontsize=14&previewwindow=tests&codemirror=1&verticallayout=1&editorsize=50`
+  render() {
+    const url = `https://codesandbox.io/embed/${
+      this.state.sandboxId
+    }?fontsize=14&previewwindow=tests&codemirror=1&verticallayout=1&editorsize=50`
 
-  // const url = `https://codesandbox.io/api/v1/sandboxes/define?json=1`
-
-  return (
-    <div id="main">
-      {/* <embed src={url} style={{width: 800, height: 1000}} /> */}
-      <embed src={url} id="sandbox" />
-    </div>
-  )
+    return (
+      this.state.sandboxId && (
+        <div id="main">
+          <embed src={url} id="sandbox" />
+        </div>
+      )
+    )
+  }
 }
 
 const mapState = state => {
@@ -22,4 +35,10 @@ const mapState = state => {
   }
 }
 
-export const ConnectedSandbox = connect(mapState, null)(Sandbox)
+const mapDispatch = dispatch => {
+  return {
+    getProblem: () => dispatch(getCurrentProblem())
+  }
+}
+
+export const ConnectedSandbox = connect(mapState, mapDispatch)(Sandbox)
